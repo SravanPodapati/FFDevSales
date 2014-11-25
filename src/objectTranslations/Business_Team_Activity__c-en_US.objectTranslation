@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Business Team Activity</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Business Team Activities</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account Phone No --></label>
+        <name>Account_Phone_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Business Team Activities --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Department --></label>
+        <name>Owner_s_Department__c</name>
+    </fields>
+    <fields>
+        <label><!-- Visibility --></label>
+        <name>Visibility__c</name>
+        <picklistValues>
+            <masterLabel>Departmental</masterLabel>
+            <translation><!-- Departmental --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Group - read only</masterLabel>
+            <translation><!-- Group - read only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Group - read/write</masterLabel>
+            <translation><!-- Group - read/write --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Private</masterLabel>
+            <translation><!-- Private --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Website --></label>
+        <name>Website__c</name>
+    </fields>
+    <layouts>
+        <layout>Business Team Activity Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- BTA_ViewAllActivity --></label>
+        <name>BTA_ViewAllActivity</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- CreateBTAActivity --></label>
+        <name>CreateBTAActivity</name>
+    </webLinks>
+</CustomObjectTranslation>

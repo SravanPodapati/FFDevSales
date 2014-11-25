@@ -1,0 +1,3 @@
+<apex:page standardController="Staging_NEO_Credit_Note__c" extensions="ffirule.IntegrationRuleEngine" action="{!convert}">
+<ffirule:IntegrationRule engine="{!engine}"/>
+</apex:page>

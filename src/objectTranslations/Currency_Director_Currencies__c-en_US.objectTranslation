@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Currency Director Currency</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Currency Director Currencies</value>
+    </caseValues>
+    <fields>
+        <label><!-- Currency Director --></label>
+        <name>Currency_Director__c</name>
+        <relationshipLabel><!-- Currency Director Currencies --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Is Currency Director Base Currency ? --></label>
+        <name>Is_Currency_Director_Base_Currency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Rate Update (Date) --></label>
+        <name>Last_Rate_Update_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Rate Update (Rate) --></label>
+        <name>Last_Rate_Update_Rate__c</name>
+    </fields>
+    <layouts>
+        <layout>Currency Director Currencies Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

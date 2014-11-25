@@ -1,0 +1,141 @@
+<apex:page controller="QuickOppController" tabStyle="Opportunity">
+    <apex:sectionHeader title="Quick Pitch"/>
+        <apex:form >
+        
+            <!-- *********************************************** -->
+            <!-- ***************** Opportunity ***************** -->  
+            <!-- *********************************************** -->
+            
+            <apex:pageBlock title="Pitch Information" id="PitchBlock" rendered="{!productsExist}">
+         	<apex:pageMessages />
+                <apex:pageBlockButtons >
+                        <apex:commandButton action="{!save}"    value="Save"   rendered="{!productsExist}"/>
+                        <apex:commandButton action="{!addNewLine}"    value="Add New Line"   rendered="{!productsExist}" rerender="PitchBlock,PitchLineItem,DisplayLineItemsPB"/>
+                        <apex:commandButton action="{!cancel}"  value="Cancel" immediate="true"/>
+                </apex:pageBlockButtons>
+
+                <apex:pageBlockSection title="Pitch Information"          columns="3">
+                    <apex:inputField value="{!opportunity.name}"                required="true"/> 
+                    
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel for="productSelect">Stage</apex:outputLabel>
+                            <apex:selectList value="{!stageSelectList}" size="1" id="stageSelect"   required="true">
+                                <apex:selectOptions value="{!stageOptions}"/>
+                            </apex:selectList>
+                    </apex:pageBlockSectionItem>
+                    
+                    <apex:pageBlockSectionItem >
+                       <apex:outputLabel for="Advertiser" value="Advertiser"></apex:outputLabel>
+                        <apex:panelGroup >
+                             <apex:inputField value="{!opportunity.accountId}"  id="Advertiser"     required="true"/>  
+                        </apex:panelGroup>
+                    </apex:pageBlockSectionItem>
+                    
+                    <apex:inputField value="{!opportunity.Type}"                required="true"/>  
+                    <apex:inputField value="{!opportunity.Agency__c}"                          />  
+                    <apex:inputField value="{!opportunity.closeDate}"           required="true"/>
+
+                    <apex:inputField value="{!contactRole.contactId}"			required="false"/>    
+                                        
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel for="roleSelect">Contact Role</apex:outputLabel>
+                        <apex:panelGroup >
+                            <apex:selectList value="{!roleSelectList}" size="1" id="roleSelect">
+                                <apex:selectOptions value="{!roleOptions}"/>
+                            </apex:selectList>
+                        </apex:panelGroup>
+                    </apex:pageBlockSectionItem>
+                
+                	<apex:inputField value="{!opportunity.ownerId}" />
+                    
+                </apex:pageBlockSection>
+                
+                
+                <!-- *********************************************** -->
+                <!-- ************ Opportunity Line Item ************ -->  
+                <!-- *********************************************** -->
+            
+                <apex:pageBlockSection title="Pitch Line Item Information" id="PitchLineItem" columns="3">
+                    
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel for="productSelect">Product</apex:outputLabel>
+                        <apex:panelGroup >
+                            <apex:selectList value="{!productsSelectList}" size="1" id="productSelect" required="true">
+                                <apex:selectOptions value="{!productOptions}"/>
+                            </apex:selectList>
+                        </apex:panelGroup>
+                    </apex:pageBlockSectionItem>
+                   
+	                <apex:inputField value="{!pitch.UnitPrice}"                     required="true"/>
+	                <apex:inputField value="{!pitch.ServiceDate}"       			required="true"/>
+	                <apex:inputField value="{!pitch.Description}"/>
+	                    
+                    <apex:pageBlockSectionItem >
+	                    <apex:outputLabel for="noOfProductsSelect">Number Of Increments</apex:outputLabel>
+	                    <apex:panelGroup >
+	                            <apex:selectList value="{!NoOfProductsSelectList}" size="1" id="noOfProductsSelect"   required="true">
+	                                <apex:selectOptions value="{!NoOfProducts}"/>
+	                            </apex:selectList>
+	                    </apex:panelGroup>
+	                    </apex:pageBlockSectionItem>
+	                  <apex:pageBlockSectionItem >  
+	                    <apex:outputLabel for="DateIncProductsSelect">Dates To Be Incremented</apex:outputLabel>
+                        <apex:panelGroup >
+                                <apex:selectList value="{!DateIncProductsList}" size="1" id="DateIncProductsSelect"   required="true">
+                                    <apex:selectOptions value="{!DateIncProducts}"/>
+                                </apex:selectList>
+                                </apex:panelGroup>
+                    </apex:pageBlockSectionItem>
+                    
+
+
+                </apex:pageBlockSection>
+                
+            </apex:pageBlock>
+            
+            <apex:pageBlock id="DisplayLineItemsPB" Title="Pitch Line Item View" rendered="{!productsExist}">
+            	<apex:pageBlockSection id="displayLineItemsPBS">
+           		 <apex:outputPanel >
+            		<apex:pageBlockTable value="{!opportunityLineView}" var="oppl" style="width:100%" >
+  						<apex:column headerValue="Product">     		
+            			   <apex:outputText value="{!oppl.PriceBookEntry.Name}" style="width:1000px"/>
+            			</apex:column>
+            			
+  						<apex:column headerValue="Quantity ">     		
+            			   <apex:outputField value="{!oppl.Quantity}" style="width:250px"/>
+            			</apex:column>  
+            			
+   						<apex:column headerValue="Unit Price ">     		
+            			   <apex:outputField value="{!oppl.UnitPrice}" style="width:250px"/>
+            			</apex:column>  
+ 
+  						<apex:column headerValue="First Ins.Date">     		
+            			   <apex:outputField value="{!oppl.ServiceDate}" style="width:250px"/>
+            			</apex:column>  
+            			           			          			             			
+  						<apex:column headerValue="Line Description/Comments">     		
+            			   <apex:outputField value="{!oppl.Description}" style="width:2000px"/>
+            			</apex:column>    
+            			        			           			         			
+            		</apex:pageBlockTable>
+            		</apex:outputPanel>
+            	</apex:pageBlockSection>
+            </apex:pageBlock>
+            
+            <!-- *********************************************** -->
+            <!-- *********** If there are no products ********** -->  
+            <!-- *********************************************** -->
+
+            <apex:pageBlock rendered="{!!productsExist}">
+            
+                <apex:pageBlockButtons >
+                    <apex:commandButton action="{!cancel}"  value="Cancel" immediate="true"/>
+                </apex:pageBlockButtons>
+            
+                <apex:outputText value="Quick Pitch functionality cannot be used because Price Book is not defined for your profile or it contains no products." 
+                                    style="color:#CC0000;font-weight:bold;"/>
+
+              </apex:pageBlock>  
+                
+        </apex:form>
+</apex:page>

@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Base Price</value>
+        </caseValues>
+        <name>orderitem_unit_price</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <label><!-- A/B Copy Split --></label>
+        <name>A_B_Copy_Split__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ad Hoc Value Back --></label>
+        <name>Ad_Hoc_Value_Back__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ad Hoc --></label>
+        <name>Ad_Hoc__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ad Unit Code --></label>
+        <name>Ad_Unit_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ad Unit Name --></label>
+        <name>Ad_Unit_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Allowances --></label>
+        <name>Allowances__c</name>
+    </fields>
+    <fields>
+        <label><!-- BasePrice --></label>
+        <name>BasePrice__c</name>
+    </fields>
+    <fields>
+        <label><!-- CCI Cancel Reason Code --></label>
+        <name>CCI_Cancel_Reason_Code__c</name>
+        <picklistValues>
+            <masterLabel>BADCRE</masterLabel>
+            <translation><!-- BADCRE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CUSTREQ</masterLabel>
+            <translation><!-- CUSTREQ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ITMSOLD</masterLabel>
+            <translation><!-- ITMSOLD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MISC</masterLabel>
+            <translation><!-- MISC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NOMAT</masterLabel>
+            <translation><!-- NOMAT --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- CCI Cancel Reason Notes --></label>
+        <name>CCI_Cancel_Reason_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- CCI Cancel Reason --></label>
+        <name>CCI_Cancel_Reason__c</name>
+        <picklistValues>
+            <masterLabel>Credit problems</masterLabel>
+            <translation><!-- Credit problems --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer request</masterLabel>
+            <translation><!-- Customer request --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Item sold</masterLabel>
+            <translation><!-- Item sold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Material not received</masterLabel>
+            <translation><!-- Material not received --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Miscellaneous</masterLabel>
+            <translation><!-- Miscellaneous --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- CCI Order Item ID --></label>
+        <name>CCI_Order_Item_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- CCI Package Item Id --></label>
+        <name>CCI_Package_Item_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- CCI Product Name --></label>
+        <name>CCI_Product_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- CCI Product --></label>
+        <name>CCI_Product__c</name>
+    </fields>
+    <fields>
+        <label><!-- CCI Schedule Item Id --></label>
+        <name>CCI_Schedule_Item_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cancel Date --></label>
+        <name>Cancel_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Canceled Reason --></label>
+        <name>Canceled_Reason__c</name>
+    </fields>
+    <fields>
+        <label><!-- Charges --></label>
+        <name>Charges__c</name>
+    </fields>
+    <fields>
+        <label><!-- Classification Category Name --></label>
+        <name>Classification_Category_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Classification Category --></label>
+        <name>Classification_Category__c</name>
+    </fields>
+    <fields>
+        <label><!-- Classification Main Category Name --></label>
+        <name>Classification_Main_Category_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Classification Main Category --></label>
+        <name>Classification_Main_Category__c</name>
+    </fields>
+    <fields>
+        <label><!-- Classification Name --></label>
+        <name>Classification_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Classification --></label>
+        <name>Classification__c</name>
+    </fields>
+    <fields>
+        <label><!-- Colour --></label>
+        <name>Colour__c</name>
+    </fields>
+    <fields>
+        <label><!-- Columns --></label>
+        <name>Columns__c</name>
+    </fields>
+    <fields>
+        <label><!-- Combined Ad Unit Name --></label>
+        <name>Combined_Ad_Unit_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Combined Ad Unit --></label>
+        <name>Combined_Ad_Unit__c</name>
+    </fields>
+    <fields>
+        <label><!-- CopySplit --></label>
+        <name>CopySplit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dateflex --></label>
+        <name>Dateflex__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discounts --></label>
+        <name>Discounts__c</name>
+    </fields>
+    <fields>
+        <label><!-- Display Section --></label>
+        <name>Display_Section__c</name>
+    </fields>
+    <fields>
+        <label><!-- Distribution Name --></label>
+        <name>Distribution_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Distribution --></label>
+        <name>Distribution__c</name>
+    </fields>
+    <fields>
+        <label><!-- Insertion Date --></label>
+        <name>First_Delivery_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Height --></label>
+        <name>Height__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsCancelableOrderItem --></label>
+        <name>IsCancelableOrderItem__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Cancelled --></label>
+        <name>Is_Cancelled__c</name>
+    </fields>
+    <fields>
+        <label><!-- Published --></label>
+        <name>Is_Published__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Delivery Date --></label>
+        <name>Last_Delivery_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Media Code --></label>
+        <name>Media_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Media Name --></label>
+        <name>Media_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Module --></label>
+        <name>Module__c</name>
+    </fields>
+    <fields>
+        <label><!-- No. of Units --></label>
+        <name>No_of_Units__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Line ID --></label>
+        <name>Opportunity_Line_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- PO Number --></label>
+        <name>PO_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Package Code --></label>
+        <name>Package_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Package Name --></label>
+        <name>Package_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Position --></label>
+        <name>Position__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Category Name --></label>
+        <name>Product_Category_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Category --></label>
+        <name>Product_Category__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Main Category Name --></label>
+        <name>Product_Main_Category_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Main Category --></label>
+        <name>Product_Main_Category__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Unit Name --></label>
+        <name>Product_Unit_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Unit --></label>
+        <name>Product_Unit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Publication Code --></label>
+        <name>Publication_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Publication Name --></label>
+        <name>Publication_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Publication --></label>
+        <name>Publication__c</name>
+    </fields>
+    <fields>
+        <label><!-- Published Page No --></label>
+        <name>Published_Page_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Regional Copy Split --></label>
+        <name>Regional_Copy_Split__c</name>
+    </fields>
+    <fields>
+        <label><!-- SCC Rate --></label>
+        <name>SCC_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Section Code --></label>
+        <name>Section_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Section Name --></label>
+        <name>Section_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Size --></label>
+        <name>Size__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sub Section Name --></label>
+        <name>Sub_Section_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sub Section --></label>
+        <name>Sub_Section__c</name>
+    </fields>
+    <fields>
+        <label><!-- Submitted For Cancellation --></label>
+        <name>Submitted_For_Cancellation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Title Category Name --></label>
+        <name>Title_Category_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Title Category --></label>
+        <name>Title_Category__c</name>
+    </fields>
+    <fields>
+        <label><!-- Title Code --></label>
+        <name>Title_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Title Name --></label>
+        <name>Title_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Title --></label>
+        <name>Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- Value Back Assigned To --></label>
+        <name>Value_Back_Assigned_To__c</name>
+        <relationshipLabel><!-- Order Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Value Back Contract --></label>
+        <name>Value_Back_Contract__c</name>
+        <relationshipLabel><!-- Order Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Value Back --></label>
+        <name>Value_Back__c</name>
+    </fields>
+    <fields>
+        <label><!-- WebSite --></label>
+        <name>WebSite__c</name>
+    </fields>
+    <fields>
+        <label><!-- Website Category Name --></label>
+        <name>Website_Category_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Website Category --></label>
+        <name>Website_Category__c</name>
+    </fields>
+    <fields>
+        <label><!-- Website Code --></label>
+        <name>Website_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Website Name --></label>
+        <name>Website_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yield --></label>
+        <name>Yield__c</name>
+    </fields>
+    <fields>
+        <label><!-- Zone Code --></label>
+        <name>Zone_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Zone Name --></label>
+        <name>Zone_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Zone --></label>
+        <name>Zone__c</name>
+    </fields>
+    <layouts>
+        <layout>Order Product Layout</layout>
+        <sections>
+            <label><!-- Ad Properties --></label>
+            <section>Ad Properties</section>
+        </sections>
+        <sections>
+            <label><!-- Cancel Resons --></label>
+            <section>Cancel Resons</section>
+        </sections>
+        <sections>
+            <label><!-- Price Information --></label>
+            <section>Price Information</section>
+        </sections>
+        <sections>
+            <label><!-- Product information --></label>
+            <section>Product information</section>
+        </sections>
+        <sections>
+            <label><!-- Value Back Information --></label>
+            <section>Value Back Information</section>
+        </sections>
+    </layouts>
+</CustomObjectTranslation>

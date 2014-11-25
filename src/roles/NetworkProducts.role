@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>None</contactAccessLevel>
+    <description>Network Products</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Network Products</name>
+    <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    <parentRole>Network_Products_Team_Lead</parentRole>
+</Role>

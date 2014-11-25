@@ -1,0 +1,52 @@
+<!-- *********************************************************************************** --> 
+<!-- *********************************************************************************** --> 
+<!-- **** 																			**** --> 
+<!-- **** 	This page is called after clicking "Deactivate" button on an 			**** --> 
+<!-- ****	active Pitch Idea.														**** --> 
+<!-- **** 																			**** --> 
+<!-- ****	It calls the Deactivate method from 									**** --> 
+<!-- ****	ActivateDeactivatePitchIdeaController and shows error messages 			**** --> 
+<!-- ****	(if there are any).														**** --> 
+<!-- **** 																			**** --> 
+<!-- **** 	Also, if users wants to deactivate inactive Pitch Idea without Reason	**** --> 
+<!-- **** 	for Inactive than picklist appears on this page.						**** --> 
+<!-- **** 																			**** --> 
+<!-- *********************************************************************************** --> 
+<!-- *********************************************************************************** --> 
+
+
+<apex:page standardController="OpportunityLineItem" 
+			tabStyle="OpportunityLineItem"  
+			extensions="ActivateDeactivatePitchIdeaController" 
+			action="{!Deactivate}">
+		
+			
+	<apex:outputText value="{!errorMessage}" rendered="{!errorMessage != null}" style="color:#CC0000;font-weight:bold;"/>
+	
+	<apex:form > <!--  rendered="{!showSelectList}"-->
+		<apex:pageBlock title="Choose Reason for Inactive First!" rendered="{!renderPage}">
+			<apex:pageBlockSection columns="1" showHeader="false">
+				<apex:pageBlockSectionItem rendered="{!showSelectList}">
+					<apex:outputLabel for="reasonForInactive">Reason for Inactive</apex:outputLabel>
+	          	  	<apex:selectList value="{!inactiveReason}" size="1" id="inactiveReason" required="true">
+	            		<apex:selectOptions value="{!inactiveOpts}"/>
+	      			</apex:selectList>
+      			</apex:pageBlockSectionItem>
+      			
+      			<apex:pageBlockSectionItem rendered="{!showLostToCompList}" >
+					<apex:outputLabel for="LostToCompetitor">Lost to Competitor</apex:outputLabel>
+	          	  	<apex:selectList value="{!competitorTitle}" size="1" id="competitorTitle" required="true">
+	            		<apex:selectOptions value="{!lostToCompOpts}"/>
+	      			</apex:selectList>
+      			</apex:pageBlockSectionItem>
+      			
+			</apex:pageBlockSection>
+			
+			<apex:pageBlockButtons location="bottom">
+				<apex:commandButton action="{!Deactivate}" 	value="Ok"	/>
+				<apex:commandButton action="{!cancel}" 		value="Cancel"/>
+			</apex:pageBlockButtons>
+		
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

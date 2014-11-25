@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Currency FFA Rate to Load</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Currency Director FFA Rates to Load</value>
+    </caseValues>
+    <fields>
+        <label><!-- Accounting Currency --></label>
+        <name>Accounting_Currency__c</name>
+        <relationshipLabel><!-- Currency Director FFA Rates to Load --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Company Home Currency --></label>
+        <name>Company_Home_Currency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Company ID --></label>
+        <name>Company_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Company Name --></label>
+        <name>Company_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cross Rate Date --></label>
+        <name>Cross_Rate_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cross Rate Date Match --></label>
+        <name>Cross_Rate_Dates_Match__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cross Rate --></label>
+        <name>Cross_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Currency Director Currencies --></label>
+        <name>Currency_Director_Currencies__c</name>
+        <relationshipLabel><!-- Currency Director FFA Rates to Load --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Is Home ? (Exclude) --></label>
+        <name>Is_Home_Exclude__c</name>
+    </fields>
+    <fields>
+        <label><!-- OK to Load --></label>
+        <name>OK_to_Load__c</name>
+    </fields>
+    <layouts>
+        <layout>Currency Director Accounting Currencies Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Update_FFA --></label>
+        <name>Update_FFA</name>
+    </webLinks>
+</CustomObjectTranslation>

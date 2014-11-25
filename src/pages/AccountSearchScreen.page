@@ -1,0 +1,183 @@
+<apex:page standardController="Account" extensions="AccountSearchController">
+
+    <apex:includeScript value="{!URLFOR($Resource.JavascriptLibraries, 'JS/jquery-1.10.2.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.JavascriptLibraries, 'JS/jquery.blockUI.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.JavascriptLibraries, 'JS/jquery-ui-1.10.2.custom.min.js')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.JavascriptLibraries, 'CSS/jquery-ui-1.10.2.custom.min.css')}" />
+    <style>
+        .ui-autocomplete {
+            max-height: 200px;
+            overflow-y: auto;
+            /* prevent horizontal scrollbar */
+            overflow-x: auto;
+            /* add padding to account for vertical scrollbar */
+            padding-right: 20px;
+        }
+        .searchElements{
+            width:33%;
+            float:left;
+            border:5px;
+        }
+    </style>
+    <apex:pageMessages />
+    <apex:sectionHeader title="Account" subtitle="Account Search Screen" description="Welcome to the Account search facility. Please populate search fields to find a specific Advertiser or Agency."/>
+    <script>
+        /*
+        *check if jquery is loaded if not load jquery again
+        **/
+        if(typeof jQuery != 'undefined'){
+            $j = jQuery.noConflict();
+        }
+        /*  
+        *Java Script to Blck and unblock the UI
+        */
+        function disableUI() {
+            $j.blockUI({ css: { 
+                    border: 'none', 
+                    padding: '15px', 
+                    backgroundColor: '#000', 
+                    '-webkit-border-radius': '10px', 
+                    '-moz-border-radius': '10px', 
+                    opacity: .5, 
+                    color: '#fff' 
+            } }); 
+        }
+        
+        function enableUI() {
+            $j.unblockUI();
+        }
+        
+        $j(function(){
+            $j( ".auto" ).autocomplete({
+                source: function(request, response) {
+                    queryData(response ,request.term);
+                },
+                minLength: 3,
+                select: function(event, ui) {
+                    $j('.auto').val(ui.item.value);
+                    $j(this).val(ui.item.label);
+                    return false;
+                },
+                focus: function( event, ui ) {
+                    $j(this).val( ui.item.label );
+                    return false;  
+                }
+            });
+        });
+
+        /*
+        *This method queries data according to the passed parameter
+        *and populates the combobox accordingly
+        */    
+        function queryData(response,param){
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.AccountSearchController.getData}',param,$j("select[id$='recordType']").val(),
+                    function(result, event){
+                        
+                        if(event.status){ 
+                            var data = [];  
+                            $j.each(result,function(){
+                                var obj = new Object();
+                                for (var field in this) { 
+                                    //match the passed label and returned value to populate the label and value                                  
+                                    if((field.toUpperCase()=='name'.toUpperCase())){
+                                        obj.label = this[field];                                                                               
+                                    }
+                                    else if((field.toUpperCase()=='id'.toUpperCase())){
+                                        obj.value= this[field];                                                                               
+                                    }                                    
+                                }                                
+                                data.push(obj);
+                            });
+                            
+                            response( data);
+                        }
+                        else{
+                            alert('Invalid Field/Object API Name : '+event.message);
+                        }
+                    },
+                    {escape: false}
+                );
+            }     
+            
+            function enterKey(ev){
+                if (window.event && (window.event.keyCode == 13 || ev.which == 13)) {
+                    disableUI();
+                    doSearchAF();
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+    </script>
+    <apex:form >
+    <apex:outputPanel id="searchInformationPanel">
+        <apex:actionFunction action="{!doSearch}" name="doSearchAF" rerender="searchResultsPanel" oncomplete="enableUI();"/>
+        <apex:pageBlock title="{!$Label.Search_Information}">
+            <table style="width: 100%;">
+                <tr style="width: 100%;">
+                    <td style="width: 25%; text-align: left;">
+                        <apex:outputLabel value="{!$Label.Account_Record_Type}" for="recordType"/>
+                        &nbsp;
+                        <apex:selectList id="recordType" styleClass="recordType" value="{!recordTypeID}" multiselect="false" size="1" >
+                            <apex:selectOptions value="{!RecordTypes}"/> 
+                        </apex:selectList>
+                    </td>
+                    <td style="width: 50%; text-align: center;">
+                        <apex:outputLabel value="{!$Label.Customer_Name}" for="customerName" />
+                        &nbsp;
+                        <apex:inputtext value="{!accountName}" id="customerName" style="width: 60%" styleClass="auto" onkeydown="return enterKey(event);"/>
+                    </td>
+                    <td style="width: 25%;text-align: right; margin-right: 20px;">
+                        <apex:outputLabel value="{!$Label.Post_Code}" for="postCode"/>
+                        &nbsp;
+                        <apex:inputtext value="{!postCode}" id="postCode" style="width: 100px;" onkeydown="return enterKey(event);"/>
+                    </td>
+                </tr>
+            </table>
+            
+                <div id="SearchButtonDiv" align="center" >
+                <apex:pageBlockButtons location="bottom">
+                    <apex:commandButton value="{!$Label.Search}" rerender="searchResultsPanel" onclick="disableUI();" oncomplete="enableUI();" >
+                        <apex:param name="searched" value="1" assignTo="{!requestedToSearch}"/>
+                    </apex:commandButton>
+                    <apex:commandButton value="clear" action="{!clear}" rerender="searchInformationPanel, searchResultsPanel" onclick="disableUI();" oncomplete="enableUI();history.go(0);" >
+                        <apex:param name="searched" value="0" assignTo="{!requestedToSearch}"/>
+                    </apex:commandButton>
+                </apex:pageBlockButtons>
+                </div>
+        </apex:pageBlock>
+        </apex:outputPanel>
+        <apex:outputPanel id="searchResultsPanel"> 
+            <apex:pageBlock title="{!$Label.Search_Results}">
+                <apex:pageBlockButtons location="bottom">
+                    <apex:commandButton rendered="{!requestedToSearch == '1'&&((accountName != null && accountName != '')|| (postCode != null && postCode != ''))}" action="/setup/ui/recordtypeselect.jsp?ent=Account&retURL=%2F001%2Fo&save_new_url=%2F001%2Fe%3FretURL%3D%252F001%252Fo" value="New Account"  />
+                </apex:pageBlockButtons>
+                <apex:pageMessage summary="{!$Label.Search_Criteria_Error}" severity="error" strength="3" rendered="{!requestedToSearch == '1' && NOT((accountName != null && accountName != '') || (postCode != null && postCode != '') || (alias != null && alias != ''))}"/>
+                <apex:pageMessage summary="{!$Label.Search_Criteria_Info}" severity="info" strength="3" rendered="{!requestedToSearch == '0' && NOT((accountName != null && accountName != '') || (postCode != null && postCode != '') || (alias != null && alias != ''))}"/>
+                <apex:pageMessage summary="{!$Label.Search_Results_Warning}" severity="info" strength="3" rendered="{!AND((SearchAccounts.size == 0), ((accountName != null && accountName != '') || (postCode != null && postCode != '') || (alias != null && alias != '')))}"/>
+                <apex:pageMessage summary="{!$Label.Search_Results_Limit}" severity="info" strength="3" rendered="{!sizeOfSearchResults >= accountSearchLimit}"/>
+                <apex:pageBlockTable value="{!SearchAccounts}" var="acc" rendered="{!AND((SearchAccounts.size > 0), ((accountName != null && accountName != '') || (postCode != null && postCode != '') || (alias != null && alias != '')))}">
+                    <apex:repeat value="{!fields}" var="f">
+                        <apex:column >
+                            <apex:facet name="header" >
+                                <apex:commandLink rerender="searchResultsPanel" value="{!f.Label}" onclick="disableUI();" onComplete="enableUI();" >
+                                    &nbsp;
+                                    <apex:outputText rendered="{!sortOption==f.FieldPath && sortDirection=='ASC'}">&#9650;</apex:outputText>
+                                    <apex:outputText rendered="{!sortOption==f.FieldPath && sortDirection=='DESC'}">&#9660;</apex:outputText>
+                                    <apex:param name="sortField" value="{!f.FieldPath}" assignTo="{!sortOption}"/>
+                                    <apex:param name="sortOrder" value="{!if(sortOption!=f.FieldPath, 'ASC', if(sortDirection=='ASC','DESC','ASC'))}" assignTo="{!sortDirection}"/>
+                                </apex:commandLink>
+                            </apex:facet>
+                            <apex:outputField value="{!acc[f]}" rendered="{!if(f.FieldPath == 'Name', false, true)}"/>
+                            <apex:outputLink value="/{!acc.Id}" rendered="{!if(f.FieldPath == 'Name', true, false)}">
+                                <apex:outputField value="{!acc[f]}"/>
+                            </apex:outputLink>
+                        </apex:column>
+                    </apex:repeat>
+                </apex:pageBlockTable> 
+            </apex:pageBlock>
+        </apex:outputPanel>
+    </apex:form>
+
+</apex:page>

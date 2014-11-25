@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <customSettingsVisibility>Public</customSettingsVisibility>
+    <description>CCI Customer Categories</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>CategoryCode__c</fullName>
+        <externalId>false</externalId>
+        <label>CategoryCode</label>
+        <length>20</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CategoryDescription__c</fullName>
+        <externalId>false</externalId>
+        <label>CategoryDescription</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>CustomerCategory</label>
+</CustomObject>

@@ -1,0 +1,38 @@
+<apex:page StandardController="Account" Extensions="ViewNotesAndAttachmentsWithinAccount" ShowHeader="False">
+<apex:form >  
+<style type="text/css">
+  td {
+    word-wrap: break-word;
+  }
+</style>
+
+<apex:pageBlock >
+
+<!-- The below is needed to avoid a query to get the Account Name -->
+<apex:outputtext value="{!account.Name}" rendered="False"/>
+
+<apex:pageBlockTable value="{!AllNotesAndAttachment}" var="noteList" style="width:100%;vertical-align:top;word-wrap: break-word;"  headerClass="headerrow">
+    <apex:column headerValue="Type" value="{!noteList.Type}" />
+    <apex:column headerValue="Title" >
+        <apex:outputLink target="_parent" value="../{!noteList.naId}">{!noteList.Title}</apex:outputLink>    
+    </apex:column>
+    <apex:column headerValue="Related To" >
+        <apex:outputLink target="_parent" value="../{!noteList.relatedTo}">{!noteList.relatedToName}</apex:outputLink>
+    </apex:column>
+    <apex:column headerValue="Last Modified" >
+    <apex:outputText value="{0,date,dd'/'MM'/'yyyy HH:mm}">
+        <apex:param value="{!noteList.LastModifiedDate}" /> 
+    </apex:outputText> 
+    </apex:column>
+    <apex:column headerValue="Last Modified By">
+        <apex:outputLink target="_parent" value="../{!noteList.LastModifiedBy}">{!noteList.LastModifiedByName}</apex:outputLink>      
+    </apex:column>
+</apex:pageBlockTable>
+
+
+
+</apex:pageBlock>
+
+</apex:form>
+
+</apex:page>

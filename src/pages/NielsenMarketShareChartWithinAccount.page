@@ -1,0 +1,71 @@
+<apex:page StandardController="Account" Extensions="NielsenMarketShareChartController" ShowHeader="False">
+
+
+<apex:form >
+  <apex:outputPanel style="height:100px; border: 1px solid #aaa">
+   <apex:outputLink target="_blank" value="../{!nielsenMarketSummaryReportId}?pv0={! URLENCODE(accountNames)}">Click for Detail on {!accountDetail.Name}</apex:outputLink>
+   <apex:chart data="{!ExpenditureChartData}" height="390" width="1100" >    
+        <apex:legend position="right" font="14px Arial"/>
+        <apex:axis type="Numeric" position="left" title="Expenditure" grid="true"
+            fields="cinema,dailyMail,directMail,doorDrops,magazines,mailOnSunday,metro,nationalNewspapers,outDoor,radio,regionalNewspapers,tv">
+            <apex:chartLabel display="over"/>
+        </apex:axis>
+                
+        <apex:axis type="Category" position="bottom" fields="month" title="Period">
+
+        </apex:axis>
+            
+          <apex:lineSeries axis="left" xField="month" yField="nationalNewspapers" title="National Newspapers(Excl dmg)"
+            markerType="circle" markerSize="4" markerFill="#8db600" fill="false"/>
+            
+          <apex:lineSeries axis="left" xField="month" yField="regionalNewspapers" title="Regional Newspapers(Excl dmg)"
+            markerType="circle" markerSize="4" markerFill="#981b1e" fill="false"/> 
+
+          <apex:lineSeries axis="left" xField="month" yField="dailyMail" title="Daily Mail"
+            markerType="circle" markerSize="4" markerFill="#b8ff5c" fill="true"/>
+            
+          <apex:lineSeries axis="left" xField="month" yField="mailOnSunday" title="Mail On Sunday"
+            markerType="cross" markerSize="4" markerFill="#fdf384" fill="true"/>
+
+          <apex:lineSeries axis="left" xField="month" yField="metro" title="Metro"
+            markerType="circle" markerSize="4" markerFill="#3B170B" fill="true"/>                        
+    </apex:chart> 
+  </apex:outputPanel>  
+</apex:form>
+
+
+
+<apex:form >
+  <apex:outputPanel style="height:100px; border: 1px solid #aaa">
+   <apex:chart data="{!MarketShareChartData}" height="390" width="1100" >    
+        <apex:legend position="right" font="14px Arial"/>
+        <apex:axis type="Numeric" position="left" title="MarketShare" grid="true"
+            fields="cinema,dailyMail,directMail,doorDrops,magazines,mailOnSunday,metro,nationalNewspapers,outDoor,radio,regionalNewspapers,tv">
+            <apex:chartLabel display="over"/>
+        </apex:axis>
+                
+        <apex:axis type="Category" position="bottom" fields="month" title="Period">
+
+        </apex:axis>
+
+          <apex:lineSeries axis="left" xField="month" yField="nationalNewspapers" title="National Newspapers(Excl dmg)"
+            markerType="circle" markerSize="4" markerFill="#8db600" fill="false"/>
+            
+          <apex:lineSeries axis="left" xField="month" yField="regionalNewspapers" title="Regional Newspapers(Excl dmg)"
+            markerType="circle" markerSize="4" markerFill="#981b1e" fill="false"/> 
+
+          <apex:lineSeries axis="left" xField="month" yField="dailyMail" title="Daily Mail"
+            markerType="circle" markerSize="4" markerFill="#b8ff5c" fill="true"/>
+            
+          <apex:lineSeries axis="left" xField="month" yField="mailOnSunday" title="Mail On Sunday"
+            markerType="cross" markerSize="4" markerFill="#fdf384" fill="true"/>
+
+          <apex:lineSeries axis="left" xField="month" yField="metro" title="Metro"
+            markerType="circle" markerSize="4" markerFill="#3B170B" fill="true"/>                        
+    </apex:chart> 
+  </apex:outputPanel>  
+</apex:form>
+
+
+
+</apex:page>

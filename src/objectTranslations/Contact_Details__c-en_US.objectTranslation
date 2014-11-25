@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Private Contact Details</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Private Contact Details</value>
+    </caseValues>
+    <fields>
+        <label><!-- Contact Details Value --></label>
+        <name>Contact_Details_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Contact Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Note --></label>
+        <name>Note__c</name>
+    </fields>
+    <fields>
+        <label><!-- Owner&apos;s Department --></label>
+        <name>Owner_s_Department__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone --></label>
+        <name>Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Visibility --></label>
+        <name>Visibility__c</name>
+        <picklistValues>
+            <masterLabel>Departmental</masterLabel>
+            <translation><!-- Departmental --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Private</masterLabel>
+            <translation><!-- Private --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Note</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Phone</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel>Contact Details Name</nameFieldLabel>
+    <recordTypes>
+        <label><!-- Note --></label>
+        <name>Note</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Phone --></label>
+        <name>Phone</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

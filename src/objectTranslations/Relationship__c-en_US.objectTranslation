@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Relationship</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Relationships</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account A --></label>
+        <lookupFilter>
+            <errorMessage><!-- There are some relationships which have Inactive Agencies attached to this Account. Please identify them and correct as necessary. --></errorMessage>
+        </lookupFilter>
+        <name>Account_A__c</name>
+        <relationshipLabel><!-- Relationships (Outgoing) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Account B --></label>
+        <lookupFilter>
+            <errorMessage><!-- There are some relationships which have Inactive Agencies attached to this Account. Please identify them and correct as necessary. --></errorMessage>
+        </lookupFilter>
+        <name>Account_B__c</name>
+        <relationshipLabel><!-- Relationships (Incoming) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Agencyname --></label>
+        <name>Agencyname__c</name>
+    </fields>
+    <fields>
+        <label><!-- Relationship Link --></label>
+        <name>Relationship_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Role --></label>
+        <name>Role__c</name>
+        <picklistValues>
+            <masterLabel>Billing</masterLabel>
+            <translation><!-- Billing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Booking</masterLabel>
+            <translation><!-- Booking --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Booking/Planning</masterLabel>
+            <translation><!-- Booking/Planning --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Creative</masterLabel>
+            <translation><!-- Creative --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Digital</masterLabel>
+            <translation><!-- Digital --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Planning</masterLabel>
+            <translation><!-- Planning --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public Relations</masterLabel>
+            <translation><!-- Public Relations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sponsorship</masterLabel>
+            <translation><!-- Sponsorship --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Visibility --></label>
+        <name>Visibility__c</name>
+        <picklistValues>
+            <masterLabel>Department</masterLabel>
+            <translation><!-- Department --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Group</masterLabel>
+            <translation><!-- Group --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Group - read only</masterLabel>
+            <translation><!-- Group - read only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Group - read/write</masterLabel>
+            <translation><!-- Group - read/write --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Private</masterLabel>
+            <translation><!-- Private --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Relationship Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- This agency is not of type Billing so cant be set up as billing relationship. --></errorMessage>
+        <name>Validate_Billing_Agency_Type</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Activate --></label>
+        <name>Activate</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Deactivate --></label>
+        <name>Deactivate</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New --></label>
+        <name>New</name>
+    </webLinks>
+</CustomObjectTranslation>

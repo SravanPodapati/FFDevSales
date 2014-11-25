@@ -1,0 +1,1181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Media Lead</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Media Leads</value>
+    </caseValues>
+    <fields>
+        <label><!-- Advertiser Description --></label>
+        <name>Advertiser_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Agency --></label>
+        <lookupFilter>
+            <errorMessage><!-- The Agency should have record type=Agency and it needs to be Active. --></errorMessage>
+        </lookupFilter>
+        <name>Agency__c</name>
+        <relationshipLabel><!-- Media Leads (Agency) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Closed Reason Description --></label>
+        <name>Closed_Lost_Reason_Other__c</name>
+    </fields>
+    <fields>
+        <label><!-- Closed Lost Reason --></label>
+        <name>Closed_Lost_Reason__c</name>
+        <picklistValues>
+            <masterLabel>Activity already booked</masterLabel>
+            <translation><!-- Activity already booked --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Activity discussed as value</masterLabel>
+            <translation><!-- Activity discussed as value --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Budget Pulled</masterLabel>
+            <translation><!-- Budget Pulled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Business titles only</masterLabel>
+            <translation><!-- Business titles only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Campaign Date moved Back</masterLabel>
+            <translation><!-- Campaign Date moved Back --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Campaign date moved</masterLabel>
+            <translation><!-- Campaign date moved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Carrying</masterLabel>
+            <translation><!-- Carrying --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Did not use online</masterLabel>
+            <translation><!-- Did not use online --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Didn’t Use Press</masterLabel>
+            <translation><!-- Didn’t Use Press --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Editorial/Space</masterLabel>
+            <translation><!-- Editorial/Space --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Free/House</masterLabel>
+            <translation><!-- Free/House --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Idea Not Suited</masterLabel>
+            <translation><!-- Idea Not Suited --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lead Already Exists as Account / Contact</masterLabel>
+            <translation><!-- Lead Already Exists as Account / Contact --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lost to A&amp;N Media Brand Sales</masterLabel>
+            <translation><!-- Lost to A&amp;N Media Brand Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lost to Competitor</masterLabel>
+            <translation><!-- Lost to Competitor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lost to DR/Network</masterLabel>
+            <translation><!-- Lost to DR/Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mids only</masterLabel>
+            <translation><!-- Mids only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Missed Campaign Targets</masterLabel>
+            <translation><!-- Missed Campaign Targets --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Missed a tactical opportunity</masterLabel>
+            <translation><!-- Missed a tactical opportunity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Budget</masterLabel>
+            <translation><!-- No Budget --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Campaign Running</masterLabel>
+            <translation><!-- No Campaign Running --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Creative Solutions booked</masterLabel>
+            <translation><!-- No Creative Solutions booked --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Solutions booked</masterLabel>
+            <translation><!-- No Solutions booked --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not core to activity</masterLabel>
+            <translation><!-- Not core to activity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Passed to classified</masterLabel>
+            <translation><!-- Passed to classified --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pops only</masterLabel>
+            <translation><!-- Pops only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quals only</masterLabel>
+            <translation><!-- Quals only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Too expensive</masterLabel>
+            <translation><!-- Too expensive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wrong target audience</masterLabel>
+            <translation><!-- Wrong target audience --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Colour --></label>
+        <name>Colour__c</name>
+        <picklistValues>
+            <masterLabel>Colour</masterLabel>
+            <translation><!-- Colour --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mono</masterLabel>
+            <translation><!-- Mono --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Advertiser --></label>
+        <name>Company__c</name>
+        <relationshipLabel><!-- Media Leads (Advertiser) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Lead Source Competitor --></label>
+        <name>Competitor__c</name>
+        <picklistValues>
+            <masterLabel>Bella</masterLabel>
+            <translation><!-- Bella --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Best</masterLabel>
+            <translation><!-- Best --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chat</masterLabel>
+            <translation><!-- Chat --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>City Am</masterLabel>
+            <translation><!-- City Am --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closer</masterLabel>
+            <translation><!-- Closer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Company</masterLabel>
+            <translation><!-- Company --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cosmopolitan</masterLabel>
+            <translation><!-- Cosmopolitan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daily Express</masterLabel>
+            <translation><!-- Daily Express --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daily Express - Saturday</masterLabel>
+            <translation><!-- Daily Express - Saturday --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daily Mail</masterLabel>
+            <translation><!-- Daily Mail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daily Mirror</masterLabel>
+            <translation><!-- Daily Mirror --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daily Mirror Saturday - We Love Telly</masterLabel>
+            <translation><!-- Daily Mirror Saturday - We Love Telly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daily Record</masterLabel>
+            <translation><!-- Daily Record --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daily Star</masterLabel>
+            <translation><!-- Daily Star --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daily Star Saturday - Hot Tv</masterLabel>
+            <translation><!-- Daily Star Saturday - Hot Tv --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daily Star Sunday (T)</masterLabel>
+            <translation><!-- Daily Star Sunday (T) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daily Star Sunday - Ok Extra/Take 5</masterLabel>
+            <translation><!-- Daily Star Sunday - Ok Extra/Take 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daily Telegraph</masterLabel>
+            <translation><!-- Daily Telegraph --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daily Telegraph Saturday - Magazine</masterLabel>
+            <translation><!-- Daily Telegraph Saturday - Magazine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Elle</masterLabel>
+            <translation><!-- Elle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Esquire</masterLabel>
+            <translation><!-- Esquire --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Evening Standard</masterLabel>
+            <translation><!-- Evening Standard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Financial Times Saturday- Magazine</masterLabel>
+            <translation><!-- Financial Times Saturday- Magazine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GQ</masterLabel>
+            <translation><!-- GQ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Glamour</masterLabel>
+            <translation><!-- Glamour --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Good Housekeeping</masterLabel>
+            <translation><!-- Good Housekeeping --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grazia</masterLabel>
+            <translation><!-- Grazia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Groupon</masterLabel>
+            <translation><!-- Groupon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guardian</masterLabel>
+            <translation><!-- Guardian --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guardian Saturday- Listings/ Guide</masterLabel>
+            <translation><!-- Guardian Saturday- Listings/ Guide --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guardian Saturday- Weekend</masterLabel>
+            <translation><!-- Guardian Saturday- Weekend --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gumtree</masterLabel>
+            <translation><!-- Gumtree --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Heat</masterLabel>
+            <translation><!-- Heat --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hello</masterLabel>
+            <translation><!-- Hello --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>I</masterLabel>
+            <translation><!-- I --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Independent</masterLabel>
+            <translation><!-- Independent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Independent &amp; I</masterLabel>
+            <translation><!-- Independent &amp; I --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Independent On Sunday (B/t)</masterLabel>
+            <translation><!-- Independent On Sunday (B/t) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Independent On Sunday - Review (T)</masterLabel>
+            <translation><!-- Independent On Sunday - Review (T) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Independent Saturday - Information</masterLabel>
+            <translation><!-- Independent Saturday - Information --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Independent Saturday - Magazine</masterLabel>
+            <translation><!-- Independent Saturday - Magazine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inside Soap</masterLabel>
+            <translation><!-- Inside Soap --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KGB Deals</masterLabel>
+            <translation><!-- KGB Deals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Living Social</masterLabel>
+            <translation><!-- Living Social --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Look</masterLabel>
+            <translation><!-- Look --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Love It</masterLabel>
+            <translation><!-- Love It --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marie Claire</masterLabel>
+            <translation><!-- Marie Claire --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Men&apos;s Fitness</masterLabel>
+            <translation><!-- Men&apos;s Fitness --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Men&apos;s Health</masterLabel>
+            <translation><!-- Men&apos;s Health --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Metro</masterLabel>
+            <translation><!-- Metro --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mids only</masterLabel>
+            <translation><!-- Mids only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>More</masterLabel>
+            <translation><!-- More --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Now</masterLabel>
+            <translation><!-- Now --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OK</masterLabel>
+            <translation><!-- OK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Observer Sunday - Observer Mag (A4)</masterLabel>
+            <translation><!-- Observer Sunday - Observer Mag (A4) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Observer Sunday(B/bl)</masterLabel>
+            <translation><!-- Observer Sunday(B/bl) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Media - Digital</masterLabel>
+            <translation><!-- Other Media - Digital --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Media - Magazines</masterLabel>
+            <translation><!-- Other Media - Magazines --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Media - Mobile</masterLabel>
+            <translation><!-- Other Media - Mobile --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Media - Outdoor</masterLabel>
+            <translation><!-- Other Media - Outdoor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Media - Radio</masterLabel>
+            <translation><!-- Other Media - Radio --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Media - TV</masterLabel>
+            <translation><!-- Other Media - TV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pops only</masterLabel>
+            <translation><!-- Pops only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prima</masterLabel>
+            <translation><!-- Prima --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Psychologies Mag</masterLabel>
+            <translation><!-- Psychologies Mag --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quals only</masterLabel>
+            <translation><!-- Quals only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Radio Times</masterLabel>
+            <translation><!-- Radio Times --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Red</masterLabel>
+            <translation><!-- Red --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reveal</masterLabel>
+            <translation><!-- Reveal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>She</masterLabel>
+            <translation><!-- She --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shortlist</masterLabel>
+            <translation><!-- Shortlist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sport</masterLabel>
+            <translation><!-- Sport --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Star</masterLabel>
+            <translation><!-- Star --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Stylist</masterLabel>
+            <translation><!-- Stylist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sunday Express (T)</masterLabel>
+            <translation><!-- Sunday Express (T) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sunday Express - Magazine (A4)</masterLabel>
+            <translation><!-- Sunday Express - Magazine (A4) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sunday Mirror (T)</masterLabel>
+            <translation><!-- Sunday Mirror (T) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sunday Mirror - Celebs On Sunday</masterLabel>
+            <translation><!-- Sunday Mirror - Celebs On Sunday --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sunday People (T)</masterLabel>
+            <translation><!-- Sunday People (T) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sunday People - Other</masterLabel>
+            <translation><!-- Sunday People - Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sunday People - Take It Easy</masterLabel>
+            <translation><!-- Sunday People - Take It Easy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sunday Telegraph (B)</masterLabel>
+            <translation><!-- Sunday Telegraph (B) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sunday Telegraph - Seven (A4)</masterLabel>
+            <translation><!-- Sunday Telegraph - Seven (A4) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sunday Telegraph - Stella (A4)</masterLabel>
+            <translation><!-- Sunday Telegraph - Stella (A4) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sunday Times (B)</masterLabel>
+            <translation><!-- Sunday Times (B) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sunday Times - Magazine</masterLabel>
+            <translation><!-- Sunday Times - Magazine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sunday Times - Style (A4)</masterLabel>
+            <translation><!-- Sunday Times - Style (A4) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sunday Times - The Culture (T)</masterLabel>
+            <translation><!-- Sunday Times - The Culture (T) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Take a Break</masterLabel>
+            <translation><!-- Take a Break --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>The Guardian</masterLabel>
+            <translation><!-- The Guardian --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>The Sun</masterLabel>
+            <translation><!-- The Sun --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>The Sun Saturday - Buzz/ Tv Mag</masterLabel>
+            <translation><!-- The Sun Saturday - Buzz/ Tv Mag --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>The Sun Saturday - Fabulous (A4)</masterLabel>
+            <translation><!-- The Sun Saturday - Fabulous (A4) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Times</masterLabel>
+            <translation><!-- Times --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Times Saturday - Magazine</masterLabel>
+            <translation><!-- Times Saturday - Magazine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Times Saturday - Playlist</masterLabel>
+            <translation><!-- Times Saturday - Playlist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Top Sante</masterLabel>
+            <translation><!-- Top Sante --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vanity Fair</masterLabel>
+            <translation><!-- Vanity Fair --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vogue</masterLabel>
+            <translation><!-- Vogue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weekend press</masterLabel>
+            <translation><!-- Weekend press --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Woman &amp; Home</masterLabel>
+            <translation><!-- Woman &amp; Home --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Womans Own</masterLabel>
+            <translation><!-- Womans Own --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>new! Magazine</masterLabel>
+            <translation><!-- new! Magazine --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Date of Publication --></label>
+        <name>Date_of_Publication__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description/Comments --></label>
+        <name>Description_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead Source --></label>
+        <name>Lead_Source__c</name>
+        <picklistValues>
+            <masterLabel>AOL</masterLabel>
+            <translation><!-- AOL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ad2One</masterLabel>
+            <translation><!-- Ad2One --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Agency</masterLabel>
+            <translation><!-- Agency --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Agency Trading Desk</masterLabel>
+            <translation><!-- Agency Trading Desk --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Associated Brand</masterLabel>
+            <translation><!-- Associated Brand --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Classified</masterLabel>
+            <translation><!-- Classified --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client Direct</masterLabel>
+            <translation><!-- Client Direct --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Consumer Magazine</masterLabel>
+            <translation><!-- Consumer Magazine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Digital</masterLabel>
+            <translation><!-- Digital --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incoming Lead</masterLabel>
+            <translation><!-- Incoming Lead --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MSN</masterLabel>
+            <translation><!-- MSN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mobile</masterLabel>
+            <translation><!-- Mobile --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Newspaper</masterLabel>
+            <translation><!-- Newspaper --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Competitor Network</masterLabel>
+            <translation><!-- Other Competitor Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Outdoor</masterLabel>
+            <translation><!-- Outdoor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Qantcast</masterLabel>
+            <translation><!-- Qantcast --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Radio</masterLabel>
+            <translation><!-- Radio --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TV</masterLabel>
+            <translation><!-- TV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unanimis</masterLabel>
+            <translation><!-- Unanimis --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yahoo</masterLabel>
+            <translation><!-- Yahoo --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Lost to which Competitor --></label>
+        <name>Lost_to_which_Competitor__c</name>
+        <picklistValues>
+            <masterLabel>Bella</masterLabel>
+            <translation><!-- Bella --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Best</masterLabel>
+            <translation><!-- Best --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chat</masterLabel>
+            <translation><!-- Chat --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>City AM</masterLabel>
+            <translation><!-- City AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closer</masterLabel>
+            <translation><!-- Closer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Company</masterLabel>
+            <translation><!-- Company --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cosmopolitan</masterLabel>
+            <translation><!-- Cosmopolitan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daily Express</masterLabel>
+            <translation><!-- Daily Express --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daily Express - Saturday</masterLabel>
+            <translation><!-- Daily Express - Saturday --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daily Mail</masterLabel>
+            <translation><!-- Daily Mail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daily Mirror</masterLabel>
+            <translation><!-- Daily Mirror --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daily Mirror Saturday - We Love Telly</masterLabel>
+            <translation><!-- Daily Mirror Saturday - We Love Telly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daily Record</masterLabel>
+            <translation><!-- Daily Record --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daily Star</masterLabel>
+            <translation><!-- Daily Star --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daily Star Saturday - Hot Tv</masterLabel>
+            <translation><!-- Daily Star Saturday - Hot Tv --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daily Star Sunday (T)</masterLabel>
+            <translation><!-- Daily Star Sunday (T) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daily Star Sunday - Ok Extra/Take 5</masterLabel>
+            <translation><!-- Daily Star Sunday - Ok Extra/Take 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daily Telegraph</masterLabel>
+            <translation><!-- Daily Telegraph --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daily Telegraph Saturday - Magazine</masterLabel>
+            <translation><!-- Daily Telegraph Saturday - Magazine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Elle</masterLabel>
+            <translation><!-- Elle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Esquire</masterLabel>
+            <translation><!-- Esquire --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Evening Standard</masterLabel>
+            <translation><!-- Evening Standard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Financial Times Saturday- Magazine</masterLabel>
+            <translation><!-- Financial Times Saturday- Magazine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GQ</masterLabel>
+            <translation><!-- GQ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Glamour</masterLabel>
+            <translation><!-- Glamour --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Good Housekeeping</masterLabel>
+            <translation><!-- Good Housekeeping --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grazia</masterLabel>
+            <translation><!-- Grazia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guardian</masterLabel>
+            <translation><!-- Guardian --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guardian Saturday- Listings/ Guide</masterLabel>
+            <translation><!-- Guardian Saturday- Listings/ Guide --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guardian Saturday- Weekend</masterLabel>
+            <translation><!-- Guardian Saturday- Weekend --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Heat</masterLabel>
+            <translation><!-- Heat --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hello</masterLabel>
+            <translation><!-- Hello --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>I</masterLabel>
+            <translation><!-- I --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Independent</masterLabel>
+            <translation><!-- Independent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Independent &amp; I</masterLabel>
+            <translation><!-- Independent &amp; I --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Independent On Sunday (B/t)</masterLabel>
+            <translation><!-- Independent On Sunday (B/t) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Independent On Sunday - Review (T)</masterLabel>
+            <translation><!-- Independent On Sunday - Review (T) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Independent Saturday - Information</masterLabel>
+            <translation><!-- Independent Saturday - Information --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Independent Saturday - Magazine</masterLabel>
+            <translation><!-- Independent Saturday - Magazine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inside Soap</masterLabel>
+            <translation><!-- Inside Soap --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Look</masterLabel>
+            <translation><!-- Look --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Love It</masterLabel>
+            <translation><!-- Love It --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marie Claire</masterLabel>
+            <translation><!-- Marie Claire --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Men&apos;s Fitness</masterLabel>
+            <translation><!-- Men&apos;s Fitness --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Men&apos;s Health</masterLabel>
+            <translation><!-- Men&apos;s Health --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Metro</masterLabel>
+            <translation><!-- Metro --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mids only</masterLabel>
+            <translation><!-- Mids only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>More</masterLabel>
+            <translation><!-- More --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Now</masterLabel>
+            <translation><!-- Now --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OK</masterLabel>
+            <translation><!-- OK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Observer Sunday - Observer Mag (A4)</masterLabel>
+            <translation><!-- Observer Sunday - Observer Mag (A4) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Observer Sunday(B/bl)</masterLabel>
+            <translation><!-- Observer Sunday(B/bl) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Media - Digital</masterLabel>
+            <translation><!-- Other Media - Digital --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Media - Magazines</masterLabel>
+            <translation><!-- Other Media - Magazines --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Media - Mobile</masterLabel>
+            <translation><!-- Other Media - Mobile --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Media - Outdoor</masterLabel>
+            <translation><!-- Other Media - Outdoor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Media - Radio</masterLabel>
+            <translation><!-- Other Media - Radio --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Media - TV</masterLabel>
+            <translation><!-- Other Media - TV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Media – Magazines</masterLabel>
+            <translation><!-- Other Media – Magazines --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Media – Mobile</masterLabel>
+            <translation><!-- Other Media – Mobile --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Media – Outdoor</masterLabel>
+            <translation><!-- Other Media – Outdoor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Media – TV</masterLabel>
+            <translation><!-- Other Media – TV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pops only</masterLabel>
+            <translation><!-- Pops only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prima</masterLabel>
+            <translation><!-- Prima --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Psychologies Mag</masterLabel>
+            <translation><!-- Psychologies Mag --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quals only</masterLabel>
+            <translation><!-- Quals only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Radio</masterLabel>
+            <translation><!-- Radio --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Radio Times</masterLabel>
+            <translation><!-- Radio Times --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Red</masterLabel>
+            <translation><!-- Red --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reveal</masterLabel>
+            <translation><!-- Reveal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>She</masterLabel>
+            <translation><!-- She --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shortlist</masterLabel>
+            <translation><!-- Shortlist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sport</masterLabel>
+            <translation><!-- Sport --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Star</masterLabel>
+            <translation><!-- Star --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Stylist</masterLabel>
+            <translation><!-- Stylist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sun</masterLabel>
+            <translation><!-- Sun --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sunday Express (T)</masterLabel>
+            <translation><!-- Sunday Express (T) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sunday Express - Magazine (A4)</masterLabel>
+            <translation><!-- Sunday Express - Magazine (A4) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sunday Mirror (T)</masterLabel>
+            <translation><!-- Sunday Mirror (T) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sunday Mirror - Celebs On Sunday</masterLabel>
+            <translation><!-- Sunday Mirror - Celebs On Sunday --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sunday People (T)</masterLabel>
+            <translation><!-- Sunday People (T) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sunday People - Other</masterLabel>
+            <translation><!-- Sunday People - Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sunday People - Take It Easy</masterLabel>
+            <translation><!-- Sunday People - Take It Easy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sunday Telegraph (B)</masterLabel>
+            <translation><!-- Sunday Telegraph (B) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sunday Telegraph - Seven (A4)</masterLabel>
+            <translation><!-- Sunday Telegraph - Seven (A4) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sunday Telegraph - Stella (A4)</masterLabel>
+            <translation><!-- Sunday Telegraph - Stella (A4) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sunday Times (B)</masterLabel>
+            <translation><!-- Sunday Times (B) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sunday Times - Magazine</masterLabel>
+            <translation><!-- Sunday Times - Magazine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sunday Times - Style (A4)</masterLabel>
+            <translation><!-- Sunday Times - Style (A4) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sunday Times - The Culture (T)</masterLabel>
+            <translation><!-- Sunday Times - The Culture (T) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Take a Break</masterLabel>
+            <translation><!-- Take a Break --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>The Sun</masterLabel>
+            <translation><!-- The Sun --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>The Sun Saturday - Buzz/ Tv Mag</masterLabel>
+            <translation><!-- The Sun Saturday - Buzz/ Tv Mag --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>The Sun Saturday - Fabulous (A4)</masterLabel>
+            <translation><!-- The Sun Saturday - Fabulous (A4) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Times</masterLabel>
+            <translation><!-- Times --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Times Saturday - Magazine</masterLabel>
+            <translation><!-- Times Saturday - Magazine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Times Saturday - Playlist</masterLabel>
+            <translation><!-- Times Saturday - Playlist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Top Sante</masterLabel>
+            <translation><!-- Top Sante --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vanity Fair</masterLabel>
+            <translation><!-- Vanity Fair --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vogue</masterLabel>
+            <translation><!-- Vogue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Woman &amp; Home</masterLabel>
+            <translation><!-- Woman &amp; Home --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Womans Own</masterLabel>
+            <translation><!-- Womans Own --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>new! Magazine</masterLabel>
+            <translation><!-- new! Magazine --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Pitch --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Media Leads --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Position --></label>
+        <name>Position__c</name>
+    </fields>
+    <fields>
+        <label><!-- Size of Ad --></label>
+        <name>Size_of_Ad__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Closed - Lead Not Relevant</masterLabel>
+            <translation><!-- Closed - Lead Not Relevant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed-Carrying</masterLabel>
+            <translation><!-- Closed-Carrying --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed-Lost</masterLabel>
+            <translation><!-- Closed-Lost --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Created in Error</masterLabel>
+            <translation><!-- Created in Error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open</masterLabel>
+            <translation><!-- Open --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Media Lead Layout</layout>
+        <sections>
+            <label><!-- Close Details --></label>
+            <section>Close Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- When saving a Media Lead either the Advertiser or the Advertiser Description field must be completed --></errorMessage>
+        <name>AdvertiserOrDescriptionMustBeCompleted</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- When Closed Lost Reason is Other, then &apos;Closed Reason Description&apos; is required. --></errorMessage>
+        <name>CloLostReaOtherThenClosedLostReasonOther</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Status field cannot be changed after a Media Lead has been &apos;Closed-Converted&apos; and a new Pitch has already been created. --></errorMessage>
+        <name>LockDownMediaLeadStatusAfterConverting</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If Lost Reason is &apos;Lost to Competitor&apos;, then &apos;Lost to Which Competitor&apos; must be selected. --></errorMessage>
+        <name>LostToWhichCompetitorIsReqWhenReIsLost</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot change any of the fields once the Media Lead status is set to Closed-Converted. --></errorMessage>
+        <name>MediaLeadLockReqFieldsStatusConverted</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Closed Lost Reason is needed when setting Status to Closed Lost. --></errorMessage>
+        <name>ReasonIsNeededIfStatusIsClosedLost</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Convert_to_Pitch --></label>
+        <name>Convert_to_Pitch</name>
+    </webLinks>
+</CustomObjectTranslation>

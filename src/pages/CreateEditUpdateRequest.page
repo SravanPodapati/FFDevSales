@@ -1,0 +1,181 @@
+<apex:page controller="CreateEditUpdateRequestController" TabStyle="Update_Request__c">
+<!-- 	<apex:includeScript value="{!URLFOR($Resource.JavascriptLibraries, 'JS/jquery-1.10.2.min.js')}" /> -->
+<!--     <apex:includeScript value="{!URLFOR($Resource.JavascriptLibraries, 'JS/jquery.blockUI.js')}" /> -->
+<!--     <apex:includeScript value="{!URLFOR($Resource.JavascriptLibraries, 'JS/jquery-ui-1.10.2.custom.min.js')}" /> -->
+<!--     <apex:stylesheet value="{!URLFOR($Resource.JavascriptLibraries, 'CSS/jquery-ui-1.10.2.custom.min.css')}" />     -->
+    <script type="text/javascript">
+//     	jQuery.noConflict();
+
+        function selectOption_JS(value){
+            selectOption_AF(value);
+        }
+
+//         SimpleDialog.prototype.setWidth = function (a) {
+// 		    this.width = a;
+// 		    this.dialog && (Sfdc.isDefAndNotNull(a) && (this.dialog.style.width = "string" == typeof a ? a : a + "px"), this.isOpen && this.position())
+// 		};
+//         var sd,sd2;
+		
+// 		function specialOperation_JS(idValue){
+// 			var divWidth = window.innerWidth*0.90;
+// 			var divheight ;
+// 			var industryConstant = {!specialAction_Industry};
+// 			if(idValue == industryConstant){
+// 				divheight = 350;
+// 			}else{
+// 				divHeight = window.innerHeight*0.50;
+// 			}
+			
+// 			jQuery(function() {
+// 				jQuery( "#"+idValue ).dialog({
+// 					autoOpen: true,
+// 					height: divheight,
+// 					width: divWidth,
+// 					modal: true,
+// 					buttons: {
+// 						"Close": function(){
+// 							jQuery( this ).dialog( "close" );
+// 						}
+// 					},
+// 					close: function() {	}
+// 				});
+// 			});
+// 		}
+
+//         /*Simple dialog reusable function*/
+//         function showSimpleDialog(title,htmlBody,isDraggable){    
+//            var sd = new SimpleDialog("SD"+Dialogs.getNextId(), isDraggable);        
+//            sd.setWidth(800);
+//            sd.setTitle(title);    
+//            sd.createDialog();     
+//            sd.setContentInnerHTML(htmlBody);    
+//            sd.show();   
+//            return sd;   
+//         }
+    </script>
+    <style>
+    	.tableHeader{
+    		text-align: center;
+    	}
+    	.columnContentCenter{
+    		text-align: center;
+    	}
+    	.columnContentLeft{
+    		text-align: left;
+    	}
+    </style>
+    <apex:form >
+    		<apex:sectionHeader title="Update Request" subtitle="New Update Request" rendered="{!relatedRecord != null}"/>
+    		<apex:sectionHeader title="{!relatedObjectName}" subtitle="Choose Related Record" rendered="{!relatedRecord == null && relatedObjectName != null}"/>
+    		<apex:sectionHeader title="Update Request" subtitle="Choose Related Object" rendered="{!relatedObjectName == null}"/>
+    		
+        <apex:actionFunction name="selectOption_AF" action="{!actionMethod}">
+            <apex:param name="relatedObjectName_Parm" value="" assignTo="{!relatedObjectName}"/>
+        </apex:actionFunction>
+<!--         <div id="dialog-form" title="Please Confirm"> -->
+<!--         	<apex:dynamicComponent componentValue="{!InformationBlock}"/> -->
+<!--         </div> -->
+        <apex:outputPanel id="pageMessagePanel">
+        	<apex:pageMessages escape="false" rendered="{!if(hasErrors == true, true, false)}"/>
+        </apex:outputPanel>
+
+        <apex:outputPanel id="selectRelatedObject" rendered="{!relatedObjectName == null}">
+            <apex:pageBlock title="Choose Related Object">
+                <apex:pageBlockSection columns="1">
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Select an Option"/>
+                        <apex:selectRadio value="{!relatedObjectName}" onclick="selectOption_JS(this.value)">
+                            <apex:selectOptions value="{!ObjectNames}" />
+                        </apex:selectRadio>
+                    </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+            </apex:pageBlock>
+        </apex:outputPanel>
+        
+        <apex:outputPanel id="selectRelatedRecord" rendered="{!relatedRecord == null && relatedObjectName != null}">
+            <apex:pageBlock title="Choose Related Record">
+                <apex:pageBlockSection >
+                    <apex:inputField value="{!tempUR['Account__c']}"/>
+                </apex:pageBlockSection>
+                <apex:pageBlockButtons >
+                    <apex:commandButton value="Proceed with the selection" action="{!selectRecord}" reRender="fildSelectPanel"/>
+                </apex:pageBlockButtons>
+            </apex:pageBlock>
+        </apex:outputPanel>
+        
+        <apex:outputPanel id="fildSelectPanel" rendered="{!relatedRecord != null}">
+            <apex:dynamicComponent componentValue="{!InformationBlock}"/>
+        </apex:outputPanel> 
+        
+        <apex:outputPanel id="fildsEditPanel" rendered="{!relatedRecord != null}">
+        	<apex:pageBlock title="Edit Panel" mode="edit">
+        		<apex:pageBlockTable value="{!fieldWrapperList}" var="fW" columnsWidth="20%, 10%, 70%" headerClass="tableHeader">
+        			<apex:column styleClass="columnContentLeft">
+        				<apex:facet name="header">Filed Name</apex:facet>
+        				<apex:outputLabel Value="{!fW.fieldLable}"/>
+        			</apex:column>
+        			<apex:column styleClass="columnContentCenter" >
+        				<apex:facet name="header">Selected?</apex:facet>
+        				<apex:inputCheckBox Value="{!fW.selected}" >
+   							<apex:actionSupport event="onchange" reRender="fildsEditPanel" action="{!selectCheckBox}">
+   								<apex:param name="currentFieldWrapper_Parm" value="{!fW.fieldAPIName}" assignTo="{!currentFieldWrapper}"/>
+   							</apex:actionSupport>
+   						</apex:inputCheckBox>
+        			</apex:column>
+        			<apex:column styleClass="columnContentLeft">
+        				<apex:facet name="header">New Values</apex:facet>
+        				<apex:inputField required="false" value="{!relatedRecord2[fW.fieldAPIName]}" html-placeHolder="{!fW.previousValue}" rendered="{!fW.Selected && !fW.isSpecial}"/>
+        				<apex:commandButton value="Click Here to Edit" rerender="fildsEditPanel, specialActionPanel" action="{!specialAction}" rendered="{!fW.Selected && fW.isSpecial}">
+        					<apex:param name="currentGroup_Parm" value="{!fW.specialGroupName}" assignTo="{!currentSpecialAction}"/>
+        				</apex:commandButton>
+        				<apex:outputField value="{!relatedRecord2[fW.fieldAPIName]}" rendered="{!fW.Selected && fW.isSpecial}"/>
+        			</apex:column>
+        		</apex:pageBlockTable>
+        		<apex:pageBlockButtons location="bottom">
+        			<apex:commandButton value="Create Update Request" rerender="pageMessagePanel, fildsEditPanel" action="{!saveUpdateRequest}"/>
+        		</apex:pageBlockButtons>
+        	</apex:pageBlock>
+        </apex:outputPanel>
+        <apex:outputPanel id="specialActionPanel" >
+<!--         <div > -->
+<!-- 	        <div id="industry" > -->
+	        	<apex:pageBlock title="Account Industries" rendered="{!currentSpecialAction == specialAction_Industry}">
+	        		<table style="width: 100%">
+	        			<tr>
+	        				<td align="right" width = "5%">
+	        					<apex:outputLabel value="Display - Main Category"/>
+	        				</td>
+	        				<td align="left" width = "20%" >
+		        				<apex:selectList title="Display - Main Category" value="{!displayMainCategory}" size="1" >
+		        					<apex:selectOptions value="{!displayMainCategoryOptions}" />
+	                            	<apex:actionSupport event="onchange" rerender="subcategory, minor_ID" />
+		        				</apex:selectList>
+	        				</td>
+	        				<td align="right" width = "5%">
+	        					<apex:outputLabel value="Display - Sub Category"/>
+	        				</td>
+	        				<td align="left" width = "20%" >
+		        				<apex:selectList id="subcategory" value="{!displaySubCategory}" multiselect="true" size="3">
+		                            <apex:selectOptions value="{!displaySubCategoryOptions}" />
+		                            <apex:actionSupport event="onchange" rerender="minor_ID" />
+		                        </apex:selectList>
+	        				</td>
+	        				<td align="right" width = "5%">
+	        					<apex:outputText value="Display - Minor Category"/>
+	        				</td>
+	        				<td align="left" width = "20%" >
+	        					<apex:selectList id="minor_ID" value="{!displayMinorCategory}" multiselect="true" size="3" >
+		                            <apex:selectOptions value="{!displayMinorCategoryOptions}"/>
+		                        </apex:selectList>
+	        				</td>
+	        			</tr>
+	        		</table>
+	        		<apex:pageBlockButtons location="bottom">
+        				<apex:commandButton value="Save Changes" rerender="fildsEditPanel, specialActionPanel, pageMessagePanel" action="{!saveIndustryChanges}" />
+	        		</apex:pageBlockButtons>
+	        	</apex:pageBlock>
+<!-- 	        </div> -->
+<!-- 	    </div> -->
+        </apex:outputPanel>
+    </apex:form>
+</apex:page>

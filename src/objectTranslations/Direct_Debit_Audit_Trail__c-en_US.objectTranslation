@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Direct Debit Audit Trail</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Direct Debit Audit Trails</value>
+    </caseValues>
+    <fields>
+        <label><!-- Direct Debit File Link --></label>
+        <name>Direct_Debit_File_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- File Created By --></label>
+        <name>File_Created_By__c</name>
+        <relationshipLabel><!-- Direct Debit Audit Trails --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Fail</masterLabel>
+            <translation><!-- Fail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Succeed</masterLabel>
+            <translation><!-- Succeed --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

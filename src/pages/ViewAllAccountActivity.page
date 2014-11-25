@@ -1,0 +1,129 @@
+<apex:page StandardController="Account" Extensions="ViewBTAHistoryWithinAccount" ShowHeader="False" id="ActivityHistoryPage">
+<apex:messages />
+<apex:form id="DefaultForm" >  
+<style type="text/css">
+  td {
+    word-wrap: break-word;
+  }
+  .header div {
+      padding-right:15px;
+  }
+</style>
+<apex:stylesheet value="{!URLFOR($Resource.Tablesorter,'/tablesorter/themes/blue/style.css')}" />
+<script src="{!URLFOR($Resource.Tablesorter,'/tablesorter/jquery-latest.js')}" type="text/javascript" />
+<script src="{!URLFOR($Resource.Tablesorter,'/tablesorter/jquery.tablesorter.min.js')}" type="text/javascript" />
+
+<script type="text/javascript">
+    window.$j = jQuery.noConflict();
+
+    $j(document).ready(function(){ 
+
+        $j(".tablesorter").tablesorter({
+            sortForce: [[7,1]],
+            dateFormat: "uk"
+        });
+    });
+</script>
+
+<!--<apex:pageBlock title="BTA Activity History for: {!account.Name}"> -->
+<!--  apex:commandbutton value="Close Window" onclick="javascript:self.close()"/ -->
+<apex:pageBlock title="All Activity History" id="ActivityHistory">
+<apex:outputtext value="{!account.Name}" rendered="False"/>
+
+<apex:dataTable value="{!allactivitypagination}" var="clact" style="width:100%;vertical-align:top;word-wrap: break-word;"  headerClass="headerrow" id="ActivityTable" styleClass="tablesorter">
+
+
+<!-- <apex:pageBlockTable value="{!openactivitypagination}" var="clact"> -->
+
+    <apex:column headerValue="Subject"> 
+
+    <div style="width:200px;word-wrap:break-word">
+    <apex:outputLink target="_parent" value="../{!clact.currid}">{!clact.Subject}</apex:outputLink>
+    </div>
+    </apex:column>
+
+    <apex:column headerValue="Name" >
+        <a href="/{!clact.WhoId}" id="N{!clact.currid}" target="_parent" onblur="LookupHoverDetail.getHover('N{!clact.currid}').hide();" onfocus="LookupHoverDetail.getHover('N{!clact.currid}', '/{!clact.WhoId}/m?retURL=%2F{!clact.WhoId}&isAjaxRequest=1').show();" onmouseout="LookupHoverDetail.getHover('N{!clact.currid}').hide();" onmouseover="LookupHoverDetail.getHover('N{!clact.currid}', '/{!clact.WhoId}/m?retURL=%2F{!clact.WhoId}&isAjaxRequest=1').show();" value="../{!clact.WhoId}">{!clact.Who}</a>
+    </apex:column> 
+
+    <apex:column headerValue="Contact Acct">
+        <a href="/{!clact.ContactAccountId}" id="C{!clact.currid}" target="_parent" onblur="LookupHoverDetail.getHover('C{!clact.currid}').hide();" onfocus="LookupHoverDetail.getHover('C{!clact.currid}', '/{!clact.ContactAccountId}/m?retURL=%2F{!clact.ContactAccountId}&isAjaxRequest=1').show();" onmouseout="LookupHoverDetail.getHover('C{!clact.currid}').hide();" onmouseover="LookupHoverDetail.getHover('C{!clact.currid}', '/{!clact.ContactAccountId}/m?retURL=%2F{!clact.ContactAccountId}&isAjaxRequest=1').show();" value="../{!clact.ContactAccountId}">{!clact.ContactAccountName}</a>
+    </apex:column>
+    
+    <apex:column headerValue="Related To">
+        <a href="/{!clact.WhatId}" id="R{!clact.currid}" target="_parent" onblur="LookupHoverDetail.getHover('R{!clact.currid}').hide();" onfocus="LookupHoverDetail.getHover('R{!clact.currid}', '/{!clact.WhatId}/m?retURL=%2F{!clact.WhatId}&isAjaxRequest=1').show();" onmouseout="LookupHoverDetail.getHover('R{!clact.currid}').hide();" onmouseover="LookupHoverDetail.getHover('R{!clact.currid}', '/{!clact.WhatId}/m?retURL=%2F{!clact.WhatId}&isAjaxRequest=1').show();" value="../{!clact.WhatId}">{!clact.What}</a>
+    </apex:column>
+    
+    <apex:column headerValue="Parent" value="{!clact.RelObj}" />
+    <apex:column headerValue="Task">
+        <apex:inputcheckbox disabled="True" value="{!clact.isitaTask}"/> 
+    </apex:column> 
+
+    <apex:column headerValue="Status" value="{!clact.Status}"/>
+        
+    <apex:column headerValue="Due Date">   
+        <apex:outputText value="{!clact.stractivityDate}"/> 
+    </apex:column> 
+    
+    <apex:column headerValue="Outcome" value="{!clact.Outcome}" />
+    
+    <apex:column headerValue="Comments" rendered="{!isnotLondon}">
+    <div style="width:300px;word-wrap:break-word">
+        <apex:outputtext value="{!clact.Comments}"/>
+    </div>
+    </apex:column>
+    
+    <apex:column headerValue="Assigned To" > 
+         <apex:outputLink target="_parent" value="../{!clact.ownerId}">{!clact.owner}</apex:outputLink>
+    </apex:column>
+    <apex:column headerValue="Prepare" rendered="{!isLondon}">
+    <div style="width:80px;word-wrap:break-word">
+        <apex:outputtext value="{!clact.Prepare}"/>
+    </div>
+    </apex:column>  
+    <apex:column headerValue="Open" rendered="{!isLondon}">
+    <div style="width:60px;word-wrap:break-word">
+        <apex:outputtext value="{!clact.open}"/>
+    </div>
+    </apex:column> 
+    <apex:column headerValue="Probe" rendered="{!isLondon}">
+    <div style="width:200px;word-wrap:break-word">
+        <apex:outputtext value="{!clact.Probe}"/>
+    </div>
+    </apex:column> 
+    <apex:column headerValue="Match" rendered="{!isLondon}">
+    <div style="width:80px;word-wrap:break-word">
+        <apex:outputtext value="{!clact.Match}"/>
+    </div>
+    </apex:column> 
+    <apex:column headerValue="Agreement" rendered="{!isLondon}">
+    <div style="width:80px;word-wrap:break-word">
+        <apex:outputtext value="{!clact.Agreement}"/>
+    </div>
+    </apex:column>
+    <apex:column headerValue="Close" rendered="{!isLondon}">
+    <div style="width:60px;word-wrap:break-word">
+        <apex:outputtext value="{!clact.Close}"/>
+    </div>
+    </apex:column>  
+        <apex:column headerValue="Comments" rendered="{!isLondon}">
+    <div style="width:300px;word-wrap:break-word">
+        <apex:outputtext value="{!clact.Comments}"/>
+    </div>
+    </apex:column>
+    <apex:column headerValue="Last Modified" rendered="{!isnotLondon}">
+          <!--  <apex:outputText value="{0,date,dd'/'MM'/'yyyy HH:mm}">  -->
+          <!--   <apex:param value="{!clact.lastModified}" />  -->
+         <!--</apex:outputText>    -->
+        <apex:outputText value="{!clact.strLastModified}"/>  
+    </apex:column> 
+       
+</apex:dataTable>
+
+<!-- <a href="javascript: history.go(-1)">Click here to go back to the previous page!</a> --> 
+<!-- <apex:commandLink action="{!previous}">Previous</apex:commandlink> -->
+<!-- <apex:commandLink action="{!next}">Next</apex:commandlink> -->
+<!--  <a href="javascript:self.close()">Close this Window</a> -->
+</apex:pageBlock>
+</apex:form>
+</apex:page>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HomePageComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <links>My_Detailed_Pitches</links>
+    <links>Create_Multiple_Pitches</links>
+    <links>Lead_rota_calendar</links>
+    <links>Grant_login_access</links>
+    <pageComponentType>links</pageComponentType>
+</HomePageComponent>

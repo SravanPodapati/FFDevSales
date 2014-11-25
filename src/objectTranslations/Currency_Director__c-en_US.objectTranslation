@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Currency Director</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Currency Director</value>
+    </caseValues>
+    <fields>
+        <label><!-- Director Company --></label>
+        <name>Director_Company__c</name>
+        <relationshipLabel><!-- Currency Director --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Director Currency --></label>
+        <name>Director_Currency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Earliest (related currency) Effective Da --></label>
+        <name>Earliest_related_currency_Effective_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is used for control purposes, and ensures that rates cannot be loaded until they share this date (i.e. the calculated cross rates are based on exchange rates which share the same date). --></help>
+        <label><!-- Latest (related currency) Effective Date --></label>
+        <name>Latest_related_currency_Effective_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rates Share Consistent Effective Dates ? --></label>
+        <name>Rates_Share_Consistent_Effective_Dates__c</name>
+    </fields>
+    <layouts>
+        <layout>Currency Director Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

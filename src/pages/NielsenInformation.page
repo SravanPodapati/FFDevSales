@@ -1,0 +1,139 @@
+<apex:page StandardController="Account" Extensions="NielsenMarketShareChartController,ViewNielsenDataWithinAccountController" ShowHeader="False">
+<apex:form >
+  <input type="button" value="Return" onclick="window.open('/{!accountId}', '_parent')" />
+  <apex:sectionHeader title="Nielsen Market Share for {!(accountDetail.Name)}"/> 
+ <apex:outputPanel style="height:100px; border: 1px solid #aaa">
+   <apex:outputLink target="_blank" value="../{!nielsenMarketSummaryReportId}?pv0={! URLENCODE(accountNames)}">Click for Detail on {!accountDetail.Name}</apex:outputLink>
+   <apex:chart data="{!MarketShareChartData}" height="390" width="1100" >    
+        <apex:legend position="right" font="14px Arial"/>
+        <apex:axis type="Numeric" position="left" title="MarketShare" grid="true"
+            fields="cinema,dailyMail,directMail,doorDrops,magazines,mailOnSunday,metro,nationalNewspapers,outDoor,radio,regionalNewspapers,tv">
+            <apex:chartLabel display="over"/>
+        </apex:axis>
+                
+        <apex:axis type="Category" position="bottom" fields="month" title="Period">
+
+        </apex:axis>
+ 
+           <apex:lineSeries axis="left" xField="month" yField="cinema" title="Cinema"
+            markerType="cross" markerSize="4" markerFill="#FA5882" fill="false"/>
+                      
+          <apex:lineSeries axis="left" xField="month" yField="radio" title="Radio"
+            markerType="circle" markerSize="4" markerFill="#fe6f5e" fill="false"/>                                          
+
+          <apex:lineSeries axis="left" xField="month" yField="tv" title="TV"
+            markerType="circle" markerSize="4" markerFill="#424243" fill="false"/> 
+
+          <apex:lineSeries axis="left" xField="month" yField="doorDrops" title="Door Drops"
+            markerType="cross" markerSize="4" markerFill="#81F7F3" fill="false"/>
+
+          <apex:lineSeries axis="left" xField="month" yField="magazines" title="Magazines(Excl dmg)"
+            markerType="circle" markerSize="4" markerFill="#DF7401" fill="false"/>
+
+          <apex:lineSeries axis="left" xField="month" yField="nationalNewspapers" title="National Newspapers(Excl dmg)"
+            markerType="circle" markerSize="4" markerFill="#8db600" fill="false"/>
+            
+          <apex:lineSeries axis="left" xField="month" yField="regionalNewspapers" title="Regional Newspapers(Excl dmg)"
+            markerType="circle" markerSize="4" markerFill="#981b1e" fill="false"/> 
+            
+          <apex:lineSeries axis="left" xField="month" yField="outDoor" title="Outdoor"
+            markerType="circle" markerSize="4" markerFill="#18e99f" fill="false"/>
+
+          <apex:lineSeries axis="left" xField="month" yField="dailyMail" title="Daily Mail"
+            markerType="circle" markerSize="4" markerFill="#b8ff5c" fill="true"/>
+            
+          <apex:lineSeries axis="left" xField="month" yField="mailOnSunday" title="Mail On Sunday"
+            markerType="cross" markerSize="4" markerFill="#fdf384" fill="true"/>
+
+          <apex:lineSeries axis="left" xField="month" yField="metro" title="Metro"
+            markerType="circle" markerSize="4" markerFill="#3B170B" fill="true"/>                        
+    </apex:chart> 
+  </apex:outputPanel> 
+</apex:form>
+<apex:form >
+  <apex:outputPanel style="height:100px; border: 1px solid #aaa">
+  
+   <apex:chart data="{!ExpenditureChartData}" height="390" width="1100" >    
+        <apex:legend position="right" font="14px Arial"/>
+        <apex:axis type="Numeric" position="left" title="Expenditure" grid="true"
+            fields="cinema,dailyMail,directMail,doorDrops,magazines,mailOnSunday,metro,nationalNewspapers,outDoor,radio,regionalNewspapers,tv">
+            <apex:chartLabel display="over"/>
+        </apex:axis>
+                
+        <apex:axis type="Category" position="bottom" fields="month" title="Period">
+
+        </apex:axis>
+ 
+           <apex:lineSeries axis="left" xField="month" yField="cinema" title="Cinema"
+            markerType="cross" markerSize="4" markerFill="#FA5882" fill="false"/>
+                      
+          <apex:lineSeries axis="left" xField="month" yField="radio" title="Radio"
+            markerType="circle" markerSize="4" markerFill="#fe6f5e" fill="false"/>                                          
+
+          <apex:lineSeries axis="left" xField="month" yField="tv" title="TV"
+            markerType="circle" markerSize="4" markerFill="#424243" fill="false"/> 
+
+          <apex:lineSeries axis="left" xField="month" yField="doorDrops" title="Door Drops"
+            markerType="cross" markerSize="4" markerFill="#81F7F3" fill="false"/>
+
+          <apex:lineSeries axis="left" xField="month" yField="magazines" title="Magazines(Excl dmg)"
+            markerType="circle" markerSize="4" markerFill="#DF7401" fill="false"/>
+
+          <apex:lineSeries axis="left" xField="month" yField="nationalNewspapers" title="National Newspapers(Excl dmg)"
+            markerType="circle" markerSize="4" markerFill="#8db600" fill="false"/>
+            
+          <apex:lineSeries axis="left" xField="month" yField="regionalNewspapers" title="Regional Newspapers(Excl dmg)"
+            markerType="circle" markerSize="4" markerFill="#981b1e" fill="false"/> 
+            
+          <apex:lineSeries axis="left" xField="month" yField="outDoor" title="Outdoor"
+            markerType="circle" markerSize="4" markerFill="#18e99f" fill="false"/>
+
+          <apex:lineSeries axis="left" xField="month" yField="dailyMail" title="Daily Mail"
+            markerType="circle" markerSize="4" markerFill="#b8ff5c" fill="true"/>
+            
+          <apex:lineSeries axis="left" xField="month" yField="mailOnSunday" title="Mail On Sunday"
+            markerType="cross" markerSize="4" markerFill="#fdf384" fill="true"/>
+
+          <apex:lineSeries axis="left" xField="month" yField="metro" title="Metro"
+            markerType="circle" markerSize="4" markerFill="#3B170B" fill="true"/>                        
+    </apex:chart> 
+  </apex:outputPanel>    
+</apex:form>
+<apex:form >
+
+<script>
+function openPopUp(URL) {
+new_window = window.open(URL, 'window', 
+'toolbar=0,scrollbars=0,location=0, statusbar=0,menubar=0,resizable=0,width=700,height=800,left = 443.5,top = 310');
+}
+function closePopUp() {
+new_window.close();
+}
+</script>
+ <apex:sectionHeader title="Nielsen Copy Data for {!(accountDetail.Name)}"/> 
+<apex:pageblock >
+<apex:pageBlockTable value="{!AllNielsenData}" var="n" style="width:100%;vertical-align:top;word-wrap: break-word;"  headerClass="headerrow">
+
+    <apex:column >
+    <!--a href="http://www.addynamix.co.uk/Press/Alerts/CreativeSnapshot.aspx?creativeid={!n.CreativeId__c}" id="N{!n.Id}" target="_parent" onblur="closePopUp('http://www.addynamix.co.uk/Press/Alerts/CreativeSnapshot.aspx?creativeid={!n.CreativeId__c}')" onfocus="openPopUp('http://www.addynamix.co.uk/Press/Alerts/CreativeSnapshot.aspx?creativeid={!n.CreativeId__c}')" onmouseout="closePopUp('http://www.addynamix.co.uk/Press/Alerts/CreativeSnapshot.aspx?creativeid={!n.CreativeId__c}')" onmouseover="openPopUp('http://www.addynamix.co.uk/Press/Alerts/CreativeSnapshot.aspx?creativeid={!n.CreativeId__c}')" value="http://www.addynamix.co.uk/Press/Alerts/CreativeSnapshot.aspx?creativeid={!n.CreativeId__c}">{!n.Creative_Description__c}</a> -->
+    <a href="{!creativeSnapshotURL}?creativeid={!n.CreativeId__c}" id="N{!n.Id}" target="_blank" onblur="closePopUp('{!creativeSnapshotURL}?creativeid={!n.CreativeId__c}')" onfocus="openPopUp('{!creativeSnapshotURL}?creativeid={!n.CreativeId__c}')" onmouseout="closePopUp('{!creativeSnapshotURL}?creativeid={!n.CreativeId__c}')" onmouseover="openPopUp('{!creativeSnapshotURL}?creativeid={!n.CreativeId__c}')" value="{!creativeSnapshotURL}?creativeid={!n.CreativeId__c}">View</a>
+    </apex:column>       
+    <apex:column headerValue="Publication" value="{!n.Publication__c}" />
+    <apex:column headerValue="Publication Group" value="{!n.Publication_Group__c}" />  
+    <apex:column headerValue="Brand Name" value="{!n.Brand_Name__c}" />        
+    <apex:column headerValue="First Seen" value="{!n.First_Seen__c}" />
+    <apex:column headerValue="Last Seen" value="{!n.Last_Seen__c}" />
+     
+    <apex:column headerValue="Category" value="{!n.Category__c}" />
+    
+    <apex:column headerValue="Media type" value="{!n.Media_Type__c}" />
+    <apex:column headerValue="Incidence" value="{!n.Incidence__c}" />
+    <apex:column headerValue="Advert Size" value="{!n.Advert_Size__c}" />
+
+    <apex:column headerValue="Expenditure" value="{!n.Expenditure__c}" />
+    <apex:column headerValue="Description" value="{!n.Description__c}" />
+
+</apex:pageBlockTable>
+</apex:pageblock>
+</apex:form>
+</apex:page>

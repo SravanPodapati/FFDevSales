@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>30.0</apiVersion>
+    <availableInTouch>false</availableInTouch>
+    <confirmationTokenRequired>false</confirmationTokenRequired>
+    <label>CL Create CIR Invoice_WEEKLY_LW_DET</label>
+    <packageVersions>
+        <majorNumber>4</majorNumber>
+        <minorNumber>0</minorNumber>
+        <namespace>ffirule</namespace>
+    </packageVersions>
+    <packageVersions>
+        <majorNumber>1</majorNumber>
+        <minorNumber>0</minorNumber>
+        <namespace>ffps_dmgi</namespace>
+    </packageVersions>
+</ApexPage>

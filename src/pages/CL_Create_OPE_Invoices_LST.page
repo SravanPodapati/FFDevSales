@@ -1,0 +1,7 @@
+<apex:page standardController="ffps_dmgi__Staging_OP1_Sales_Document__c" 
+
+extensions="ffirule.IntegrationRuleEngine"
+action="{!convert}" recordSetVar="records"> 
+
+<ffirule:IntegrationRule engine="{!engine}"/>
+</apex:page>

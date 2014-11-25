@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Accounting_Currency__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Accounting Currency</label>
+        <referenceTo>c2g__codaAccountingCurrency__c</referenceTo>
+        <relationshipName>Currency_Director_Accounting_Currencies</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Company_Home_Currency__c</fullName>
+        <externalId>false</externalId>
+        <formula>Accounting_Currency__r.c2g__OwnerCompany__r.Currency_Director_Home_Currency__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Company Home Currency</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Company_ID__c</fullName>
+        <externalId>false</externalId>
+        <formula>Accounting_Currency__r.c2g__OwnerCompany__r.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Company ID</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Company_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Accounting_Currency__r.c2g__OwnerCompany__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Company Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cross_Rate_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Currency_Director_Currencies__r.Name =  Currency_Director_Currencies__r.Currency_Director__r.Director_Currency__c ,  Currency_Director_Currencies__r.Currency_Director__r.Latest_related_currency_Effective_Date__c , Currency_Director_Currencies__r.Last_Rate_Update_Date__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Cross Rate Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Cross_Rate_Dates_Match__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Currency_Director_Currencies__r.Name =  Currency_Director_Currencies__r.Currency_Director__r.Director_Currency__c, true,
+
+
+
+IF( Accounting_Currency__r.c2g__OwnerCompany__r.Currency_Director_Home_Currency__r.Name =  Currency_Director_Currencies__r.Currency_Director__r.Director_Currency__c , true,
+
+IF( Accounting_Currency__r.c2g__OwnerCompany__r.Currency_Director_Home_Currency__r.Last_Rate_Update_Date__c =  Currency_Director_Currencies__r.Last_Rate_Update_Date__c , true, false)
+
+
+
+
+
+)
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Cross Rate Date Match</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Cross_Rate__c</fullName>
+        <externalId>false</externalId>
+        <formula>ROUND(Currency_Director_Currencies__r.Last_Rate_Update_Rate__c / Accounting_Currency__r.c2g__OwnerCompany__r.Currency_Director_Home_Currency__r.Last_Rate_Update_Rate__c  ,4)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Cross Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Currency_Director_Currencies__c</fullName>
+        <externalId>false</externalId>
+        <label>Currency Director Currencies</label>
+        <referenceTo>Currency_Director_Currencies__c</referenceTo>
+        <relationshipName>Currency_Director_Companies</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Is_Home_Exclude__c</fullName>
+        <externalId>false</externalId>
+        <formula>If(Accounting_Currency__r.Name =  Company_Home_Currency__c, true, false)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Is Home ? (Exclude)</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OK_to_Load__c</fullName>
+        <externalId>false</externalId>
+        <formula>If(Currency_Director_Currencies__r.Currency_Director__r.Rates_Share_Consistent_Effective_Dates__c = true,
+
+If(Is_Home_Exclude__c = true, false, true)
+
+,
+
+false)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>OK to Load</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Currency FFA Rate to Load</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>Company_Name__c</columns>
+        <columns>Accounting_Currency__c</columns>
+        <columns>Cross_Rate__c</columns>
+        <columns>Cross_Rate_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OK_to_Load__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Rates Ready for Load</label>
+    </listViews>
+    <listViews>
+        <fullName>All1</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>{0000}</displayFormat>
+        <label>Currency FFA Cross Rates Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Currency Director FFA Rates to Load</pluralLabel>
+    <searchLayouts>
+        <excludedStandardButtons>New</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <listViewButtons>Update_FFA</listViewButtons>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <webLinks>
+        <fullName>Update_FFA</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Update FFA</masterLabel>
+        <openType>sidebar</openType>
+        <page>CL_CD_Update_FFA</page>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+    </webLinks>
+</CustomObject>

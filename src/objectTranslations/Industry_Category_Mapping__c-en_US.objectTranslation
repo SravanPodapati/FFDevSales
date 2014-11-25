@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Industry Category Mapping</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Industry Category Mapping</value>
+    </caseValues>
+    <fields>
+        <label><!-- Industry --></label>
+        <name>Industry__c</name>
+        <picklistValues>
+            <masterLabel>Drink</masterLabel>
+            <translation><!-- Drink --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fashion</masterLabel>
+            <translation><!-- Fashion --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Food</masterLabel>
+            <translation><!-- Food --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Minor Category --></label>
+        <name>Minor_Category__c</name>
+        <picklistValues>
+            <masterLabel>Beer</masterLabel>
+            <translation><!-- Beer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Clothes</masterLabel>
+            <translation><!-- Clothes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cola</masterLabel>
+            <translation><!-- Cola --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jewellery</masterLabel>
+            <translation><!-- Jewellery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KFC</masterLabel>
+            <translation><!-- KFC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Salmons</masterLabel>
+            <translation><!-- Salmons --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vodka</masterLabel>
+            <translation><!-- Vodka --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>four</masterLabel>
+            <translation><!-- four --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>three</masterLabel>
+            <translation><!-- three --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- UniqueKey --></label>
+        <name>UniqueKey__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

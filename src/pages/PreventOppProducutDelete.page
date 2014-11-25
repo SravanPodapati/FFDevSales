@@ -1,0 +1,13 @@
+<apex:page standardController="OpportunityLineItem">
+<div style="width:100%;" align="center">
+<br /><br />
+<div style="color: #D8000C;background-color: #FFBABA;">
+<h1>FORBIDDEN!</h1>
+<br/><br/>
+You are not allowed to delete Pitch Products.
+Deactivate them instead.
+<br/><br/>
+<a href="javascript: history.go(-1)">Click here to go back to the previous page!</a>
+</div>
+</div>
+</apex:page>

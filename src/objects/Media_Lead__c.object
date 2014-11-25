@@ -1,0 +1,1691 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Advertiser_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Advertiser Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Agency__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Agency</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>The Agency should have record type=Agency and it needs to be Active.</errorMessage>
+            <filterItems>
+                <field>Account.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Agency</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Media Leads (Agency)</relationshipLabel>
+        <relationshipName>Media_Leads1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Closed_Lost_Reason_Other__c</fullName>
+        <externalId>false</externalId>
+        <label>Closed Reason Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Closed_Lost_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Closed Lost Reason</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Activity already booked</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Activity discussed as value</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Budget Pulled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Business titles only</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Campaign date moved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Campaign Date moved Back</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Carrying</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Did not use online</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Didn’t Use Press</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Editorial/Space</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Free/House</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Idea Not Suited</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lead Already Exists as Account / Contact</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lost to A&amp;N Media Brand Sales</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lost to Competitor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lost to DR/Network</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mids only</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Missed a tactical opportunity</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Missed Campaign Targets</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Budget</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Campaign Running</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Creative Solutions booked</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Solutions booked</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not core to activity</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Passed to classified</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pops only</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quals only</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Too expensive</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wrong target audience</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Colour__c</fullName>
+        <externalId>false</externalId>
+        <label>Colour</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Colour</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mono</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Company__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Advertiser</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Media Leads (Advertiser)</relationshipLabel>
+        <relationshipName>Media_Leads</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Competitor__c</fullName>
+        <externalId>false</externalId>
+        <label>Lead Source Competitor</label>
+        <picklist>
+            <controllingField>Lead_Source__c</controllingField>
+            <picklistValues>
+                <fullName>Bella</fullName>
+                <controllingFieldValues>Consumer Magazine</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Best</fullName>
+                <controllingFieldValues>Consumer Magazine</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chat</fullName>
+                <controllingFieldValues>Consumer Magazine</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>City Am</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closer</fullName>
+                <controllingFieldValues>Consumer Magazine</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Company</fullName>
+                <controllingFieldValues>Consumer Magazine</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cosmopolitan</fullName>
+                <controllingFieldValues>Consumer Magazine</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Daily Express</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Daily Express - Saturday</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Daily Mail</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Daily Mirror</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Daily Mirror Saturday - We Love Telly</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Daily Record</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Daily Star</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Daily Star Saturday - Hot Tv</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Daily Star Sunday (T)</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Daily Star Sunday - Ok Extra/Take 5</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Daily Telegraph</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Daily Telegraph Saturday - Magazine</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Elle</fullName>
+                <controllingFieldValues>Consumer Magazine</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Esquire</fullName>
+                <controllingFieldValues>Consumer Magazine</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Evening Standard</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Financial Times Saturday- Magazine</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Glamour</fullName>
+                <controllingFieldValues>Consumer Magazine</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Good Housekeeping</fullName>
+                <controllingFieldValues>Consumer Magazine</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GQ</fullName>
+                <controllingFieldValues>Consumer Magazine</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Grazia</fullName>
+                <controllingFieldValues>Consumer Magazine</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Groupon</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Guardian</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Guardian Saturday- Listings/ Guide</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Guardian Saturday- Weekend</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gumtree</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Heat</fullName>
+                <controllingFieldValues>Consumer Magazine</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hello</fullName>
+                <controllingFieldValues>Consumer Magazine</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>I</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Independent</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Independent &amp; I</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Independent On Sunday (B/t)</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Independent On Sunday - Review (T)</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Independent Saturday - Information</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Independent Saturday - Magazine</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Inside Soap</fullName>
+                <controllingFieldValues>Consumer Magazine</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KGB Deals</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Living Social</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Look</fullName>
+                <controllingFieldValues>Consumer Magazine</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Love It</fullName>
+                <controllingFieldValues>Consumer Magazine</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Marie Claire</fullName>
+                <controllingFieldValues>Consumer Magazine</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Men&apos;s Fitness</fullName>
+                <controllingFieldValues>Consumer Magazine</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Men&apos;s Health</fullName>
+                <controllingFieldValues>Consumer Magazine</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Metro</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mids only</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>More</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>new! Magazine</fullName>
+                <controllingFieldValues>Consumer Magazine</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Now</fullName>
+                <controllingFieldValues>Consumer Magazine</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Observer Sunday(B/bl)</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Observer Sunday - Observer Mag (A4)</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OK</fullName>
+                <controllingFieldValues>Consumer Magazine</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other Media - Digital</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other Media - Magazines</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other Media - Mobile</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other Media - Outdoor</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other Media - Radio</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other Media - TV</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pops only</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Prima</fullName>
+                <controllingFieldValues>Consumer Magazine</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Psychologies Mag</fullName>
+                <controllingFieldValues>Consumer Magazine</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quals only</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Radio Times</fullName>
+                <controllingFieldValues>Consumer Magazine</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Red</fullName>
+                <controllingFieldValues>Consumer Magazine</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reveal</fullName>
+                <controllingFieldValues>Consumer Magazine</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>She</fullName>
+                <controllingFieldValues>Consumer Magazine</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shortlist</fullName>
+                <controllingFieldValues>Consumer Magazine</controllingFieldValues>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sport</fullName>
+                <controllingFieldValues>Consumer Magazine</controllingFieldValues>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Star</fullName>
+                <controllingFieldValues>Consumer Magazine</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Stylist</fullName>
+                <controllingFieldValues>Consumer Magazine</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sunday Express (T)</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sunday Express - Magazine (A4)</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sunday Mirror (T)</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sunday Mirror - Celebs On Sunday</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sunday People (T)</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sunday People - Other</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sunday People - Take It Easy</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sunday Telegraph (B)</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sunday Telegraph - Seven (A4)</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sunday Telegraph - Stella (A4)</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sunday Times (B)</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sunday Times - Magazine</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sunday Times - Style (A4)</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sunday Times - The Culture (T)</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Take a Break</fullName>
+                <controllingFieldValues>Consumer Magazine</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>The Guardian</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>The Sun</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>The Sun Saturday - Buzz/ Tv Mag</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>The Sun Saturday - Fabulous (A4)</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Times</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Times Saturday - Magazine</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Times Saturday - Playlist</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Top Sante</fullName>
+                <controllingFieldValues>Consumer Magazine</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vanity Fair</fullName>
+                <controllingFieldValues>Consumer Magazine</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vogue</fullName>
+                <controllingFieldValues>Consumer Magazine</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Weekend press</fullName>
+                <controllingFieldValues>Newspaper</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Woman &amp; Home</fullName>
+                <controllingFieldValues>Consumer Magazine</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Womans Own</fullName>
+                <controllingFieldValues>Consumer Magazine</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Date_of_Publication__c</fullName>
+        <externalId>false</externalId>
+        <label>Date of Publication</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Description_Comments__c</fullName>
+        <description>A field to enter basic information regarding the Media Lead</description>
+        <externalId>false</externalId>
+        <label>Description/Comments</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Lead_Source__c</fullName>
+        <externalId>false</externalId>
+        <label>Lead Source</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Ad2One</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Agency</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Agency Trading Desk</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AOL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Associated Brand</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Classified</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Client Direct</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Consumer Magazine</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Digital</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Incoming Lead</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mobile</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MSN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Newspaper</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other Competitor Network</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Outdoor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Qantcast</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Radio</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TV</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unanimis</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yahoo</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Lost_to_which_Competitor__c</fullName>
+        <externalId>false</externalId>
+        <label>Lost to which Competitor</label>
+        <picklist>
+            <controllingField>Closed_Lost_Reason__c</controllingField>
+            <picklistValues>
+                <fullName>Bella</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Best</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chat</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>City AM</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closer</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Company</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cosmopolitan</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Daily Express</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Daily Express - Saturday</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Daily Mail</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Daily Mirror</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Daily Mirror Saturday - We Love Telly</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Daily Record</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Daily Star</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Daily Star Saturday - Hot Tv</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Daily Star Sunday (T)</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Daily Star Sunday - Ok Extra/Take 5</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Daily Telegraph</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Daily Telegraph Saturday - Magazine</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Elle</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Esquire</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Evening Standard</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Financial Times Saturday- Magazine</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Glamour</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Good Housekeeping</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GQ</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Grazia</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Guardian</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Guardian Saturday- Listings/ Guide</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Guardian Saturday- Weekend</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Heat</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hello</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>I</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Independent</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Independent &amp; I</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Independent On Sunday (B/t)</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Independent On Sunday - Review (T)</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Independent Saturday - Information</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Independent Saturday - Magazine</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Inside Soap</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Look</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Love It</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Marie Claire</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Men&apos;s Fitness</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Men&apos;s Health</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Metro</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mids only</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>More</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>new! Magazine</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Now</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Observer Sunday(B/bl)</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Observer Sunday - Observer Mag (A4)</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OK</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other Media - Digital</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other Media - Magazines</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other Media – Magazines</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other Media - Mobile</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other Media – Mobile</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other Media - Outdoor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other Media – Outdoor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other Media - Radio</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other Media - TV</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other Media – TV</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pops only</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Prima</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Psychologies Mag</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quals only</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Radio</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Radio Times</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Red</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reveal</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>She</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shortlist</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sport</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Star</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Stylist</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sun</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sunday Express (T)</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sunday Express - Magazine (A4)</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sunday Mirror (T)</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sunday Mirror - Celebs On Sunday</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sunday People (T)</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sunday People - Other</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sunday People - Take It Easy</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sunday Telegraph (B)</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sunday Telegraph - Seven (A4)</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sunday Telegraph - Stella (A4)</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sunday Times (B)</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sunday Times - Magazine</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sunday Times - Style (A4)</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sunday Times - The Culture (T)</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Take a Break</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>The Sun</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>The Sun Saturday - Buzz/ Tv Mag</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>The Sun Saturday - Fabulous (A4)</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Times</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Times Saturday - Magazine</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Times Saturday - Playlist</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Top Sante</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vanity Fair</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vogue</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Woman &amp; Home</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Womans Own</fullName>
+                <controllingFieldValues>Lost to Competitor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Pitch</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Media Leads</relationshipLabel>
+        <relationshipName>Media_Leads</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Position__c</fullName>
+        <externalId>false</externalId>
+        <label>Position</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Size_of_Ad__c</fullName>
+        <externalId>false</externalId>
+        <label>Size of Ad</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Open</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Created in Error</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed - Lead Not Relevant</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed-Carrying</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed-Lost</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <label>Media Lead</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Company__c</columns>
+        <columns>Agency__c</columns>
+        <columns>Advertiser_Description__c</columns>
+        <columns>Lead_Source__c</columns>
+        <columns>Date_of_Publication__c</columns>
+        <columns>Status__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Opportunity__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>In_Progress_Media_Leads_more_than_7_days</fullName>
+        <columns>NAME</columns>
+        <columns>Agency__c</columns>
+        <columns>Company__c</columns>
+        <columns>Status__c</columns>
+        <columns>Date_of_Publication__c</columns>
+        <columns>Opportunity__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>In Progress</value>
+        </filters>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>LAST_N_DAYS:7</value>
+        </filters>
+        <label>In-Progress Media Leads more than 7 days</label>
+    </listViews>
+    <listViews>
+        <fullName>My_Media_Leads</fullName>
+        <columns>NAME</columns>
+        <columns>Company__c</columns>
+        <columns>Agency__c</columns>
+        <columns>Date_of_Publication__c</columns>
+        <columns>Status__c</columns>
+        <columns>Opportunity__c</columns>
+        <filterScope>Mine</filterScope>
+        <label>.My Media Leads</label>
+    </listViews>
+    <nameField>
+        <label>Media Lead Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Media Leads</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Company__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Agency__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Date_of_Publication__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Lead_Source__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Opportunity__c</customTabListAdditionalFields>
+        <searchResultsAdditionalFields>Company__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Agency__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Lead_Source__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OWNER.FIRST_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OWNER.LAST_NAME</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>AdvertiserOrDescriptionMustBeCompleted</fullName>
+        <active>true</active>
+        <description>When saving a Media Lead either the Advertiser or the Advertiser Description field must be completed</description>
+        <errorConditionFormula>(ISBLANK(Company__c) &amp;&amp; ISBLANK(Advertiser_Description__c)) &amp;&amp; !( $Setup.No_Validations__c.Flag__c )</errorConditionFormula>
+        <errorDisplayField>Company__c</errorDisplayField>
+        <errorMessage>When saving a Media Lead either the Advertiser or the Advertiser Description field must be completed</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CloLostReaOtherThenClosedLostReasonOther</fullName>
+        <active>true</active>
+        <description>When Closed Lost Reason is Other, then &apos;Closed Reason Description&apos; is required.</description>
+        <errorConditionFormula>ISPICKVAL(Closed_Lost_Reason__c,&apos;Other&apos;) &amp;&amp; ISBLANK( Closed_Lost_Reason_Other__c )
+&amp;&amp; !( $Setup.No_Validations__c.Flag__c )</errorConditionFormula>
+        <errorDisplayField>Closed_Lost_Reason_Other__c</errorDisplayField>
+        <errorMessage>When Closed Lost Reason is Other, then &apos;Closed Reason Description&apos; is required.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LockDownMediaLeadStatusAfterConverting</fullName>
+        <active>true</active>
+        <description>The Status field cannot be changed after a Media Lead has been Closed-Converted as a Pitch has already been created.</description>
+        <errorConditionFormula>ISPICKVAL(PRIORVALUE(Status__c), &apos;Closed-Converted&apos;) &amp;&amp;  ISCHANGED(Status__c)</errorConditionFormula>
+        <errorMessage>The Status field cannot be changed after a Media Lead has been &apos;Closed-Converted&apos; and a new Pitch has already been created.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LostToWhichCompetitorIsReqWhenReIsLost</fullName>
+        <active>true</active>
+        <description>If Lost Reason is &apos;Lost to Competitor&apos;, then &apos;Lost to Which Competitor&apos; must be selected.</description>
+        <errorConditionFormula>ISPICKVAL(Closed_Lost_Reason__c, &apos;Lost to Competitor&apos;) &amp;&amp; ISNULL(Lost_to_which_Competitor__c) 
+&amp;&amp; !( $Setup.No_Validations__c.Flag__c )</errorConditionFormula>
+        <errorDisplayField>Lost_to_which_Competitor__c</errorDisplayField>
+        <errorMessage>If Lost Reason is &apos;Lost to Competitor&apos;, then &apos;Lost to Which Competitor&apos; must be selected.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>MediaLeadLockReqFieldsStatusConverted</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISPICKVAL(Status__c,&apos;Closed-Converted&apos;) &amp;&amp; ( ISCHANGED(Company__c) ||  ISCHANGED(Agency__c) || ISCHANGED(Advertiser_Description__c) || ISCHANGED(Closed_Lost_Reason__c) || ISCHANGED(Closed_Lost_Reason_Other__c) || ISCHANGED(Colour__c) || ISCHANGED(Competitor__c) || ISCHANGED(Date_of_Publication__c) || ISCHANGED(Lead_Source__c) || ISCHANGED(Position__c) || ISCHANGED(Size_of_Ad__c))</errorConditionFormula>
+        <errorMessage>You cannot change any of the fields once the Media Lead status is set to Closed-Converted.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ReasonIsNeededIfStatusIsClosedLost</fullName>
+        <active>true</active>
+        <description>Closed Lost Reason is needed when setting Status to Closed Lost.</description>
+        <errorConditionFormula>ISBLANK(TEXT(Closed_Lost_Reason__c)) &amp;&amp; ISPICKVAL( Status__c , &apos;Closed-Lost&apos;)
+&amp;&amp; !( $Setup.No_Validations__c.Flag__c )</errorConditionFormula>
+        <errorDisplayField>Closed_Lost_Reason__c</errorDisplayField>
+        <errorMessage>Closed Lost Reason is needed when setting Status to Closed Lost.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Convert_to_Pitch</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Convert to Pitch</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/25.0/connection.js&quot;)} 
+
+var ml = new sforce.SObject(&quot;Media_Lead__c&quot;); 
+
+var url = parent.location.href; //string for the URL of the current page 
+ml.id =&quot;{!Media_Lead__c.Id}&quot;; 
+
+
+if (&quot;{!Media_Lead__c.Status__c}&quot;==&apos;Closed-Carrying&apos;) 
+{ 
+alert(&quot;This MediaLead cannot be Converted to a Pitch as it is already Closed-Carrying.&quot;); 
+} 
+else
+if (&quot;{!Media_Lead__c.Status__c}&quot;==&apos;Closed-Lost&apos;) 
+{ 
+alert(&quot;This MediaLead cannot be Converted to a Pitch as it is already Closed-Lost.&quot;); 
+} 
+else
+if (&quot;{!Media_Lead__c.Status__c}&quot;==&apos;Closed-Converted&apos;) 
+{ 
+alert(&quot;This MediaLead cannot be Converted to a Pitch as it is already Closed-Converted.&quot;); 
+} 
+else 
+{
+var r=confirm(&quot;Are you sure you want to Convert this Media Lead?&quot;);
+if (r==true)
+{ 
+
+
+var result = sforce.connection.query(&quot;Select Company__c, Agency__c From Media_Lead__C where Id = &apos;{!Media_Lead__c.Id}&apos; &quot;);
+var records = result.getArray(&quot;records&quot;); 
+
+var o = new sforce.SObject(&quot;Opportunity&quot;); 
+
+var myDate=new Date();
+myDate.setDate(myDate.getDate()+7);
+
+o.AccountId = records[0].Company__c;
+o.Agency__c = records[0].Agency__c;
+o.name =&quot;{!Media_Lead__c.Name}&quot;;
+o.StageName = &apos;Preparation&apos;;
+o.CloseDate=myDate;
+o.CreationMethod__c=&quot;Media Lead&quot;;
+o.Source_Of_Pitch__c = &quot;Media Lead&quot;;
+
+
+//alert(&quot;o.AccountId : &quot;+o.AccountId); 
+//alert(&quot;o.Agency__c : &quot;+o.Agency__c); 
+
+var oppresult = sforce.connection.create([o]); 
+
+
+
+if (oppresult[0].getBoolean(&quot;success&quot;))
+{
+ml.Status__c=&quot;Closed-Converted&quot;; 
+ml.Opportunity__c=oppresult[0].id;
+var result = sforce.connection.update([ml]); 
+if (result[0].getBoolean(&quot;success&quot;))
+{
+alert(&quot;The Media Lead named: &quot; +&quot;{!Media_Lead__c.Name}&quot;+&quot; has been converted.&quot;); 
+//parent.location.href = url; //calling current page to refresh 
+var newurl=&quot;/&quot;+ml.Opportunity__c ;
+location.replace(newurl);
+}
+}else{ 
+alert(&quot;The Media Lead named: &quot; +&quot;{!Media_Lead__c.Name}&quot;+&quot; cannot be converted due to a problem.&quot;); 
+}
+}
+}</url>
+    </webLinks>
+</CustomObject>

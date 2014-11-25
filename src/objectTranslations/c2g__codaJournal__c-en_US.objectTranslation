@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>TFR Journal Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Journal Detail --></label>
+            <section>Journal Detail</section>
+        </sections>
+        <sections>
+            <label><!-- Journal Status --></label>
+            <section>Journal Status</section>
+        </sections>
+        <sections>
+            <label><!-- Refund Specific --></label>
+            <section>Refund Specific</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Log a Call --></label>
+        <name>Log_A_Call_Journal</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- New Task --></label>
+        <name>New_Task_Journal</name>
+    </quickActions>
+</CustomObjectTranslation>

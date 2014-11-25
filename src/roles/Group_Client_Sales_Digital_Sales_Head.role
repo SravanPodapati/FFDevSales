@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>None</contactAccessLevel>
+    <description>Group Client Sales - Digital Sales Head</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Group Client Sales - Digital Sales Head</name>
+    <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    <parentRole>Group_Client_Sales_Manager</parentRole>
+</Role>

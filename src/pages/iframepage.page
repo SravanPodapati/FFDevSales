@@ -1,0 +1,16 @@
+<apex:page standardController="Account" action="{!createOrder}" extensions="DirectOrderController">
+<apex:sectionHeader title="Direct Order"/>
+	<div style="margin-top:-10px; margin-left:40px">
+		<apex:outputLink value="/{!clientID}" style="color: blue;">Account: {!ClientName}</apex:outputLink> 
+	</div>
+<br/>
+<apex:messages />
+<!--apex:outputLabel value="{!url1}" /--> 
+<apex:outputLabel rendered="{!renderError}"   value="{!errorMessage}" />  
+<apex:pageBlock rendered="{!renderPlugin}" title="Booking Plugin">
+<iframe height="700px" rendered="{!renderPlugin}"  src="{!url1}" width="100%" sandbox=""/>
+
+
+
+</apex:pageBlock> 
+</apex:page>

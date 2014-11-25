@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>TFR Invoice Line Item Layout</layout>
+        <sections>
+            <label><!-- Account Code --></label>
+            <section>Account Code</section>
+        </sections>
+        <sections>
+            <label><!-- Advertising --></label>
+            <section>Advertising</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Distribution --></label>
+            <section>Distribution</section>
+        </sections>
+    </layouts>
+</CustomObjectTranslation>

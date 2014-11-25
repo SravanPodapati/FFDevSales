@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContactSharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <criteriaBasedRules>
+        <fullName>ANMediaD</fullName>
+        <sharedTo>
+            <roleAndSubordinates>ANMedia</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Visibility__c</field>
+            <operation>equals</operation>
+            <value>Group - read only</value>
+        </criteriaItems>
+        <contactAccessLevel>Read</contactAccessLevel>
+        <name>A&amp;N MediaD</name>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>ANMediaD174451</fullName>
+        <sharedTo>
+            <roleAndSubordinates>ANMedia</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Visibility__c</field>
+            <operation>equals</operation>
+            <value>Group - read/write</value>
+        </criteriaItems>
+        <contactAccessLevel>Edit</contactAccessLevel>
+        <name>A&amp;N MediaD</name>
+    </criteriaBasedRules>
+</ContactSharingRules>

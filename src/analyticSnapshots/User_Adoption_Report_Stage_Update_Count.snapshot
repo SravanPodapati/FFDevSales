@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AnalyticSnapshot xmlns="http://soap.sforce.com/2006/04/metadata">
+    <groupColumn>CREATED</groupColumn>
+    <mappings>
+        <sourceField>CREATED</sourceField>
+        <sourceType>tabular</sourceType>
+        <targetField>User_Adoption_Metrics__c.Adoption_Metric_User__c</targetField>
+    </mappings>
+    <mappings>
+        <sourceField>RowCount</sourceField>
+        <sourceType>summary</sourceType>
+        <targetField>User_Adoption_Metrics__c.No_of_Pitch_Stage_Updates__c</targetField>
+    </mappings>
+    <mappings>
+        <sourceField>CREATED_ROLE</sourceField>
+        <sourceType>tabular</sourceType>
+        <targetField>User_Adoption_Metrics__c.User_Role__c</targetField>
+    </mappings>
+    <name>User Adoption Report-Stage Update Count</name>
+    <runningUser>a&amp;n.media@assocnews.co.uk</runningUser>
+    <sourceReport>Metro_Display_Reports/Metro_Adoption_Metric_Stage_Update_Count</sourceReport>
+    <targetObject>User_Adoption_Metrics__c</targetObject>
+</AnalyticSnapshot>

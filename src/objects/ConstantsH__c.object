@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <customSettingsVisibility>Protected</customSettingsVisibility>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Acc_and_Contact_owner__c</fullName>
+        <defaultValue>&apos;A&amp;N Media&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>Acc and Contact owner</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Department__c</fullName>
+        <externalId>false</externalId>
+        <label>Department</label>
+        <length>255</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IsManager__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>IsManager</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Auto_Follow_Stages__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>comma separated list of Opportunity stages valid for Auto-Follow rules [Gl-38]</inlineHelpText>
+        <label>Opportunity Auto Follow Stages</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Auto_Follow_Threshold__c</fullName>
+        <description>IMPORTANT: do NOT make this field of type Currency. It causes SFDC to throw: &quot;Internal Salesforce Error: 54908659-2463 (-2030433787) (-2030433787) stack null&quot;</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Opportunity Amount thresholds for Auto-Follow logic</inlineHelpText>
+        <label>Opportunity Auto Follow Threshold</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Price_Book__c</fullName>
+        <externalId>false</externalId>
+        <label>Price Book</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Quick_Pitch_Icons_Per_Line__c</fullName>
+        <description>number of product icons per line on Page 2 of Opportunity create via Chatter function</description>
+        <externalId>false</externalId>
+        <inlineHelpText>number of product icons per line on Page 2 of Opportunity create via Chatter function</inlineHelpText>
+        <label>Quick Pitch - Icons Per Line</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>ConstantsH</label>
+</CustomObject>

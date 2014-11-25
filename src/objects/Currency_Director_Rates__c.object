@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Base_Currency__c</fullName>
+        <externalId>false</externalId>
+        <formula>Currency_Director_Currencies__r.Currency_Director__r.Director_Currency__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Base Currency</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Currency_Director_Currencies__c</fullName>
+        <externalId>false</externalId>
+        <label>Currency Director Currencies</label>
+        <referenceTo>Currency_Director_Currencies__c</referenceTo>
+        <relationshipLabel>Currency Director Rates</relationshipLabel>
+        <relationshipName>Currency_Director_Rates</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Effective_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Effective Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Is_Latest__c</fullName>
+        <externalId>false</externalId>
+        <formula>If(Effective_Date__c =   Currency_Director_Currencies__r.Currency_Director__r.Latest_related_currency_Effective_Date__c  , true, false)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Is Latest ?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Rate__c</fullName>
+        <externalId>false</externalId>
+        <label>Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Currency Director Rates</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Currency_Director_Currencies__c</columns>
+        <columns>Effective_Date__c</columns>
+        <columns>Rate__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Is_Latest__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Currency_Director_Currencies__c</field>
+            <operation>notEqual</operation>
+            <value>GBP</value>
+        </filters>
+        <label>Latest Rates to GBP</label>
+    </listViews>
+    <nameField>
+        <displayFormat>{0000}</displayFormat>
+        <label>Currency Director Rates Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Currency Director Rates</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Check_rate_does_not_predate_other_rates</fullName>
+        <active>true</active>
+        <description>Checks that the Exchange Rate Effective Date keyed does not predate an existing exchange rate</description>
+        <errorConditionFormula>AND( ISNEW() , Effective_Date__c &lt;=  Currency_Director_Currencies__r.Last_Rate_Update_Date__c )</errorConditionFormula>
+        <errorMessage>The new exchange rate (effective date) must fall after the last existing exchange rate record</errorMessage>
+    </validationRules>
+</CustomObject>

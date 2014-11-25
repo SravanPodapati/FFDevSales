@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Update Request</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Update Requests</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account Mapping --></label>
+        <name>Account_Mapping__c</name>
+        <relationshipLabel><!-- Update Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Account Name Selected --></label>
+        <name>Account_Name_S__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Name --></label>
+        <name>Account_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Update Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Billing City Selected --></label>
+        <name>Billing_City_S__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing City --></label>
+        <name>Billing_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Country Selected --></label>
+        <name>Billing_Country_S__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Country --></label>
+        <name>Billing_Country__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing State/Province --></label>
+        <name>Billing_State_Province__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing State/Province Selected --></label>
+        <name>Billing_State_Province_s__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Street Selected --></label>
+        <name>Billing_Street_S__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Street --></label>
+        <name>Billing_Street__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Zip/Postal Code Selected --></label>
+        <name>Billing_Zip_Postal_Code_S__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Zip/Postal Code --></label>
+        <name>Billing_Zip_Postal_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Change Completed --></label>
+        <name>Change_Completed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Display - Minor Category Selected --></label>
+        <name>Display_Minor_Category_S__c</name>
+    </fields>
+    <fields>
+        <label><!-- Display - Minor Category --></label>
+        <name>Display_Minor_Category__c</name>
+    </fields>
+    <fields>
+        <label><!-- Display - Main Category Selected --></label>
+        <name>Display_S__c</name>
+    </fields>
+    <fields>
+        <label><!-- Display - Sub Category Selected --></label>
+        <name>Display_Sub_Category_S__c</name>
+    </fields>
+    <fields>
+        <label><!-- Display - Sub Category --></label>
+        <name>Display_Sub_Category__c</name>
+    </fields>
+    <fields>
+        <label><!-- Display - Main Category --></label>
+        <name>Display__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Name Selected --></label>
+        <name>First_Name_S__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Name --></label>
+        <name>First_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- NPA Selected --></label>
+        <name>NPA_S__c</name>
+    </fields>
+    <fields>
+        <label><!-- NPA --></label>
+        <name>NPA__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- New Parent Account --></label>
+        <name>New_Parent_Account__c</name>
+        <relationshipLabel><!-- Update Requests (New Parent Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Parent Account Selected --></label>
+        <name>Parent_Account_S__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Account --></label>
+        <name>Parent_Account__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone Number Selected --></label>
+        <name>Phone_Number_S__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone Number --></label>
+        <name>Phone_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Salutation Selected --></label>
+        <name>Salutation_S__c</name>
+    </fields>
+    <fields>
+        <label><!-- Salutation --></label>
+        <name>Salutation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type Selected --></label>
+        <name>Type_S__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+    </fields>
+    <layouts>
+        <layout>Update Request Layout</layout>
+        <sections>
+            <label><!-- Account Change Details --></label>
+            <section>Account Change Details</section>
+        </sections>
+        <sections>
+            <label><!-- Address Change Details --></label>
+            <section>Address Change Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Display Categorisation Change Details --></label>
+            <section>Display Categorisation Change Details</section>
+        </sections>
+    </layouts>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <errorMessage><!-- Billing Street is mandatory on Billing Agencies, Direct Advertisers, Private Advertisers and Charity unless they&apos;re based in Ireland. --></errorMessage>
+        <name>AccBillingAddrRequiredOnAgencyDirectAdv</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Billing Postcode is mandatory on Billing Agencies, Direct Advertisers, Private Advertisers and Charity unless they&apos;re based in Ireland. --></errorMessage>
+        <name>AccBillingPostCodeReqOnAgencyDirectAdv</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Phone Field shouldn&apos;t allow text to be added. --></errorMessage>
+        <name>AccountCheckPhoneFormat</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Type can not be changed after an account is synchronised with CCI. --></errorMessage>
+        <name>AccountTypeChangeValidation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Can not have &apos;|&apos; in Account Name --></errorMessage>
+        <name>Avoid_pipe_sign_Account</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Can not have &apos;|&apos; in Billing City --></errorMessage>
+        <name>Avoid_pipe_sign_Billing_City_for_Account</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Can not have &apos;|&apos; in Billing Country --></errorMessage>
+        <name>Avoid_pipe_sign_Billing_Country</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Can not have &apos;|&apos; in Billing Zip/Postal Code --></errorMessage>
+        <name>Avoid_pipe_sign_Billing_Postal_Code</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Can not have &apos;|&apos; in Billing State / Province --></errorMessage>
+        <name>Avoid_pipe_sign_Billing_State_Province</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Can not have &apos;|&apos; in Billing Street --></errorMessage>
+        <name>Avoid_pipe_sign_Billing_Street</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You Requested to change the country to United Kingdom, but the entered or existing post code value is not valid. --></errorMessage>
+        <name>BillingPostalCode_format</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Billing City to a maximum of 22 Characters --></errorMessage>
+        <name>Billing_City_to_a_maximum_of_22_Characte</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Country is not valid --></errorMessage>
+        <name>Billing_Country_Lookup</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Billing Street should not have only special characters. --></errorMessage>
+        <name>Billing_Street_format</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Billing street can not be more than 80 characters. --></errorMessage>
+        <name>Billing_Street_to_a_maximum_of_80_Charac</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If Type is Brand Parent account must be completed with either a Direct Advertiser or a Client account --></errorMessage>
+        <name>BrandParentAccountIsDirectOrClient</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Parent account for a Brand account must be either a Direct Advertiser or a Client account type --></errorMessage>
+        <name>BrandParentAccountShouldNotBeAgency</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If the account type is Brand the parent cannot be a Holding Company type --></errorMessage>
+        <name>BrandParentTypeCannotBeHoldingCompany</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If Type is Brand Parent account must be completed with either a Direct Advertiser or a Client account --></errorMessage>
+        <name>If_Type_is_Brand_requires_parent_account</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Only Private Advertiser can have First Name or Salutation --></errorMessage>
+        <name>PA_can_only_have_FirstName_and_Saluatio</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Parent can only be a Booking or Billing Agency. --></errorMessage>
+        <name>ParentForBookingOrBillingAgency</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Phone Number field is mandatory --></errorMessage>
+        <name>PhoneNoMandatory</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Phone Numbers should be between 10 and 20 Digits. --></errorMessage>
+        <name>Phone_length_Validation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Post code must contain at least a number or letter. --></errorMessage>
+        <name>PostCodeCharacterValidation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Salutation and First Name are Required for a Private Advertiser --></errorMessage>
+        <name>PrivateAdvertiserNameRequired</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Type can not be changed from Private Advertiser. --></errorMessage>
+        <name>Private_advertiser_can_not_be_changeable</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Account Type can not be changed to this type of Account. Please enter the Phone,Billing Street and Billing PostalCode then save the record before switching the Account Type. --></errorMessage>
+        <name>TypeChangeValidationToBrand</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- New_Update_Request_Account --></label>
+        <name>New_Update_Request_Account</name>
+    </webLinks>
+</CustomObjectTranslation>

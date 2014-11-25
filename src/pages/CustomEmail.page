@@ -1,0 +1,71 @@
+<apex:page Title="Send an Email" sidebar="true" showHeader="true" wizard="false" standardController="Task" extensions="EmailController">
+
+    <apex:form >
+       
+    <apex:pageBlock > 
+        <apex:pageBlockButtons >
+            <apex:commandButton value="Send" action="{!send}"/> 
+            <!--apex:commandButton value="Attach BookingOrder" action="{!attach}"/--> 
+            <apex:commandButton value="Cancel" action="{!cancel}"/> 
+        </apex:pageBlockButtons>
+        <apex:messages />
+    
+    <apex:pageBlockSection title="Edit Email" columns="1">
+        <apex:pageBlockSectionItem dataStyleClass="requiredInput">
+               <apex:outputLabel for="To">To</apex:outputLabel>  
+               <apex:outputPanel >
+                    <div class="requiredInput">
+                        <div class="requiredBlock"></div>
+                         <apex:inputText size="30" value="{!address}" id="To"  maxlength="180"/> 
+                          <apex:outputText style="font-style:bold" rendered="{!MultiCts}" value="{!mutiCtsMsg}" />                
+                       
+                    </div>
+                </apex:outputPanel>  
+          
+             </apex:pageBlockSectionItem>
+             <apex:pageBlockSectionItem >
+                 <apex:outputLabel for="CC"><B><U>CC:</U></B></apex:outputLabel>    
+                <apex:inputTextArea value="{!cc}" id="CC" rows="2" cols="60" />
+             </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                 <apex:outputLabel for="BCC"><B><U>BCC:</U></B></apex:outputLabel>    
+                <apex:inputTextArea value="{!bcc}" id="BCC" rows="2" cols="60" />
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+           
+                <apex:outputLabel for="Subject">  Subject</apex:outputLabel>
+                <apex:outputPanel >
+                    <div class="requiredInput">
+                        <div class="requiredBlock"></div>
+                        <apex:inputText value="{!subject}" id="Subject"                   
+                        />
+                    </div>
+                </apex:outputPanel>
+            
+            </apex:pageBlockSectionItem>
+           
+            <apex:pageBlockSectionItem >
+                 <apex:outputLabel for="Body"> Body</apex:outputLabel>
+                <apex:inputTextarea richtext="true"  value="{!body}" id="Body" rows="10" cols="80"/>           
+           </apex:pageBlockSectionItem>
+           
+            </apex:pageBlockSection>
+            </apex:pageBlock>
+             
+            <apex:pageBlock rendered="{!attachmentExists}">
+            <apex:pageBlockButtons location="top"> <apex:commandButton rendered="{!attachmentExists}" value="Remove Attachment" action="{!remove}"/></apex:pageBlockButtons>
+            <!--apex:outputLabel value="Attachment" for="Order"/-->
+            <apex:outputLink title="Attachment"  value="/apex/bookingconfirmationpdf?id={!parentID}" target="_blank"><B>{!orderAttachment.name}</B></apex:outputLink>
+            
+          
+                       
+            </apex:pageBlock>
+            
+            
+          
+           
+           
+
+            
+        </apex:form>
+    </apex:page>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Deal Product</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Deal Products</value>
+    </caseValues>
+    <fields>
+        <label><!-- Discount Percentage --></label>
+        <name>Discount_Percentage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pitch --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Deal Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Cap --></label>
+        <name>Product_Cap__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Description --></label>
+        <name>Product_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Media Surcharge --></label>
+        <name>Product_Media_Surcharge__c</name>
+    </fields>
+    <fields>
+        <label><!-- Supplier % Rate --></label>
+        <name>Product_Supplier_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Supplier Unredeemed % Rate --></label>
+        <name>Product_Supplier_Unredeemed_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Usual Selling Price --></label>
+        <name>Product_Usual_Selling_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Wowcher Commission --></label>
+        <name>Product_Wowcher_Commission__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deal Price --></label>
+        <name>Product_price__c</name>
+    </fields>
+    <layouts>
+        <layout>Deal Product Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Cannot amend or create a Deal Product when the Pitch is Signed Rejected, please ask your manager. --></errorMessage>
+        <name>WowcherPitchStageSignedRejected</name>
+    </validationRules>
+</CustomObjectTranslation>

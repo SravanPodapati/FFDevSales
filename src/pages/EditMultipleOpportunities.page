@@ -1,0 +1,41 @@
+<apex:page standardController="Opportunity" recordSetVar="opportunities" tabStyle="Opportunity" sidebar="false">
+ <apex:sectionHeader title="Edit Multiple Opportunities"/>
+  <apex:form >
+    <apex:pageBlock >
+      <apex:pageMessages />
+      <apex:pageBlockButtons >
+        <apex:commandButton value="Save" action="{!save}"/>
+        <apex:commandButton value="Cancel" action="{!cancel}"/>
+      </apex:pageBlockButtons>
+      <apex:pageBlockTable value="{!opportunities}" var="opp">
+          
+        <apex:column headerValue="Name" value="{!opp.Name}" /> 
+        <apex:column headerValue="Account" value="{!opp.Account.name}" /> 
+        <apex:column headerValue="Close Date" value="{!opp.closeDate}" />   
+          
+        <apex:column headerValue="Stage">
+          <apex:inputField value="{!opp.StageName}"/>
+        </apex:column>
+        <apex:column headerValue="Our Merchant Screenshot">
+          <apex:inputField value="{!opp.Our_Merchant_Screenshot__c}"/>
+        </apex:column>
+        <apex:column headerValue="Sample Received">
+          <apex:inputField value="{!opp.Sample_Received__c}"/>
+        </apex:column>
+        <apex:column headerValue="Date Approved">
+          <apex:inputField value="{!opp.Date_Approved__c}"/>
+        </apex:column>
+        <apex:column headerValue="Approval Point">
+          <apex:inputField value="{!opp.Approval_Point__c}"/>
+        </apex:column>
+        <apex:column headerValue="Similar Merchant Screenshot">
+          <apex:inputField value="{!opp.Similar_Merchant_Screenshot__c}"/>
+        </apex:column>
+        <apex:column headerValue="Mystery Phonecall">
+          <apex:inputField value="{!opp.Mystery_Phonecall__c}"/>
+        </apex:column>
+        
+      </apex:pageBlockTable>      
+    </apex:pageBlock>
+  </apex:form>
+</apex:page>

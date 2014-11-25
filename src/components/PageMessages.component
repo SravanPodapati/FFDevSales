@@ -1,0 +1,135 @@
+<apex:component >
+	<style>
+		.Warning{
+			border: 1px;
+			border-color: rgb(252, 135, 9);
+			border-style: solid;
+			background-color: rgb(255, 255, 193);
+			border-top-left-radius: 4px;
+			border-top-right-radius: 4px;
+			border-bottom-left-radius: 4px;
+			border-bottom-right-radius: 4px;
+			margin-left: 20px;
+			margin-right: 20px;
+			margin-bottom: 4px;
+			margin-top: 4px;
+		}
+		
+		.Success{
+			border: 1px;
+			border-color: rgb(43, 139, 5);
+			border-style: solid;
+			background-color: rgb(255, 255, 193);
+			border-top-left-radius: 4px;
+			border-top-right-radius: 4px;
+			border-bottom-left-radius: 4px;
+			border-bottom-right-radius: 4px;
+			margin-left: 20px;
+			margin-right: 20px;
+			margin-bottom: 4px;
+			margin-top: 4px;
+		}
+		
+		.Error{
+			border: 1px;
+			border-color: rgb(190, 0, 6);
+			border-style: solid;
+			background-color: rgb(255, 255, 193);
+			border-top-left-radius: 4px;
+			border-top-right-radius: 4px;
+			border-bottom-left-radius: 4px;
+			border-bottom-right-radius: 4px;
+			margin-left: 20px;
+			margin-right: 20px;
+			margin-bottom: 4px;
+			margin-top: 4px;
+		}
+		 
+		.FATAL{
+			border: 1px;
+			border-color: rgb(190, 0, 6);
+			border-style: solid;
+			background-color: rgb(255, 255, 193);
+			border-top-left-radius: 4px;
+			border-top-right-radius: 4px;
+			border-bottom-left-radius: 4px;
+			border-bottom-right-radius: 4px;
+			margin-left: 20px;
+			margin-right: 20px;
+			margin-bottom: 4px;
+			margin-top: 4px;
+		}
+		
+		.Message{
+			border: 1px;
+			border-color: rgb(43, 131, 254);
+			border-style: solid;
+			background-color: rgb(255, 255, 193);
+			border-top-left-radius: 4px;
+			border-top-right-radius: 4px;
+			border-bottom-left-radius: 4px;
+			border-bottom-right-radius: 4px;
+			margin-left: 20px;
+			margin-right: 20px;
+			margin-bottom: 4px;
+			margin-top: 4px;
+		}
+		.tableStyle{
+			border: 1px;
+			border-color:black;
+			vertical-align: middle;
+			margin: 5px;
+			padding: 2px;
+			text-align: left;
+		}
+	</style>
+	<script type="text/javascript">
+		if({!messageClass.hasMessages} == true){
+				var el = document.getElementById('scrollHereDiv');
+				el.scrollIntoView(true);
+			}
+	</script>
+	<apex:attribute type="ResultWrapper" name="messageClass" description="Page Messages to Display on the page" required="true" />
+	<apex:attribute type="boolean" name="displayImmage" description="Determine wether to display immage or not" default="true" />
+	<apex:attribute type="boolean" name="displayType" description="Determine wether to display type of message or not" default="true" />
+	<div id="scrollHereDiv"></div>
+	<apex:repeat value="{!messageClass.GroupedPageMessages}" var="message">
+	<div class="{!message}">
+		<table class="tableStyle" cellpadding="0px" cellspacing="0px" >
+			<tr>
+				<td valign="top" style="width: 26px;">
+					<apex:image url="{!URLFOR('/img/msg_icons/error24.png')}" rendered="{!displayImmage && message == 'Error'}"/>
+					<apex:image url="{!URLFOR('/img/msg_icons/warning24.png')}" rendered="{!displayImmage && message == 'Warning'}"/>
+					<apex:image url="{!URLFOR('/img/msg_icons/info24.png')}" rendered="{!displayImmage && message == 'Message'}"/>
+					<apex:image url="{!URLFOR('/img/msg_icons/confirm24.png')}" rendered="{!displayImmage && message == 'Success'}"/>
+				</td>
+				<td valign="top" >
+					<h4 style="margin: 8px; display: {!if(messageClass.groupedMessagesSize[message] == 1, 'inline;','none;')}">
+						<apex:outputText value="Error:" rendered="{!displayType && message == 'Error'}"/>
+						<apex:outputText value="Warning" rendered="{!displayType && message == 'Warning'}"/>
+						<apex:outputText value="" rendered="{!displayType && message == 'Message'}"/>
+						<apex:outputText value="Success:" rendered="{!displayType && message == 'Success'}"/>
+					</h4>
+					<h4 style="margin: 8px; display: {!if(messageClass.groupedMessagesSize[message] > 1, 'inline;','none;')}">
+						<apex:outputText value="Errors" rendered="{!displayType && message == 'Error'}"/>
+						<apex:outputText value="Warning" rendered="{!displayType && message == 'Warning'}"/>
+						<apex:outputText value="Messages" rendered="{!displayType && message == 'Message'}"/>
+						<apex:outputText value="Success" rendered="{!displayType && message == 'Success'}"/>
+					</h4>
+					<apex:repeat value="{!messageClass.GroupedPageMessages[message]}" var="text" rendered="{!messageClass.groupedMessagesSize[message] > 1}">
+						<ul style="line-height: 14px;margin-left: 8px; margin-top:6px; margin-bottom:6px; margin-right: 0px; padding-left: 10px;">
+							<li>
+								<apex:outputText value="{!text}" style="text-align: left;"/> 
+							</li>
+						</ul>
+					</apex:repeat>
+					<br style="display: {!if(messageClass.groupedMessagesSize[message] == 1, 'block;','none;')}"/>
+					<apex:repeat value="{!messageClass.GroupedPageMessages[message]}" var="text" rendered="{!messageClass.groupedMessagesSize[message] == 1}">
+						<apex:outputText value="{!text}" style="text-align: left;margin: 8px;"/>
+					</apex:repeat>
+				</td>
+			</tr>		
+		</table>
+	</div>
+	</apex:repeat>	
+</apex:component>

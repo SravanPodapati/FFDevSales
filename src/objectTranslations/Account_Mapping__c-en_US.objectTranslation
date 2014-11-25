@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Account Mapping</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Account Mappings</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Account Mappings --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <help><!-- Tick if the ID is a Brand ID rather than a Client ID --></help>
+        <label><!-- Brand ID? --></label>
+        <name>Brand_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Ref --></label>
+        <name>Source_Key__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source System --></label>
+        <name>Source_System__c</name>
+        <picklistValues>
+            <masterLabel>Advance</masterLabel>
+            <translation><!-- Advance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CCI Mail</masterLabel>
+            <translation><!-- CCI Mail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CCI Metro</masterLabel>
+            <translation><!-- CCI Metro --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IDM Origins</masterLabel>
+            <translation><!-- IDM Origins --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nielsen</masterLabel>
+            <translation><!-- Nielsen --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Operative One</masterLabel>
+            <translation><!-- Operative One --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- UniqueSourceKey --></label>
+        <name>UniqueSourceKey__c</name>
+    </fields>
+    <layouts>
+        <layout>Account Mapping Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- You are not authorised to update an Account Mapping, please create an Update Request. --></errorMessage>
+        <name>AccountMapping_Only_VDT_Can_Update</name>
+    </validationRules>
+</CustomObjectTranslation>

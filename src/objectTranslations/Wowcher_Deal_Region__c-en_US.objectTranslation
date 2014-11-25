@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Wowcher Deal Region</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Wowcher Deal Region</value>
+    </caseValues>
+    <fields>
+        <label><!-- Deal Analyst 1 --></label>
+        <name>Deal_Analyst_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deal Analyst 2 --></label>
+        <name>Deal_Analyst_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deal Analyst 3 --></label>
+        <name>Deal_Analyst_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deal Analyst CC --></label>
+        <name>Deal_Analyst_CC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deal Region --></label>
+        <name>Deal_Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- Merchant CC --></label>
+        <name>Merchant_CC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Merchant Liaison --></label>
+        <name>Merchant_Liaison__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

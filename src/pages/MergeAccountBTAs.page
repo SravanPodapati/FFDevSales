@@ -1,0 +1,17 @@
+<apex:page standardController="Account" extensions="MergeAccountBTAsController">
+	
+	<div style="font-size: 1.8em; font-weight: bold; line-height: 1.1em; padding: 5px 5px 10px 5px;">Merge duplicate Business Team Activities</div>
+	
+	<apex:form >
+<!-- 		<div style="width: 100%; text-align: center; margin-top: 10px;"> -->
+			<apex:pageMessage summary="Merge duplicate Business Team Activities for the Account {!Account.Name}?" severity="confirm" />
+			<br />
+<!-- 		</div> -->
+<!-- 			Merge duplicate Business Team Activities for the Account {!Account.Name}?<br /><br /> -->	
+			<apex:commandButton action="{!MergeBTAs}" value="OK" style="width:50px;"/>
+			<apex:commandButton action="{!CancelMergeBTAs}" value="Cancel" style="width:50px;"/>
+			<br />
+	        <apex:pageMessages />
+	</apex:form>
+	
+</apex:page>

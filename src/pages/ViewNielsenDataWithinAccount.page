@@ -1,0 +1,39 @@
+<apex:page standardController="Account" extensions="ViewNielsenDataWithinAccountController">
+<apex:form >
+
+<script>
+function openPopUp(URL) {
+new_window = window.open(URL, 'window', 
+'toolbar=0,scrollbars=0,location=0, statusbar=0,menubar=0,resizable=0,width=700,height=800,left = 443.5,top = 310');
+}
+function closePopUp() {
+new_window.close();
+}
+</script>
+
+<apex:pageblock >
+<apex:pageBlockTable value="{!AllNielsenData}" var="n" style="width:100%;vertical-align:top;word-wrap: break-word;"  headerClass="headerrow">
+
+    <apex:column >
+    <!--a href="http://www.addynamix.co.uk/Press/Alerts/CreativeSnapshot.aspx?creativeid={!n.CreativeId__c}" id="N{!n.Id}" target="_parent" onblur="closePopUp('http://www.addynamix.co.uk/Press/Alerts/CreativeSnapshot.aspx?creativeid={!n.CreativeId__c}')" onfocus="openPopUp('http://www.addynamix.co.uk/Press/Alerts/CreativeSnapshot.aspx?creativeid={!n.CreativeId__c}')" onmouseout="closePopUp('http://www.addynamix.co.uk/Press/Alerts/CreativeSnapshot.aspx?creativeid={!n.CreativeId__c}')" onmouseover="openPopUp('http://www.addynamix.co.uk/Press/Alerts/CreativeSnapshot.aspx?creativeid={!n.CreativeId__c}')" value="http://www.addynamix.co.uk/Press/Alerts/CreativeSnapshot.aspx?creativeid={!n.CreativeId__c}">{!n.Creative_Description__c}</a> -->
+    <a href="{!creativeSnapshotURL}?creativeid={!n.CreativeId__c}" id="N{!n.Id}" target="_blank" onblur="closePopUp('{!creativeSnapshotURL}?creativeid={!n.CreativeId__c}')" onfocus="openPopUp('{!creativeSnapshotURL}?creativeid={!n.CreativeId__c}')" onmouseout="closePopUp('{!creativeSnapshotURL}?creativeid={!n.CreativeId__c}')" onmouseover="openPopUp('{!creativeSnapshotURL}?creativeid={!n.CreativeId__c}')" value="{!creativeSnapshotURL}?creativeid={!n.CreativeId__c}">View</a>
+    </apex:column>       
+    <apex:column headerValue="Publication" value="{!n.Publication__c}" />
+    <apex:column headerValue="Publication Group" value="{!n.Publication_Group__c}" />  
+    <apex:column headerValue="Brand Name" value="{!n.Brand_Name__c}" />        
+    <apex:column headerValue="First Seen" value="{!n.First_Seen__c}" />
+    <apex:column headerValue="Last Seen" value="{!n.Last_Seen__c}" />
+     
+    <apex:column headerValue="Category" value="{!n.Category__c}" />
+    
+    <apex:column headerValue="Media type" value="{!n.Media_Type__c}" />
+    <apex:column headerValue="Incidence" value="{!n.Incidence__c}" />
+    <apex:column headerValue="Advert Size" value="{!n.Advert_Size__c}" />
+
+    <apex:column headerValue="Expenditure" value="{!n.Expenditure__c}" />
+    <apex:column headerValue="Description" value="{!n.Description__c}" />
+
+</apex:pageBlockTable>
+</apex:pageblock>
+</apex:form>
+</apex:page>

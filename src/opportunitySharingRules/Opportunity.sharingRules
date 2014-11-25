@@ -1,0 +1,813 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpportunitySharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <criteriaBasedRules>
+        <fullName>ANMediaD</fullName>
+        <sharedTo>
+            <roleAndSubordinates>ANMedia</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Visibility__c</field>
+            <operation>equals</operation>
+            <value>Group - read/write</value>
+        </criteriaItems>
+        <name>A&amp;N MediaD</name>
+        <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>ANMediaD173901</fullName>
+        <sharedTo>
+            <roleAndSubordinates>ANMedia</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Visibility__c</field>
+            <operation>equals</operation>
+            <value>Group - read only</value>
+        </criteriaItems>
+        <name>A&amp;N MediaD</name>
+        <opportunityAccessLevel>Read</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>Group_Client_Sales</fullName>
+        <sharedTo>
+            <roleAndSubordinates>Group_Client_Sales</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Visibility__c</field>
+            <operation>equals</operation>
+            <value>Departmental</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Owners_Department__c</field>
+            <operation>contains</operation>
+            <value>Group Client Sales</value>
+        </criteriaItems>
+        <name>Group Client Sales</name>
+        <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>Group_Client_Sales_with_Irish_Daily_Mail</fullName>
+        <sharedTo>
+            <roleAndSubordinates>Group_Client_Sales</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Visibility__c</field>
+            <operation>equals</operation>
+            <value>Departmental</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Owners_Department__c</field>
+            <operation>contains</operation>
+            <value>Irish Daily Mail</value>
+        </criteriaItems>
+        <name>Group Client Sales with Irish Daily Mail</name>
+        <opportunityAccessLevel>Read</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>Group_Client_Sales_with_London_Classified</fullName>
+        <sharedTo>
+            <roleAndSubordinates>Group_Client_Sales</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Visibility__c</field>
+            <operation>equals</operation>
+            <value>Departmental</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Owners_Department__c</field>
+            <operation>contains</operation>
+            <value>London Classified</value>
+        </criteriaItems>
+        <name>Group Client Sales with London Classified</name>
+        <opportunityAccessLevel>Read</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>Group_Client_Sales_with_Mail_Classified</fullName>
+        <sharedTo>
+            <roleAndSubordinates>Group_Client_Sales</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Visibility__c</field>
+            <operation>equals</operation>
+            <value>Departmental</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Owners_Department__c</field>
+            <operation>contains</operation>
+            <value>Mail Classified</value>
+        </criteriaItems>
+        <name>Group Client Sales with Mail Classified</name>
+        <opportunityAccessLevel>Read</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>Group_Client_Sales_with_Mail_Display</fullName>
+        <sharedTo>
+            <roleAndSubordinates>Group_Client_Sales</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Visibility__c</field>
+            <operation>equals</operation>
+            <value>Departmental</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Owners_Department__c</field>
+            <operation>contains</operation>
+            <value>Mail Display</value>
+        </criteriaItems>
+        <name>Group Client Sales with Mail Display</name>
+        <opportunityAccessLevel>Read</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>Group_Client_Sales_with_Mail_OnLine</fullName>
+        <sharedTo>
+            <roleAndSubordinates>Group_Client_Sales</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Visibility__c</field>
+            <operation>equals</operation>
+            <value>Departmental</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Owners_Department__c</field>
+            <operation>contains</operation>
+            <value>Mail On Line</value>
+        </criteriaItems>
+        <name>Group Client Sales with Mail OnLine</name>
+        <opportunityAccessLevel>Read</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>Group_Client_Sales_with_Mail_On_Line</fullName>
+        <sharedTo>
+            <roleAndSubordinates>Group_Client_Sales</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Visibility__c</field>
+            <operation>equals</operation>
+            <value>Departmental</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Owners_Department__c</field>
+            <operation>contains</operation>
+            <value>Mail on Line</value>
+        </criteriaItems>
+        <name>Group Client Sales with Mail On Line</name>
+        <opportunityAccessLevel>Read</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>Group_Client_Sales_with_Metro_Display</fullName>
+        <sharedTo>
+            <roleAndSubordinates>Group_Client_Sales</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Visibility__c</field>
+            <operation>equals</operation>
+            <value>Departmental</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Owners_Department__c</field>
+            <operation>contains</operation>
+            <value>Metro Display</value>
+        </criteriaItems>
+        <name>Group Client Sales with Metro Display</name>
+        <opportunityAccessLevel>Read</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>Group_Client_Sales_with_Network_Digital</fullName>
+        <sharedTo>
+            <roleAndSubordinates>Group_Client_Sales</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Visibility__c</field>
+            <operation>equals</operation>
+            <value>Departmental</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Owners_Department__c</field>
+            <operation>contains</operation>
+            <value>Network Digital</value>
+        </criteriaItems>
+        <name>Group Client Sales with Network Digital</name>
+        <opportunityAccessLevel>Read</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>IrishDailyMailHeadD</fullName>
+        <sharedTo>
+            <roleAndSubordinates>IrishDailyMailHead</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Visibility__c</field>
+            <operation>equals</operation>
+            <value>Departmental</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Owners_Department__c</field>
+            <operation>equals</operation>
+            <value>Irish Daily Mail</value>
+        </criteriaItems>
+        <name>Irish Daily Mail HeadD</name>
+        <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>Irish_Daily_Mail_with_Group_Client_Sales</fullName>
+        <sharedTo>
+            <roleAndSubordinates>IrishDailyMailHead</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Visibility__c</field>
+            <operation>equals</operation>
+            <value>Departmental</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Owners_Department__c</field>
+            <operation>contains</operation>
+            <value>Group Client Sales</value>
+        </criteriaItems>
+        <name>Irish Daily Mail with Group Client Sales</name>
+        <opportunityAccessLevel>Read</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>LondonClassifiedD</fullName>
+        <sharedTo>
+            <roleAndSubordinates>LondonClassified</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Visibility__c</field>
+            <operation>equals</operation>
+            <value>Departmental</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Owners_Department__c</field>
+            <operation>equals</operation>
+            <value>London Classified</value>
+        </criteriaItems>
+        <name>London ClassifiedD</name>
+        <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>London_Classified_with_Group_Client_Sales</fullName>
+        <sharedTo>
+            <roleAndSubordinates>LondonClassified</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Visibility__c</field>
+            <operation>equals</operation>
+            <value>Departmental</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Owners_Department__c</field>
+            <operation>contains</operation>
+            <value>Group Client Sales</value>
+        </criteriaItems>
+        <name>London Classified with Group Client Sales</name>
+        <opportunityAccessLevel>Read</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>MOL_MOL</fullName>
+        <sharedTo>
+            <roleAndSubordinates>Mail_on_line</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Visibility__c</field>
+            <operation>equals</operation>
+            <value>Departmental</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Owners_Department__c</field>
+            <operation>equals</operation>
+            <value>Mail On Line</value>
+        </criteriaItems>
+        <name>MOL MOL</name>
+        <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>MailClassifiedD</fullName>
+        <sharedTo>
+            <roleAndSubordinates>MailClassified</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Visibility__c</field>
+            <operation>equals</operation>
+            <value>Departmental</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Owners_Department__c</field>
+            <operation>equals</operation>
+            <value>Mail Classified</value>
+        </criteriaItems>
+        <name>Mail ClassifiedD</name>
+        <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>MailClassifiedMarketing</fullName>
+        <sharedTo>
+            <roleAndSubordinates>MailClassifiedMarketingManager</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Visibility__c</field>
+            <operation>equals</operation>
+            <value>Departmental</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Owners_Department__c</field>
+            <operation>contains</operation>
+            <value>Mail Display</value>
+        </criteriaItems>
+        <name>MailClassifiedMarketing</name>
+        <opportunityAccessLevel>Read</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>MailClassifiedwithMailDisplayMktg</fullName>
+        <sharedTo>
+            <roleAndSubordinates>MailDisplayMarketingHead</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Visibility__c</field>
+            <operation>equals</operation>
+            <value>Departmental</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Owners_Department__c</field>
+            <operation>contains</operation>
+            <value>Mail Classified</value>
+        </criteriaItems>
+        <name>MailClassifiedwithMailDisplayMktg</name>
+        <opportunityAccessLevel>Read</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>MailDisplayD</fullName>
+        <sharedTo>
+            <roleAndSubordinates>MailDisplay</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Visibility__c</field>
+            <operation>equals</operation>
+            <value>Departmental</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Owners_Department__c</field>
+            <operation>equals</operation>
+            <value>Mail Display</value>
+        </criteriaItems>
+        <name>Mail DisplayD</name>
+        <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>MailDisplayD173901</fullName>
+        <sharedTo>
+            <roleAndSubordinates>MailDisplay</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Visibility__c</field>
+            <operation>equals</operation>
+            <value>Departmental</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Owners_Department__c</field>
+            <operation>equals</operation>
+            <value>Mail on Line</value>
+        </criteriaItems>
+        <name>Mail DisplayD</name>
+        <opportunityAccessLevel>Read</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>MailDisplayD173902</fullName>
+        <sharedTo>
+            <roleAndSubordinates>MailDisplay</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Visibility__c</field>
+            <operation>equals</operation>
+            <value>Departmental</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Owners_Department__c</field>
+            <operation>contains</operation>
+            <value>Network Digital</value>
+        </criteriaItems>
+        <name>Mail DisplayD</name>
+        <opportunityAccessLevel>Read</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>MailDisplaywithMOL</fullName>
+        <sharedTo>
+            <roleAndSubordinates>MailDisplay</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Visibility__c</field>
+            <operation>equals</operation>
+            <value>Departmental</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Owners_Department__c</field>
+            <operation>contains</operation>
+            <value>Mail On Line</value>
+        </criteriaItems>
+        <name>MailDisplaywithMOL</name>
+        <opportunityAccessLevel>Read</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>MailOnlineUSwithinDept</fullName>
+        <sharedTo>
+            <roleAndSubordinates>Mail_On_Line_US_Head</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Visibility__c</field>
+            <operation>equals</operation>
+            <value>Departmental</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Owners_Department__c</field>
+            <operation>equals</operation>
+            <value>Mail On Line US</value>
+        </criteriaItems>
+        <name>MailOnlineUSwithinDept</name>
+        <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>Mail_Classified_with_Group_Client_Sales</fullName>
+        <sharedTo>
+            <roleAndSubordinates>MailClassified</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Visibility__c</field>
+            <operation>equals</operation>
+            <value>Departmental</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Owners_Department__c</field>
+            <operation>contains</operation>
+            <value>Group Client Sales</value>
+        </criteriaItems>
+        <name>Mail Classified with Group Client Sales</name>
+        <opportunityAccessLevel>Read</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>Mail_Classified_with_Network_Products</fullName>
+        <sharedTo>
+            <roleAndSubordinates>NetworkProducts</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Visibility__c</field>
+            <operation>equals</operation>
+            <value>Department</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Owners_Department__c</field>
+            <operation>equals</operation>
+            <value>Mail Classified</value>
+        </criteriaItems>
+        <name>Mail Classified with Network Products</name>
+        <opportunityAccessLevel>Read</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>Mail_Display_With_Network_Products</fullName>
+        <sharedTo>
+            <roleAndSubordinates>NetworkProducts</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Visibility__c</field>
+            <operation>equals</operation>
+            <value>Departmental</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Owners_Department__c</field>
+            <operation>equals</operation>
+            <value>Mail Display</value>
+        </criteriaItems>
+        <name>Mail Display With Network Products</name>
+        <opportunityAccessLevel>Read</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>Mail_Display_with_Group_Client_Sales</fullName>
+        <sharedTo>
+            <roleAndSubordinates>MailDisplay</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Visibility__c</field>
+            <operation>equals</operation>
+            <value>Departmental</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Owners_Department__c</field>
+            <operation>contains</operation>
+            <value>Group Client Sales</value>
+        </criteriaItems>
+        <name>Mail Display with Group Client Sales</name>
+        <opportunityAccessLevel>Read</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>Mail_on_Line_with_Group_Client_Sales</fullName>
+        <sharedTo>
+            <roleAndSubordinates>MailonLine</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Visibility__c</field>
+            <operation>equals</operation>
+            <value>Departmental</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Owners_Department__c</field>
+            <operation>contains</operation>
+            <value>Group Client Sales</value>
+        </criteriaItems>
+        <name>Mail on Line with Group Client Sales</name>
+        <opportunityAccessLevel>Read</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>MailonLineD</fullName>
+        <sharedTo>
+            <roleAndSubordinates>MailonLine</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Visibility__c</field>
+            <operation>equals</operation>
+            <value>Departmental</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Owners_Department__c</field>
+            <operation>equals</operation>
+            <value>Mail on Line</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Owners_Department__c</field>
+            <operation>equals</operation>
+            <value>Mail On Line</value>
+        </criteriaItems>
+        <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+        <name>Mail on LineD</name>
+        <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>MailonLineD173901</fullName>
+        <sharedTo>
+            <roleAndSubordinates>MailonLine</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Visibility__c</field>
+            <operation>equals</operation>
+            <value>Departmental</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Owners_Department__c</field>
+            <operation>equals</operation>
+            <value>Mail Display</value>
+        </criteriaItems>
+        <name>Mail on LineD</name>
+        <opportunityAccessLevel>Read</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>MailonLineD173902</fullName>
+        <sharedTo>
+            <roleAndSubordinates>MailonLine</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Visibility__c</field>
+            <operation>equals</operation>
+            <value>Departmental</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Owners_Department__c</field>
+            <operation>contains</operation>
+            <value>Network Digital</value>
+        </criteriaItems>
+        <name>Mail on LineD</name>
+        <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>MetroDisplayD</fullName>
+        <sharedTo>
+            <roleAndSubordinates>MetroDisplay</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Visibility__c</field>
+            <operation>equals</operation>
+            <value>Departmental</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Owners_Department__c</field>
+            <operation>equals</operation>
+            <value>Metro Display</value>
+        </criteriaItems>
+        <name>Metro DisplayD</name>
+        <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>Metro_Display_with_Group_Client_Sales</fullName>
+        <sharedTo>
+            <roleAndSubordinates>MetroDisplay</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Visibility__c</field>
+            <operation>equals</operation>
+            <value>Departmental</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Owners_Department__c</field>
+            <operation>contains</operation>
+            <value>Group Client Sales</value>
+        </criteriaItems>
+        <name>Metro Display with Group Client Sales</name>
+        <opportunityAccessLevel>Read</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>Metro_ND</fullName>
+        <sharedTo>
+            <roleAndSubordinates>MetroDisplay</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Visibility__c</field>
+            <operation>equals</operation>
+            <value>Departmental</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Owners_Department__c</field>
+            <operation>contains</operation>
+            <value>Network Digital</value>
+        </criteriaItems>
+        <name>Metro ND</name>
+        <opportunityAccessLevel>Read</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>Metro_co_uk</fullName>
+        <sharedTo>
+            <roleAndSubordinates>Metrocouk_Head</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Visibility__c</field>
+            <operation>equals</operation>
+            <value>Departmental</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Owners_Department__c</field>
+            <operation>contains</operation>
+            <value>Mail On Line</value>
+        </criteriaItems>
+        <name>Metro.co.uk</name>
+        <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>Metro_co_uk_MOL</fullName>
+        <sharedTo>
+            <roleAndSubordinates>Mail_on_line</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Visibility__c</field>
+            <operation>equals</operation>
+            <value>Departmental</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Owners_Department__c</field>
+            <operation>contains</operation>
+            <value>Metro.co.uk</value>
+        </criteriaItems>
+        <name>Metro.co.uk MOL</name>
+        <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>Metro_co_uk_Metro_co_uk</fullName>
+        <sharedTo>
+            <roleAndSubordinates>Metrocouk_Head</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Visibility__c</field>
+            <operation>equals</operation>
+            <value>Departmental</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Owners_Department__c</field>
+            <operation>contains</operation>
+            <value>Metro.co.uk</value>
+        </criteriaItems>
+        <name>Metro.co.uk Metro.co.uk</name>
+        <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>Network_Digital_with_Group_Client_Sales</fullName>
+        <sharedTo>
+            <roleAndSubordinates>NetworkDigital</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Visibility__c</field>
+            <operation>equals</operation>
+            <value>Departmental</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Owners_Department__c</field>
+            <operation>contains</operation>
+            <value>Group Client Sales</value>
+        </criteriaItems>
+        <name>Network Digital with Group Client Sales</name>
+        <opportunityAccessLevel>Read</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>Network_Digital_with_Mail_Classified</fullName>
+        <sharedTo>
+            <roleAndSubordinates>MailClassified</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Visibility__c</field>
+            <operation>equals</operation>
+            <value>Departmental</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Owners_Department__c</field>
+            <operation>equals</operation>
+            <value>Network Digital</value>
+        </criteriaItems>
+        <name>Network Digital with Mail Classified</name>
+        <opportunityAccessLevel>Read</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>Network_Digital_with_Network_Products</fullName>
+        <sharedTo>
+            <roleAndSubordinates>NetworkProducts</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Visibility__c</field>
+            <operation>equals</operation>
+            <value>Departmental</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Owners_Department__c</field>
+            <operation>equals</operation>
+            <value>Network Digital</value>
+        </criteriaItems>
+        <name>Network Digital with Network Products</name>
+        <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>WowcherExec</fullName>
+        <sharedTo>
+            <role>Wowcher_Exec_Team</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>Visibility__c</field>
+            <operation>equals</operation>
+            <value>Departmental</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Owners_Department__c</field>
+            <operation>contains</operation>
+            <value>Wowcher</value>
+        </criteriaItems>
+        <name>WowcherExec</name>
+        <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>Wowcher_Display</fullName>
+        <sharedTo>
+            <roleAndSubordinates>Wowcher_Exec_Team</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Visibility__c</field>
+            <operation>equals</operation>
+            <value>Departmental</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Owners_Department__c</field>
+            <operation>equals</operation>
+            <value>Wowcher</value>
+        </criteriaItems>
+        <name>Wowcher Display</name>
+        <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <criteriaBasedRules>
+        <fullName>Wowcher_with_Wowcher</fullName>
+        <sharedTo>
+            <roleAndSubordinates>Wowcher_Exec_Team</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>Visibility__c</field>
+            <operation>equals</operation>
+            <value>Departmental</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Owners_Department__c</field>
+            <operation>contains</operation>
+            <value>Wowcher</value>
+        </criteriaItems>
+        <name>Wowcher with Wowcher</name>
+        <opportunityAccessLevel>Read</opportunityAccessLevel>
+    </criteriaBasedRules>
+    <ownerRules>
+        <fullName>CCI_Integration</fullName>
+        <sharedTo>
+            <group>CCI_Integration</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>ANMedia</roleAndSubordinates>
+        </sharedFrom>
+        <name>CCI Integration</name>
+        <opportunityAccessLevel>Read</opportunityAccessLevel>
+    </ownerRules>
+    <ownerRules>
+        <fullName>MOL_UK_MOL_US</fullName>
+        <sharedTo>
+            <roleAndSubordinates>Mail_on_line</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Mail_on_line</roleAndSubordinates>
+        </sharedFrom>
+        <name>MOL UK &amp; MOL US</name>
+        <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    </ownerRules>
+</OpportunitySharingRules>

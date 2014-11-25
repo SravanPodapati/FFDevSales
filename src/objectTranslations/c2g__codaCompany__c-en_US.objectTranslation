@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>TFR VAT Company Layout</layout>
+        <sections>
+            <label><!-- Accounts Receivable Analysis - Currency Write-off --></label>
+            <section>Accounts Receivable Analysis - Currency Write-off</section>
+        </sections>
+        <sections>
+            <label><!-- Accounts Receivable Analysis - Settlement Discount --></label>
+            <section>Accounts Receivable Analysis - Settlement Discount</section>
+        </sections>
+        <sections>
+            <label><!-- Accounts Receivable Analysis - Write-off --></label>
+            <section>Accounts Receivable Analysis - Write-off</section>
+        </sections>
+        <sections>
+            <label><!-- Address Information --></label>
+            <section>Address Information</section>
+        </sections>
+        <sections>
+            <label><!-- Credit Terms --></label>
+            <section>Credit Terms</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Default Information --></label>
+            <section>Default Information</section>
+        </sections>
+        <sections>
+            <label><!-- VAT Information --></label>
+            <section>VAT Information</section>
+        </sections>
+    </layouts>
+</CustomObjectTranslation>

@@ -1,0 +1,106 @@
+<apex:page StandardController="Account" Extensions="SalesRevenueChart" ShowHeader="True">
+<apex:form >
+  <input type="button" value="Return" onclick="window.open('/{!accountId}')" />
+  <apex:sectionHeader title="Revenue By Title By Quarter for {!(accountDetail.Name)}"/> 
+  <a href="/{!publicationGroupReportId}?pv0={! URLENCODE (accountNames)}&pv1={! URLENCODE (accountNames)}&pv2={! URLENCODE (accountNames)}" >Click for Detail on {!accountDetail.Name}</a>
+  <apex:outputPanel style="height:350px; border: 1px solid #aaa" >
+    <center>
+   <apex:chart data="{!PublicationGroupChartData}" height="350" width="1000">
+        <apex:legend position="right" font="14px Arial"/>
+        <apex:axis type="Numeric" position="left" title="Revenue" grid="true"
+            fields="network,metroClassified,metroDisplay,mailClassified,mailDisplay,mailOnline,esClassified" >
+            <apex:chartLabel display="over"/ >
+        </apex:axis>
+        <apex:axis type="Category" position="bottom" fields="quarter" title="Period">
+            <apex:chartLabel display="over"/ >
+        </apex:axis>
+        <apex:barSeries orientation="vertical" axis="left" tips="true"
+            xField="quarter" yField="network,metroClassified,metroDisplay,mailClassified,mailDisplay,mailOnline,esClassified" title="Network, Metro Classified, Metro Display, Mail Classified, Mail Display, Mail Online, ES Classified" 
+            stacked="true"/>
+    </apex:chart> 
+    </center>
+  </apex:outputPanel>
+   
+</apex:form>
+
+<apex:form >
+    <apex:sectionHeader title="Revenue By Quarter for {!(accountDetail.Name)}"/>
+     <a href="/{!publicationGroupReportId}?pv0={! URLENCODE (accountNames)}&pv1={! URLENCODE (accountNames)}&pv2={! URLENCODE (accountNames)}" > Click for Detail on {!accountDetail.Name}</a>
+     <center>
+    <table border="1">
+    <tr>
+    <td>
+  <apex:outputPanel style="height:300px; border: 1px solid #aaa" >
+   <apex:chart data="{!RevenueLastQuarter}" height="350" width="450" theme="Salesforce">
+         <apex:pieSeries dataField="revenue" labelField="title" highlight="true" >
+             <apex:chartTips height="20" width="120"/>
+         </apex:pieSeries>
+         <apex:legend position="right" font="14px Arial"/>
+    </apex:chart> 
+  </apex:outputPanel>  
+    <center><b>Last Quarter</b></center>   
+    </td>
+    <td>
+  <apex:outputPanel style="height:300px; border: 1px solid #aaa" >
+   <apex:chart data="{!RevenueThisQuarter}" height="350" width="450" theme="Salesforce">
+         <apex:pieSeries dataField="revenue" labelField="title" highlight="true">
+             <apex:chartTips height="20" width="120"/>
+         </apex:pieSeries>
+         <apex:legend position="right" font="14px Arial"/>
+    </apex:chart> 
+  </apex:outputPanel> 
+    <center><b>Curent Quarter</b></center>       
+    </td>
+    <td>
+  <apex:outputPanel style="height:300px; border: 1px solid #aaa" >
+   <apex:chart data="{!RevenueNextQuarter}" height="350" width="450" theme="Salesforce">
+         <apex:pieSeries dataField="revenue" labelField="title" highlight="true">
+              <apex:chartTips height="20" width="120"/>
+         </apex:pieseries>
+         <apex:legend position="right" font="14px Arial"/>
+    </apex:chart> 
+  </apex:outputPanel>
+   <center><b>Next Quarter</b></center>    
+    </td>
+    </tr>
+    
+    </table>
+    </center>
+</apex:form>
+
+<apex:form >
+  <apex:sectionHeader title="Revenue By Qtr for {!(accountDetail.Name)}"/>
+  <apex:outputPanel style="height:300px; border: 1px solid #aaa" >
+   <a href="/{!publicationGroupReportId}?pv0={! URLENCODE (accountNames)}&pv1={! URLENCODE (accountNames)}&pv2={! URLENCODE (accountNames)}" > Click for Detail on {!accountDetail.Name}</a>
+   <center>
+   <apex:chart data="{!RevenueByQtr}" height="300" width="1000">
+        <apex:legend position="right" font="14px Arial"/>
+        <apex:axis type="Numeric" position="left" title="Revenue" grid="true"
+            fields="q1,q2,q3,q4">
+            <apex:chartLabel display="over"/>
+        </apex:axis>
+        <apex:axis type="Category" position="bottom" fields="year" title="Period">
+
+        </apex:axis>
+        <apex:barSeries orientation="vertical" axis="left"
+            xField="year" yField="q1,q2,q3,q4" stacked="false" 
+            title="Q1,Q2,Q3,Q4"/>
+    </apex:chart> 
+    </center>
+  </apex:outputPanel>  
+</apex:form>
+
+<apex:form >
+  <apex:sectionHeader title="Revenue By Title Group - Current Year for {!(accountDetail.Name)}"/>
+  <apex:outputPanel style="height:300px; border: 1px solid #aaa" >
+   <a href="/{!publicationGroupReportId}?pv0={! URLENCODE (accountNames)}&pv1={! URLENCODE (accountNames)}&pv2={! URLENCODE (accountNames)}" > Click for Detail on {!accountDetail.Name}</a>
+   <center>
+   <apex:chart data="{!RevenueByYearTitle}" height="350" width="450">
+         <apex:pieSeries dataField="revenue" labelField="title" highlight="true"/>
+         <apex:legend position="right" font="14px Arial"/>
+    </apex:chart> 
+    </center>
+  </apex:outputPanel>  
+</apex:form>
+
+</apex:page>

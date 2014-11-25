@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Revenue Insertion</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Revenue Insertions</value>
+    </caseValues>
+    <fields>
+        <label><!-- Ad Size --></label>
+        <name>AdSize__c</name>
+    </fields>
+    <fields>
+        <label><!-- URN --></label>
+        <name>Ad_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Advertiser --></label>
+        <name>Advertiser_Id__c</name>
+        <relationshipLabel><!-- Revenue Insertions (Advertiser) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Advertiser Name --></label>
+        <name>Advertiser_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Agency --></label>
+        <name>Agency_Id__c</name>
+        <relationshipLabel><!-- Revenue Insertions (Agency) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Agency Name --></label>
+        <name>Agency_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Commission --></label>
+        <name>Commission__c</name>
+    </fields>
+    <fields>
+        <label><!-- Creation Date --></label>
+        <name>Creation_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Insertion Date --></label>
+        <name>Insertion_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Cancelled --></label>
+        <name>IsCancelled__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Colour --></label>
+        <name>IsColour__c</name>
+    </fields>
+    <fields>
+        <label><!-- Media Code --></label>
+        <name>MediaCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Modified Time --></label>
+        <name>Modified_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Gross Price --></label>
+        <name>Price_Exc_Comm__c</name>
+    </fields>
+    <fields>
+        <label><!-- Production Id --></label>
+        <name>Production_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pub Name --></label>
+        <name>PubName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Rep --></label>
+        <name>Sales_Rep__c</name>
+    </fields>
+    <fields>
+        <label><!-- Visibility --></label>
+        <name>Visibility__c</name>
+        <picklistValues>
+            <masterLabel>Department</masterLabel>
+            <translation><!-- Department --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Group</masterLabel>
+            <translation><!-- Group --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Private</masterLabel>
+            <translation><!-- Private --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Revenue Insertion Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

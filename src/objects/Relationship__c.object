@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account_A__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account A</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>There are some relationships which have Inactive Agencies attached to this Account. Please identify them and correct as necessary.</errorMessage>
+            <filterItems>
+                <field>Account.IsActive__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Relationships (Outgoing)</relationshipLabel>
+        <relationshipName>Account_Account_rel_A</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Account_B__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account B</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>There are some relationships which have Inactive Agencies attached to this Account. Please identify them and correct as necessary.</errorMessage>
+            <filterItems>
+                <field>Account.IsActive__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Relationships (Incoming)</relationshipLabel>
+        <relationshipName>Account_Account_rel_B</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Active</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Agencyname__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account_A__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Agencyname</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Relationship_Link__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(Id,   Account_B__r.Name &amp;&quot; &lt;&lt; &gt;&gt; &quot;&amp;  Account_A__r.Name,&quot;_self&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Relationship Link</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Role__c</fullName>
+        <externalId>false</externalId>
+        <label>Role</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Billing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Booking</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Booking/Planning</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Creative</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Digital</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Planning</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Public Relations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sponsorship</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Visibility__c</fullName>
+        <externalId>false</externalId>
+        <label>Visibility</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Group - read/write</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Group - read only</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Private</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Group</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Department</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <label>Relationship</label>
+    <nameField>
+        <label>Relationship Name</label>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Relationships</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Account_B__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Account_A__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Role__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Account_B__c</searchFilterFields>
+        <searchFilterFields>Account_A__c</searchFilterFields>
+        <searchFilterFields>Role__c</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>Validate_Billing_Agency_Type</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISPICKVAL(Role__c,&apos;Billing&apos;) &amp;&amp;  Not(ISPICKVAL(Account_A__r.Type,&apos;Billing Agency&apos;))</errorConditionFormula>
+        <errorDisplayField>Role__c</errorDisplayField>
+        <errorMessage>This agency is not of type Billing so cant be set up as billing relationship.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Activate</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Activate</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/25.0/connection.js&quot;)} 
+
+var ActiveUpdate = new sforce.SObject(&quot;Relationship__c&quot;); 
+
+var url = parent.location.href; //string for the URL of the current page 
+
+ActiveUpdate.Id =&quot;{!Relationship__c.Id}&quot;; 
+
+if (&quot;{!Relationship__c.Active__c}&quot;==1) 
+{ 
+alert(&quot;This Relationship is already Activated.&quot;); 
+} 
+else 
+{
+var r=confirm(&quot;Are you sure you want to Activate this Relationship?&quot;);
+if (r==true)
+{ 
+ActiveUpdate.Active__c=&quot;true&quot;; 
+
+var result = sforce.connection.update([ActiveUpdate]); 
+
+if (result[0].getBoolean(&quot;success&quot;)) 
+{
+alert(&quot;The Relationship named: &quot; +&quot;{!Relationship__c.Name}&quot;+&quot; has been Activated.&quot;); 
+parent.location.href = url; //calling current page to refresh 
+}else{ 
+alert(&quot;The Relationship named: &quot; +&quot;{!Relationship__c.Name}&quot;+&quot; cannot been Activated as there was a problem.&quot;); 
+}
+}
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Deactivate</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Deactivate</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>var ActiveUpdate = new sforce.SObject(&quot;Relationship__c&quot;);
+
+var url = parent.location.href; //string for the URL of the current page 
+
+ActiveUpdate.Id =&quot;{!Relationship__c.Id}&quot;;
+
+if (&quot;{!Relationship__c.Active__c}&quot;==0) 
+{ 
+alert(&quot;This Relationship is already Deactivated.&quot;); 
+}else{ 
+var r=confirm(&quot;Are you sure you want to Deactivate this Relationship?&quot;); 
+if (r==true) 
+{ 
+
+var updatedrcs = [];
+
+try
+{
+var rcs = sforce.connection.query(&quot;select r.id, r.Active__c from Relationship_Contact__c r where r.Relationship__c=&apos;{!Relationship__c.Id}&apos;&quot;);
+
+var records = rcs.getArray(&quot;records&quot;);
+
+for (var n=0; n&lt;records.length; n++)
+{   
+var RCSToUpdate = new sforce.SObject(&quot;Relationship_Contact__c&quot;);    
+     RCSToUpdate = records[n];
+      RCSToUpdate.Active__c=&quot;false&quot;;
+     updatedrcs.push(RCSToUpdate);
+}
+
+var rcsresult = sforce.connection.update(updatedrcs);
+}catch(err)
+{
+}
+ActiveUpdate.Active__c=&quot;false&quot;;
+var result = sforce.connection.update([ActiveUpdate]);
+
+if (result[0].getBoolean(&quot;success&quot;)) 
+{ 
+    
+   alert(&quot;The Relationship named: &quot; +&quot;{!Relationship__c.Name}&quot;+&quot; and it&apos;s Contact Relationships have been Deactivated.&quot;); 
+    parent.location.href = url; //calling current page to refresh
+}else{
+alert(&quot;The Relationship named: &quot; +&quot;{!Relationship__c.Name}&quot;+&quot; cannot be Deactivated as there was a problem.&quot;); 
+}
+}
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>New Relationship</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>var acct = new sforce.SObject(&quot;Account&quot;); 
+acct.id = &quot;{!Account.Id}&quot;; 
+acct.type = &quot;{!Account.Type}&quot;; 
+acct.name = &quot;{!Account.Name}&quot;; 
+
+window.parent.location.href=&quot;/a09/e?CF00ND0000003g0n8=&quot;+acct.name+&quot;&amp;CF00ND0000003g0n8_lkid=&quot;+acct.id+&quot;&amp;Name=&quot;+acct.name+&quot;&amp;retURL=&quot;+acct.id;</url>
+    </webLinks>
+</CustomObject>

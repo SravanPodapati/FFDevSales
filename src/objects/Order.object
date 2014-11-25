@@ -1,0 +1,779 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Activate</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Approve</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Deactivate</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>NewReduction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ReduceOrder</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>AccountId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AccountNumber</fullName>
+    </fields>
+    <fields>
+        <fullName>ActivatedById</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ActivatedDate</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Ad_Hoc_VB__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Ad Hoc VB</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Agency__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Agency</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Orders</relationshipLabel>
+        <relationshipName>Orders1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Allowances__c</fullName>
+        <externalId>false</externalId>
+        <label>Allowances</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Base_Price__c</fullName>
+        <externalId>false</externalId>
+        <label>Base Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>BillToContactId</fullName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BillingAddress</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Booking_Agency__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Booking Agency</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Orders (Booking Agency)</relationshipLabel>
+        <relationshipName>Orders</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Booking_Source__c</fullName>
+        <externalId>false</externalId>
+        <label>Booking Source</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Booking_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Booking Status</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CCIBookingAgencyId__c</fullName>
+        <externalId>false</externalId>
+        <label>CCIBookingAgencyId</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CCI_Account_ID__c</fullName>
+        <description>CCI Finance Account ID</description>
+        <externalId>false</externalId>
+        <label>CCI Finance Account ID</label>
+        <length>40</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CCI_Cancel_Reason_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>CCI Cancel Reason Code</label>
+        <picklist>
+            <controllingField>CCI_Cancel_Reason__c</controllingField>
+            <picklistValues>
+                <fullName>BADCRE</fullName>
+                <controllingFieldValues>Credit problems</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CUSTREQ</fullName>
+                <controllingFieldValues>Customer request</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ITMSOLD</fullName>
+                <controllingFieldValues>Item sold</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MISC</fullName>
+                <controllingFieldValues>Miscellaneous</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NOMAT</fullName>
+                <controllingFieldValues>Material not received</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PACKCHANGE</fullName>
+                <controllingFieldValues>Zone/Package Change</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>CCI_Cancel_Reason_Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>CCI Cancel Reason Notes</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>CCI_Cancel_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>CCI Cancel Reason</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Customer request</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Credit problems</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Miscellaneous</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Material not received</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Zone/Package Change</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Item sold</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>CCI_Customer_ID__c</fullName>
+        <description>CCI Advertiser ID</description>
+        <externalId>false</externalId>
+        <label>CCI Customer ID</label>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CCI_Order_ID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>CCI AdDesk Sales Order Id</description>
+        <externalId>true</externalId>
+        <label>CCI Order ID</label>
+        <length>40</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Caller_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Caller Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Caller_Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>Caller Phone</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cancel_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Order Cancel Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Cancel_Reason_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Cancel Reason Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cancel_Reason_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Cancel Reason Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Charges__c</fullName>
+        <externalId>false</externalId>
+        <label>Charges</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CompanyAuthorizedById</fullName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CompanyAuthorizedDate</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Complaint_Note__c</fullName>
+        <externalId>false</externalId>
+        <label>Complaint Note</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>ContractEndDate</fullName>
+    </fields>
+    <fields>
+        <fullName>ContractId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ContractName</fullName>
+    </fields>
+    <fields>
+        <fullName>Created_In_CCI_By__c</fullName>
+        <externalId>false</externalId>
+        <label>Created In CCI By</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CurrencyIsoCode</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>CustomerAuthorizedById</fullName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CustomerAuthorizedDate</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Discounts__c</fullName>
+        <externalId>false</externalId>
+        <label>Discounts</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>EffectiveDate</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>EndDate</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Finance_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Finance Account</label>
+        <referenceTo>FinanceAccount__c</referenceTo>
+        <relationshipLabel>Orders</relationshipLabel>
+        <relationshipName>Orders1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>First_Delivery_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>First Insertion Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Has_Complaint__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Has Complaint</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IsReductionOrder</fullName>
+    </fields>
+    <fields>
+        <fullName>Is_Accepted__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Accepted</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_Cancelled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Cancelled</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_Voided__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Voided</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Last_Delivery_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Insertion Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Name</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>No_Of_Cancelled__c</fullName>
+        <externalId>false</externalId>
+        <label>No Of Cancelled</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>No_Of_Dates__c</fullName>
+        <externalId>false</externalId>
+        <label>No Of Insertions</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>No_Of_Published__c</fullName>
+        <externalId>false</externalId>
+        <label>No Of Published</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OpportunityId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Orders</relationshipLabel>
+        <relationshipName>Orders1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OrderReferenceNumber</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Order_Status_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Order Status Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OriginalOrderId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OwnerId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PoDate</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>PoNumber</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>QuoteId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ShipToContactId</fullName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ShippingAddress</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Submitted_For_Cancellation__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Submitted For Cancellation</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Tax_1__c</fullName>
+        <externalId>false</externalId>
+        <label>Tax 1</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Tax_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Tax 2</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Tax_3__c</fullName>
+        <externalId>false</externalId>
+        <label>Tax 3</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>TotalAmount</fullName>
+    </fields>
+    <fields>
+        <fullName>Total_Excl_Tax__c</fullName>
+        <externalId>false</externalId>
+        <label>Total excl. Tax</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Incl_Tax__c</fullName>
+        <externalId>false</externalId>
+        <label>Total incl. tax</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Type</fullName>
+        <picklist>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>User__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Orders</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>VB_Target__c</fullName>
+        <externalId>false</externalId>
+        <label>VB Target</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Advertiser</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Agency</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Value_Back__c</fullName>
+        <externalId>false</externalId>
+        <label>Value Back</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <listViews>
+        <fullName>AllActivatedOrders</fullName>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ORDERS.STATUS_CODE</field>
+            <operation>equals</operation>
+            <value>A</value>
+        </filters>
+        <label>All Activated Orders</label>
+    </listViews>
+    <listViews>
+        <fullName>AllDraftOrders</fullName>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ORDERS.STATUS_CODE</field>
+            <operation>equals</operation>
+            <value>D</value>
+        </filters>
+        <label>All Draft Orders</label>
+    </listViews>
+    <listViews>
+        <fullName>AllOrders</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All Orders</label>
+    </listViews>
+    <searchLayouts>
+        <customTabListAdditionalFields>ORDERS.ORDER_NUMBER</customTabListAdditionalFields>
+        <customTabListAdditionalFields>SALES.ACCOUNT.NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ORDERS.STATUS</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ORDERS.TOTAL_AMOUNT</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>ORDERS.ORDER_NUMBER</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CONTRACT.OWNERALIAS</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ORDERS.ORDER_NUMBER</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CONTRACT.OWNERALIAS</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>ORDERS.ORDER_NUMBER</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <webLinks>
+        <fullName>Edit_Order</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Edit Order</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/connection.js&quot;)}
+
+
+var permission=&quot;{!$User.Edit_Order__c}&quot;;
+var profile=&quot;{!User.Profile_Name__c}&quot;;
+
+ 
+// identify the record
+var orderRec = new sforce.SObject(&quot;Order&quot;);
+orderRec.Booking_Source__c = &quot;{!Order.Booking_Source__c}&quot;;
+if(orderRec.Booking_Source__c!= &quot;PluginOE&quot;)
+{
+    alert(&quot;Order was not created though the Plugin. Editing of this Order is not allowed through Glue.&quot;);
+}
+else
+{
+   // if(permission || profile.indexOf(&quot;Mail Display&quot;)&gt;0||profile.indexOf(&quot;Mail
+  // Classified&quot;)&gt;0||profile.indexOf(&quot;Metro Display&quot;)&gt;0||profile.indexOf(&quot;London
+  // Classified&quot;)&gt;0)
+    if(permission || profile.indexOf(&quot;Mail Display&quot;)&gt;0)
+    {
+       window.location.href=&quot;/apex/EditOrderProcessingFlow?id={!Order.Id}&quot;; 
+    }
+    else
+    {
+       alert(&apos;You do not have the permission to edit the order from Glue.&apos;);
+    }
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>SendOrderConfirmationEmail</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Send Order Confirmation Email</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>var status = &quot;{!Order.Status}&quot;;
+if(status != &quot;Activated&quot;)
+alert(&apos;Send Order Conformation Email is allowed only for Activated Orders.&apos;);
+else
+window.location.href=&quot;/apex/CustomEmail?orderNo={!Order.OrderNumber}&quot;;</url>
+    </webLinks>
+</CustomObject>

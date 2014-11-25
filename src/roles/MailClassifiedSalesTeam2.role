@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>None</contactAccessLevel>
+    <description>Kate Mail Classified Sales Team 2</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Kate Mail Classified Sales Team 2</name>
+    <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    <parentRole>MailClassifiedSalesTeam2Manager</parentRole>
+</Role>

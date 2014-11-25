@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Relationship Contact</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Relationship Contacts</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account A --></label>
+        <name>Account_A__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account B --></label>
+        <name>Account_B__c</name>
+    </fields>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact&apos;s Account --></label>
+        <name>Contact_s_Account__c</name>
+    </fields>
+    <fields>
+        <label><!-- Department --></label>
+        <name>Department__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email --></label>
+        <name>Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Job Title --></label>
+        <name>Job_Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mobile --></label>
+        <name>Mobile__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone --></label>
+        <name>Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Relationship Contact Link --></label>
+        <name>Relationship_Contact_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Relationship Contact --></label>
+        <name>Relationship_Contact__c</name>
+        <relationshipLabel><!-- Relationship Contacts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Relationship --></label>
+        <name>Relationship__c</name>
+        <relationshipLabel><!-- Relationship Contacts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Visibility --></label>
+        <name>Visibility__c</name>
+        <picklistValues>
+            <masterLabel>Department</masterLabel>
+            <translation><!-- Department --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Group</masterLabel>
+            <translation><!-- Group --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Group - read only</masterLabel>
+            <translation><!-- Group - read only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Group - read/write</masterLabel>
+            <translation><!-- Group - read/write --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Private</masterLabel>
+            <translation><!-- Private --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Relationship Contact Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

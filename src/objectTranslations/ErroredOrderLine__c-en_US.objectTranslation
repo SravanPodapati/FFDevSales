@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>ErroredOrderLine</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>ErroredOrderLines</value>
+    </caseValues>
+    <fields>
+        <label><!-- A/B Copy Split --></label>
+        <name>A_B_Copy_Split__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ad Unit Code --></label>
+        <name>Ad_Unit_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ad Unit Name --></label>
+        <name>Ad_Unit_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Allowances --></label>
+        <name>Allowances__c</name>
+    </fields>
+    <fields>
+        <label><!-- Baseprice --></label>
+        <name>Baseprice__c</name>
+    </fields>
+    <fields>
+        <label><!-- CCI Order Item ID --></label>
+        <name>CCI_Order_Item_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- CCI Package Item Id --></label>
+        <name>CCI_Package_Item_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- CCI Schedule Item Id --></label>
+        <name>CCI_Schedule_Item_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cancel Date --></label>
+        <name>Cancel_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Canceled Reason --></label>
+        <name>Canceled_Reason__c</name>
+    </fields>
+    <fields>
+        <label><!-- Charges --></label>
+        <name>Charges__c</name>
+    </fields>
+    <fields>
+        <label><!-- Colour --></label>
+        <name>Colour__c</name>
+    </fields>
+    <fields>
+        <label><!-- Columns --></label>
+        <name>Columns__c</name>
+    </fields>
+    <fields>
+        <label><!-- CopySplit --></label>
+        <name>CopySplit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dateflex --></label>
+        <name>Dateflex__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discounts --></label>
+        <name>Discounts__c</name>
+    </fields>
+    <fields>
+        <label><!-- ErroredOrder --></label>
+        <name>ErroredOrder__c</name>
+        <relationshipLabel><!-- ErroredOrderLines (ErroredOrder) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- First Delivery Date --></label>
+        <name>First_Delivery_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Height --></label>
+        <name>Height__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsCancelableOrderItem --></label>
+        <name>IsCancelableOrderItem__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Cancelled --></label>
+        <name>Is_Cancelled__c</name>
+    </fields>
+    <fields>
+        <label><!-- Published --></label>
+        <name>Is_Published__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Delivery Date --></label>
+        <name>Last_Delivery_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- ListPrice --></label>
+        <name>ListPrice__c</name>
+    </fields>
+    <fields>
+        <label><!-- Media Code --></label>
+        <name>Media_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Media Name --></label>
+        <name>Media_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Module --></label>
+        <name>Module__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Line ID --></label>
+        <name>Opportunity_Line_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- OrderId --></label>
+        <name>OrderId__c</name>
+        <relationshipLabel><!-- ErroredOrderLines --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Package Code --></label>
+        <name>Package_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Package Name --></label>
+        <name>Package_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Position --></label>
+        <name>Position__c</name>
+    </fields>
+    <fields>
+        <label><!-- Publication Code --></label>
+        <name>Publication_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Publication Name --></label>
+        <name>Publication_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quantity --></label>
+        <name>Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Regional Copy Split --></label>
+        <name>Regional_Copy_Split__c</name>
+    </fields>
+    <fields>
+        <label><!-- SCC Rate --></label>
+        <name>SCC_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Section Code --></label>
+        <name>Section_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Section Name --></label>
+        <name>Section_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- ServiceDate --></label>
+        <name>ServiceDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Size --></label>
+        <name>Size__c</name>
+    </fields>
+    <fields>
+        <label><!-- Title Code --></label>
+        <name>Title_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Title Name --></label>
+        <name>Title_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- TotalPrice --></label>
+        <name>TotalPrice__c</name>
+    </fields>
+    <fields>
+        <label><!-- UnitPrice --></label>
+        <name>UnitPrice__c</name>
+    </fields>
+    <fields>
+        <label><!-- Website Code --></label>
+        <name>Website_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Website Name --></label>
+        <name>Website_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Yield --></label>
+        <name>Yield__c</name>
+    </fields>
+    <fields>
+        <label><!-- Zone Code --></label>
+        <name>Zone_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Zone Name --></label>
+        <name>Zone_Name__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

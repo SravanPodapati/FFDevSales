@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Finance Account</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Finance Accounts</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Finance Accounts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Agency Commission --></label>
+        <name>Agency_Commission__c</name>
+        <picklistValues>
+            <masterLabel>0.00</masterLabel>
+            <translation><!-- 0.00 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10.00</masterLabel>
+            <translation><!-- 10.00 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11.00</masterLabel>
+            <translation><!-- 11.00 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12.00</masterLabel>
+            <translation><!-- 12.00 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12.50</masterLabel>
+            <translation><!-- 12.50 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>13.00</masterLabel>
+            <translation><!-- 13.00 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>15.00</masterLabel>
+            <translation><!-- 15.00 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>30.00</masterLabel>
+            <translation><!-- 30.00 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5.00</masterLabel>
+            <translation><!-- 5.00 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6.00</masterLabel>
+            <translation><!-- 6.00 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6.50</masterLabel>
+            <translation><!-- 6.50 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7.00</masterLabel>
+            <translation><!-- 7.00 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7.50</masterLabel>
+            <translation><!-- 7.50 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8.00</masterLabel>
+            <translation><!-- 8.00 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8.50</masterLabel>
+            <translation><!-- 8.50 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9.00</masterLabel>
+            <translation><!-- 9.00 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- CCIMailCustomerID --></label>
+        <name>CCIMailCustomerID__c</name>
+    </fields>
+    <fields>
+        <label><!-- CCIMetroCustomerID --></label>
+        <name>CCIMetroCustomerID__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Date the Finance Account was closed. --></help>
+        <label><!-- Close Date --></label>
+        <name>CloseDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Close status of the Account. --></help>
+        <label><!-- Close Status --></label>
+        <name>CloseStatus__c</name>
+        <picklistValues>
+            <masterLabel>Dead</masterLabel>
+            <translation><!-- Dead --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Live</masterLabel>
+            <translation><!-- Live --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Company --></label>
+        <name>Company__c</name>
+        <relationshipLabel><!-- Finance Accounts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Credit Controller --></label>
+        <name>Credit_Controller__c</name>
+        <relationshipLabel><!-- Finance Accounts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Credit Limit --></label>
+        <name>Credit_Limit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Credit Status --></label>
+        <name>Credit_Status__c</name>
+        <picklistValues>
+            <masterLabel>BDWO</masterLabel>
+            <translation><!-- BDWO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Good</masterLabel>
+            <translation><!-- Good --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Legal</masterLabel>
+            <translation><!-- Legal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Overdue</masterLabel>
+            <translation><!-- Overdue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pre-BDWO</masterLabel>
+            <translation><!-- Pre-BDWO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pre-Legal</masterLabel>
+            <translation><!-- Pre-Legal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prepay Only</masterLabel>
+            <translation><!-- Prepay Only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Stop</masterLabel>
+            <translation><!-- Stop --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TODO: Add picklist values</masterLabel>
+            <translation><!-- TODO: Add picklist values --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- DoCCIInt --></label>
+        <name>DoCCIInt__c</name>
+    </fields>
+    <fields>
+        <label><!-- Document Destination Contact --></label>
+        <lookupFilter>
+            <errorMessage><!-- Contact must belong to the associated Account. --></errorMessage>
+        </lookupFilter>
+        <name>DocumentDestinationContact__c</name>
+        <relationshipLabel><!-- Finance Accounts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- FD Customer --></label>
+        <name>FDCustomer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Finance Account Number --></label>
+        <name>FinanceAccountNo__c</name>
+    </fields>
+    <fields>
+        <label><!-- Finance Id --></label>
+        <name>Finance_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- CCI InvoicedRevenueLastYear --></label>
+        <name>InvoicedRevenueLastYear__c</name>
+    </fields>
+    <fields>
+        <label><!-- CCI InvoicedRevenueYTD --></label>
+        <name>InvoicedRevenueYTD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invoicing Frequency --></label>
+        <name>InvoicingFrequency__c</name>
+        <picklistValues>
+            <masterLabel>7DAYS</masterLabel>
+            <translation><!-- 7DAYS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>INTERN</masterLabel>
+            <translation><!-- INTERN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MIDMINTHLY</masterLabel>
+            <translation><!-- MIDMINTHLY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MONTH</masterLabel>
+            <translation><!-- MONTH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monthly</masterLabel>
+            <translation><!-- Monthly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PREPAYMENT</masterLabel>
+            <translation><!-- PREPAYMENT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quarterly</masterLabel>
+            <translation><!-- Quarterly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weekly</masterLabel>
+            <translation><!-- Weekly --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Monthly Statement --></label>
+        <name>MonthlyStatement__c</name>
+        <picklistValues>
+            <masterLabel>Always Receive Statements</masterLabel>
+            <translation><!-- Always Receive Statements --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>House Rules</masterLabel>
+            <translation><!-- House Rules --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Never Receive Statements</masterLabel>
+            <translation><!-- Never Receive Statements --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Neo ID --></help>
+        <label><!-- Neo ID --></label>
+        <name>Neo_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- SOP ID --></label>
+        <name>SOP_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- SOP Source --></label>
+        <name>SOP_Source__c</name>
+        <picklistValues>
+            <masterLabel>ADV</masterLabel>
+            <translation><!-- ADV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CCI</masterLabel>
+            <translation><!-- CCI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CIR</masterLabel>
+            <translation><!-- CIR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OPE</masterLabel>
+            <translation><!-- OPE --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- UniqueName --></label>
+        <name>UniqueName__c</name>
+    </fields>
+    <layouts>
+        <layout>Finance Account Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Finance --></label>
+            <section>Finance</section>
+        </sections>
+        <sections>
+            <label><!-- To Delete --></label>
+            <section>To Delete</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Read Only</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Finance --></label>
+            <section>Finance</section>
+        </sections>
+        <sections>
+            <label><!-- To Delete --></label>
+            <section>To Delete</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- ReadOnly --></label>
+        <name>ReadOnly</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- master --></label>
+        <name>master</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Account must be set --></errorMessage>
+        <name>AccountLookupValidation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Company cannot be blank --></errorMessage>
+        <name>CompanyLookupValidation</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Create_CCIAccount_Mail --></label>
+        <name>Create_CCIAccount_Mail</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Finance_Account --></label>
+        <name>New_Finance_Account</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_To_CCI --></label>
+        <name>Send_To_CCI</name>
+    </webLinks>
+</CustomObjectTranslation>

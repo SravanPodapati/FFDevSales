@@ -1,0 +1,1555 @@
+<apex:page sidebar="false" tabStyle="Opportunity_To_Order__tab" title="{!$Label.Opportunity_To_Order}" controller="OpportunityToOrder_BaseController" extensions="O2O_OpportunityExtenction,O2O_OpportunityLineExtenction" >
+    <!--    load Script from Resources -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="{!URLFOR($Resource.MultiDateSelector, 'MultiDateSelector/js/jquery.ui.core.js')}"></script>        
+    <script src="{!URLFOR($Resource.MultiDateSelector, 'MultiDateSelector/js/jquery.calendars.js')}"></script>
+    <script src="{!URLFOR($Resource.MultiDateSelector, 'MultiDateSelector/js/jquery.calendars.plus.js')}"></script>
+    <script src="{!URLFOR($Resource.MultiDateSelector, 'MultiDateSelector/js/jquery.calendars.picker.js')}"></script>
+
+<style type="text/css" title="currentStyle"> 
+    @import "{!URLFOR($Resource.MultiDateSelector, 'MultiDateSelector/css/jquery.calendars.picker.css')}";
+</style>
+<!--    Load Style sheets from Resources -->
+<script type="text/javascript">   
+    function enableBorderBlue(ele){
+        ele.style.border = "2px solid SkyBlue";
+        ele.style.margin = "1px";
+    }
+    
+    function enableBorderRed(ele){
+        ele.style.border = "2px solid OrangeRed";
+        ele.style.margin = "1px";
+    }
+    
+    function disableBorder(ele){
+        ele.style.border = "none";
+        ele.style.margin = "3px";
+    }
+    
+    if(typeof jQuery != 'undefined'){
+        $j = jQuery.noConflict();
+    }
+    
+    function addMultiSelectDateFormat(){
+        $j(function(){
+        //alert(document.getElementById('{!$component.pgid:frmid:pgBlockId:pgBlockSectionId1:pgBlockSectionItemId3:multi999Picker}'));
+        //replacing the above statement with "input[name*='selectedInsertionDates']" 
+        //"input[name*='selectedInsertionDates']" ==> * uses as occurence of string at aly location of ID. 
+            $j("input[name*='selectedInsertionDates']").calendarsPicker({ 
+                dateFormat: 'dd/mm/yyyy', multiSelect: 999, monthsToShow: 2, showTrigger: '#calImg'
+            });
+        });
+    }
+</script>
+<style type="text/css">
+    .headerStyle{
+        display: block;
+        margin:0;
+        line-height:24px; 
+        list-style:none;
+        border-top-left-radius: 7px;
+        border-top-right-radius: 7px;
+        background-clip: border-box;
+        background-color: rgba(0, 0, 0, 0);
+        background-image: linear-gradient(rgb(229, 242, 250), rgb(205, 232, 240));
+    }
+    .activeTab {
+        background-color: black;
+        background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.498039), rgba(255, 255, 255, 0) 12px);
+        background-image: -moz-linear-gradient(rgba(255,255,255,.50),rgba(255,255,255,0) 12px);
+        border-top-left-radius: 7px;
+        border-top-right-radius: 7px;
+        box-shadow:3px 0 5px -3px #999,-3px 0 5px -3px #999;
+        display: inline-block;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 13px;
+        font-weight: bold;
+        color: #fff;
+    }
+    .inactiveTab { 
+        background-color: rgba(0, 0, 0, 0);
+        background-image: linear-gradient(rgb(229, 242, 250), rgb(205, 232, 240));
+        color: black;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 13px;
+        font-weight: bold;
+        border-collapse: collapse;
+    }
+    .tabContent{
+        background-color: white;
+        border-top: 3px solid black;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+    }
+    .alignLeft{
+        text-align: left;
+    }
+    .alignRight{
+        text-align: right;
+    }
+    .alignCenter{
+        text-align: center;
+    }
+    .lineText{
+        color: #3676F6;
+    }
+    .greenText{
+        color: green;
+    }
+    .cciCancelText{
+        color: red;
+    }
+    .redText{
+        color: red;
+    }
+    .cciText{
+            color: black;
+    }
+    .leftFloat{
+        float: left;
+    }
+    .tableStyle{
+        margin-top: 7px;
+        text-align: center;
+        width: 100%;
+        border: 0px solid gray;
+        border-spacing: 0px;
+        border-collapse: separate;
+    }
+    .theadStyle{
+        margin: 7px;
+    }
+    .theadtdStyle{
+        margin: 7px;
+        text-align: center;
+        font-weight: bold;
+        border-width:1px;
+        border-color: gray;
+        border-style: solid;
+        border-collapse: collapse;
+        border-radius: 2px;
+        padding-top: 4px;
+        padding-left: 4px;
+        padding-right: 4px;
+        padding-bottom: 4px;
+    }
+    .theadtdStyle.cciInfoDark{
+        background-color: #C3D79A;
+    }
+    .theadtdStyle.cciInfoLight{
+        background-color: #EAF2DD;
+    }
+    .theadtdStyle.clientDark{
+        background-color: #FFC56E;
+    }
+    .theadtdStyle.clientLight{
+        background-color: #FFF2CD;
+    }
+    .theadtdStyle.dpiDark{
+        background-color: #FDFF66;
+    }
+    .theadtdStyle.dpiLight{
+        background-color: #FEFF99;
+    }
+    .theadtdStyle.cpiDark{
+        background-color: #D6E3BE;
+    }
+    .theadtdStyle.cpiLight{
+        background-color: #E9F0DD;
+    }
+    .theadtdStyle.idDark{
+        background-color: #E1BBB4;
+    }
+    .theadtdStyle.idLight{
+        background-color: #f1dcd9;
+    }
+    .theadtdStyle.pdDark{
+        background-color: #D8D8D8;
+    }
+    .theadtdStyle.pdLight{
+        background-color: #F2F2F2;
+    }
+    .tdStyle{
+        text-align: center;
+        border-width:1px;
+        border-color: gray;
+        border-style: solid;
+        border-collapse: collapse;
+        border-radius: 2px;
+        background-color: white;
+        line-height:120%;
+        padding-top: 4px;
+        padding-left: 4px;
+        padding-right: 4px;
+        padding-bottom: 4px;
+    }
+    .tdStyle.cciCancel{
+        background-color: red;
+        font-weight: bold;
+        color: white;
+    }
+    .tdStyle.cciOrder{
+        background-color: Black;
+        font-weight: bold;
+        color: white;
+    }
+    .tdStyle.cciGlue{
+        background-color: #3676F6;
+        font-weight: bold;
+        color: white;
+    }
+    .cciOrder{
+        background-color: Black;
+        font-weight: bold;
+        color: white;
+    }
+    .cciCancel{
+        background-color: red;
+        font-weight: bold;
+        color: white;
+    }
+    .cciGlue{
+        background-color: #3676F6;
+        font-weight: bold;
+        color: white;
+    }
+    .tdStyle.lineText{
+        color: #3676F6;
+    }
+    .tdStyle.cciText{
+        color: black;
+    }
+    .tdStyle.cciCancelText{
+        color: red;
+    }
+    .tdStyle.glueDeactivatedText{
+        color: black;
+    }
+    .outer td{
+        vertical-align:middle;
+    }
+    .bPageBlock .detailList th, .bPageBlock .detailList td{
+        vertical-align: middle;
+    }
+        /* This is for the full screen DIV */
+    .popupBackground {
+        /* Background color */
+        background-color:black;
+        opacity: 0.60;
+        /*filter: alpha(opacity = 60);
+    
+        /* Dimensions */
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 998;
+        position: absolute;
+        
+        /* Mouse */
+        cursor:wait;
+    }
+ 
+    /* This is for the message DIV */
+    .PopupPanel {
+        /* Background color */
+        border: solid 2px silver;
+        border-radius:10px;
+        background-color: silver;
+ 
+        /* Dimensions */
+        left: 50%;
+        width: 400px;
+        margin-left: -200px;
+        top: 50%;
+        height: 50px;
+        margin-top: -25px;
+        z-index: 999;
+        position: fixed;
+        
+        /* Mouse */
+        cursor:wait;
+    }
+    .custPopup{
+        background-color: white;
+        /* Dimensions */
+        left: 50%;
+        width: 400px;
+        margin-left: -200px;
+        top: 45%;
+        z-index: 999;
+        position: fixed;
+    }
+    .yieldImmage{
+        margin-left: 2px;
+        width: 16px;
+        height: 16px;
+    }
+    .yieldImmage:hover{
+        border: 1px solid gray;
+        box-shadow: 0 0 10px #ccc;
+        cursor:pointer;
+    }
+    /*overriding of the tab, pageblock, pageblocksection, etc... background color as black*/
+    .bPageBlock .detailList .dataCol{
+        width: 12.5%;
+    }
+    .bPageBlock .detailList .labelCol{
+        width: 12.5%;
+    }
+    .Custom92Tab .tertiaryPalette, .individualPalette .Custom92Block .tertiaryPalette, .layoutEdit .individualPalette .Custom92Block .tertiaryPalette {
+        background-color: black;
+    }
+    .Custom92Tab .brdPalette{
+        border-top-color: black;
+    }
+    .Custom92Tab .primaryPalette, .individualPalette .Custom92Block .primaryPalette{
+        background-color: black;
+        background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.498039), rgba(255, 255, 255, 0) 12px);
+        background-image: -moz-linear-gradient(rgba(255,255,255,.50),rgba(255,255,255,0) 12px);
+    }
+    .Custom92Tab .listViewport .subNav .linkBar, .Custom92Tab .mComponent .cHeader, .Custom92Tab .genericTable, .Custom92Tab .bSubBlock, .Custom92Tab .bPageBlock{
+        border-top-color: black;
+    }
+    .rich-tab-active{
+        border: 0px;
+    }
+    .rich-tab-inactive{
+        border: 0px;
+    }
+    .rich-tab-inactive:hover{
+        cursor:pointer;
+    }
+    .rich-tab-active:hover{
+        cursor:pointer;
+    }
+    .rich-tabhdr-side-cell{
+        border: 0px;
+    }
+    .rich-tabhdr-side-border {
+        display: none;
+    }
+    .rich-tab-bottom-line{
+        border: 0px;
+    }
+    .bPageBlock .detailList .empty{
+        border-bottom-color: rgb(236, 236, 236);
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+    }
+    #bodyCell{
+        vertical-align: top;
+    }
+    .bPageBlock .detailList th.last, .bPageBlock .detailList td.last, .bPageBlock .detailList tr.last td, .bPageBlock.bLayoutBlock .detailList tr td, .bPageBlock.bLayoutBlock .detailList tr th{
+        border-bottom-width: 1px;
+    }
+    .bPageBlock .detailList th.last, .bPageBlock .detailList td.last, .bPageBlock .detailList tr.last td, .bPageBlock.bLayoutBlock .detailList tr td, .bPageBlock.bLayoutBlock .detailList tr th{
+        border-bottom-width: 1px;
+    }
+</style>
+
+<!-- Status Tips while waiting for the responce from Controller -->
+<apex:actionStatus id="statusSaveTrip" stopText="">
+    <apex:facet name="start">
+        <div>
+            <div class="popupBackground">
+            </div>
+            <div class="PopupPanel">
+                <table style="width:100%; height:100%; color: red; font-weight: Bold; font-size: 14px;">
+                    <tr>
+                        <td align="center"><b>Please Wait...</b></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </apex:facet>
+</apex:actionStatus>
+
+
+<!-- Start of Body -->
+<apex:outputPanel id="sectionHeaderPanel">
+    <apex:sectionHeader title="{!$Label.Opportunity_To_Order}" subtitle="{!$Label.New_Opportunity}" rendered="{!currentOpp.id == null}"/>
+    <apex:sectionHeader title="{!$Label.Opportunity_To_Order}" subtitle="{!currentOpp.Name}" rendered="{!currentOpp.id != null}"/>
+        
+    <div style="margin-top:-10px; margin-left:40px">
+        <apex:outputLink value="{!$Site.Domain}/apex/OpportunityToOrder?oppID={!currentOpp.ID}" style="color: blue;" rendered="{!openCCIPlugin}">{!$Label.Opportunity_To_Order}: {!currentOpp.Name}</apex:outputLink> 
+    </div>
+</apex:outputPanel>
+
+<!-- Page messages -->
+<apex:form id="messageForm">
+    <apex:outputPanel id="messagePanel">
+        <script type="text/javascript">
+            if({!hasMessages} == true){
+                var el = document.getElementById('scrollHereDiv');
+                el.scrollIntoView(true);
+            }
+        </script>
+        <div id="scrollHereDiv"></div>
+        <apex:pageMessages id="pageMessages" rendered="{!hasMessages}"/>
+    </apex:outputPanel>
+</apex:form>
+
+<!-- Edit / Create New Opportunity -->
+<apex:form id="opportunityForm">
+    <apex:outputPanel id="opportunityPanel" >
+        <apex:pageBlock title="{!$Label.Configure_QuicK_Opportunity}" rendered="{!openCCIPlugin == false && currentOpp != null}">
+            <apex:pageBlockSection title="{!IF(currentOpp.ID==null, $Label.New_Opportunity,currentOpp.Name)}" columns="4" collapsible="false" rendered="{!editOpp == true}">
+                <apex:inputField value="{!currentOpp.Name}" />
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!$Label.Advertiser_or_Brand}"/>
+                    <apex:outputPanel id="advertiserFieldPanel">
+                        <apex:actionRegion >
+                            <apex:inputField value="{!currentOpp.AccountId}" rendered="{!hasActiveLineItems == false && currentOpp.Agency__c == null}" >
+                                <apex:actionSupport event="onchange" action="{!dummyAction}" rerender="agencyFieldPanel" />
+                            </apex:inputField>
+                            <apex:selectList value="{!currentOpp.AccountID}" size="1" multiSelect="false" rendered="{!hasActiveLineItems == false && currentOpp.Agency__c != null}">
+                                <apex:selectOptions value="{!Opportunity_Advertisers}"/>
+                                <apex:actionSupport event="onchange" action="{!dummyAction}" rerender="agencyFieldPanel" />
+                            </apex:selectList>
+                        </apex:actionRegion>
+                        <a href="/{!currentOpp.AccountId}" target="_blank" id="currentOpp{!currentOpp.AccountId}" 
+                                                onblur="LookupHoverDetail.getHover('currentOpp{!currentOpp.AccountId}').hide();" 
+                                                onfocus="LookupHoverDetail.getHover('currentOpp{!currentOpp.AccountId}', '/{!currentOpp.AccountId}/m?retURL=%2F{!currentOpp.AccountId}&isAjaxRequest=1').show();" 
+                                                onmouseout="LookupHoverDetail.getHover('currentOpp{!currentOpp.AccountId}').hide();" 
+                                                onmouseover="LookupHoverDetail.getHover('currentOpp{!currentOpp.AccountId}', '/{!currentOpp.AccountId}/m?retURL=%2F{!currentOpp.AccountId}&isAjaxRequest=1').show();">
+                            <apex:outputText value="{!currentOpp.Account.Name}" rendered="{!hasActiveLineItems}" title="To edit delete all the lines."/>
+                        </a>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!$ObjectType.Opportunity.fields.Agency__c.label}"/>
+                    <apex:outputPanel id="agencyFieldPanel">
+                        <apex:actionRegion >
+                            <apex:inputField value="{!currentOpp.Agency__c}" rendered="{!hasActiveLineItems == false && currentOpp.AccountId == null}" >
+                                <apex:actionSupport event="onchange" action="{!dummyAction}" rerender="advertiserFieldPanel" />
+                            </apex:inputField>
+                            <apex:selectList value="{!currentOpp.Agency__c}" size="1" multiSelect="false" rendered="{!hasActiveLineItems == false && currentOpp.AccountId != null}">
+                                <apex:selectOptions value="{!Opportunity_Agencies}"/>
+                                <apex:actionSupport event="onchange" action="{!dummyAction}" rerender="advertiserFieldPanel" />
+                            </apex:selectList>
+                        </apex:actionRegion>
+                        <a href="/{!currentOpp.Agency__c}" target="_blank" id="currentOpp{!currentOpp.Agency__c}" 
+                                                onblur="LookupHoverDetail.getHover('currentOpp{!currentOpp.Agency__c}').hide();" 
+                                                onfocus="LookupHoverDetail.getHover('currentOpp{!currentOpp.Agency__c}', '/{!currentOpp.Agency__c}/m?retURL=%2F{!currentOpp.Agency__c}&isAjaxRequest=1').show();" 
+                                                onmouseout="LookupHoverDetail.getHover('currentOpp{!currentOpp.Agency__c}').hide();" 
+                                                onmouseover="LookupHoverDetail.getHover('currentOpp{!currentOpp.Agency__c}', '/{!currentOpp.Agency__c}/m?retURL=%2F{!currentOpp.Agency__c}&isAjaxRequest=1').show();">
+                            <apex:outputText value="{!currentOpp.Agency__r.Name}" rendered="{!hasActiveLineItems}" title="To edit delete all the lines."/>
+                        </a>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:inputField value="{!currentOpp.Type}" required="true"/>
+                <apex:inputField value="{!currentOpp.StageName}"/>
+                <apex:inputField value="{!currentOpp.CloseDate}"/>
+                <apex:inputField value="{!contactRole.ContactID}" required="true" label="{!$Label.Agency_or_Client_Contact}"/>
+                <apex:inputField value="{!contactRole.Role}" label="{!$Label.Contacts_Role_For_this_Opportunity}" required="true"/>
+                <apex:inputField value="{!currentOpp.OwnerID}" label="Opportunity Owner"/>
+                <apex:inputField value="{!currentOpp.CampaignID}" label="Strategic Campaign"/>
+                <apex:pageBlockSectionItem >                                            
+                    <apex:outputLabel value="{!$Label.Create_New_Contact}"/>
+                    <apex:outputpanel >
+                        <a href="/003/e?retURL=/apex/PitchHub" target="_blank">       
+                            <apex:image value="{!$Resource.NewContact}" height="16px" width="16px"/>                  
+                        </a>
+                    </apex:outputpanel>       
+                </apex:pageBlockSectionItem>
+                <apex:inputField value="{!currentOpp.IsNew__c}"/>
+                <apex:inputField value="{!currentOpp.Opportunity_Start_Date__c}" required="true" rendered="{!if(currentOpp == null, true, OpportunityStageToIsClosedMap[currentOpp.StageName] == false)}"/>
+                <apex:outputField value="{!currentOpp.Opportunity_Start_Date__c}" rendered="{!currentOpp != null && OpportunityStageToIsClosedMap[currentOpp.StageName] == true}"/>
+                <apex:inputField value="{!currentOpp.Opportunity_End_Date__c}" required="true"/>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!$Label.Estimated_Total_Opportunity_Value}"/>
+                    <apex:inputField value="{!currentOpp.Estimated_Total_Opportunity_Value__c}" styleClass="lineText" required="true"/>
+                </apex:pageBlockSectionItem>
+                <apex:outputField value="{!CurrentOpp.Amount}" label="{!$Label.Actual_Opportunity_Value}"/>
+            </apex:pageBlockSection>
+<!-- view page of opportunity -->
+            <apex:pageBlockSection title="{!IF(currentOpp.ID==null,$Label.New_Opportunity,currentOpp.Name)}" columns="4" collapsible="false" rendered="{!editOpp == false}">
+                <apex:pageblocksectionItem >
+                    <apex:outputLabel value="{!$ObjectType.Opportunity.fields.Name.label}"/>
+                    <a href="/{!currentOpp.Id}" target="_blank" id="currentOpp{!currentOpp.Id}" 
+                                            onblur="LookupHoverDetail.getHover('currentOpp{!currentOpp.Id}').hide();" 
+                                            onfocus="LookupHoverDetail.getHover('currentOpp{!currentOpp.Id}', '/{!currentOpp.Id}/m?retURL=%2F{!currentOpp.Id}&isAjaxRequest=1').show();" 
+                                            onmouseout="LookupHoverDetail.getHover('currentOpp{!currentOpp.Id}').hide();" 
+                                            onmouseover="LookupHoverDetail.getHover('currentOpp{!currentOpp.Id}', '/{!currentOpp.Id}/m?retURL=%2F{!currentOpp.Id}&isAjaxRequest=1').show();">
+                        {!currentOpp.Name}
+                    </a>
+                </apex:pageblocksectionItem>
+                <apex:pageblocksectionItem >
+                    <apex:outputLabel value="{!$Label.Advertiser_or_Brand}"/>
+                    <a href="/{!currentOpp.AccountId}" target="_blank" id="currentOpp{!currentOpp.AccountId}" 
+                                            onblur="LookupHoverDetail.getHover('currentOpp{!currentOpp.AccountId}').hide();" 
+                                            onfocus="LookupHoverDetail.getHover('currentOpp{!currentOpp.AccountId}', '/{!currentOpp.AccountId}/m?retURL=%2F{!currentOpp.AccountId}&isAjaxRequest=1').show();" 
+                                            onmouseout="LookupHoverDetail.getHover('currentOpp{!currentOpp.AccountId}').hide();" 
+                                            onmouseover="LookupHoverDetail.getHover('currentOpp{!currentOpp.AccountId}', '/{!currentOpp.AccountId}/m?retURL=%2F{!currentOpp.AccountId}&isAjaxRequest=1').show();">
+                        {!currentOpp.Account.Name}
+                    </a>
+                </apex:pageblocksectionItem>
+                <apex:pageblocksectionItem >
+                    <apex:outputLabel value="{!$ObjectType.Opportunity.fields.Agency__c.label}"/>
+                    <a href="/{!currentOpp.Agency__c}" target="_blank" id="currentOpp{!currentOpp.Agency__c}"
+                                            onblur="LookupHoverDetail.getHover('currentOpp{!currentOpp.Agency__c}').hide();" 
+                                            onfocus="LookupHoverDetail.getHover('currentOpp{!currentOpp.Agency__c}', '/{!currentOpp.Agency__c}/m?retURL=%2F{!currentOpp.Agency__c}&isAjaxRequest=1').show();" 
+                                            onmouseout="LookupHoverDetail.getHover('currentOpp{!currentOpp.Agency__c}').hide();" 
+                                            onmouseover="LookupHoverDetail.getHover('currentOpp{!currentOpp.Agency__c}', '/{!currentOpp.Agency__c}/m?retURL=%2F{!currentOpp.Agency__c}&isAjaxRequest=1').show();">
+                        {!currentOpp.Agency__r.Name}
+                    </a>
+                </apex:pageblocksectionItem>
+                <apex:outputField value="{!currentOpp.Type}"/>
+                <apex:outputField value="{!currentOpp.StageName}"/>
+                <apex:outputField value="{!currentOpp.CloseDate}"/>
+                <apex:pageblocksectionItem >
+                    <apex:outputLabel value="{!$Label.Agency_or_Client_Contact}"/>
+                    <a href="/{!contactRole.ContactID}" target="_blank" id="currentOpp{!contactRole.ContactID}"
+                                            onblur="LookupHoverDetail.getHover('currentOpp{!contactRole.ContactID}').hide();" 
+                                            onfocus="LookupHoverDetail.getHover('currentOpp{!contactRole.ContactID}', '/{!contactRole.ContactID}/m?retURL=%2F{!contactRole.ContactID}&isAjaxRequest=1').show();" 
+                                            onmouseout="LookupHoverDetail.getHover('currentOpp{!contactRole.ContactID}').hide();" 
+                                            onmouseover="LookupHoverDetail.getHover('currentOpp{!contactRole.ContactID}', '/{!contactRole.ContactID}/m?retURL=%2F{!contactRole.ContactID}&isAjaxRequest=1').show();">
+                        {!contactRole.Contact.Name}
+                    </a>
+                </apex:pageblocksectionItem>
+                <apex:outputField value="{!contactRole.Role}" label="{!$Label.Contacts_Role_For_this_Opportunity}"/>
+                <apex:pageblocksectionItem >
+                    <apex:outputLabel value="Opportunity Owner"/>
+                    <a href="/{!currentOpp.OwnerID}" target="_blank" id="currentOpp{!currentOpp.OwnerID}"
+                                            onblur="LookupHoverDetail.getHover('currentOpp{!currentOpp.OwnerID}').hide();" 
+                                            onfocus="LookupHoverDetail.getHover('currentOpp{!currentOpp.OwnerID}', '/{!currentOpp.OwnerID}/m?retURL=%2F{!currentOpp.OwnerID}&isAjaxRequest=1').show();" 
+                                            onmouseout="LookupHoverDetail.getHover('currentOpp{!currentOpp.OwnerID}').hide();" 
+                                            onmouseover="LookupHoverDetail.getHover('currentOpp{!currentOpp.OwnerID}', '/{!currentOpp.OwnerID}/m?retURL=%2F{!currentOpp.OwnerID}&isAjaxRequest=1').show();">
+                        {!currentOpp.Owner.Name}
+                    </a>
+                </apex:pageblocksectionItem>
+                <apex:outputField value="{!currentOpp.CampaignID}" label="Strategic Campaign"/>
+                <apex:pageBlockSectionItem >                                            
+                    <apex:outputLabel value="{!$Label.Create_New_Contact}"/>
+                    <apex:outputpanel >
+                        <a href="/003/e?retURL=/apex/PitchHub" target="_blank">               
+                            <apex:image value="{!$Resource.NewContact}" height="16px" width="16px"/>                  
+                        </a>
+                    </apex:outputpanel>       
+                </apex:pageBlockSectionItem>
+                <apex:outputField value="{!currentOpp.IsNew__c}"/>
+                <apex:outputField value="{!currentOpp.Opportunity_Start_Date__c}" />
+                <apex:outputField value="{!currentOpp.Opportunity_End_Date__c}" />
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!$Label.Estimated_Total_Opportunity_Value}"/>
+                    <apex:outputText value="{!CEILING(currentOpp.Estimated_Total_Opportunity_Value__c)}" styleClass="lineText"/>
+                </apex:pageBlockSectionItem>
+                <apex:outputText value="{!CEILING(CurrentOpp.Amount)}" label="{!$Label.Actual_Opportunity_Value}"/>
+            </apex:pageBlockSection>
+            <hr/>
+            <!-- aligning the buttons in center of the page insted of using the page block buttons -->
+            <div style="width: inherit;" align="center" id="opportunityPannelButtons">
+                <apex:outputPanel id="opportunityPanelButtons">
+                    <apex:commandButton action="{!saveOpportunity}" title="{!$Label.Save_Opportunity}" rerender="opportunityPanel, messagePanel, tabPanel" value="{!$Label.Save}" status="statusSaveTrip" rendered="{!editOpp == true}"/>
+                    <apex:commandButton action="{!cancelOpportunity}" title="{!$Label.Cancel}" rerender="opportunityPanel" value="{!$Label.Cancel}" immediate="true" rendered="{!editOpp == true && currentOpp.Id!=null}"/>
+                    <apex:commandButton action="{!editOpportunity}" title="{!if(hasOrdersInCCI, $Label.Can_not_Edit_Opportunity_Reason, $Label.Edit_Opportunity)}" rerender="opportunityPanel, messagePanel" value="{!$Label.Edit}" rendered="{!editOpp == false}" disabled="{!hasOrdersInCCI}"/>
+                    <apex:commandButton action="{!deleteOpportunity}" value="{!$Label.Delete}" title="{!if(hasActiveLineItems, $Label.Can_not_Delete_Opportunity_Reason, $Label.Delete_Opportuity)}" disabled="{!hasActiveLineItems}" rendered="{!currentOpp.Id!=null && editOpp == false}" status="statusSaveTrip"/>
+                </apex:outputPanel>
+            </div>
+        </apex:pageBlock>
+    </apex:outputPanel>
+</apex:form>
+<br/> 
+<!-- End of Opportunity Form -->
+<!-- Start of Tab Panel  -->
+<apex:outputPanel id="tabPanel">
+    <apex:tabPanel contentClass="tabContent" headerClass="headerStyle" switchType="client" activeTabClass="activeTab" inactiveTabClass="inactiveTab" headerSpacing="5px" height="400%" rendered="{!currentOpp.Id != null && openCCIPlugin == false}" >
+        <!-- Opportunity To Print Tab -->
+        <apex:tab label="Opportunity to Print" name="opportunityToOrder" >
+            <apex:form id="opportunityToPrintForm" >
+                <apex:outputpanel id="printPanel" >
+                    <apex:pageBlock >
+                        <apex:outputPanel id="configureInsertionsPanel">
+                            <div style="width:inherit; margin: 6px;" id="headdingPrintPanel">
+                                <table style="width: 100%;" >
+                                    <tr>
+                                        <td style="text-align: left; width:33%;">
+                                            <b>{!$Label.Display_Print_Product_Details}</b>
+                                        </td>
+                                        <td style="text-align:center; width:33%;">
+                                            <apex:commandButton value="New Opportunity Line" action="{!newPrintOpportunityLine}" reRender="configurePrintInsertionsPanel" immediate="true" oncomplete="addMultiSelectDateFormat();" status="statusSaveTrip"/>
+                                        </td>
+                                        <td style="text-align: right; width:33%;">
+                                            <b class="lineText">{!$Label.Estimated_For_Opportunity}</b>
+                                            &nbsp; | &nbsp;
+                                            <b class="cciText">{!$Label.Confirmed_In_CCI}</b>
+                                            &nbsp; | &nbsp;
+                                            <b class="redText">Canceled in CCI</b>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <hr/>
+                            </div>
+                        </apex:outputPanel>
+<!-- Editing or Viewing the lines -->
+                        <apex:outputPanel id="configurePrintInsertionsPanel" >
+                            <apex:repeat value="{!inProgressPrintSelectedTWList}" var="tW">
+                                <apex:outputPanel id="individualLine" >
+                                    <apex:pageblockSection title="{!$Label.Configure_Print_Insertions} - {!if(tW.lW.line.id != null,tW.lW.selectedInsertionDates, 'New') }" columns="4" collapsible="false" rendered="{!tW.lineEditMode == true}">
+                                    </apex:pageblockSection>
+                                    <c:PageMessages messageClass="{!tW.rW}" rendered="{!tW.rW.hasMessages}" displayType="true"/>
+                                    <div class="alignCenter">
+                                        <apex:commandButton title="{!if(tW.lineType=='Display', ($Label.Switch_To_Classified), ($Label.Switch_To_Display))}" value="{!if(tW.lineType=='Display', ($Label.Switch_To_Classified), ($Label.Switch_To_Display))}" action="{!tW.switchType}" rerender="{!$Component.individualLine}" rendered="{!tW.lineEditMode == true}" oncomplete="addMultiSelectDateFormat();" immediate="true"/>
+                                    </div>
+<!-- Creating or Editing Opportunity Line Items -->
+                                    <apex:pageblockSection id="fieldsSection" columns="4" collapsible="false" rendered="{!tW.lineEditMode == true && tW.lW.removeLine_Print == false}">
+                                        <apex:pageBlockSectionItem >
+                                            <apex:outputLabel value="{!$Label.Advertiser_or_Brand}"/>
+                                            <apex:outputPanel id="line_advertiserFieldPanel">
+                                                <apex:actionRegion >
+                                                <div class="requiredInput">
+                                                    <div class="requiredBlock"></div>
+                                                    <apex:inputField value="{!tW.lW.line.Account__c}" rendered="{!CurrentOpp.AccountID == null}" styleClass="lineText" required="true">
+                                                        <apex:actionSupport event="onchange" action="{!tW.dummyAction}" rerender="line_billingAgentFieldPanel" />
+                                                    </apex:inputField>
+                                                    <apex:selectList value="{!tW.lW.line.Account__c}" size="1" multiSelect="false" rendered="{!CurrentOpp.AccountID != null}" styleClass="lineText" required="true">
+                                                        <apex:selectOptions value="{!tW.Line_Advertisers}"/>
+                                                        <apex:actionSupport event="onchange" action="{!tW.dummyAction}" rerender="line_billingAgentFieldPanel" />
+                                                    </apex:selectList>
+                                                </div>
+                                                </apex:actionRegion>
+                                            </apex:outputPanel>
+                                        </apex:pageBlockSectionItem>
+                                        <apex:pageBlockSectionItem >
+                                            <apex:outputLabel value="{!$ObjectType.OpportunityLineItem.fields.Billing_Agent__c.label}"/>
+                                            <apex:outputPanel id="line_billingAgentFieldPanel">
+                                                <apex:actionRegion >
+                                                <div class="requiredInput">
+                                                    <div class="requiredBlock"></div>
+                                                    <apex:inputField value="{!tW.lW.line.Billing_Agent__c}" rendered="{!tW.lW.line.Account__c == null}" styleClass="lineText">
+                                                        <apex:actionSupport event="onchange" action="{!tW.dummyAction}" rerender="line_advertiserFieldPanel" />
+                                                    </apex:inputField>
+                                                    <apex:selectList value="{!tW.lW.line.Billing_Agent__c}" size="1" multiSelect="false" rendered="{!tW.lW.line.Account__c != null}" styleClass="lineText" required="true">
+                                                        <apex:selectOptions value="{!tW.Line_BillingAgents}"/>
+                                                        <apex:actionSupport event="onchange" action="{!tW.dummyAction}" rerender="line_advertiserFieldPanel" />
+                                                    </apex:selectList>
+                                                </div>
+                                                </apex:actionRegion>
+                                            </apex:outputPanel>
+                                        </apex:pageBlockSectionItem>
+                                        <apex:inputField value="{!tW.lW.line.Order_Level_PO_Number__c}" styleClass="lineText"/>
+                                        <apex:inputField value="{!tW.lW.line.URN__c}" styleClass="lineText"/>
+                                        <apex:inputField value="{!tW.lW.line.Classified_Main_Category__c}" label="{!$ObjectType.OpportunityLineItem.fields.Classified_Main_Category__c.label}" rendered="{!tW.lineType == 'Classified'}" styleClass="lineText"/>
+                                        <apex:inputField value="{!tW.lW.line.Classified_Sub_Category__c}" label="{!$ObjectType.OpportunityLineItem.fields.Classified_Sub_Category__c.label}" rendered="{!tW.lineType == 'Classified'}" styleClass="lineText"/>
+                                        <apex:inputField value="{!tW.lW.line.Classified_Minor_Category__c}" label="{!$ObjectType.OpportunityLineItem.fields.Classified_Minor_Category__c.label}" rendered="{!tW.lineType == 'Classified'}" styleClass="lineText"/>
+                                        <apex:pageblockSectionItem rendered="{!tW.lineType == 'Classified'}"/>
+                                        <apex:pageblockSectionItem >
+                                            <apex:outputLabel for="priceInputId">{!$ObjectType.OpportunityLineItem.fields.UnitPrice.label}</apex:outputLabel>
+                                            <apex:outputPanel >
+                                                <apex:inputText value="{!tW.lW.line.UnitPrice}" id="priceInputId" styleClass="lineText" html-type="number" disabled="{!tW.lW.priceImmage == false}"/>
+                                            </apex:outputPanel>
+                                        </apex:pageblockSectionItem>
+                                        <apex:pageblockSectionItem >
+                                            <apex:outputLabel for="yieldId">{!$ObjectType.OpportunityLineItem.fields.Yield__c.label}</apex:outputLabel>
+                                            <apex:outputPanel >
+                                                <apex:inputText value="{!tW.lW.line.Yield__c}" id="yieldInputId" styleClass="lineText" html-type="number" disabled="{!tW.lW.yieldImmage == false}"/>
+                                            </apex:outputPanel>
+                                        </apex:pageblockSectionItem>
+                                        <apex:pageblockSectionItem />
+                                        <apex:pageblockSectionItem >
+                                            <apex:outputLabel value="Select Value Back Contract"/>
+                                            <apex:inputText value="{!contractName}" styleClass="lineText"/>
+                                        </apex:pageblockSectionItem>
+                                        <apex:pageblocksectionItem >
+                                            <apex:outputLabel value="{!$ObjectType.OpportunityLineItem.fields.Package__c.label}"/>
+                                            <apex:outputpanel id="packagePanel">
+                                                    <div class="requiredInput">
+                                                        <div class="requiredBlock"></div>
+                                                        <apex:selectList value="{!tW.lW.line.Package__c}" size="1" multiSelect="false" rendered="{!tW.lW.line.Package__c == null || tW.lW.line.Id == null}" styleClass="lineText" html-onload="">
+                                                            <apex:selectOptions value="{!tW.lW.packages}"/>
+                                                            <apex:actionSupport event="onchange" action="{!tW.packageChange}" rerender="{!$Component.individualLine}" status="statusSaveTrip" oncomplete="addMultiSelectDateFormat();" timeout="600000"/>
+                                                        </apex:selectList>
+                                                    </div>
+                                                    <apex:outputField value="{!tW.lW.line.Package__c}" rendered="{!tW.lW.line.Package__c != null && tW.lW.line.Id != null}" styleClass="lineText"/>
+                                            </apex:outputpanel>
+                                        </apex:pageblocksectionItem>
+                                        <apex:pageblockSectionItem >
+                                            <apex:outputLabel value="CCI Order ID for this Insertion"/>
+                                            <apex:outputPanel >
+                                                <apex:outputText value="{!tW.lW.ord.CCI_Order_ID__c}" rendered="{!tW.lW.line.Order_Item__c != null}"/>
+                                                <apex:outputText value="NOT IN CCI" rendered="{!tW.lW.line.Order_Item__c == null}" styleClass="lineText"/>
+                                            </apex:outputPanel>
+                                        </apex:pageblockSectionItem>
+                                        <apex:pageblockSectionItem >
+                                            <apex:outputLabel value="CCI Order Status"/>
+                                            <apex:outputPanel >
+                                                <apex:outputText value="{!tW.lW.ord.Status}" rendered="{!tW.lW.line.Order_Item__c != null}"/>
+                                                <apex:outputText value="NOT IN CCI" rendered="{!tW.lW.line.Order_Item__c == null}" styleClass="lineText"/>
+                                            </apex:outputPanel>
+                                        </apex:pageblockSectionItem>
+                                   </apex:pageblockSection>
+<!-- products information that are dependent on CCI -->
+                                    <apex:repeat value="{!tW.lW.scheduleWrapperList}" var="sW" >
+                                        <apex:pageblockSection title="{!if(tW.lW.scheduleWrapperList.size > 1, sW.packageRuleName,'')}" columns="4" collapsible="false" rendered="{!tW.lineEditMode == true && tW.lW.removeLine_Print == false}">   
+                                            <apex:repeat value="{!sW.fieldsList}" var="field">
+                                                <apex:pageblockSectionItem >
+                                                    <apex:outputLabel value="{!field.setting.equivalentFieldLabel}"/>
+                                                    <apex:outputPanel >
+                                                        <apex:selectList value="{!field.selectedValue}" size="1" multiSelect="false" styleClass="lineText" rendered="{!field.setting.inputType == 'Picklist'}">
+                                                            <apex:selectOptions value="{!field.possibleOptions}"/>
+                                                            <apex:actionSupport event="onchange" action="{!sW.refreshConceptValues}" status="statusSaveTrip" rerender="{!$Component.individualLine}" oncomplete="addMultiSelectDateFormat();"/>
+                                                        </apex:selectList>
+                                                        <apex:inputText value="{!field.selectedValue}" rendered="{!field.setting.inputType == 'Text'}">
+                                                            <apex:actionSupport event="onchange" action="{!sW.refreshConceptValues}" status="statusSaveTrip" rerender="{!$Component.individualLine}" oncomplete="addMultiSelectDateFormat();"/>
+                                                        </apex:inputText>
+                                                    </apex:outputPanel>
+                                                </apex:pageblockSectionItem>
+                                            </apex:repeat>
+                                            <apex:pageblockSectionItem >
+                                                <apex:outputLabel for="selectedInsertionDates">{!$Label.Insertion_Date_or_Date_Range}</apex:outputLabel>
+                                                <apex:outputPanel >
+                                                    <div class="requiredInput">
+                                                        <div Class="requiredBlock"></div>
+                                                        <apex:inputText value="{!sW.selectedInsertionDates}" id="selectedInsertionDates" style="width: 90%; color:#3676F6;" html-onload="alert('loaded');"/>
+                                                    </div>
+                                                </apex:outputPanel>
+                                            </apex:pageblockSectionItem>
+                                            <apex:pageblockSectionItem >
+                                                <apex:outputLabel value="Dateflex"/>
+                                                <apex:outputPanel >
+                                                    <apex:inputCheckbox value="{!sW.dateFlex}"/>
+                                                </apex:outputPanel>
+                                            </apex:pageblockSectionItem>
+                                            <apex:pageblockSectionItem >
+                                                <apex:outputLabel value="PO Number"/>
+                                                <apex:outputPanel >
+                                                    <apex:inputText value="{!sW.poNumber}" styleClass="lineText"/>
+                                                </apex:outputPanel>
+                                            </apex:pageblockSectionItem>
+                                            <apex:pageblockSectionItem >
+                                                <apex:outputLabel value="{!$ObjectType.OpportunityLineItem.fields.Size__c.label}"/>
+                                                <apex:outputPanel id="sizePanel">
+                                                    <table style="width: 150px; vertical-align: middle;">
+                                                        <tbody>
+                                                            <tr style="text-align: center; ">
+                                                                <td><b>Columns</b></td>
+                                                                <td rowspan="2"><b>X</b></td>
+                                                                <td><b>CMs</b></td>
+                                                            </tr>
+                                                            <tr style="text-align: center; ">
+                                                                <td style="width: 39%;">
+                                                                    <apex:inputText id="coloumnsInputId" value="{!sW.columns}" styleClass="lineText" style="width: 60px !important;" html-type="number"/>
+                                                                </td>
+                                                                <td style="width: 39%;">
+                                                                    <apex:inputText id="cmsInputId" value="{!sW.cms}" styleClass="lineText" style="width: 60px !important;" html-type="number"/>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </apex:outputPanel>
+                                            </apex:pageblockSectionItem>
+                                        </apex:pageblockSection>
+                                    </apex:repeat>
+<!-- De-Activate Resions for Opportunity Line Items -->
+                                    <apex:pageblockSection columns="2" collapsible="false" rendered="{!tW.lineEditMode == true && tW.lW.removeLine_Print == true}">
+                                        <apex:inputField value="{!tW.lW.line.Reason_for_Inactive2__c}"/>
+                                        <apex:inputField value="{!tW.lW.line.Competitor_Title__c}"/>
+                                    </apex:pageblockSection>
+                                    <div style="width: inherit;  display: {!if(tW.lineEditMode == true, 'block;','none;')}" align="center">
+                                        <apex:commandButton title="{!$Label.Cancel}" immediate="true" value="{!$Label.Cancel}" rerender="#" >
+                                            <apex:actionSupport immediate="true" action="{!cancelPrintLine}"  rerender="printPanel" event="onclick" status="statusSaveTrip" oncomplete="addMultiSelectDateFormat();">
+                                                <apex:param name="currentLineId" value="{!if(tW.lW.line.Id==null, tW.newLineIdentifier, tW.lW.line.Id)}" assignTo="{!currentLineId}"/>
+                                            </apex:actionSupport>
+                                        </apex:commandButton> 
+                                        <apex:commandButton title="{!$Label.Save_Changes}" value="{!$Label.Save_Changes}" rerender="singleInsertionPanel" rendered="{!tW.lineEditMode == true && tW.lW.removeLine_Print == false}"  >
+                                            <apex:actionSupport action="{!savePrintLine}" rerender="printPanel" event="onclick" status="statusSaveTrip" oncomplete="addMultiSelectDateFormat();">
+                                                <apex:param name="currentLineId" value="{!if(tW.lW.line.Id==null, tW.newLineIdentifier, tW.lW.line.Id)}" assignTo="{!currentLineId}"/>
+                                            </apex:actionSupport>
+                                        </apex:commandButton>
+                                        <apex:commandButton title="Removes" value="Remove" rerender="#" rendered="{!tW.lineEditMode == true && tW.lW.removeLine_Print == false && tW.lW.line.Id != null}" >
+                                            <apex:actionSupport action="{!enableDeActivateResions_single}" rerender="{!$Component.individualLine}" event="onclick" status="statusSaveTrip" oncomplete="addMultiSelectDateFormat();">
+                                                <apex:param name="currentLineId" value="{!tW.lW.line.Id}" assignTo="{!currentLineId}"/>
+                                            </apex:actionSupport>
+                                        </apex:commandButton>
+                                        <apex:commandButton title="{!$Label.Add_to_Opportunity_Line}" value="{!$Label.Add_to_Opportunity_Line}" rerender="printPanel" rendered="{!tW.lineEditMode == true  && tW.lW.removeLine_Print == false}" status="statusSaveTrip" >
+                                            <apex:actionSupport action="{!saveAndNew}" rerender="printPanel" event="onclick" status="statusSaveTrip" oncomplete="addMultiSelectDateFormat();">
+                                                <apex:param name="currentLineId" value="{!if(tW.lW.line.Id==null, tW.newLineIdentifier, tW.lW.line.Id)}" assignTo="{!currentLineId}"/>
+                                            </apex:actionSupport>
+                                        </apex:commandButton>
+                                        <apex:commandButton title="{!$Label.Add_to_Opportunity_Line_and_Copy}" value="{!$Label.Add_to_Opportunity_Line_and_Copy}" rerender="printPanel" rendered="{!tW.lineEditMode == true  && tW.lW.removeLine_Print == false}" >
+                                            <apex:actionSupport action="{!saveAndCopy}" rerender="printPanel" event="onclick" status="statusSaveTrip" oncomplete="addMultiSelectDateFormat();">
+                                                <apex:param name="currentLineId" value="{!if(tW.lW.line.Id==null, tW.newLineIdentifier, tW.lW.line.Id)}" assignTo="{!currentLineId}"/>
+                                            </apex:actionSupport>
+                                        </apex:commandButton>
+                                        <apex:commandButton title="click to de-activate or remove this opportunity line item." value="OK" rerender="printPanel" rendered="{!tW.lineEditMode == true && tW.lW.removeLine_Print == true}" >
+                                            <apex:actionSupport action="{!deActivateSelectedLines}" rerender="printPanel" event="onclick" status="statusSaveTrip" oncomplete="addMultiSelectDateFormat();">
+                                                <apex:param name="currentLineId" value="{!tW.lW.line.Id}" assignTo="{!currentLineId}"/>
+                                            </apex:actionSupport>
+                                        </apex:commandButton>
+                                    </div>
+<!-- View OrderItem that are submited to CCI -->
+                                    <apex:pageblockSection title="View Order Item - {!tW.lW.item.CCI_Order_Item_ID__c}" columns="4" collapsible="false" rendered="{!tW.lineEditMode == false && (tW.lW.item.Is_Cancelled__c == false || tW.lW.item.Submitted_For_Cancellation__c == false)&& tW.lW.cancelLine_Print == false}">
+                                        <apex:pageBlockSectionItem >
+                                            <apex:outputLabel value="{!$Label.Advertiser_or_Brand}"/>
+                                            <apex:outputLink value="/{!tW.lW.ord.AccountId}" target="_blank">
+                                                <apex:outputText value="{!tW.lW.ord.Account.Name}" styleClass="cciText"/>
+                                            </apex:outputLink>
+                                        </apex:pageBlockSectionItem>
+                                        <apex:pageblockSectionItem >
+                                            <apex:outputLabel value="{!$ObjectType.OpportunityLineItem.fields.Billing_Agent__c.label}"/>
+                                            <apex:outputLink value="/{!tW.lW.ord.Agency__c}" target="_blank">
+                                                <apex:outputField value="{!tW.lW.ord.Agency__r.Name}" styleClass="cciText"/>
+                                            </apex:outputLink>
+                                        </apex:pageblockSectionItem>
+                                        <apex:outputField value="{!tW.lW.ord.PONumber}" styleClass="cciText" label="Order Level PO Number"/>
+<!--URN location                            <apex:outputField value="{!tW.lW.ord.PONumber}" styleClass="cciText"/> -->
+                                        <apex:pageblockSectionItem />
+                                        <apex:pageblockSectionItem >
+                                            <apex:outputLabel >{!$ObjectType.OpportunityLineItem.fields.UnitPrice.label}</apex:outputLabel>
+                                            <apex:outputText value="{!tW.lW.item.UnitPrice}" styleClass="cciText" />
+                                        </apex:pageblockSectionItem>
+                                        <apex:pageblockSectionItem >
+                                            <apex:outputLabel >{!$ObjectType.OpportunityLineItem.fields.Yield__c.label}</apex:outputLabel>
+                                            <apex:outputText value="{!tW.lW.item.Yield__c}" styleClass="cciText" />
+                                        </apex:pageblockSectionItem>
+                                        <apex:pageblockSectionItem >
+                                            <apex:outputLabel value="Select Value Back Contract"/>
+                                            <apex:outputText value="{!tW.lW.item.Value_Back_Contract__r.Name}" styleClass="cciText"/>
+                                        </apex:pageblockSectionItem>
+                                        <apex:pageblockSectionItem />
+                                        <apex:pageblocksectionItem >
+                                            <apex:outputLabel value="{!$ObjectType.OpportunityLineItem.fields.Package__c.label}"/>
+                                            <apex:outputText value="{!tW.lW.item.Package_Name__c}" styleClass="cciText"/>
+                                        </apex:pageblocksectionItem>
+                                        <apex:pageblockSectionItem >
+                                            <apex:outputLabel value="CCI Order ID for this Insertion"/>
+                                            <apex:outputPanel >
+                                                <apex:outputText value="{!tW.lW.ord.CCI_Order_ID__c}" rendered="{!tW.lineEditMode==false}" styleClass="cciText"/>
+                                            </apex:outputPanel>
+                                        </apex:pageblockSectionItem>
+                                        <apex:pageblockSectionItem >
+                                            <apex:outputLabel value="CCI Order Status"/>
+                                            <apex:outputPanel >
+                                                <apex:outputText value="{!tW.lW.ord.Status}" rendered="{!tW.lineEditMode==false}" styleClass="cciText"/>
+                                            </apex:outputPanel>
+                                        </apex:pageblockSectionItem>
+                                    </apex:pageblockSection>
+<!-- products information that are dependent on CCI -->
+                                    <apex:repeat value="{!tW.lW.scheduleWrapperList}" var="sW" >
+                                        <apex:pageblockSection title="{!if(tW.lW.scheduleWrapperList.size > 1, sW.packageRuleName,'')}" columns="4" collapsible="false" rendered="{!tW.lineEditMode == false && (tW.lW.item.Is_Cancelled__c == false || tW.lW.item.Submitted_For_Cancellation__c == false )&& tW.lW.removeLine_Print == false}">   
+                                            <apex:repeat value="{!sW.fieldsList}" var="field">
+                                                <apex:pageblockSectionItem >
+                                                    <apex:outputLabel value="{!field.setting.equivalentFieldLabel}"/>
+                                                    <apex:outputText value="{!field.selectedValue}" styleClass="cciText"/>
+                                                </apex:pageblockSectionItem>
+                                            </apex:repeat>
+                                            <apex:pageblockSectionItem >
+                                                <apex:outputLabel for="selectedInsertionDates">{!$Label.Insertion_Date_or_Date_Range}</apex:outputLabel>
+                                                <apex:outputText value="{!sW.selectedInsertionDates}" styleClass="cciText"/>
+                                            </apex:pageblockSectionItem>
+                                            <apex:pageblockSectionItem >
+                                                <apex:outputLabel value="Dateflex"/>
+                                                <apex:inputCheckbox value="{!sW.dateFlex}" styleClass="cciText" disabled="true"/>
+                                            </apex:pageblockSectionItem>
+                                            <apex:pageblockSectionItem >
+                                                <apex:outputLabel value="PO Number"/>
+                                                <apex:outputText value="{!sW.poNumber}" styleClass="cciText" />
+                                            </apex:pageblockSectionItem>
+                                            <apex:pageblockSectionItem >
+                                                <apex:outputLabel value="{!$ObjectType.OpportunityLineItem.fields.Size__c.label}"/>
+                                                <apex:outputText value="{!(sW.columns)}x{!sW.cms}" styleClass="cciText"/>
+                                            </apex:pageblockSectionItem>
+                                        </apex:pageblockSection>
+                                    </apex:repeat>
+<!-- De-Activate Resions for Opportunity Line Items -->
+                                    <apex:pageblockSection title="Choose Cancel Reason - {!tW.lW.item.CCI_Order_Item_ID__c}" columns="3" collapsible="false" rendered="{!tW.lineEditMode == false && (tW.lW.item.Is_Cancelled__c == false || tW.lW.item.Submitted_For_Cancellation__c == false) && tW.lW.cancelLine_Print == true}" >
+                                        <apex:pageblockSectionItem />
+                                        <apex:selectList value="{!tW.cancelReasonCode}" size="1" multiSelect="false" label="Cancel Reason">
+                                            <apex:selectOptions value="{!cancelReason}"/>
+                                        </apex:selectList>
+                                        <apex:pageblockSectionItem />
+                                    </apex:pageblockSection>
+                                    <div style="width: inherit; display: {!if(tW.lineEditMode == false, 'block;','none;')}" align="center">
+                                        <apex:commandButton value="Close" title="Close the view panel" rendered="{!tW.lineEditMode == false && tW.lW.cancelLine_Print == false }" rerender="#">
+                                            <apex:actionsupport action="{!closeLine_InprogressPrint_Item}" event="onclick" rerender="configurePrintInsertionsPanel,singleInsertionPanel"  status="statusSaveTrip" >
+                                                <apex:param name="currentLineId" value="{!tW.lW.item.Id}" assignTo="{!currentLineId}"/>
+                                            </apex:actionsupport>
+                                        </apex:commandButton>
+                                        <apex:commandButton value="Edit Order in CCI" title="Close the view panel" rendered="{!tW.lineEditMode == false && tW.lW.cancelLine_Print == false}" rerender="#">
+                                            <apex:actionsupport action="{!editOrder_Single}" event="onclick" rerender="sectionHeaderPanel, messagePanel, opportunityPanel, tabPanel, iframePanel, printPanel"  status="statusSaveTrip" >
+                                                <apex:param name="currentLineId" value="{!tW.lW.item.Id}" assignTo="{!currentLineId}"/>
+                                            </apex:actionsupport>
+                                        </apex:commandButton>
+                                        <apex:commandButton value="Cancel Line in CCI" title="Enale options to choose Cancel Reasons." rerender="#" rendered="{!tW.lineEditMode == false && tW.lW.cancelLine_Print == false}" disabled="{!tW.lW.item.IsCancelableOrderItem__c == false || tW.lW.item.Submitted_For_Cancellation__c = true}">
+                                            <apex:actionSupport action="{!enableDeActivateResions_single}" rerender="{!$Component.individualLine}" event="onclick" status="statusSaveTrip" oncomplete="addMultiSelectDateFormat();">
+                                                <apex:param name="currentLineId" value="{!tW.lW.line.Id}" assignTo="{!currentLineId}"/>
+                                            </apex:actionSupport>
+                                        </apex:commandButton>
+                                        <apex:commandButton value="Submit" title="Submits for Cancelation of Selected Item in CCI" rendered="{!tW.lineEditMode == false && tW.lW.cancelLine_Print == true}" rerender="#">
+                                            <apex:actionSupport action="{!cancelOrderItem_Single}" rerender="configurePrintInsertionsPanel,singleInsertionPanel" event="onclick" status="statusSaveTrip" oncomplete="addMultiSelectDateFormat();">
+                                                <apex:param name="currentLineId" value="{!tW.lW.item.Id}" assignTo="{!currentLineId}"/>
+                                            </apex:actionSupport>
+                                        </apex:commandButton>
+                                        <apex:commandButton value="Cancel" title="Closes the deactivate Panel and Opens it in view mode." rendered="{!tW.lineEditMode == false && tW.lW.cancelLine_Print == true}" rerender="#">
+                                            <apex:actionSupport action="{!disableCancelResons}" rerender="configurePrintInsertionsPanel,singleInsertionPanel" event="onclick" status="statusSaveTrip" oncomplete="addMultiSelectDateFormat();">
+                                                <apex:param name="currentLineId" value="{!tW.lW.item.Id}" assignTo="{!currentLineId}"/>
+                                            </apex:actionSupport>
+                                        </apex:commandButton>
+                                        <apex:commandButton value="Assigne / Edit Value Back" action="{!tW.ValueBack}" disabled="{!tW.lW.item.Value_Back__c == 0}"/>
+                                        
+                                    </div>
+                                    <hr/>
+                                </apex:outputPanel>
+                            </apex:repeat>
+                            <div style="width: inherit; display: {!if(noOfSelectedLines>=1, 'block;', 'none;')}" align="center">
+                                <apex:commandButton title="Save All Changes" value="Save All" rendered="{!inProgressPrintSelectedTWList != null && inProgressPrintSelectedTWList.size > 0 && deActivateMultipleLines == false}" action="{!saveAllPrintLines}" rerender="printPanel" status="statusSaveTrip"/>
+                                <apex:commandButton title="Cancel or Close All Lines" value="Cancel Or Close All" rendered="{!inProgressPrintSelectedTWList != null && inProgressPrintSelectedTWList.size > 0 && deActivateMultipleLines == false}" action="{!cancelAllSelectedLines_Print}" rerender="printPanel"/>
+                            </div>
+                            <script>
+                                function activateSelectedLinesJS(){
+                                    if(confirm("Due to this operation, Any un-saved changes on In-Progress Print lines will be lost. Please click on ok to proceed.") == true){
+                                        deActivateSelectedAF();
+                                        return ;
+                                    }else{
+                                        return ;
+                                    }
+                                }
+                            </script>
+                        </apex:outputPanel>
+<!-- End of Editing or Viewing the lines -->
+<!-- In Progress insertions table -->
+                        <apex:outputPanel id="singleInsertionPanel" style="width: inherit;">
+                            <apex:pageblockSection title="{!$Label.In_Progress_Order_Lines}" collapsible="false">
+                            </apex:pageblockSection>
+                            <div style="width: inherit;" align="center">
+<!--                                 <b>{!$Label.Opportunity_Line_Changes}: &nbsp;</b> -->
+                                    <apex:commandButton title="Refresh Table" value="Refresh Table" action="{!refreshInProgressPrintTable}" reRender="singleInsertionPanel, configurePrintInsertionsPanel" status="statusSaveTrip"/>
+<!--                                 <b style="margin-left: 100px;">CCI Order Changes: &nbsp;</b> -->
+                            </div>
+                            <c:PageMessages messageClass="{!inProgressPrintResultWrapper}" rendered="{!inProgressPrintResultWrapper.hasMessages}" displayType="true"/>
+<!-- In Progress Print Table starts here -->
+                            <table class="tableStyle">
+                                <thead class="theadStyle" >
+                                    <tr>
+                                        <td colspan="1" rowspan="2" class="theadtdStyle pdDark">
+                                            {!$Label.Select}
+                                            <apex:commandLink action="{!clearInProgressPrintSelections}" rerender="configurePrintInsertionsPanel, singleInsertionPanel" status="statusSaveTrip" rendered="{!noOfSelectedLines > 0}">
+                                                <apex:param name="resetNoOfSelectedLines" value="0" assignTo="{!noOfSelectedLines}"/>
+                                                <br/>
+                                                {!$Label.Clear}
+                                            </apex:commandLink>
+                                        </td>
+                                        <td colspan="3" rowspan="1" class="theadtdStyle pdDark">Actions</td>
+                                        <td colspan="1" rowspan="2" class="theadtdStyle cciInfoLight">{!$Label.CCI_Order_Status}</td>
+                                        <td colspan="4" class="theadtdStyle clientLight">{!$Label.Client_Information}</td>
+                                        <td colspan="4" class="theadtdStyle dpiLight">{!$Label.Display_Product_Info}</td>
+                                        <td colspan="3" class="theadtdStyle cpiLight">{!$Label.Classified_Product_Info}</td>
+                                        <td colspan="6" class="theadtdStyle idLight">{!$Label.Insertion_Details}</td>
+                                        <td colspan="6" class="theadtdStyle pdLight">{!$Label.Price_Details}</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" class="theadtdStyle pdDark">Edit / View</td>
+                                        <td class="theadtdStyle pdDark">De-Activate / Cancel</td>
+                                        <td class="theadtdStyle clientDark">{!$Label.Client}</td>
+                                        <td class="theadtdStyle clientDark">{!$Label.Brand_Adv}</td>
+                                        <td class="theadtdStyle clientDark">{!$Label.Agency}</td>
+                                        <td class="theadtdStyle clientDark">PO</td>
+                                        <td class="theadtdStyle dpiDark">{!$Label.Package}</td>
+                                        <td class="theadtdStyle dpiDark">{!$Label.Title}</td>
+                                        <td class="theadtdStyle dpiDark">{!$Label.Pub}</td>
+                                        <td class="theadtdStyle dpiDark">{!$Label.Disp_Sect}</td>
+                                        <td class="theadtdStyle cpiDark">{!$Label.Main}</td>
+                                        <td class="theadtdStyle cpiDark">{!$Label.Sub}</td>
+                                        <td class="theadtdStyle cpiDark">{!$Label.Minor}</td>
+                                        <td class="theadtdStyle idDark">{!$Label.Size}</td>
+                                        <td class="theadtdStyle idDark">{!$Label.Insertion_Date}</td>
+                                        <td class="theadtdStyle idDark">{!$Label.Dateflex}</td>
+                                        <td class="theadtdStyle idDark">{!$Label.Region}</td>
+                                        <td class="theadtdStyle idDark">{!$Label.AB_Copy_Split}</td>
+                                        <td class="theadtdStyle idDark">{!$Label.Regional_Copy_Split}</td>
+                                        <td class="theadtdStyle pdDark">{!$Label.Price}</td>
+                                        <td class="theadtdStyle pdDark">{!$Label.Yield}</td>
+                                        <td class="theadtdStyle pdDark">{!$Label.Value_Back}</td>
+                                        <td class="theadtdStyle pdDark">{!$Label.VB_Target}</td>
+                                        <td class="theadtdStyle pdDark">{!$Label.Ad_Hoc_VB}</td>
+                                        <td class="theadtdStyle pdDark">Schedule</td>
+                                    </tr>
+                                </thead>
+                                <tbody style="max-height: 200px; overflow-y: auto;">
+                                    <apex:repeat value="{!inProgressPrintTWList}" var="tW">
+                                        <tr valign="middle" >
+                                            <td class="tdStyle" valign="middle">
+<!--                                                Select  -->
+                                                <apex:inputCheckbox value="{!tW.selected}" disabled="{!tW.disabled}" rendered="{!tW.lineEditMode==true}">
+                                                    <apex:actionSupport action="{!selectLine_InProgressPrint_Line}" rerender="configurePrintInsertionsPanel,singleInsertionPanel" event="onclick" status="statusSaveTrip" oncomplete="addMultiSelectDateFormat();">
+                                                        <apex:param name="currentLineId" value="{!tW.lW.line.Id}" assignTo="{!currentLineId}"/>
+                                                        <apex:param name="addToSelectList" value="NO" assignTo="{!tW.addToSelectList}"/>
+                                                    </apex:actionSupport>
+                                                </apex:inputCheckbox>
+                                                <apex:inputCheckbox value="{!tW.selected}" disabled="{!tW.disabled}" rendered="{!tW.lineEditMode==false}">
+                                                    <apex:actionsupport event="onclick" action="{!selectLine_InProgressPrint_Item}" rerender="configurePrintInsertionsPanel,singleInsertionPanel"  status="statusSaveTrip" >
+                                                        <apex:param name="currentLineId" value="{!tW.lW.item.Id}" assignTo="{!currentLineId}"/>
+                                                        <apex:param name="selectLine" value="{!if(tW.Selected, false,true)}" assignTo="{!tW.Selected}"/>
+                                                        <apex:param name="addToSelectList" value="NO" assignTo="{!tW.addToSelectList}"/>
+                                                    </apex:actionsupport>
+                                                </apex:inputCheckbox>
+                                            </td>
+                                            <td class="tdStyle" valign="middle" colspan="{!if(tW.lineEditMode==true, 2, 1)}" style="{!if(tW.lineEditMode==true, 'border-right-style: solid;', 'border-right-style: none; border-bottom-right-radius:0px; border-top-right-radius: 0px')}">
+<!--                                                Edit -->
+                                                <apex:image url="{!URLFOR($Resource.ActionImmages,'/images/Edit_Blue.png')}" height="24" width="24" style="margin:3px;" rendered="{!tW.lineEditMode==true}" title="Edit in Salesforrce" onmouseover="enableBorderBlue(this);" onmouseout="disableBorder(this);" >
+                                                    <apex:actionsupport event="onclick" action="{!selectLine_InProgressPrint_Line}" rerender="configurePrintInsertionsPanel,singleInsertionPanel"  status="statusSaveTrip" >
+                                                        <apex:param name="currentLineId" value="{!tW.lW.line.Id}" assignTo="{!currentLineId}"/>
+                                                        <apex:param name="selectLine" value="true" assignTo="{!tW.Selected}"/>
+                                                        <apex:param name="addToSelectList" value="YES" assignTo="{!tW.addToSelectList}"/>
+                                                    </apex:actionsupport>
+                                                </apex:image>
+                                                <apex:image url="{!URLFOR($Resource.ActionImmages,'/images/Edit_Red.png')}" height="24" width="24" rendered="{!tW.lineEditMode==false}" title="Insertion Level Editing in CCI Plugin" onmouseover="enableBorderRed(this);" onmouseout="disableBorder(this);" style=" margin:3px;">
+                                                    <apex:actionsupport event="onclick" action="{!editOrderItem_Single}" rerender="sectionHeaderPanel, messagePanel, opportunityPanel, tabPanel, iframePanel, printPanel" status="statusSaveTrip" >
+                                                        <apex:param name="currentLineId" value="{!tW.lW.item.Id}" assignTo="{!currentLineId}"/>
+                                                        <apex:param name="selectLine" value="true" assignTo="{!tW.Selected}"/>
+                                                        <apex:param name="addToSelectList" value="YES" assignTo="{!tW.addToSelectList}"/>
+                                                    </apex:actionsupport>
+                                                </apex:image>
+                                            </td>
+                                            <td class="tdStyle" valign="middle" style="border-left-style:none; border-bottom-left-radius:0px; border-top-left-radius:0px; display : {!if(tW.lineEditMode==true, 'none;', 'td;')}" >
+<!--                                                View -->
+                                                <apex:image url="{!URLFOR($Resource.ActionImmages,'/images/View_Red.png')}" height="24" width="24" rendered="{!tW.lineEditMode==false}" title="View in Salesforce" onmouseover="enableBorderRed(this);" onmouseout="disableBorder(this);" style=" margin:3px;">
+                                                    <apex:actionsupport event="onclick" action="{!selectLine_InProgressPrint_Item}" rerender="configurePrintInsertionsPanel,singleInsertionPanel"  status="statusSaveTrip" >
+                                                        <apex:param name="currentLineId" value="{!tW.lW.item.Id}" assignTo="{!currentLineId}"/>
+                                                        <apex:param name="selectLine" value="true" assignTo="{!tW.Selected}"/>
+                                                        <apex:param name="addToSelectList" value="YES" assignTo="{!tW.addToSelectList}"/>
+                                                    </apex:actionsupport>
+                                                </apex:image>
+                                            </td>
+                                            <td class="tdStyle" valign="middle" >
+<!--                                                DeActivate / Cancel -->
+                                                <apex:image url="{!URLFOR($Resource.ActionImmages,'/images/Cancel_Blue.png')}" style="height:24px; width:24px; margin:3px;" rendered="{!tW.lineEditMode==true}" title="Edit in Salesforrce" onmouseover="enableBorderBlue(this);" onmouseout="disableBorder(this);" >
+                                                    <apex:actionsupport event="onclick" action="{!enableDeActivateResions_single}" rerender="configurePrintInsertionsPanel,singleInsertionPanel"  status="statusSaveTrip" >
+                                                        <apex:param name="currentLineId" value="{!tW.lW.line.Id}" assignTo="{!currentLineId}"/>
+                                                        <apex:param name="selectLine" value="true" assignTo="{!tW.Selected}"/>
+                                                        <apex:param name="addToSelectList" value="YES" assignTo="{!tW.addToSelectList}"/>
+                                                    </apex:actionsupport>
+                                                </apex:image>
+                                                <apex:image url="{!URLFOR($Resource.ActionImmages,'/images/Cancel_Red.png')}" height="24" width="24" rendered="{!tW.lineEditMode==false}" onmouseover="enableBorderRed(this);" onmouseout="disableBorder(this);" style=" margin:3px;">
+                                                    <apex:actionsupport event="onclick" action="{!enableDeActivateResions_single}" rerender="configurePrintInsertionsPanel,singleInsertionPanel"  status="statusSaveTrip" >
+                                                        <apex:param name="currentLineId" value="{!tW.lW.line.Id}" assignTo="{!currentLineId}"/>
+                                                        <apex:param name="selectLine" value="true" assignTo="{!tW.Selected}"/>
+                                                        <apex:param name="addToSelectList" value="YES" assignTo="{!tW.addToSelectList}"/>
+                                                    </apex:actionsupport>
+                                                </apex:image>
+                                            </td>
+                                            <td class="{!if(tW.lineEditMode==true, (if(tW.lW.line.Order_Item__c != null ,'tdStyle cciCancel', 'tdStyle cciGlue')),'tdStyle cciOrder')}" valign="middle">
+<!--                                            Order Status  -->
+                                                <apex:outputPanel rendered="{!tW.lineEditMode==true && tW.lW.line.Order_Item__c == null}">
+                                                    <a href="/{!tW.lW.line.Id}" target="_blank" >
+                                                        <apex:outputText value="NOT IN CCI" styleClass="cciGlue"/>
+                                                    </a>
+                                                </apex:outputPanel>
+                                                <apex:outputPanel rendered="{!tW.lineEditMode==false}">
+                                                    <a href="/{!tW.lW.ord.Id}" target="_blank" class="cciOrder">
+                                                        <apex:outputText value="Order ID {!tW.lW.ord.CCI_Order_ID__c}" styleClass="cciOrder"/>
+                                                    </a>
+                                                </apex:outputPanel>
+                                                <apex:outputPanel rendered="{!tW.lineEditMode==true && tW.lW.line.Order_Item__c != null}">
+                                                    <a href="/{!tW.lW.line.Id}" target="_blank" >
+                                                        <apex:outputText value="Order ID {!tW.lW.ord.CCI_Order_ID__c} CANCELLED" styleClass="cciCancel"/>
+                                                    </a>
+                                                </apex:outputPanel>
+                                            </td>
+                                            <td class="{!if(tW.lineEditMode==true, (if(tW.lW.line.Order_Item__c != null ,'tdStyle cciCancelText', 'tdStyle lineText')),'tdStyle cciText')}" valign="middle">
+<!--                                                    Client -->
+                                                <a href="/{!tW.lW.line.Account__c}" target="_blank" >
+                                                    <apex:outputText value="{!tW.lW.line.Account__r.Name}" rendered="{!tW.lineEditMode==true && tW.lW.line.Account__r.Type == 'Client'}" styleClass="{!if(tW.lineEditMode==true && tW.lW.line.Order_Item__c != null, 'cciCancelText', 'lineText')}"/>
+                                                </a>
+                                                <a href="/{!tW.lW.ord.AccountID}" target="_blank">
+                                                    <apex:outputField value="{!tW.lW.ord.Account.Name}" rendered="{!tW.lineEditMode==false && tW.lW.ord.Account.Type == 'Client'}" styleClass="cciText"/>
+                                                </a>
+                                            </td>
+                                            <td class="{!if(tW.lineEditMode==true, (if(tW.lW.line.Order_Item__c != null ,'tdStyle cciCancelText', 'tdStyle lineText')),'tdStyle cciText')}" valign="middle">
+<!--                                                    brand / Adv -->
+                                                <a href="/{!tW.lW.line.Account__c}" target="_blank" >
+                                                    <apex:outputText value="{!tW.lW.line.Account__r.Name}" rendered="{!tW.lineEditMode==true && (tW.lW.line.Account__r.Type != 'Private Advertiser' && tW.lW.line.Account__r.Type != 'Client')}" styleClass="{!if(tW.lineEditMode==true && tW.lW.line.Order_Item__c != null, 'cciCancelText', 'lineText')}"/>
+                                                    <apex:outputText rendered="{!tW.lineEditMode==true && (tW.lW.line.Account__r.Type == 'Private Advertiser')}" styleClass="{!if(tW.lineEditMode==true && tW.lW.line.Order_Item__c != null, 'cciCancelText', 'lineText')}">
+                                                        {!tW.lW.line.Account__r.Salutation__c} {!tW.lW.line.Account__r.Name}
+                                                    </apex:outputText>
+                                                </a>
+                                                <a href="/{!tW.lW.ord.AccountId}" target="_blank" >
+                                                    <apex:outputText value="{!tW.lW.ord.Account.Name}" rendered="{!tW.lineEditMode==false && (tW.lW.ord.Account.Type == 'Brand' || tW.lW.ord.Account.Type == 'Direct Advertiser')}" styleClass="cciText"/>
+                                                    <apex:outputText rendered="{!tW.lineEditMode==false && (tW.lW.ord.Account.Type == 'Private Advertiser')}" styleClass="cciText">
+                                                        {!tW.lW.ord.Account.Salutation__c} {!tW.lW.ord.Account.Name} 
+                                                    </apex:outputText>
+                                                </a>
+                                            </td>
+                                            <td class="{!if(tW.lineEditMode==true, (if(tW.lW.line.Order_Item__c != null ,'tdStyle cciCancelText', 'tdStyle lineText')),'tdStyle cciText')}" valign="middle">
+<!--                                                    Agency -->
+                                                <a href="{!tW.lW.line.Billing_Agent__c}" target="_blank" >
+                                                    <apex:outputText value="{!tW.lW.line.Billing_Agent__r.Name}" rendered="{!tW.lineEditMode==true && NOT(ISBLANK(tW.lW.line.Billing_Agent__c))}" styleClass="{!if(tW.lineEditMode==true && tW.lW.line.Order_Item__c != null, 'cciCancelText', 'lineText')}"/>
+                                                </a>
+                                                <a href="{!tW.lW.ord.Agency__c}" target="_blank" >
+                                                    <apex:outputText value="{!tW.lW.ord.Agency__r.Name}" rendered="{!tW.lineEditMode==false}" styleClass="cciText"/>
+                                                </a>
+                                            </td>
+                                            <td class="{!if(tW.lineEditMode==true, (if(tW.lW.line.Order_Item__c != null ,'tdStyle cciCancelText', 'tdStyle lineText')),'tdStyle cciText')}" valign="middle">
+<!--                                             po Number  -->
+                                                <apex:outputText value="{!tW.lW.line.PO_Number__c}" rendered="{!tW.lineEditMode==true && NOT(ISBLANK(tW.lW.line.Billing_Agent__c))}" />
+                                                <apex:outputText value="{!tW.lW.ord.PoNumber}" rendered="{!tW.lineEditMode==false}" />
+                                            </td>
+                                            <td class="{!if(tW.lineEditMode==true, (if(tW.lW.line.Order_Item__c != null ,'tdStyle cciCancelText', 'tdStyle lineText')),'tdStyle cciText')}" valign="middle">
+<!--                                                Package -->
+                                                <apex:outputText value="{!tW.lW.line.Package_Name__c}" rendered="{!tW.lineEditMode==true}"/>
+                                                <apex:outputText value="{!tW.lW.item.Package_Code__c}" rendered="{!tW.lineEditMode==false}"/>
+                                            </td>
+                                            <td class="{!if(tW.lineEditMode==true, (if(tW.lW.line.Order_Item__c != null ,'tdStyle cciCancelText', 'tdStyle lineText')),'tdStyle cciText')}" valign="middle">
+<!--                                                Title -->
+                                                <apex:outputField value="{!tW.lW.line.Title_Name__c}" rendered="{!tW.lineEditMode==true}"/>
+                                                <apex:outputField value="{!tW.lW.item.Title_Code__c}" rendered="{!tW.lineEditMode==false}"/>
+                                            </td>
+                                            <td class="{!if(tW.lineEditMode==true, (if(tW.lW.line.Order_Item__c != null ,'tdStyle cciCancelText', 'tdStyle lineText')),'tdStyle cciText')}" valign="middle">
+<!--                                                pub -->
+                                                <apex:outputField value="{!tW.lW.line.Publication_Name__c}" rendered="{!tW.lineEditMode==true}"/>
+                                                <apex:outputField value="{!tW.lW.item.Publication_Code__c}" rendered="{!tW.lineEditMode==false}"/>
+                                            </td>
+                                            <td class="{!if(tW.lineEditMode==true, (if(tW.lW.line.Order_Item__c != null ,'tdStyle cciCancelText', 'tdStyle lineText')),'tdStyle cciText')}" valign="middle">
+<!--                                                Dis Sect -->
+                                                <apex:outputField value="{!tW.lW.line.Section_Name__c}" rendered="{!tW.lineEditMode==true}"/>
+                                                <apex:outputField value="{!tW.lW.item.Section_Code__c}" rendered="{!tW.lineEditMode==false}"/>
+                                            </td>
+                                            <td class="{!if(tW.lineEditMode==true, (if(tW.lW.line.Order_Item__c != null ,'tdStyle cciCancelText', 'tdStyle lineText')),'tdStyle cciText')}" valign="middle">
+<!--                                                Main -->
+                                                <apex:outputField value="{!tW.lW.line.Classified_Main_Category__c}" rendered="{!tW.lineEditMode==true}"/>
+                                            </td>
+                                            <td class="{!if(tW.lineEditMode==true, (if(tW.lW.line.Order_Item__c != null ,'tdStyle cciCancelText', 'tdStyle lineText')),'tdStyle cciText')}" valign="middle">
+<!--                                                Sub -->
+                                                <apex:outputField value="{!tW.lW.line.Classified_Sub_Category__c}" rendered="{!tW.lineEditMode==true}"/>
+                                            </td>
+                                            <td class="{!if(tW.lineEditMode==true, (if(tW.lW.line.Order_Item__c != null ,'tdStyle cciCancelText', 'tdStyle lineText')),'tdStyle cciText')}" valign="middle">
+<!--                                                Minor -->
+                                                <apex:outputField value="{!tW.lW.line.Classified_Minor_Category__c}" rendered="{!tW.lineEditMode==true}"/>
+                                            </td>
+                                            <td class="{!if(tW.lineEditMode==true, (if(tW.lW.line.Order_Item__c != null ,'tdStyle cciCancelText', 'tdStyle lineText')),'tdStyle cciText')}" valign="middle">
+<!--                                                Size -->
+                                                <apex:outputField value="{!tW.lW.line.Size__c}" rendered="{!tW.lineEditMode==true}"/>
+                                                <apex:outputText value="{!VALUE(tW.lW.item.Height__c)/100000}x{!tW.lW.item.Columns__c}" rendered="{!tW.lineEditMode==false}"/>
+                                            </td>
+                                            <td class="{!if(tW.lineEditMode==true, (if(tW.lW.line.Order_Item__c != null ,'tdStyle cciCancelText', 'tdStyle lineText')),'tdStyle cciText')}" valign="middle">
+<!--                                                Insertion date -->
+<!--                                                 <apex:outputField value="{!tW.lW.line.ServiceDate}" rendered="{!tW.lineEditMode==true && tW.lW.line.Dateflex__c == false}"/> -->
+<!--                                                 <apex:outputField value="{!tW.lW.line.Dateflex_Daterange__c}" rendered="{!tW.lineEditMode==true && tW.lW.line.Dateflex__c == true}"/> -->
+<!--                                                 <apex:outputField value="{!tW.lW.item.ServiceDate}" rendered="{!tW.lineEditMode==false}"/> -->
+                                                <apex:outputText value="{!tW.lW.selectedInsertionDates}" />
+                                            </td>
+                                            <td class="{!if(tW.lineEditMode==true, (if(tW.lW.line.Order_Item__c != null ,'tdStyle cciCancelText', 'tdStyle lineText')),'tdStyle cciText')}" valign="middle">
+<!--                                                DateFlex -->
+                                                <apex:outputField value="{!tW.lW.line.Dateflex__c}" rendered="{!tW.lineEditMode==true}"/>
+                                                <apex:outputField value="{!tW.lW.item.Dateflex__c}" rendered="{!tW.lineEditMode==false}"/>
+                                            </td>
+                                            <td class="{!if(tW.lineEditMode==true, (if(tW.lW.line.Order_Item__c != null ,'tdStyle cciCancelText', 'tdStyle lineText')),'tdStyle cciText')}" valign="middle">
+<!--                                                region -->
+                                                <apex:outputField value="{!tW.lW.line.Region__c}" rendered="{!tW.lineEditMode==true}"/>
+                                                <apex:outputField value="{!tW.lW.item.Zone_Code__c}" rendered="{!tW.lineEditMode==false}"/>
+                                            </td>
+                                            <td class="{!if(tW.lineEditMode==true, (if(tW.lW.line.Order_Item__c != null ,'tdStyle cciCancelText', 'tdStyle lineText')),'tdStyle cciText')}" valign="middle">
+<!--                                                 AB copy Split -->
+                                                <apex:outputField value="{!tW.lW.line.Copy_Split__c}" rendered="{!tW.lineEditMode==true}"/>
+                                                <apex:outputField value="{!tW.lW.item.A_B_Copy_Split__c}" rendered="{!tW.lineEditMode==false}"/>
+                                            </td>
+                                            <td class="{!if(tW.lineEditMode==true, (if(tW.lW.line.Order_Item__c != null ,'tdStyle cciCancelText', 'tdStyle lineText')),'tdStyle cciText')}" valign="middle">
+<!--                                                 Regional copy Split -->
+                                                <apex:outputField value="{!tW.lW.line.Copy_Split__c}" rendered="{!tW.lineEditMode==true}"/>
+                                                <apex:outputField value="{!tW.lW.item.Regional_Copy_Split__c}" rendered="{!tW.lineEditMode==false}"/>
+                                            </td>
+                                            <td class="{!if(tW.lineEditMode==true, (if(tW.lW.line.Order_Item__c != null ,'tdStyle cciCancelText', 'tdStyle lineText')),'tdStyle cciText')}" valign="middle">
+<!--                                                price -->
+                                                <apex:outputField value="{!tW.lW.line.UnitPrice}" rendered="{!tW.lineEditMode==true}"/>
+                                                <apex:outputField value="{!tW.lW.item.UnitPrice}" rendered="{!tW.lineEditMode==false}"/>
+                                            </td>
+                                            <td class="{!if(tW.lineEditMode==true, (if(tW.lW.line.Order_Item__c != null ,'tdStyle cciCancelText', 'tdStyle lineText')),'tdStyle cciText')}" valign="middle">
+<!--                                                Yield -->
+                                                <apex:outputText value="{!tW.lW.line.Yield__c}" rendered="{!tW.lineEditMode==true}"/>
+                                                <apex:outputText value="{!tW.lW.item.Yield__c}" rendered="{!tW.lineEditMode==false}"/>
+                                            </td>
+                                            <td class="{!if(tW.lineEditMode==true, (if(tW.lW.line.Order_Item__c != null ,'tdStyle cciCancelText', 'tdStyle lineText')),'tdStyle cciText')}" valign="middle">
+<!--                                                Value Back -->
+                                                <apex:outputText rendered="{!tW.lineEditMode==true}"/>
+                                                <apex:outputField value="{!tW.lW.item.Value_Back__c}" rendered="{!tW.lineEditMode==false}"/>
+                                            </td>
+                                            <td class="{!if(tW.lineEditMode==true, (if(tW.lW.line.Order_Item__c != null ,'tdStyle cciCancelText', 'tdStyle lineText')),'tdStyle cciText')}" valign="middle">
+<!--                                                VB Target -->
+                                                <apex:outputText rendered="{!tW.lineEditMode==true}"/>
+                                                <apex:outputField value="{!tW.lW.item.Value_Back_Assigned_To__c}" rendered="{!tW.lineEditMode==false}"/>
+                                            </td>
+                                            <td class="{!if(tW.lineEditMode==true, (if(tW.lW.line.Order_Item__c != null ,'tdStyle cciCancelText', 'tdStyle lineText')),'tdStyle cciText')}" valign="middle">
+<!--                                                AD Hoc VB  -->
+                                                <apex:outputText rendered="{!tW.lineEditMode==true}"/>
+                                                <apex:outputField value="{!tW.lW.item.Ad_Hoc_Value_Back__c}" rendered="{!tW.lineEditMode==false}"/>
+                                            </td>
+                                            <td class="{!if(tW.lineEditMode==true, (if(tW.lW.line.Order_Item__c != null ,'tdStyle cciCancelText', 'tdStyle lineText')),'tdStyle cciText')}" valign="middle">
+<!--                                                Schedule Identifiwe  -->
+                                                <apex:outputText value="{!tW.lW.line.Schedule_Identifier__c}" rendered="{!tW.lineEditMode==true}"/>
+                                                <apex:outputField value="{!tW.lW.item.CCI_Schedule_Item_Id__c}" rendered="{!tW.lineEditMode==false}"/>
+                                            </td>
+                                        </tr>
+                                    </apex:repeat>
+                                </tbody>
+                            </table>
+<!-- CCI buttons -->
+                            <div style="display: {!if(noOfSelectedLines >= 1 || noOfSelectedItems >= 1,'block;','none;')}">
+                                <br/>
+                                <apex:commandbutton action="{!submitToCCI_MultiLine}" value="{!if(noOfSelectedLines > 1, 'Create All Selected Lines in CCI', 'Create Selected Line in CCI')}" title="Click to Open CCI Plugin with the information from selected line(s)" status="statusSaveTrip" rendered="{!noOfSelectedLines >= 1}" rerender="sectionHeaderPanel, messagePanel, opportunityPanel, tabPanel, iframePanel, printPanel"/>
+                                <apex:commandbutton action="{!editOrder_Multi}" value="Edit Order in CCI" title="Click to Open CCI Plugin to Edit the selected order. Can open for multiple order selection." status="statusSaveTrip" rerender="sectionHeaderPanel, messagePanel, opportunityPanel, tabPanel, iframePanel, printPanel" rendered="{!noOfSelectedItems >= 1}"/>
+                                <apex:commandbutton action="{!changeBrand_Order}" value="Change Brand" title="Click to cancel the selected order and Please change the brand in Salesforce and resubmit the lines." status="statusSaveTrip" rerender="sectionHeaderPanel, messagePanel, opportunityPanel, tabPanel, iframePanel, printPanel" rendered="{!noOfSelectedItems >= 1}"/>
+                            </div>
+                        </apex:outputPanel>
+                        <apex:outputPanel id="inActiveOpportuityLinesPanel">
+                            <apex:pageblockSection title="► Show Deleted Print Table" collapsible="false" onclick="hideData(this);">
+                            </apex:pageblockSection>
+<!-- Deleted Table starts here -->
+                            <script>
+                                //hide or show the table and buttons 
+                                function hideData(tempEle){
+                                    var temp1 = tempEle.getElementsByTagName("div")[0];
+                                    var temp2 = temp1.getElementsByTagName("h3")[0];
+                                    var header = temp2.innerHTML;
+                                    if(header.indexOf("Show") > -1){
+                                        temp2.innerHTML = "▼ Hide Deleted Print Table";
+                                        document.getElementById("deletedPrintTanle").style.display = "block";
+                                    }else{
+                                        temp2.innerHTML = "► Show Deleted Print Table";
+                                        document.getElementById("deletedPrintTanle").style.display = "none";
+                                    }
+                                }
+                                /*script for asking for a conformation*/
+                                function activateSelectedJS(){
+                                    if(confirm("Any un-saved changes on In-Progress Print lines will be lost. Please click on ok to proceed.") == true){
+                                        activateSelectedAF();
+                                        return ;
+                                    }else{
+                                        return ;
+                                    }
+                                    
+                                }
+                            </script>
+                            <apex:actionFunction name="activateSelectedAF" action="{!activateSelected}" reRender="printPanel" status="statusSaveTrip"/>
+                            <div id="deletedPrintTanle" style="display:none;">
+                            <div align="center" >
+                                <apex:commandButton value="Activate Selected" reRender="printPanel" status="statusSaveTrip" onclick="activateSelectedJS();"/>
+                                <apex:commandButton value="Refersh Table" action="{!populateDeletedOpportunityLineItems}" rerender="inActiveOpportuityLinesPanel" status="statusSaveTrip"/>
+                            </div>
+                            <c:PageMessages messageClass="{!inActivePrintResultWrapper}" rendered="{!inActivePrintResultWrapper.hasMessages}" displayType="true"/>
+                            <table class="tableStyle">
+                                <thead class="theadStyle" >
+                                    <tr>
+                                        <td colspan="1" rowspan="2" class="theadtdStyle pdDark">
+                                            {!$Label.Select} <br/>
+                                            <apex:inputCheckbox value="{!selectAllInActive}" >
+                                                <apex:actionSupport event="onchange" action="{!selectOrDeSelectAllDeletedList}" rerender="inActiveOpportuityLinesPanel" status="statusSaveTrip"/>
+                                            </apex:inputCheckbox>
+                                        </td>
+                                        <td colspan="1" rowspan="2" class="theadtdStyle pdDark">{!$Label.Type}</td>
+                                        <td colspan="3" class="theadtdStyle clientLight">{!$Label.Client_Information}</td>
+                                        <td colspan="4" class="theadtdStyle dpiLight">{!$Label.Display_Product_Info}</td>
+                                        <td colspan="3" class="theadtdStyle cpiLight">{!$Label.Classified_Product_Info}</td>
+                                        <td colspan="6" class="theadtdStyle idLight">{!$Label.Insertion_Details}</td>
+                                        <td colspan="2" class="theadtdStyle pdLight">{!$Label.Price_Details}</td>
+                                        <td colspan="2" class="theadtdStyle pdLight">De-Activate Resions</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="theadtdStyle clientDark">{!$Label.Client}</td>
+                                        <td class="theadtdStyle clientDark">{!$Label.Brand_Adv}</td>
+                                        <td class="theadtdStyle clientDark">{!$Label.Agency}</td>
+                                        <td class="theadtdStyle dpiDark">{!$Label.Package}</td>
+                                        <td class="theadtdStyle dpiDark">{!$Label.Title}</td>
+                                        <td class="theadtdStyle dpiDark">{!$Label.Pub}</td>
+                                        <td class="theadtdStyle dpiDark">{!$Label.Disp_Sect}</td>
+                                        <td class="theadtdStyle cpiDark">{!$Label.Main}</td>
+                                        <td class="theadtdStyle cpiDark">{!$Label.Sub}</td>
+                                        <td class="theadtdStyle cpiDark">{!$Label.Minor}</td>
+                                        <td class="theadtdStyle idDark">{!$Label.Size}</td>
+                                        <td class="theadtdStyle idDark">{!$Label.Insertion_Date}</td>
+                                        <td class="theadtdStyle idDark">{!$Label.Dateflex}</td>
+                                        <td class="theadtdStyle idDark">{!$Label.Region}</td>
+                                        <td class="theadtdStyle idDark">{!$Label.AB_Copy_Split}</td>
+                                        <td class="theadtdStyle idDark">{!$Label.Regional_Copy_Split}</td>
+                                        <td class="theadtdStyle pdDark">{!$Label.Price}</td>
+                                        <td class="theadtdStyle pdDark">{!$Label.Yield}</td>
+                                        <td class="theadtdStyle pdDark">Reason for Inactive</td>
+                                        <td class="theadtdStyle pdDark">Competitor</td>
+                                    </tr>
+                                </thead>
+                                <tbody style="max-height: 200px; overflow-y: auto;">
+                                    <apex:repeat value="{!deletedPrintTWList}" var="tW">
+                                        <tr valign="middle" >
+                                            <td class="tdStyle" valign="middle">
+<!--                                                Select  -->
+                                                <apex:inputCheckbox value="{!tW.selected}" />
+                                            </td>
+                                            <td class="tdStyle" valign="middle">
+<!--                                            Type -->
+                                                <apex:outputField value="{!tW.lW.iPI.Type__c}" rendered="{!tW.lW.iPI.Type__c!=null}"/>
+                                                <apex:outputText rendered="{!tW.lW.iPI.Classified_Main_Category__c!=null && tW.lW.iPI.Type__c==null}">Classified</apex:outputText>
+                                                <apex:outputText rendered="{!tW.lW.iPI.Classified_Main_Category__c==null && tW.lW.iPI.Type__c==null}">Display</apex:outputText>
+                                            </td>
+                                            <td class="tdStyle glueDeactivatedText" valign="middle">
+<!--                                                    Client -->
+                                                <a href="/{!tW.lW.iPI.Account__c}" target="_blank" >
+                                                    <apex:outputText value="{!tW.lW.iPI.Account__r.Name}" rendered="{!tW.lW.iPI.Account__r.Type == 'Client'}" />
+                                                </a>
+                                            </td>
+                                            <td class="tdStyle glueDeactivatedText" valign="middle">
+<!--                                                    brand / Adv -->
+                                                <a href="/{!tW.lW.iPI.Account__c}" target="_blank" >
+                                                    <apex:outputText value="{!tW.lW.iPI.Account__r.Name}" rendered="{!tW.lW.iPI.Account__r.Type != 'Client' && tW.lW.iPI.Account__r.Type != 'Private Advertiser'}" />
+                                                    <apex:outputText rendered="{!tW.lW.iPI.Account__r.Type == 'Private Advertiser'}" >
+                                                        {!tW.lW.iPI.Account__r.Salutation__c} {!tW.lW.iPI.Account__r.Name}
+                                                    </apex:outputText>
+                                                </a>
+                                            </td>
+                                            <td class="tdStyle glueDeactivatedText" valign="middle">
+<!--                                                    Agency -->
+                                                <a href="{!tW.lW.iPI.Billing_Agent__c}" target="_blank" >
+                                                    <apex:outputText value="{!tW.lW.iPI.Billing_Agent__r.Name}" />
+                                                </a>
+                                            </td>
+                                            <td class="tdStyle glueDeactivatedText" valign="middle">
+<!--                                                Package -->
+                                                <apex:outputText value="{!tW.lW.iPI.Package__c}" />
+                                            </td>
+                                            <td class="tdStyle glueDeactivatedText" valign="middle">
+<!--                                                Title -->
+                                                <apex:outputField value="{!tW.lW.iPI.Title__c}" />
+                                            </td>
+                                            <td class="tdStyle glueDeactivatedText" valign="middle">
+<!--                                                pub -->
+                                                <apex:outputField value="{!tW.lW.iPI.Publication__c}" />
+                                            </td>
+                                            <td class="tdStyle glueDeactivatedText" valign="middle">
+<!--                                                Dis Sect -->
+                                                <apex:outputField value="{!tW.lW.iPI.Display_Section__c}" />
+                                            </td>
+                                            <td class="tdStyle glueDeactivatedText" valign="middle">
+<!--                                                Main -->
+                                                <apex:outputField value="{!tW.lW.iPI.Classified_Main_Category__c}" />
+                                            </td>
+                                            <td class="tdStyle glueDeactivatedText" valign="middle">
+<!--                                                Sub -->
+                                                <apex:outputField value="{!tW.lW.iPI.Classified_Sub_Category__c}" />
+                                            </td>
+                                            <td class="tdStyle glueDeactivatedText" valign="middle">
+<!--                                                Minor -->
+                                                <apex:outputField value="{!tW.lW.iPI.Classified_Minor_Category__c}" />
+                                            </td>
+                                            <td class="tdStyle glueDeactivatedText" valign="middle">
+<!--                                                Size -->
+                                                <apex:outputField value="{!tW.lW.iPI.Size__c}" />
+                                            </td>
+                                            <td class="tdStyle glueDeactivatedText" valign="middle">
+<!--                                                Insertion date -->
+                                                <apex:outputField value="{!tW.lW.iPI.ServiceDate__c}" />
+                                            </td>
+                                            <td class="tdStyle glueDeactivatedText" valign="middle">
+<!--                                                DateFlex -->
+                                                <apex:outputField value="{!tW.lW.iPI.Dateflex__c}" />
+                                            </td>
+                                            <td class="tdStyle glueDeactivatedText" valign="middle">
+<!--                                                region -->
+                                                <apex:outputField value="{!tW.lW.iPI.Region__c}" />
+                                            </td>
+                                            <td class="tdStyle glueDeactivatedText" valign="middle">
+<!--                                                 AB copy Split -->
+                                                <apex:outputField value="{!tW.lW.iPI.Copy_Split__c}" />
+                                            </td>
+                                            <td class="tdStyle glueDeactivatedText" valign="middle">
+<!--                                                 Regional copy Split -->
+                                                <apex:outputField value="{!tW.lW.iPI.Copy_Split__c}" />
+                                            </td>
+                                            <td class="tdStyle glueDeactivatedText" valign="middle">
+<!--                                                price -->
+                                                <apex:outputField value="{!tW.lW.iPI.Cost__c}" />
+                                            </td>
+                                            <td class="tdStyle glueDeactivatedText" valign="middle">
+<!--                                                Yield -->
+                                                <apex:outputText value="{!tW.lW.iPI.Yield__c}" />
+                                            </td>
+                                            <td class="tdStyle glueDeactivatedText" valign="middle">
+<!--                                                Cancel Reasons -->
+                                                <apex:outputText value="{!tW.lW.iPI.Reason_for_Inactive2__c}"/>
+                                            </td>
+                                            <td class="tdStyle glueDeactivatedText" valign="middle">
+<!--                                                Competitor Title -->
+                                                <apex:outputText value="{!tW.lW.iPI.Competitor_Title__c}"/>
+                                            </td>
+                                        </tr>
+                                    </apex:repeat>
+                                </tbody>
+                            </table>
+                            </div>
+                        </apex:outputPanel>
+                    </apex:pageBlock>
+                </apex:outputpanel>
+            </apex:form>
+        </apex:tab>
+    </apex:tabPanel>
+</apex:outputPanel> 
+<!-- End of tab Panel -->
+
+<!-- PlugIn Panel -->
+<apex:outputPanel id="iframePanel">
+<!--    <apex:pageblock rendered="{!openCCIPlugin == true}" title="{!$Label.Selected_Order_Lines}"> -->
+        <!-- Table starts here -->
+<!--        <table class="tableStyle" > -->
+<!--            <thead class="theadStyle"> -->
+<!--                <tr> -->
+<!--                    <td colspan="1" rowspan="2" class="theadtdStyle pdDark">{!$Label.Type}</td> -->
+<!--                    <td colspan="1" class="theadtdStyle cciInfoLight">{!$Label.CCI_Information}</td> -->
+<!--                    <td colspan="3" class="theadtdStyle clientLight">{!$Label.Client_Information}</td> -->
+<!--                    <td colspan="4" class="theadtdStyle dpiLight">{!$Label.Display_Product_Info}</td> -->
+<!--                    <td colspan="3" class="theadtdStyle cpiLight">{!$Label.Classified_Product_Info}</td> -->
+<!--                    <td colspan="6" class="theadtdStyle idLight">{!$Label.Insertion_Details}</td> -->
+<!--                    <td colspan="5" class="theadtdStyle pdLight">{!$Label.Price_Details}</td> -->
+<!--                </tr> -->
+<!--                <tr> -->
+<!--                    <td class="theadtdStyle cciInfoDark" >{!$Label.CCI_Order_Status}</td> -->
+<!--                    <td class="theadtdStyle clientDark">{!$Label.Client}</td> -->
+<!--                    <td class="theadtdStyle clientDark">{!$Label.Brand_Adv}</td> -->
+<!--                    <td class="theadtdStyle clientDark">{!$Label.Agency}</td> -->
+<!--                    <td class="theadtdStyle dpiDark">{!$Label.Package}</td> -->
+<!--                    <td class="theadtdStyle dpiDark">{!$Label.Title}</td> -->
+<!--                    <td class="theadtdStyle dpiDark">{!$Label.Pub}</td> -->
+<!--                    <td class="theadtdStyle dpiDark">{!$Label.Disp_Sect}</td> -->
+<!--                    <td class="theadtdStyle cpiDark">{!$Label.Main}</td> -->
+<!--                    <td class="theadtdStyle cpiDark">{!$Label.Sub}</td> -->
+<!--                    <td class="theadtdStyle cpiDark">{!$Label.Minor}</td> -->
+<!--                    <td class="theadtdStyle idDark">{!$Label.Size}</td> -->
+<!--                    <td class="theadtdStyle idDark">{!$Label.Insertion_Date}</td> -->
+<!--                    <td class="theadtdStyle idDark">{!$Label.Dateflex}</td> -->
+<!--                    <td class="theadtdStyle idDark">{!$Label.Region}</td> -->
+<!--                    <td class="theadtdStyle idDark">{!$Label.AB_Copy_Split}</td> -->
+<!--                    <td class="theadtdStyle idDark">{!$Label.Regional_Copy_Split}</td> -->
+<!--                    <td class="theadtdStyle pdDark">{!$Label.Price}</td> -->
+<!--                    <td class="theadtdStyle pdDark">{!$Label.Yield}</td> -->
+<!--                    <td class="theadtdStyle pdDark">{!$Label.Value_Back}</td> -->
+<!--                    <td class="theadtdStyle pdDark">{!$Label.VB_Target}</td> -->
+<!--                    <td class="theadtdStyle pdDark">{!$Label.Ad_Hoc_VB}</td> -->
+<!--                </tr> -->
+<!--            </thead> -->
+<!--            <tbody> -->
+<!--                <apex:repeat value="{!iframePrintWrapperList}" var="tW" rendered="{!iframePrintWrapperList!=null}"> -->
+<!--                    <tr valign="middle" > -->
+<!--                        <td class="tdStyle" valign="middle"> -->
+<!--                                            Type -->
+<!--                             <apex:outputField value="{!tW.lW.line.Type__c}" rendered="{!tW.lW.line.Type__c!=null}"/> -->
+<!--                             <apex:outputText rendered="{!tW.lW.line.Classified_Main_Category__c!=null && tW.lW.line.Type__c==null}">Classified</apex:outputText> -->
+<!--                             <apex:outputText rendered="{!tW.lW.line.Classified_Main_Category__c==null && tW.lW.line.Type__c==null}">Display</apex:outputText> -->
+<!--                        </td> -->
+<!--                        <td class="{!if(tW.lineEditMode==true, 'tdStyle cciGlue','tdStyle cciOrder')}" valign="middle"> -->
+    <!--                                            Order Status  -->
+<!--                            <apex:outputPanel rendered="{!tW.lineEditMode==true}"> -->
+<!--                                <apex:outputLink value="/{!tW.lW.line.Id}" target="_blank" > -->
+<!--                                    <div class="cciGlue">NOT IN CCI</div> -->
+<!--                                </apex:outputLink> -->
+<!--                            </apex:outputPanel> -->
+<!--                            <apex:outputPanel rendered="{!tW.lineEditMode==false}"> -->
+<!--                                <apex:outputLink value="/{!tW.lW.ord.Id}" target="_blank" > -->
+<!--                                    <div class="cciOrder">Order ID {!tW.lW.ord.CCI_Order_ID__c}</div> -->
+<!--                                </apex:outputLink> -->
+<!--                            </apex:outputPanel> -->
+<!--                        </td> -->
+<!--                        <td class="{!if(tW.lineEditMode==true, 'tdStyle lineText','tdStyle cciText')}" valign="middle"> -->
+    <!--                                                    Client -->
+<!--                            <a href="/{!tW.lW.line.Account__c}" target="_blank" class="{!if(tW.lineEditMode == true && tW.lW.line.Order_Item__c != null && tW.lW.item.Is_Cancelled__c, 'redText', 'lineText')}"> -->
+<!--                                <apex:outputText value="{!tW.lW.line.Account__r.Name}" rendered="{!tW.lineEditMode==true && tW.lW.line.Account__r.Type == 'Client'}" styleClass="lineText"/> -->
+<!--                            </a> -->
+<!--                        </td> -->
+<!--                        <td class="{!if(tW.lineEditMode==true, 'tdStyle lineText','tdStyle cciText')}" valign="middle"> -->
+    <!--                                                    brand / Adv -->
+<!--                            <a href="/{!tW.lW.line.Account__c}" target="_blank" class="{!if(tW.lineEditMode == true && tW.lW.line.Order_Item__c != null && tW.lW.item.Is_Cancelled__c, 'redText', 'lineText')}"> -->
+<!--                                <apex:outputText value="{!tW.lW.line.Account__r.Name}" rendered="{!tW.lineEditMode==true && (tW.lW.line.Account__r.Type == 'Brand' || tW.lW.line.Account__r.Type == 'Direct Advertiser')}" styleClass="lineText"/> -->
+<!--                                <apex:outputText rendered="{!tW.lineEditMode==true && (tW.lW.line.Account__r.Type == 'Private Advertiser')}" styleClass="lineText"> -->
+<!--                                    {!tW.lW.line.Account__r.Salutation__c} {!tW.lW.line.Account__r.Name} -->
+<!--                                </apex:outputText> -->
+<!--                            </a> -->
+<!--                        </td> -->
+<!--                        <td class="{!if(tW.lineEditMode==true, 'tdStyle lineText','tdStyle cciText')}" valign="middle"> -->
+    <!--                                                    Agency -->
+<!--                            <a href="{!tW.lW.line.Billing_Agent__c}" target="_blank" class="{!if(tW.lineEditMode == true && tW.lW.line.Order_Item__c != null && tW.lW.item.Is_Cancelled__c, 'redText', 'lineText')}"> -->
+<!--                                <apex:outputText value="{!tW.lW.line.Billing_Agent__r.Name}" rendered="{!NOT(ISBLANK(tW.lW.line.Billing_Agent__c))}" styleClass="lineText"/> -->
+<!--                            </a> -->
+<!--                        </td> -->
+<!--                        <td class="{!if(tW.lineEditMode==true, 'tdStyle lineText','tdStyle cciText')}" valign="middle"> -->
+    <!--                                                Package -->
+<!--                            <apex:outputText value="{!tW.lW.line.Package__c}" /> -->
+<!--                        </td> -->
+<!--                        <td class="{!if(tW.lineEditMode==true, 'tdStyle lineText','tdStyle cciText')}" valign="middle"> -->
+    <!--                                                Title -->
+<!--                            <apex:outputField value="{!tW.lW.line.Title__c}" /> -->
+<!--                        </td> -->
+<!--                        <td class="{!if(tW.lineEditMode==true, 'tdStyle lineText','tdStyle cciText')}" valign="middle"> -->
+    <!--                                                pub -->
+<!--                            <apex:outputField value="{!tW.lW.line.Publication__c}" /> -->
+<!--                        </td> -->
+<!--                        <td class="{!if(tW.lineEditMode==true, 'tdStyle lineText','tdStyle cciText')}" valign="middle"> -->
+    <!--                                                Dis Sect -->
+<!--                            <apex:outputField value="{!tW.lW.line.Display_Section__c}" /> -->
+<!--                        </td> -->
+<!--                        <td class="{!if(tW.lineEditMode==true, 'tdStyle lineText','tdStyle cciText')}" valign="middle"> -->
+    <!--                                                Main -->
+<!--                            <apex:outputField value="{!tW.lW.line.Classified_Main_Category__c}" /> -->
+<!--                        </td> -->
+<!--                        <td class="{!if(tW.lineEditMode==true, 'tdStyle lineText','tdStyle cciText')}" valign="middle"> -->
+    <!--                                                Sub -->
+<!--                            <apex:outputField value="{!tW.lW.line.Classified_Sub_Category__c}" /> -->
+<!--                        </td> -->
+<!--                        <td class="{!if(tW.lineEditMode==true, 'tdStyle lineText','tdStyle cciText')}" valign="middle"> -->
+    <!--                                                Minor -->
+<!--                            <apex:outputField value="{!tW.lW.line.Classified_Minor_Category__c}" /> -->
+<!--                        </td> -->
+<!--                        <td class="{!if(tW.lineEditMode==true, 'tdStyle lineText','tdStyle cciText')}" valign="middle"> -->
+    <!--                                                Size -->
+<!--                            <apex:outputField value="{!tW.lW.line.Size__c}" /> -->
+<!--                        </td> -->
+<!--                        <td class="{!if(tW.lineEditMode==true, 'tdStyle lineText','tdStyle cciText')}" valign="middle"> -->
+    <!--                                                Insertion date -->
+<!--                            <apex:outputField value="{!tW.lW.line.ServiceDate}" /> -->
+<!--                        </td> -->
+<!--                        <td class="{!if(tW.lineEditMode==true, 'tdStyle lineText','tdStyle cciText')}" valign="middle"> -->
+    <!--                                                DateFlex -->
+<!--                            <apex:outputField value="{!tW.lW.line.Dateflex__c}" /> -->
+<!--                        </td> -->
+<!--                        <td class="{!if(tW.lineEditMode==true, 'tdStyle lineText','tdStyle cciText')}" valign="middle"> -->
+    <!--                                                region -->
+<!--                            <apex:outputField value="{!tW.lW.line.Region__c}" /> -->
+<!--                        </td> -->
+<!--                        <td class="{!if(tW.lineEditMode==true, 'tdStyle lineText','tdStyle cciText')}" valign="middle"> -->
+    <!--                                                 AB copy Split -->
+<!--                            <apex:outputField value="{!tW.lW.line.Copy_Split__c}" /> -->
+<!--                        </td> -->
+<!--                        <td class="{!if(tW.lineEditMode==true, 'tdStyle lineText','tdStyle cciText')}" valign="middle"> -->
+    <!--                                                 Regional copy Split -->
+<!--                            <apex:outputField value="{!tW.lW.line.Copy_Split__c}" /> -->
+<!--                        </td> -->
+<!--                        <td class="{!if(tW.lineEditMode==true, 'tdStyle lineText','tdStyle cciText')}" valign="middle"> -->
+    <!--                                                price -->
+<!--                            <apex:outputField value="{!tW.lW.line.TotalPrice}" /> -->
+<!--                        </td> -->
+<!--                        <td class="{!if(tW.lineEditMode==true, 'tdStyle lineText','tdStyle cciText')}" valign="middle"> -->
+    <!--                                                Yield -->
+<!--                            <apex:outputText value="{!tW.lW.line.Yield__c}" /> -->
+<!--                        </td> -->
+<!--                        <td class="{!if(tW.lineEditMode==true, 'tdStyle lineText','tdStyle cciText')}" valign="middle"> -->
+    <!--                                                Value Back -->
+<!--                            <apex:outputText rendered="{!tW.lineEditMode==true}"/> -->
+<!--                        </td> -->
+<!--                        <td class="{!if(tW.lineEditMode==true, 'tdStyle lineText','tdStyle cciText')}" valign="middle"> -->
+    <!--                                                VB Target -->
+<!--                            <apex:outputText rendered="{!tW.lineEditMode==true}"/> -->
+<!--                        </td> -->
+<!--                        <td class="{!if(tW.lineEditMode==true, 'tdStyle lineText','tdStyle cciText')}" valign="middle"> -->
+    <!--                                                AD Hoc VB  -->
+<!--                            <apex:outputText rendered="{!tW.lineEditMode==true}"/> -->
+<!--                        </td> -->
+<!--                    </tr> -->
+<!--                </apex:repeat> -->
+<!--            </tbody> -->
+<!--        </table> -->
+<!--    </apex:pageblock> -->
+<!--    <br/> -->
+    <apex:pageblock rendered="{!openCCIPlugin == true}" title="CCI Plugin">
+        <iframe height="800px" src="{!pluginURL}" width="100%" sandbox="" ></iframe>
+    </apex:pageblock>
+</apex:outputPanel>
+
+<apex:pageBlock rendered="{!currentOpp.Id == null && openCCIPlugin == false}">
+    <apex:enhancedList customizable="true" rowsPerPage="100" type="Opportunity" id="MyOpportunities" height="450"/>
+</apex:pageBlock>
+</apex:page>

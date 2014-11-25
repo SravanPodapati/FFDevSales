@@ -1,0 +1,19 @@
+<apex:page standardController="Account" extensions="OrderFlowController" >
+    <flow:interview name="DirectOrderProcessingFlow" interview="{!directOrderProcessingFlow}" finishLocation="{!FlowFinishLocation}">
+        <apex:param name="AccId" value="{!Account.Id}"/>
+        <apex:param name="UserType" value="{!userType}"/>  
+        <apex:param name="NoOfCCIProfiles" value="{!noOfCCIProfiles}"/> 
+        <apex:param name="NoOfCCIGroups" value="{!noOfCCIGroups}"/> 
+        <apex:param name="CCIGroup1" value="{!group0}"/>  
+        <apex:param name="CCIGroup2" value="{!group1}"/>
+        <apex:param name="CCIGroup3" value="{!group2}"/>
+        <apex:param name="CCIGroup4" value="{!group3}"/>
+        <apex:param name="CCIGroup5" value="{!group4}"/>
+        <apex:param name="CCIProfile1" value="{!profile0}"/>
+        <apex:param name="CCIProfile2" value="{!profile1}"/>
+        <apex:param name="CCIProfile3" value="{!profile2}"/>
+        <apex:param name="CCIProfile4" value="{!profile3}"/>
+        <apex:param name="CCIProfile5" value="{!profile4}"/>
+        <apex:param name="UserId" value="{!userId}"/>  
+    </flow:interview>
+</apex:page>

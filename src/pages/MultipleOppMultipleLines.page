@@ -1,0 +1,305 @@
+<apex:page controller="MultipleOppMultiLineController" tabStyle="Pitch_Hub__tab" id="multiopppage">
+
+<script>
+function getUrlVars() 
+{
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+
+</script>
+
+        <!-- loads jquery and jquery ui -->
+
+        <script src="{!URLFOR($Resource.MultiDateSelector, 'MultiDateSelector/js/jquery-1.7.2.js')}"></script>
+        <script src="{!URLFOR($Resource.MultiDateSelector, 'MultiDateSelector/js/jquery.ui.core.js')}"></script>        
+        
+        <script src="{!URLFOR($Resource.MultiDateSelector, 'MultiDateSelector/js/jquery.calendars.js')}"></script>
+        <script src="{!URLFOR($Resource.MultiDateSelector, 'MultiDateSelector/js/jquery.calendars.plus.js')}"></script>
+        <script src="{!URLFOR($Resource.MultiDateSelector, 'MultiDateSelector/js/jquery.calendars.picker.js')}"></script>
+
+        <style type="text/css" title="currentStyle">
+            @import "{!URLFOR($Resource.MultiDateSelector, 'MultiDateSelector/css/jquery.calendars.picker.css')}";
+        </style>         
+
+        <script type="text/javascript">      
+            var $j = jQuery.noConflict();
+            $j(function(){
+                //alert(document.getElementById('{!$component.pgid:frmid:pgBlockId:pgBlockSectionId1:pgBlockSectionItemId3:multi999Picker}'));
+                var myElement    =   document.getElementById('{!$component.multiopppage:multioppform:multioppblock:pitchduplineitem:pgBlockSectionItemId3:multi999Picker}');
+                $j(myElement).calendarsPicker({ 
+                dateFormat: 'dd/mm/yyyy', multiSelect: 999, monthsToShow: 2, showTrigger: '#calImg'});
+
+            });
+        </script>        
+
+    <apex:sectionHeader title="Multiple Pitches" id="multioppsection"/>
+        <apex:form id="multioppform">
+      
+        
+            <!-- *********************************************** -->
+            <!-- ***************** Opportunity ***************** -->  
+            <!-- *********************************************** -->
+            
+            <apex:pageBlock title="Pitch Information" id="multioppblock">
+                <apex:pageMessages />
+                <apex:pageBlockButtons >
+                        <apex:commandButton value="Add Product" action="{!add_rows}" />
+                       <!--   <apex:commandButton action="{!save}"    value="Save"   rendered="{!productsExist}"/> -->                       
+                        <apex:commandButton action="{!cancel}"  value="Cancel" immediate="true"/>
+                </apex:pageBlockButtons>
+
+                <apex:pageBlockSection title="Pitch Information"          columns="4" id="multioppsection">
+                    
+                    <apex:inputField value="{!opportunity.name}"                required="true"/>                     
+                     
+                    <apex:pageBlockSectionItem >
+                       <apex:outputLabel for="Advertiser" value="Advertiser"></apex:outputLabel>
+                        <apex:panelGroup >
+                             <apex:inputField value="{!opportunity.accountId}"  id="Advertiser"     required="true"/>  
+                        </apex:panelGroup>
+                    </apex:pageBlockSectionItem>
+                    
+                    <apex:inputField value="{!opportunity.Agency__c}"                          /> 
+                    
+                    <apex:inputField value="{!opportunity.Type}"                required="true"/>  
+                                        
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel for="productSelect">Stage</apex:outputLabel>
+                            <apex:selectList value="{!stageSelectList}" size="1" id="stageSelect"   required="true">
+                                <apex:selectOptions value="{!stageOptions}"/>
+                            </apex:selectList>
+                    </apex:pageBlockSectionItem>
+                    
+                    <apex:inputField value="{!opportunity.closeDate}"           required="true"/>
+                    
+<!--                     <apex:inputField value="{!contactRole.contactId}"           required="true"/>    -->
+                    <apex:inputField value="{!contactRole.contactId}"           required="true"/> 
+                                        
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel for="roleSelect">Contact Role</apex:outputLabel>               
+                        
+<!--                         <apex:panelGroup > -->
+<!--                         <div class="requiredInput"> -->
+<!--                            <div class="requiredBlock"></div> -->
+<!--                                <apex:selectList value="{!roleSelectList}" size="1" id="roleSelect"> -->
+<!--                                    <apex:selectOptions value="{!roleOptions}"/> -->
+<!--                                </apex:selectList> -->
+<!--                             </div> -->
+<!--                         </apex:panelGroup> -->
+
+
+                        <apex:panelGroup >
+                        <div class="requiredInput">
+                            <div class="requiredBlock"></div>                        
+                            <apex:selectList value="{!roleSelectList}" size="1" id="roleSelect" required="true">
+                                <apex:selectOptions value="{!roleOptions}"/>
+                            </apex:selectList>
+                         </div>                           
+                        </apex:panelGroup>
+                    </apex:pageBlockSectionItem>
+                    
+                    <apex:inputField value="{!opportunity.ownerId}" />                             
+                    <apex:inputField value="{!opportunity.CampaignID}" label="Strategic Campaign" id="Campaign" />   
+                    
+                    <apex:pageBlockSectionItem >                                            
+                        <apex:outputLabel >Create New Contact</apex:outputLabel>
+                        <apex:outputpanel >
+                            <a href="javascript:window.location.href='/003/e?retURL=/apex/MultipleOppMultipleLines'+(getUrlVars()['retURL']==null?'':'?retURL='+getUrlVars()['retURL']+'&saveURL='+getUrlVars()['retURL']);" target="_blank">                        
+                            <apex:image value="{!$Resource.Edit}"/>                        
+                            </a>
+                        </apex:outputpanel>                        
+                    </apex:pageBlockSectionItem>   
+                    
+                    <apex:inputField value="{!opportunity.IsNew__c}"/>
+                                        
+                    <apex:pageBlockSectionItem id="multioppsection1">
+                        <apex:outputLabel for="noOfIncrementsSelect">Number Of Pitches</apex:outputLabel>
+                        <apex:panelGroup >
+                                <apex:selectList value="{!NoOfIncrements}" size="1" id="noOfIncrementsSelect"   required="true" >          
+                                    <apex:selectOptions value="{!NoOfProducts}"/>
+                                </apex:selectList>
+                        </apex:panelGroup>
+                    </apex:pageBlockSectionItem>
+                        
+                    <apex:pageBlockSectionItem id="theDateInc">  
+                        <apex:outputLabel for="DateIncProductsSelect">Dates To Be Incremented</apex:outputLabel>
+                        <apex:panelGroup id="thePanel">
+                            <apex:selectList value="{!DateIncProductsList}" size="1" id="DateIncProductsSelect"   required="true" >
+                                <apex:selectOptions value="{!DateIncProducts}"/>
+                            </apex:selectList>
+                        </apex:panelGroup>
+                    </apex:pageBlockSectionItem>  
+                    
+                    <apex:inputCheckbox value="{!opportunity.Is_Mock_Up_Requested__c}"/>
+                                                          
+                </apex:pageBlockSection>
+
+                
+                <!-- *********************************************** -->
+                <!-- ************ Pitch Line Item to Duplicate ***** -->  
+                <!-- *********************************************** -->
+                                
+                <apex:pageBlockSection title="Product Information" id="pitchduplineitem"  columns="4">
+
+                    <apex:pageBlockSectionItem >               
+                        <apex:outputLabel for="selectedProduct" >Product</apex:outputLabel>
+                          <apex:panelGroup >
+                            <apex:selectList value="{!selectedOppLine.product}" size="1" id="selectedProduct">
+                                 <apex:selectOptions value="{!productOptions}"/>
+                            </apex:selectList>                         
+                         </apex:panelGroup>
+                    </apex:pageBlockSectionItem>  
+                    
+                     <apex:pageBlockSectionItem >               
+                        <apex:outputLabel for="selectedDescription" >Line Description/Comments</apex:outputLabel>
+                          <apex:panelGroup >
+                            <apex:inputField value="{!selectedOppLine.opline.description}"                    required="false"  />                                          
+                         </apex:panelGroup>
+                    </apex:pageBlockSectionItem>  
+                                        
+                     <apex:pageBlockSectionItem >               
+                        <apex:outputLabel for="selectedUnitPrice" >Sales Price</apex:outputLabel>
+                          <apex:panelGroup >
+                            <apex:inputField value="{!selectedOppLine.opline.unitprice}"                    required="true"  />                                            
+                         </apex:panelGroup>
+                    </apex:pageBlockSectionItem>  
+
+
+                    <apex:inputField value="{!selectedOppLine.opline.Brand__c}"                    required="false"  />                                            
+ 
+                    <apex:inputField value="{!selectedOppLine.opline.Size__c}"                     required="false"  />                                            
+
+                    <apex:inputField value="{!selectedOppLine.opline.Position__c}"                 required="false"  />                                            
+
+                    <apex:inputField value="{!selectedOppLine.opline.Color_Specification__c }"     required="false"  />                                            
+
+                    <apex:inputField value="{!selectedOppLine.opline.Region__c }"                  required="false"  />                                            
+
+                    <apex:inputField value="{!selectedOppLine.opline.URN__c}"                      required="false"  />    
+                                                                                                                        
+                    <!-- <apex:pageBlockSectionItem >               
+                        <apex:outputLabel for="selectedFirstInsertionDate" >First Insertion Date</apex:outputLabel>
+                          <apex:panelGroup >
+                            <apex:inputField value="{!selectedOppLine.opline.servicedate}"                    required="false"  />                                           
+                         </apex:panelGroup>
+                    </apex:pageBlockSectionItem>  -->
+
+                    <apex:pageblockSectionItem id="pgBlockSectionItemId3">
+                        <apex:outputLabel for="from-input">Select First Insertion Dates</apex:outputLabel>
+                        <apex:outputPanel >
+                            <apex:image url="{!$Resource.Mandatory}"/>
+                            <apex:inputText id="multi999Picker"  value="{!selectedOppLine.SelectedInsertionDates}"/>                                      
+                        </apex:outputPanel>
+                    </apex:pageblockSectionItem>                                        
+                    <apex:inputField value="{!selectedOppLine.opline.Last_Insertion_Date__c}"/>                                                                                                                                          
+                                       
+                
+                    
+                </apex:pageBlockSection>
+               
+                
+                <!-- *********************************************** -->
+                <!-- ************ Pitch Line Item ************ -->  
+                <!-- *********************************************** -->
+             </apex:pageBlock>
+         </apex:form>
+         <apex:form id="multioppform2" style="overflow:hidden;height:300px;" >
+              <apex:pageBlock >   
+                <apex:pageBlockSection title="Pitch Line Item Details" id="pitchlineitem">
+
+                  <Div align="center">
+                    <apex:panelGroup >
+                         <apex:commandButton action="{!save}"    value="Save"   rendered="{!productsExist}"/>
+                         <!--<apex:inputText value="{!num}" style="width:45px"/>
+                         <apex:commandButton value="Number of Pitch Line Items" action="{!add_rows}" /> -->
+                        <!-- <apex:commandLink value="Save" action="{!save}" styleclass="btn"/> -->
+                    </apex:panelGroup>
+                    </Div>
+                    <br/>
+                 </apex:pageBlockSection>
+                 <apex:pageBlockSection >  
+                    <apex:outputPanel id="outpanel" layout="block" style="overflow:scroll;height:200px;">
+                     <apex:pageBlockTable value="{!pitchLinesList}" var="opl" id="table">
+                    
+                    <apex:column headerValue="Product">
+                        <apex:selectList value="{!opl.product}" size="1" id="productSelect">
+                            <apex:selectOptions value="{!productOptions}"/>
+                        </apex:selectList>                         
+                    </apex:column>
+
+                    <apex:column headerValue="Line Description/Comments">
+                       <apex:inputField value="{!opl.opline.description}" style="width:130px"/>
+                    </apex:column>
+                                         
+                    <apex:column headerValue="Sales Price">
+                       <apex:inputField value="{!opl.opline.unitPrice}"                    required="false"  style="width:70px" />
+                    </apex:column>
+
+                    <apex:column headerValue="Brand" rendered="{!isMetro}">
+                       <apex:inputField value="{!opl.opline.Brand__c}"                    required="false"  style="width:50px"/>
+                    </apex:column>
+
+                    <apex:column headerValue="Size" rendered="{!isMetro}">
+                       <apex:inputField value="{!opl.opline.Size__c}"                    required="false" style="width:50px" />
+                    </apex:column>
+
+                    <apex:column headerValue="Position" rendered="{!isMetro}">
+                       <apex:inputField value="{!opl.opline.Position__c}"                    required="false"  style="width:50px" />
+                    </apex:column>
+
+                    <apex:column headerValue="Colour Specification" rendered="{!isMetro}">
+                       <apex:inputField value="{!opl.opline.Color_Specification__c}"                    required="false"  style="width:100px" />
+                    </apex:column>
+
+                    <apex:column headerValue="Region" rendered="{!isMetro}">
+                       <apex:inputField value="{!opl.opline.Region__c}"                    required="false" style="width:50px" />
+                    </apex:column>
+                                                   
+                    <apex:column headerValue="URN">
+                       <apex:inputField value="{!opl.opline.URN__c}"            required="false" style="width:50px"/>
+                    </apex:column>  
+                                                                                                                                    
+                    <apex:column headerValue="First Insertion Date">
+                       <apex:inputField value="{!opl.opline.ServiceDate}"       required="false" />
+                    </apex:column>                 
+
+                    <apex:column headerValue="Last Insertion Date">
+                       <apex:inputField value="{!opl.opline.Last_Insertion_Date__c}"       required="false" />
+                    </apex:column>                     
+                    <apex:inputCheckbox value="{!opl.deleteline}" id="deleteline"  rendered="false"/>
+
+                    <apex:column headerValue="Delete">
+                          <apex:commandButton image="{!$Resource.DeleteIcon}" action="{!delete_rows}" reRender="table">
+                                    <apex:param name="deleteline" value="true" assignTo="{!opl.deleteline}"/>
+                          </apex:commandButton> 
+                    </apex:column>
+                                       
+                   </apex:pageBlockTable>
+                        </apex:outputPanel>
+                                   
+                </apex:pageBlockSection>
+
+            </apex:pageBlock>
+                       
+            <!-- *********************************************** -->
+            <!-- *********** If there are no products ********** -->  
+            <!-- *********************************************** -->
+
+            <apex:pageBlock >
+            
+                <apex:pageBlockButtons >
+                    <apex:commandButton action="{!cancel}"  value="Cancel" immediate="true"/>
+                </apex:pageBlockButtons>
+            
+                <apex:outputText value="Multi Pitch functionality cannot be used because Price Book is not defined for your profile or it contains no products." 
+                                    style="color:#CC0000;font-weight:bold;"/>
+
+              </apex:pageBlock>  
+              <apex:pageBlock id="hiddenBlock" rendered="false"></apex:pageBlock>
+             <apex:actionFunction action="{!delete_rows}" name="deleterows" reRender="table"/>
+        </apex:form>
+</apex:page>

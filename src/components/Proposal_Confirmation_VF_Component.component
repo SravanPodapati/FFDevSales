@@ -1,0 +1,51 @@
+<apex:component controller="BookingConfirmationController" access="global">
+  <apex:attribute name="OpportunityID" description="Opportunity ID"  type="Id" required="required" assignTo="{!oppID}"/>
+  <apex:attribute name="ShowPrice" description="Attribute that decides whether price is to be displayed or not"  type="Boolean" required="false" assignTo="{!showPrice}"/>
+   <apex:attribute name="LC" description="Attribute that decides whether it is London Classified or not"  type="Boolean" required="false" assignTo="{!LC}"/>
+  
+    <style>
+        p { font-family:calibri; font-size:12pt;  }
+    </style>
+
+	<p>	
+	As discussed, please find details of the proposal below:
+	</p>
+
+    <p>
+        <apex:dataTable value="{!OppLineItems}" var="oli" border="2">
+        
+            <apex:column headerValue="Agency" value="{!oli.Opportunity.Agency__r.name}" style="width:150px"/>
+            <apex:column headerValue="Client" value="{!oli.Opportunity.Account.name}" style="width:150px"/>
+			<apex:column headerValue="Product" value="{!oli.Product_Name__c}" style="width:300px"/>
+            <apex:column headerValue="Size" value="{!oli.Size__c}" style="width:100px"/>
+
+        
+        </apex:dataTable>
+        <br/>
+
+        <apex:outputText value="The Total Price for the Proposal is :  {0, number,£ ###,###,###,##0.00}">
+        	<apex:param value="{!TotalPrice}" />
+        </apex:outputText>
+        
+    </p>
+    
+ <p>
+	If you have any queries with the above, please don't hesitate to contact me.<br/><br/>  
+ </p>
+
+ <p>
+
+ Thanks,<br/><br/>
+ Kind Regards<br/>
+ <apex:outputLabel >{!$User.FirstName}</apex:outputLabel><br/>
+ <apex:outputLabel >{!$UserRole.Name}</apex:outputLabel>
+
+
+</p>
+<!-- 
+<br/>
+<apex:image url="{!LCimageurl}" rendered="{!lc}"/>
+<apex:image url="{!NCimageurl}" rendered="!{!lc}"/>
+<br/>
+ -->
+</apex:component>

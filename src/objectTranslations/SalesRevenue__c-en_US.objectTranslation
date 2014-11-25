@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>SalesRevenue</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>SalesRevenue</value>
+    </caseValues>
+    <fields>
+        <label><!-- AdvertiserID --></label>
+        <name>AdvertiserID__c</name>
+        <relationshipLabel><!-- SalesRevenue --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- BrandID --></label>
+        <name>BrandID__c</name>
+        <relationshipLabel><!-- SalesRevenue (BrandID) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Department --></label>
+        <name>Department__c</name>
+    </fields>
+    <fields>
+        <label><!-- Insertion End Date --></label>
+        <name>Insertion_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Insertion Start Date --></label>
+        <name>Insertion_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invoice_AgencyID --></label>
+        <name>Invoice_AgencyID__c</name>
+        <relationshipLabel><!-- SalesRevenue (Invoice_AgencyID) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Revenue Date --></label>
+        <name>Period_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Period Start Date --></label>
+        <name>Period_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Publication --></label>
+        <name>Publication__c</name>
+    </fields>
+    <fields>
+        <label><!-- Revenue Amount --></label>
+        <name>Revenue_Amount__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,23 @@
+<apex:page standardController="Account" extensions="CreateAccountBTAsController">
+	
+	<div style="font-size: 1.8em; font-weight: bold; line-height: 1.1em; padding: 5px 5px 10px 5px;">Creating Business Team Activities</div>
+	
+	<apex:form rendered="{!NOT(HasBTAs)}">
+<!-- 		<div style="width: 100%; text-align: center; margin-top: 10px;"> -->
+<!-- 			Create Business Team Activities for the Account '<apex:outputText value="{!Account.name}" />' ?<br /> -->
+			<apex:pageMessage summary="Create Business Team Activities for the Account {!Account.Name}?" severity="confirm" />
+			<br />
+<!-- 		</div>	 -->
+			<apex:commandButton action="{!CreateBTAs}" value="OK" style="width:50px;"/>
+			<apex:commandButton action="{!CancelCreateBTAs}" value="Cancel" style="width:50px;"/>
+			<br />
+	        <apex:pageMessages />
+	</apex:form>
+	
+	<apex:form rendered="{!HasBTAs}">
+		<apex:pageMessage summary="The Account {!Account.name} already has Business Team Activities created." severity="error" />
+		<br />
+		<apex:commandButton action="{!CancelCreateBTAs}" value="Back to Account page" />
+	</apex:form>
+	
+</apex:page>

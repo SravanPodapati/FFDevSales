@@ -1,0 +1,1303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Account Category</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Account Categories</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Account Categories --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Classified - Main Category --></label>
+        <name>Classified_Main_Category__c</name>
+        <picklistValues>
+            <masterLabel>Business &amp; Finance</masterLabel>
+            <translation><!-- Business &amp; Finance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Education</masterLabel>
+            <translation><!-- Education --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Entertainments</masterLabel>
+            <translation><!-- Entertainments --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fashion &amp; Retail</masterLabel>
+            <translation><!-- Fashion &amp; Retail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Health</masterLabel>
+            <translation><!-- Health --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Homes &amp; Gardens</masterLabel>
+            <translation><!-- Homes &amp; Gardens --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mail Order</masterLabel>
+            <translation><!-- Mail Order --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mobility</masterLabel>
+            <translation><!-- Mobility --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motors</masterLabel>
+            <translation><!-- Motors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Noticeboard</masterLabel>
+            <translation><!-- Noticeboard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Personal &amp; Notices</masterLabel>
+            <translation><!-- Personal &amp; Notices --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Property Overseas</masterLabel>
+            <translation><!-- Property Overseas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Property UK</masterLabel>
+            <translation><!-- Property UK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recruitment</masterLabel>
+            <translation><!-- Recruitment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Travel Overseas</masterLabel>
+            <translation><!-- Travel Overseas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Travel UK</masterLabel>
+            <translation><!-- Travel UK --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Classified - Minor Category --></label>
+        <name>Classified_Minor_Category__c</name>
+        <picklistValues>
+            <masterLabel>Accessories</masterLabel>
+            <translation><!-- Accessories --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Accessories &amp; Soft Furnishings</masterLabel>
+            <translation><!-- Accessories &amp; Soft Furnishings --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Africa</masterLabel>
+            <translation><!-- Africa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>America</masterLabel>
+            <translation><!-- America --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Asia</masterLabel>
+            <translation><!-- Asia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Australia &amp; New Zealand</masterLabel>
+            <translation><!-- Australia &amp; New Zealand --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Austria</masterLabel>
+            <translation><!-- Austria --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Balearics</masterLabel>
+            <translation><!-- Balearics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bathrooms</masterLabel>
+            <translation><!-- Bathrooms --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bedrooms</masterLabel>
+            <translation><!-- Bedrooms --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blackpool</masterLabel>
+            <translation><!-- Blackpool --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bournemouth</masterLabel>
+            <translation><!-- Bournemouth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bridal</masterLabel>
+            <translation><!-- Bridal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Building &amp; Construction</masterLabel>
+            <translation><!-- Building &amp; Construction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Building Maintenance</masterLabel>
+            <translation><!-- Building Maintenance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Business Services</masterLabel>
+            <translation><!-- Business Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Businesses For Sale</masterLabel>
+            <translation><!-- Businesses For Sale --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Canada</masterLabel>
+            <translation><!-- Canada --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Canaries</masterLabel>
+            <translation><!-- Canaries --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Car Hire &amp; Leasing</masterLabel>
+            <translation><!-- Car Hire &amp; Leasing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Caribbean</masterLabel>
+            <translation><!-- Caribbean --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Channel Islands</masterLabel>
+            <translation><!-- Channel Islands --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Children</masterLabel>
+            <translation><!-- Children --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>China</masterLabel>
+            <translation><!-- China --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Claims Management</masterLabel>
+            <translation><!-- Claims Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Clerical &amp; Secretarial</masterLabel>
+            <translation><!-- Clerical &amp; Secretarial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conservatories, Lofts &amp; Extensions</masterLabel>
+            <translation><!-- Conservatories, Lofts &amp; Extensions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contracts &amp; Tenders</masterLabel>
+            <translation><!-- Contracts &amp; Tenders --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cornwall</masterLabel>
+            <translation><!-- Cornwall --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cotswolds</masterLabel>
+            <translation><!-- Cotswolds --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Credit Management</masterLabel>
+            <translation><!-- Credit Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Croatia</masterLabel>
+            <translation><!-- Croatia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cyprus</masterLabel>
+            <translation><!-- Cyprus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Debt Management</masterLabel>
+            <translation><!-- Debt Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Devon</masterLabel>
+            <translation><!-- Devon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dorset</masterLabel>
+            <translation><!-- Dorset --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Drivers &amp; Riders</masterLabel>
+            <translation><!-- Drivers &amp; Riders --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Driving Instructors</masterLabel>
+            <translation><!-- Driving Instructors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dubai</masterLabel>
+            <translation><!-- Dubai --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>East Midlands</masterLabel>
+            <translation><!-- East Midlands --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>East of England</masterLabel>
+            <translation><!-- East of England --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Education &amp; Teaching</masterLabel>
+            <translation><!-- Education &amp; Teaching --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Egypt</masterLabel>
+            <translation><!-- Egypt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Engineering &amp; Technical</masterLabel>
+            <translation><!-- Engineering &amp; Technical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Europe</masterLabel>
+            <translation><!-- Europe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Events (Motors)</masterLabel>
+            <translation><!-- Events (Motors) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Far East</masterLabel>
+            <translation><!-- Far East --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fashion, Design &amp; Tailoring</masterLabel>
+            <translation><!-- Fashion, Design &amp; Tailoring --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Financial</masterLabel>
+            <translation><!-- Financial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Flooring</masterLabel>
+            <translation><!-- Flooring --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Florida</masterLabel>
+            <translation><!-- Florida --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>France</masterLabel>
+            <translation><!-- France --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Furniture</masterLabel>
+            <translation><!-- Furniture --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Garages &amp; Driveways</masterLabel>
+            <translation><!-- Garages &amp; Driveways --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Garden Equipment</masterLabel>
+            <translation><!-- Garden Equipment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Garden Furniture &amp; Ornaments</masterLabel>
+            <translation><!-- Garden Furniture &amp; Ornaments --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General</masterLabel>
+            <translation><!-- General --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Graduate</masterLabel>
+            <translation><!-- Graduate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Greece</masterLabel>
+            <translation><!-- Greece --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Greenhouses &amp; Sheds</masterLabel>
+            <translation><!-- Greenhouses &amp; Sheds --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HR Appointments</masterLabel>
+            <translation><!-- HR Appointments --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hampshire</masterLabel>
+            <translation><!-- Hampshire --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Heating</masterLabel>
+            <translation><!-- Heating --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Home Entertaiment</masterLabel>
+            <translation><!-- Home Entertaiment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hotel, Catering &amp; Tourism</masterLabel>
+            <translation><!-- Hotel, Catering &amp; Tourism --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Housing/Regeneration</masterLabel>
+            <translation><!-- Housing/Regeneration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>I.T. &amp; Communications</masterLabel>
+            <translation><!-- I.T. &amp; Communications --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>India</masterLabel>
+            <translation><!-- India --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Indian Ocean</masterLabel>
+            <translation><!-- Indian Ocean --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Interior Design</masterLabel>
+            <translation><!-- Interior Design --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ireland</masterLabel>
+            <translation><!-- Ireland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Isle of Man</masterLabel>
+            <translation><!-- Isle of Man --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Isle of Wight</masterLabel>
+            <translation><!-- Isle of Wight --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Italy</masterLabel>
+            <translation><!-- Italy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kent</masterLabel>
+            <translation><!-- Kent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kitchens</masterLabel>
+            <translation><!-- Kitchens --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lake District &amp; Cumbria</masterLabel>
+            <translation><!-- Lake District &amp; Cumbria --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lapland</masterLabel>
+            <translation><!-- Lapland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Latin America</masterLabel>
+            <translation><!-- Latin America --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lawnmowers &amp; Tractors</masterLabel>
+            <translation><!-- Lawnmowers &amp; Tractors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lighting</masterLabel>
+            <translation><!-- Lighting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>London &amp; Home Counties</masterLabel>
+            <translation><!-- London &amp; Home Counties --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Malaysia</masterLabel>
+            <translation><!-- Malaysia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Malta &amp; Gozo</masterLabel>
+            <translation><!-- Malta &amp; Gozo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Management &amp; Executive</masterLabel>
+            <translation><!-- Management &amp; Executive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mauritius</masterLabel>
+            <translation><!-- Mauritius --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Media &amp; Marketing</masterLabel>
+            <translation><!-- Media &amp; Marketing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medical &amp; Healthcare</masterLabel>
+            <translation><!-- Medical &amp; Healthcare --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medical Sales</masterLabel>
+            <translation><!-- Medical Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mediterranean</masterLabel>
+            <translation><!-- Mediterranean --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Men</masterLabel>
+            <translation><!-- Men --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Midlands</masterLabel>
+            <translation><!-- Midlands --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mortgages &amp; Loans</masterLabel>
+            <translation><!-- Mortgages &amp; Loans --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motor Accessories</masterLabel>
+            <translation><!-- Motor Accessories --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motor Dealerships</masterLabel>
+            <translation><!-- Motor Dealerships --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motor Manufacturers</masterLabel>
+            <translation><!-- Motor Manufacturers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Norfolk</masterLabel>
+            <translation><!-- Norfolk --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North Cyprus</masterLabel>
+            <translation><!-- North Cyprus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North East of England</masterLabel>
+            <translation><!-- North East of England --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North West of England</masterLabel>
+            <translation><!-- North West of England --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Peak District</masterLabel>
+            <translation><!-- Peak District --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Plus Size</masterLabel>
+            <translation><!-- Plus Size --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Portugal</masterLabel>
+            <translation><!-- Portugal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Print</masterLabel>
+            <translation><!-- Print --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Private Sales</masterLabel>
+            <translation><!-- Private Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Renewable Energy</masterLabel>
+            <translation><!-- Renewable Energy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail</masterLabel>
+            <translation><!-- Retail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales</masterLabel>
+            <translation><!-- Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Scotland</masterLabel>
+            <translation><!-- Scotland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Security</masterLabel>
+            <translation><!-- Security --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Seeds &amp; Plants</masterLabel>
+            <translation><!-- Seeds &amp; Plants --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Servicing &amp; Repairs</masterLabel>
+            <translation><!-- Servicing &amp; Repairs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shelving &amp; Storage</masterLabel>
+            <translation><!-- Shelving &amp; Storage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Africa</masterLabel>
+            <translation><!-- South Africa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South West of England</masterLabel>
+            <translation><!-- South West of England --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South of England</masterLabel>
+            <translation><!-- South of England --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Spain</masterLabel>
+            <translation><!-- Spain --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sri Lanka</masterLabel>
+            <translation><!-- Sri Lanka --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Suffolk</masterLabel>
+            <translation><!-- Suffolk --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sussex</masterLabel>
+            <translation><!-- Sussex --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Switzerland</masterLabel>
+            <translation><!-- Switzerland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Thailand</masterLabel>
+            <translation><!-- Thailand --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Turkey</masterLabel>
+            <translation><!-- Turkey --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>USA</masterLabel>
+            <translation><!-- USA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vehicle Finance &amp; Insurance</masterLabel>
+            <translation><!-- Vehicle Finance &amp; Insurance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wales</masterLabel>
+            <translation><!-- Wales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>West Country</masterLabel>
+            <translation><!-- West Country --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>West Midlands</masterLabel>
+            <translation><!-- West Midlands --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Windows</masterLabel>
+            <translation><!-- Windows --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Women</masterLabel>
+            <translation><!-- Women --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yorkshire</masterLabel>
+            <translation><!-- Yorkshire --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Classified - Sub Category --></label>
+        <name>Classified_Sub_Category__c</name>
+        <picklistValues>
+            <masterLabel>Airlines</masterLabel>
+            <translation><!-- Airlines --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Airport Parking</masterLabel>
+            <translation><!-- Airport Parking --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Apprenticeships</masterLabel>
+            <translation><!-- Apprenticeships --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Auctions (General)</masterLabel>
+            <translation><!-- Auctions (General) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Auctions (Motors)</masterLabel>
+            <translation><!-- Auctions (Motors) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Auctions (Property)</masterLabel>
+            <translation><!-- Auctions (Property) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B&amp;B/Guest Houses</masterLabel>
+            <translation><!-- B&amp;B/Guest Houses --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bars/Clubs</masterLabel>
+            <translation><!-- Bars/Clubs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bathing</masterLabel>
+            <translation><!-- Bathing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Battlefields</masterLabel>
+            <translation><!-- Battlefields --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Births, Deaths and Marriages</masterLabel>
+            <translation><!-- Births, Deaths and Marriages --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Business Opportunities</masterLabel>
+            <translation><!-- Business Opportunities --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Business to Business</masterLabel>
+            <translation><!-- Business to Business --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Camping &amp; Caravan Holidays</masterLabel>
+            <translation><!-- Camping &amp; Caravan Holidays --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Car Hire</masterLabel>
+            <translation><!-- Car Hire --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Caravans &amp; Motorhomes</masterLabel>
+            <translation><!-- Caravans &amp; Motorhomes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cars</masterLabel>
+            <translation><!-- Cars --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cars wanted</masterLabel>
+            <translation><!-- Cars wanted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Charities</masterLabel>
+            <translation><!-- Charities --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Charity Events</masterLabel>
+            <translation><!-- Charity Events --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chatlines</masterLabel>
+            <translation><!-- Chatlines --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Christmas</masterLabel>
+            <translation><!-- Christmas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cinemas</masterLabel>
+            <translation><!-- Cinemas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>City Living</masterLabel>
+            <translation><!-- City Living --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Clinical Trials</masterLabel>
+            <translation><!-- Clinical Trials --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Collectables</masterLabel>
+            <translation><!-- Collectables --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Colleges</masterLabel>
+            <translation><!-- Colleges --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commercial Property</masterLabel>
+            <translation><!-- Commercial Property --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Complementary Therapies &amp; Wellbeing</masterLabel>
+            <translation><!-- Complementary Therapies &amp; Wellbeing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conferences</masterLabel>
+            <translation><!-- Conferences --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cosmetic Surgery</masterLabel>
+            <translation><!-- Cosmetic Surgery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cosmetics</masterLabel>
+            <translation><!-- Cosmetics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cottages</masterLabel>
+            <translation><!-- Cottages --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Country Homes</masterLabel>
+            <translation><!-- Country Homes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cruising</masterLabel>
+            <translation><!-- Cruising --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daily Living Aids</masterLabel>
+            <translation><!-- Daily Living Aids --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Death Notices</masterLabel>
+            <translation><!-- Death Notices --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dentalcare</masterLabel>
+            <translation><!-- Dentalcare --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Diet &amp; Weight Loss</masterLabel>
+            <translation><!-- Diet &amp; Weight Loss --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Distance Learning</masterLabel>
+            <translation><!-- Distance Learning --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Domestic Posts</masterLabel>
+            <translation><!-- Domestic Posts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Entertainment</masterLabel>
+            <translation><!-- Entertainment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Escorted Tours</masterLabel>
+            <translation><!-- Escorted Tours --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Estate Agents</masterLabel>
+            <translation><!-- Estate Agents --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Events</masterLabel>
+            <translation><!-- Events --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Events &amp; Exhibitions</masterLabel>
+            <translation><!-- Events &amp; Exhibitions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Exhibitions</masterLabel>
+            <translation><!-- Exhibitions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Eyecare</masterLabel>
+            <translation><!-- Eyecare --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family Fun</masterLabel>
+            <translation><!-- Family Fun --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fashion</masterLabel>
+            <translation><!-- Fashion --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ferries</masterLabel>
+            <translation><!-- Ferries --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finance</masterLabel>
+            <translation><!-- Finance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>First Time Buyers</masterLabel>
+            <translation><!-- First Time Buyers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fitness &amp; Health Equipment</masterLabel>
+            <translation><!-- Fitness &amp; Health Equipment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Flights &amp; Overseas Holidays</masterLabel>
+            <translation><!-- Flights &amp; Overseas Holidays --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Footwear</masterLabel>
+            <translation><!-- Footwear --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Franchises</masterLabel>
+            <translation><!-- Franchises --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Full Time Appointments</masterLabel>
+            <translation><!-- Full Time Appointments --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Further Education</masterLabel>
+            <translation><!-- Further Education --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gallery</masterLabel>
+            <translation><!-- Gallery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gardens</masterLabel>
+            <translation><!-- Gardens --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Golf Breaks</masterLabel>
+            <translation><!-- Golf Breaks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Health Products</masterLabel>
+            <translation><!-- Health Products --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Health and Beauty</masterLabel>
+            <translation><!-- Health and Beauty --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hearing Aids</masterLabel>
+            <translation><!-- Hearing Aids --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Holiday Homes for Sale</masterLabel>
+            <translation><!-- Holiday Homes for Sale --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Holiday Parks &amp; Lodges</masterLabel>
+            <translation><!-- Holiday Parks &amp; Lodges --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Holidays Afloat</masterLabel>
+            <translation><!-- Holidays Afloat --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Home Improvements</masterLabel>
+            <translation><!-- Home Improvements --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Homes &amp; Gardening products</masterLabel>
+            <translation><!-- Homes &amp; Gardening products --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hotels</masterLabel>
+            <translation><!-- Hotels --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Interiors</masterLabel>
+            <translation><!-- Interiors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Investment Property</masterLabel>
+            <translation><!-- Investment Property --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Landlord/Property Services</masterLabel>
+            <translation><!-- Landlord/Property Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Legal Notices</masterLabel>
+            <translation><!-- Legal Notices --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lettings</masterLabel>
+            <translation><!-- Lettings --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MBA &amp; Post Graduate Courses</masterLabel>
+            <translation><!-- MBA &amp; Post Graduate Courses --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mail Order</masterLabel>
+            <translation><!-- Mail Order --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Massage</masterLabel>
+            <translation><!-- Massage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medical</masterLabel>
+            <translation><!-- Medical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Meeting point</masterLabel>
+            <translation><!-- Meeting point --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mobile Communications</masterLabel>
+            <translation><!-- Mobile Communications --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mobility Aids</masterLabel>
+            <translation><!-- Mobility Aids --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mother &amp; Baby</masterLabel>
+            <translation><!-- Mother &amp; Baby --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorbikes</masterLabel>
+            <translation><!-- Motorbikes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Multi-Lingual Appointments</masterLabel>
+            <translation><!-- Multi-Lingual Appointments --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Museums &amp; Galleries</masterLabel>
+            <translation><!-- Museums &amp; Galleries --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Homes &amp; Developers</masterLabel>
+            <translation><!-- New Homes &amp; Developers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Noticeboard Trades</masterLabel>
+            <translation><!-- Noticeboard Trades --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Overseas Appointments</masterLabel>
+            <translation><!-- Overseas Appointments --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Part Time Appointments</masterLabel>
+            <translation><!-- Part Time Appointments --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Personal</masterLabel>
+            <translation><!-- Personal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Personal Training</masterLabel>
+            <translation><!-- Personal Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pets Welcome</masterLabel>
+            <translation><!-- Pets Welcome --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional Qualifications</masterLabel>
+            <translation><!-- Professional Qualifications --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Property Wanted</masterLabel>
+            <translation><!-- Property Wanted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public &amp; Community</masterLabel>
+            <translation><!-- Public &amp; Community --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public Notices</masterLabel>
+            <translation><!-- Public Notices --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rail &amp; Coach Journeys</masterLabel>
+            <translation><!-- Rail &amp; Coach Journeys --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recruitment Consultants</masterLabel>
+            <translation><!-- Recruitment Consultants --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Registration Numbers</masterLabel>
+            <translation><!-- Registration Numbers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Residential Park Homes</masterLabel>
+            <translation><!-- Residential Park Homes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Residential Property</masterLabel>
+            <translation><!-- Residential Property --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Restaurants</masterLabel>
+            <translation><!-- Restaurants --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail</masterLabel>
+            <translation><!-- Retail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retirement Homes</masterLabel>
+            <translation><!-- Retirement Homes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rise &amp; Recliners</masterLabel>
+            <translation><!-- Rise &amp; Recliners --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>River Cruises</masterLabel>
+            <translation><!-- River Cruises --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sample Sales</masterLabel>
+            <translation><!-- Sample Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Schools</masterLabel>
+            <translation><!-- Schools --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Scooters</masterLabel>
+            <translation><!-- Scooters --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Self Catering Holidays</masterLabel>
+            <translation><!-- Self Catering Holidays --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shared Ownership &amp; Housing Asociations</masterLabel>
+            <translation><!-- Shared Ownership &amp; Housing Asociations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Short &amp; Part Time Courses</masterLabel>
+            <translation><!-- Short &amp; Part Time Courses --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Short Breaks</masterLabel>
+            <translation><!-- Short Breaks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Singles Holidays</masterLabel>
+            <translation><!-- Singles Holidays --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Skiing &amp; Winter Sports</masterLabel>
+            <translation><!-- Skiing &amp; Winter Sports --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Skincare &amp; Cosmetics</masterLabel>
+            <translation><!-- Skincare &amp; Cosmetics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Special Interest Holidays</masterLabel>
+            <translation><!-- Special Interest Holidays --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Spiritualists</masterLabel>
+            <translation><!-- Spiritualists --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Stairlifts</masterLabel>
+            <translation><!-- Stairlifts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TV Shows</masterLabel>
+            <translation><!-- TV Shows --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Temporary Staff</masterLabel>
+            <translation><!-- Temporary Staff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Theatres &amp; Concerts</masterLabel>
+            <translation><!-- Theatres &amp; Concerts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Timeshares</masterLabel>
+            <translation><!-- Timeshares --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tourist Boards</masterLabel>
+            <translation><!-- Tourist Boards --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trades &amp; Craftspeople</masterLabel>
+            <translation><!-- Trades &amp; Craftspeople --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Travel Insurance</masterLabel>
+            <translation><!-- Travel Insurance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UK Holidays</masterLabel>
+            <translation><!-- UK Holidays --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Universities</masterLabel>
+            <translation><!-- Universities --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vans</masterLabel>
+            <translation><!-- Vans --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Villa Holidays</masterLabel>
+            <translation><!-- Villa Holidays --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vitamins &amp; Medicines</masterLabel>
+            <translation><!-- Vitamins &amp; Medicines --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vocational</masterLabel>
+            <translation><!-- Vocational --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waterside Homes</masterLabel>
+            <translation><!-- Waterside Homes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weddings</masterLabel>
+            <translation><!-- Weddings --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weddings &amp; Honeymoons</masterLabel>
+            <translation><!-- Weddings &amp; Honeymoons --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Work Wanted</masterLabel>
+            <translation><!-- Work Wanted --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Display - Main Category --></label>
+        <name>Display_Main_Category__c</name>
+        <picklistValues>
+            <masterLabel>Business &amp; Industrial</masterLabel>
+            <translation><!-- Business &amp; Industrial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Clothing &amp; Accessories</masterLabel>
+            <translation><!-- Clothing &amp; Accessories --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Computers</masterLabel>
+            <translation><!-- Computers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cosmetics &amp; Personal Care</masterLabel>
+            <translation><!-- Cosmetics &amp; Personal Care --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Drink</masterLabel>
+            <translation><!-- Drink --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Entertainment &amp; Leisure</masterLabel>
+            <translation><!-- Entertainment &amp; Leisure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finance</masterLabel>
+            <translation><!-- Finance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Food</masterLabel>
+            <translation><!-- Food --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Games &amp; Consoles</masterLabel>
+            <translation><!-- Games &amp; Consoles --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gardening &amp; Agriculture</masterLabel>
+            <translation><!-- Gardening &amp; Agriculture --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Govt,social,political Organis</masterLabel>
+            <translation><!-- Govt,social,political Organis --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Household Appliances</masterLabel>
+            <translation><!-- Household Appliances --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Household Equipment &amp; Diy</masterLabel>
+            <translation><!-- Household Equipment &amp; Diy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Household Fmcg</masterLabel>
+            <translation><!-- Household Fmcg --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Leisure Equipment</masterLabel>
+            <translation><!-- Leisure Equipment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mail Order</masterLabel>
+            <translation><!-- Mail Order --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Media</masterLabel>
+            <translation><!-- Media --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Miscellaneous</masterLabel>
+            <translation><!-- Miscellaneous --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motors</masterLabel>
+            <translation><!-- Motors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Multi Advertisers</masterLabel>
+            <translation><!-- Multi Advertisers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Allocated</masterLabel>
+            <translation><!-- Not Allocated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office Equipment &amp; Stationery</masterLabel>
+            <translation><!-- Office Equipment &amp; Stationery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Online Retail</masterLabel>
+            <translation><!-- Online Retail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pharmaceutical</masterLabel>
+            <translation><!-- Pharmaceutical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Property</masterLabel>
+            <translation><!-- Property --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail</masterLabel>
+            <translation><!-- Retail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Telecoms</masterLabel>
+            <translation><!-- Telecoms --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tobacco &amp; Accessories</masterLabel>
+            <translation><!-- Tobacco &amp; Accessories --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Travel &amp; Transport</masterLabel>
+            <translation><!-- Travel &amp; Transport --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Classified Account Category Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Display Account Category Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

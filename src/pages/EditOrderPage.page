@@ -1,0 +1,12 @@
+<apex:page standardController="Order" action="{!editOrder}" extensions="EditOrderController">
+<apex:sectionHeader title="Edit Order"/>
+	<div style="margin-top:-10px; margin-left:40px">
+		<apex:outputLink value="/{!order.id}" style="color: blue;">Order: {!order.Name}</apex:outputLink> 
+	</div>
+<br/>
+<apex:messages />
+<apex:pageBlock rendered="{!renderPlugin}" title="Edit Order">
+ <apex:iframe rendered="{!renderPlugin}" src="{!url}" scrolling="true" title="CCI Plugin" height="800"/>
+
+</apex:pageBlock>
+</apex:page>

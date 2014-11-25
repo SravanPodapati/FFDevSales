@@ -1,0 +1,40 @@
+<apex:page StandardController="Account" Extensions="SalesRevenueChart" ShowHeader="False">
+<apex:form >
+  <apex:outputPanel style="height:100px; border: 1px solid #aaa">
+   <apex:outputLink target="_blank" value="../{!publicationGroupReportId}?pv0={!URLENCODE(accountNames)}&pv1={! URLENCODE(accountNames)}&pv2={! URLENCODE(accountNames)}">Click for Detail on {!accountDetail.Name}</apex:outputLink>
+   <apex:chart data="{!PublicationGroupChartData}" height="390" width="1100" >    
+        <apex:legend position="right" font="14px Arial"/>
+        <apex:axis type="Numeric" position="left" title="Revenue" grid="true"
+            fields="network,metroClassified,metroDisplay,mailClassified,mailDisplay,mailOnline,esClassified">
+            <apex:chartLabel display="over"/>
+        </apex:axis>
+                
+        <apex:axis type="Category" position="bottom" fields="quarter" title="Period">
+
+        </apex:axis>
+ 
+           <apex:lineSeries axis="left" xField="quarter" yField="network" title="AN&Y Network"
+            markerType="cross" markerSize="4" markerFill="#FA5882" fill="true"/>
+                      
+          <apex:lineSeries axis="left" xField="quarter" yField="metroClassified" title="Metro Classified"
+            markerType="circle" markerSize="4" markerFill="#08298A" fill="true"/>
+
+          <apex:lineSeries axis="left" xField="quarter" yField="metroDisplay" title="Metro Display"
+            markerType="cross" markerSize="4" markerFill="#81F7F3" fill="true"/>
+
+          <apex:lineSeries axis="left" xField="quarter" yField="mailClassified" title="Mail Classified"
+            markerType="circle" markerSize="4" markerFill="#DF7401" fill="true"/>
+
+          <apex:lineSeries axis="left" xField="quarter" yField="mailDisplay" title="Mail Display"
+            markerType="cross" markerSize="4" markerFill="#F5A9BC" fill="true"/>
+
+          <apex:lineSeries axis="left" xField="quarter" yField="mailOnline" title="Mail Online"
+            markerType="circle" markerSize="4" markerFill="#3B170B" fill="true"/>
+
+          <apex:lineSeries axis="left" xField="quarter" yField="esClassified" title="ES Classified"
+            markerType="circle" markerSize="4" markerFill="#5EF507" fill="true"/>
+                                          
+    </apex:chart> 
+  </apex:outputPanel>  
+</apex:form>
+</apex:page>

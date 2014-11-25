@@ -1,0 +1,4 @@
+<apex:page standardController="Account" extensions="AccountDeactivateController" action="{!mydeactivate}">
+<apex:sectionHeader title="Auto-Running Apex Code"/>   
+<apex:outputPanel >You tried calling Apex Code from a button. If you see this page, something went wrong.</apex:outputPanel> 
+</apex:page>

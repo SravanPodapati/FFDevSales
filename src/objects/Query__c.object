@@ -1,0 +1,1107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>AdReference__c</fullName>
+        <externalId>false</externalId>
+        <formula>SalesInvoice__r.ffps_dmg__AdReference__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Ad Reference</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AllocatedQueryAmount__c</fullName>
+        <externalId>false</externalId>
+        <label>Allocated Query Amount</label>
+        <summarizedField>QueryLineItem__c.QueryValue__c</summarizedField>
+        <summaryForeignKey>QueryLineItem__c.Query__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>ApprovingCreditController__c</fullName>
+        <externalId>false</externalId>
+        <label>Approving Credit Controller</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BusinessUnit__c</fullName>
+        <externalId>false</externalId>
+        <label>Business Unit</label>
+        <picklist>
+            <picklistValues>
+                <fullName>ANy Media</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Group</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mail</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Metro</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Client__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Client</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Queries</relationshipLabel>
+        <relationshipName>Queries</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CreditApprovalLevel__c</fullName>
+        <externalId>false</externalId>
+        <label>Credit Approval Level</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CreditControllerApprovedDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Credit Controller Approved Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CreditControllerApproved__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Credit Controller Approved</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CustomerContact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Customer Contact</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Contact.AccountId</field>
+                <operation>equals</operation>
+                <valueField>$Source.Client__c</valueField>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Queries</relationshipLabel>
+        <relationshipName>Queries</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CustomerReference__c</fullName>
+        <externalId>false</externalId>
+        <formula>SalesInvoice__r.c2g__CustomerReference__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Customer Reference</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer__c</fullName>
+        <externalId>false</externalId>
+        <formula>SalesInvoice__r.c2g__OwnerCompany__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Company</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DateOpened__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Opened</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>DaysToResolve__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISBLANK( QueryCloseDate__c ) , NULL,  QueryCloseDate__c - QueryDate__c  )</formula>
+        <label>Days to Resolve</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Days_Outstanding__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK( QueryCloseDate__c ),TODAY()- QueryDate__c ,  DaysToResolve__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Days Outstanding</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>DocumentCreditStatus__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(SalesInvoice__r.ffps_dmg__DocumentCreditStatus__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Document Credit Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DueDate__c</fullName>
+        <externalId>false</externalId>
+        <formula>SalesInvoice__r.c2g__DueDate__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Due Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>FinanceAccount__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Finance Account</label>
+        <referenceTo>ffps_dmg__FinanceAccount__c</referenceTo>
+        <relationshipLabel>Queries</relationshipLabel>
+        <relationshipName>Queries</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>InvoiceCurrency__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(SalesInvoice__r.c2g__InvoiceCurrency__r.CurrencyIsoCode)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Invoice Currency</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>InvoiceDate__c</fullName>
+        <externalId>false</externalId>
+        <formula>SalesInvoice__r.c2g__InvoiceDate__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Invoice Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>InvoiceExchangeRate__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( TotalNetHomeValue__c &gt; 0, NetTotal__c /  TotalNetHomeValue__c, null)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Invoice Exchange Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>InvoiceTotal__c</fullName>
+        <externalId>false</externalId>
+        <formula>SalesInvoice__r.c2g__InvoiceTotal__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Invoice Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NetTotal__c</fullName>
+        <externalId>false</externalId>
+        <formula>SalesInvoice__r.c2g__NetTotal__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Net Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OrderBillingNotes__c</fullName>
+        <externalId>false</externalId>
+        <label>Order Billing Notes</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>OutstandingValue__c</fullName>
+        <externalId>false</externalId>
+        <formula>SalesInvoice__r.c2g__OutstandingValue__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Outstanding Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PaymentStatus__c</fullName>
+        <externalId>false</externalId>
+        <formula>SalesInvoice__r.c2g__PaymentStatus__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Payment Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PrepaidOrCredit__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(SalesInvoice__r.ffps_dmgi__Prepaid_or_Credit__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Prepaid or Credit</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>QueryCloseDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Query Close Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>QueryDate__c</fullName>
+        <defaultValue>Today()</defaultValue>
+        <externalId>false</externalId>
+        <label>Query Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ReasonCode__c</fullName>
+        <externalId>false</externalId>
+        <label>Reason Code</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Adazzle</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ad Did Not Appear</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ad Not Authorised</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Advert Cancelled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Advert Duplicated</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Artwork</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Book Balancing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Credit Card Fraud</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Credit Policy Violation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Duplicate Charge</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Free Advert Charged</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Goodwill - Non Rev</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Goodwill - Rev Aff</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Incorrect Class/Position</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Incorrect Commission</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Incorrect Insert Date</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Incorrect Newsprint</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Incorrect Number of Copies</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Incorrect Photo/Lift</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Incorrect Publication</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Incorrect Rate (National)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Incorrect Style/Layout/Size/Co</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Incorrect Text</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Insert Missing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Invoice Overcharged</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Invoice Transfer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Order Number</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Poor Reproduction</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Prepaid Credit Note</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Under Delivery</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VAT Exempt</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Voucher Copy Required</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>SOPID__c</fullName>
+        <externalId>false</externalId>
+        <formula>FinanceAccount__r.ffps_dmgi__SOP_ID__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SOP ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SOP__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(FinanceAccount__r.ffps_dmgi__SOP_Source__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SOP</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SalesApprovalStatus__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISBLANK( SalesApprover__c), &apos;&apos;, IF(  SterlingTotalQueryAmount__c &lt;=  CreditApprovalLevel__c ,&apos;Approved&apos;,&apos;INSUFFICIENT APPROVAL LIMIT&apos;) )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Sales Approval Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SalesApprover__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Sales Approver</label>
+        <referenceTo>CreditApprover__c</referenceTo>
+        <relationshipLabel>Queries (Sales Approver)</relationshipLabel>
+        <relationshipName>Queries2</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SalesInvoice__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Sales Invoice</label>
+        <referenceTo>c2g__codaInvoice__c</referenceTo>
+        <relationshipLabel>Queries</relationshipLabel>
+        <relationshipName>Queries</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SalesManagerEmail__c</fullName>
+        <externalId>false</externalId>
+        <label>Sales Manager Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SalesManager__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Sales Manager</label>
+        <referenceTo>CreditApprover__c</referenceTo>
+        <relationshipLabel>Queries (Sales Manager)</relationshipLabel>
+        <relationshipName>Queries1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SalesPersonEmail__c</fullName>
+        <externalId>false</externalId>
+        <label>Sales Person Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SalesPerson__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Sales Person</label>
+        <referenceTo>CreditApprover__c</referenceTo>
+        <relationshipLabel>Queries</relationshipLabel>
+        <relationshipName>Queries</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SalesSectionEmail__c</fullName>
+        <externalId>false</externalId>
+        <label>Sales Section Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SalesSection__c</fullName>
+        <externalId>false</externalId>
+        <label>Sales Section</label>
+        <picklist>
+            <controllingField>BusinessUnit__c</controllingField>
+            <picklistValues>
+                <fullName>Administration</fullName>
+                <controllingFieldValues>Mail</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Client Sales</fullName>
+                <controllingFieldValues>Mail</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Customer Services</fullName>
+                <controllingFieldValues>Mail</controllingFieldValues>
+                <controllingFieldValues>Metro</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Innovations</fullName>
+                <controllingFieldValues>Metro</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Inserts</fullName>
+                <controllingFieldValues>Mail</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>International</fullName>
+                <controllingFieldValues>Mail</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Leicester SSF</fullName>
+                <controllingFieldValues>Group</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mail</fullName>
+                <controllingFieldValues>ANy Media</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mail Order, Motors, Homes &amp; Gardens, Interiors &amp; Property</fullName>
+                <controllingFieldValues>Mail</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Manchester</fullName>
+                <controllingFieldValues>Mail</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Marketing</fullName>
+                <controllingFieldValues>Mail</controllingFieldValues>
+                <controllingFieldValues>Metro</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Media Link</fullName>
+                <controllingFieldValues>Mail</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Metro</fullName>
+                <controllingFieldValues>ANy Media</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mobility, Health, Career Mail, Notices</fullName>
+                <controllingFieldValues>Mail</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Network</fullName>
+                <controllingFieldValues>ANy Media</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Overseas Travel</fullName>
+                <controllingFieldValues>Mail</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Property</fullName>
+                <controllingFieldValues>Metro</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Recruitment</fullName>
+                <controllingFieldValues>Metro</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Scotland</fullName>
+                <controllingFieldValues>Mail</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Scotland Admin</fullName>
+                <controllingFieldValues>Mail</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Scotland Production</fullName>
+                <controllingFieldValues>Mail</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Senior Management</fullName>
+                <controllingFieldValues>ANy Media</controllingFieldValues>
+                <controllingFieldValues>Mail</controllingFieldValues>
+                <controllingFieldValues>Metro</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Strategic Sales</fullName>
+                <controllingFieldValues>ANy Media</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Strategy &amp; Solutions</fullName>
+                <controllingFieldValues>Mail</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Support</fullName>
+                <controllingFieldValues>Mail</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Systems &amp; Goodwill</fullName>
+                <controllingFieldValues>Mail</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Team Barry</fullName>
+                <controllingFieldValues>Mail</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Team Hendle</fullName>
+                <controllingFieldValues>Mail</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Team Stevens</fullName>
+                <controllingFieldValues>Mail</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Travel</fullName>
+                <controllingFieldValues>Metro</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UK Travel &amp; YOU Gallery</fullName>
+                <controllingFieldValues>Mail</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Send48HrEmail__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Set by a background process to flag that a 48 Hour Email followup should be sent. This field is a trigger for an email to be sent via a workflow.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Set by a background process to flag that a 48 Hour Email followup should be sent. This field is a trigger for an email to be sent via a workflow.</inlineHelpText>
+        <label>Send 48hr Email</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Source__c</fullName>
+        <externalId>false</externalId>
+        <formula>SalesInvoice__r.ffps_dmgi__Source__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Source</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <description>Status of Query</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Status of Query</inlineHelpText>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Draft</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Open</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Query Denied</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sales Approval Received</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pending Credit Controller Approval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Query Passed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Credit Note Created</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>SterlingTotalQueryAmount__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF (InvoiceExchangeRate__c &gt; 0, TotalQueryAmount__c /  InvoiceExchangeRate__c, null)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Sterling Total Query Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TaxTotal__c</fullName>
+        <externalId>false</externalId>
+        <formula>SalesInvoice__r.c2g__Tax1Total__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Tax Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ToBeAllocatedQueryAmount__c</fullName>
+        <externalId>false</externalId>
+        <formula>TotalQueryAmount__c -  AllocatedQueryAmount__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>To Be Allocated Query Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TotalNetHomeValue__c</fullName>
+        <externalId>false</externalId>
+        <formula>SalesInvoice__r.TotalNetHomeValue__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Net Home Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TotalQueryAmount__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Query Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Query</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>QueryDate__c</columns>
+        <columns>Status__c</columns>
+        <columns>Customer__c</columns>
+        <columns>DueDate__c</columns>
+        <columns>SalesInvoice__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>PendingCreditControllerApproval</fullName>
+        <columns>NAME</columns>
+        <columns>QueryDate__c</columns>
+        <columns>Status__c</columns>
+        <columns>Customer__c</columns>
+        <columns>DueDate__c</columns>
+        <columns>SalesInvoice__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Pending Credit Controller Approval</value>
+        </filters>
+        <label>Pending Credit Controller Approval</label>
+    </listViews>
+    <nameField>
+        <displayFormat>QRY{00000}</displayFormat>
+        <label>Query Number</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Queries</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>QueryDate__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Customer__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>DueDate__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>SalesInvoice__c</customTabListAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>CannotChangeSalesInvoice</fullName>
+        <active>true</active>
+        <description>Cannot change the Sales Invoice once it has been saved.</description>
+        <errorConditionFormula>ISCHANGED( SalesInvoice__c )</errorConditionFormula>
+        <errorDisplayField>SalesInvoice__c</errorDisplayField>
+        <errorMessage>You cannot change the Sales Invoice once a record has been created. You must delete and create a new Query.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CreditControllerInsufficientAuthority</fullName>
+        <active>true</active>
+        <description>The Credit Controller approving the Query to be passed must have sufficient authority – Total Query Amount &lt;= Credit Approvers credit limit on his/her User record</description>
+        <errorConditionFormula>AND( CreditControllerApproved__c , ISCHANGED (CreditControllerApproved__c),OR( SterlingTotalQueryAmount__c &gt; $User.CreditApprovalLimit__c, ISBLANK ($User.CreditApprovalLimit__c)))</errorConditionFormula>
+        <errorMessage>You have insufficient authority to pass this Query</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CustomerContactRequiredForActiveQuery</fullName>
+        <active>true</active>
+        <description>A Customer Contact is required when a Query is anything other than Draft.</description>
+        <errorConditionFormula>!ISPICKVAL(Status__c, &apos;Draft&apos;) &amp;&amp; ISBLANK(CustomerContact__c)</errorConditionFormula>
+        <errorDisplayField>CustomerContact__c</errorDisplayField>
+        <errorMessage>You must specify a Customer Contact.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>SalesApprovalStatusMustBeApproved</fullName>
+        <active>true</active>
+        <description>If the Status is Pending Credit Approval or Query Passed then the Sales Approval Status must be Approved</description>
+        <errorConditionFormula>AND( NOT( SalesApprovalStatus__c  = &apos;Approved&apos;), OR( ISPICKVAL( Status__c, &apos;Pending Credit Controller Approval&apos;), ISPICKVAL( Status__c, &apos;Query Passed&apos;)))</errorConditionFormula>
+        <errorDisplayField>SalesApprover__c</errorDisplayField>
+        <errorMessage>If the Status is Pending Credit Controller Approval or Query Passed then the Sales Approval Status must be Approved – Sales Approver is blank or has insufficient authority</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ToBeAllocatedQueryAmountMustBeNil</fullName>
+        <active>true</active>
+        <description>If the Status is anything other than Open or Sales Approval Received then the To Be Allocated Query Amount must be nil</description>
+        <errorConditionFormula>AND( ABS( ToBeAllocatedQueryAmount__c ) &gt;1, NOT(OR(ISPICKVAL(Status__c, &apos;Draft&apos;),ISPICKVAL(Status__c, &apos;Sales Approval Received&apos;))))</errorConditionFormula>
+        <errorDisplayField>TotalQueryAmount__c</errorDisplayField>
+        <errorMessage>If the Status is anything other than Open or Sales Approval Received then the To Be Allocated Query Amount must be nil</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>TotalQueryAmountCannotExceedNetInvoice</fullName>
+        <active>true</active>
+        <description>The Total Query Amount cannot Exceed the Net Invoice Value.</description>
+        <errorConditionFormula>TotalQueryAmount__c &gt;  NetTotal__c</errorConditionFormula>
+        <errorDisplayField>TotalQueryAmount__c</errorDisplayField>
+        <errorMessage>The Total Query Amount cannot exceed the Invoice Net total.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>CreateCreditNote</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Create Credit Note</masterLabel>
+        <openType>sidebar</openType>
+        <page>CreateCreditNote</page>
+        <protected>false</protected>
+    </webLinks>
+</CustomObject>

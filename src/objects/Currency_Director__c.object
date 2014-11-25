@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Currency Director - Header Object</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Director_Company__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Director Company</label>
+        <referenceTo>c2g__codaCompany__c</referenceTo>
+        <relationshipLabel>Currency Director</relationshipLabel>
+        <relationshipName>Currency_Director</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Director_Currency__c</fullName>
+        <externalId>false</externalId>
+        <label>Director Currency</label>
+        <length>3</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Earliest_related_currency_Effective_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Earliest (related currency) Effective Da</label>
+        <summarizedField>Currency_Director_Currencies__c.Last_Rate_Update_Date__c</summarizedField>
+        <summaryFilterItems>
+            <field>Currency_Director_Currencies__c.Is_Currency_Director_Base_Currency__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Currency_Director_Currencies__c.Currency_Director__c</summaryForeignKey>
+        <summaryOperation>min</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Latest_related_currency_Effective_Date__c</fullName>
+        <description>Reports back the latest Effective Date on the exchange rates set on all related [Currency Director Currency] masters. This is used for control purposes, and ensures that rates cannot be loaded until they share this date (i.e. the calculated cross rates are based on exchange rates which share the same date).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is used for control purposes, and ensures that rates cannot be loaded until they share this date (i.e. the calculated cross rates are based on exchange rates which share the same date).</inlineHelpText>
+        <label>Latest (related currency) Effective Date</label>
+        <summarizedField>Currency_Director_Currencies__c.Last_Rate_Update_Date__c</summarizedField>
+        <summaryForeignKey>Currency_Director_Currencies__c.Currency_Director__c</summaryForeignKey>
+        <summaryOperation>max</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Rates_Share_Consistent_Effective_Dates__c</fullName>
+        <externalId>false</externalId>
+        <formula>If(Earliest_related_currency_Effective_Date__c =  Latest_related_currency_Effective_Date__c, true, false)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Rates Share Consistent Effective Dates ?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Currency Director</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Currency Director Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Currency Director</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>BookingSystemSettings</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>BookingSystemSettings</value>
+    </caseValues>
+    <fields>
+        <label><!-- AccountPath --></label>
+        <name>AccountPath__c</name>
+    </fields>
+    <fields>
+        <label><!-- AuthCodePath --></label>
+        <name>AuthPath__c</name>
+    </fields>
+    <fields>
+        <label><!-- AuthenticationPathClient --></label>
+        <name>AuthenticationPathClient__c</name>
+    </fields>
+    <fields>
+        <label><!-- AuthenticationPath --></label>
+        <name>AuthenticationPath__c</name>
+    </fields>
+    <fields>
+        <label><!-- BookingPluginPath --></label>
+        <name>BookingPluginPath__c</name>
+    </fields>
+    <fields>
+        <label><!-- CalendarPath --></label>
+        <name>CalendarPath__c</name>
+    </fields>
+    <fields>
+        <label><!-- ClientId --></label>
+        <name>ClientId__c</name>
+    </fields>
+    <fields>
+        <label><!-- ConceptValuePath --></label>
+        <name>ConceptValuePath__c</name>
+    </fields>
+    <fields>
+        <label><!-- ContentType --></label>
+        <name>ContentType__c</name>
+    </fields>
+    <fields>
+        <label><!-- CustomerPath --></label>
+        <name>CustomerPath__c</name>
+    </fields>
+    <fields>
+        <label><!-- Domain --></label>
+        <name>Domain__c</name>
+    </fields>
+    <fields>
+        <label><!-- EditBookingPluginPath --></label>
+        <name>EditBookingPluginPath__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please enter a value in seconds --></help>
+        <label><!-- Minimum Token Validity --></label>
+        <name>MinimumTokenValidity__c</name>
+    </fields>
+    <fields>
+        <label><!-- OrderPath --></label>
+        <name>OrderPath__c</name>
+    </fields>
+    <fields>
+        <label><!-- PackagePath --></label>
+        <name>PackagePath__c</name>
+    </fields>
+    <fields>
+        <label><!-- ProductKeyPath --></label>
+        <name>ProductKeyPath__c</name>
+    </fields>
+    <fields>
+        <label><!-- ReadTimeout --></label>
+        <name>ReadTimeout__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service User Group --></label>
+        <name>ServiceUserGroup__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service User Mail Profile --></label>
+        <name>ServiceUserMailProfile__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service User Metro Profile --></label>
+        <name>ServiceUserMetroProfile__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service User Name --></label>
+        <name>ServiceUserName__c</name>
+    </fields>
+    <fields>
+        <label><!-- SharedSecret --></label>
+        <name>SharedSecret__c</name>
+    </fields>
+    <fields>
+        <label><!-- TempDomain --></label>
+        <name>TempDomain__c</name>
+    </fields>
+    <fields>
+        <label><!-- UserGroupPath --></label>
+        <name>UserGroupPath__c</name>
+    </fields>
+    <fields>
+        <label><!-- UserProfilePath --></label>
+        <name>UserProfilePath__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

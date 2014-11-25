@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>Finance Account DMG</layout>
+        <sections>
+            <label><!-- Credit Management --></label>
+            <section>Credit Management</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Outstanding Invoices by status --></label>
+            <section>Outstanding Invoices by status</section>
+        </sections>
+        <sections>
+            <label><!-- Statements --></label>
+            <section>Statements</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Log a Call --></label>
+        <name>Log_A_Call_finance_account</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- New Task --></label>
+        <name>New_Task_FinanceAccount</name>
+    </quickActions>
+</CustomObjectTranslation>

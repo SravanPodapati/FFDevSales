@@ -1,0 +1,674 @@
+<apex:page standardcontroller="Account" extensions="OpportunityPitchController" showHeader="false" title="Pitch">
+<script type='text/javascript' src='/canvas/sdk/js/publisher.js'></script> 
+
+<apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" />
+
+<apex:stylesheet value="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/themes/base/jquery-ui.css"/>
+<apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js"/>
+<!-- google charts -->
+<apex:includeScript value="https://www.google.com/jsapi"/>
+
+<style>
+    .baseContainer {
+        font-family: 'Arial','Helvetica',san-serif;
+        font-size:100%;
+        height:100%;
+    }
+
+    .requiredMark {
+        color: red;
+        display: inline;
+    }
+    .pitchBtn {
+        padding:5px 10px; 
+        font-size:13px; 
+        font-weight:bold; 
+        line-height: 18px;
+        border-radius: 3px;
+    }
+    .pitchBtn:hover {
+        background-color:#669966;
+    }
+
+    .pitchBtn-white {
+        background-color:#EAEAEA;
+        border: 1px solid #096EB3;
+    }
+    .btnProgress {
+        border-color: #c4c4c4 !important;
+        color: #909090 !important;
+        background: #e8e8e9 url('/img/loading.gif') no-repeat center;
+    }
+
+    .pitchBtn-green {
+        color: #fff;
+        /*background-color: #8ab529;*/
+        background-color: #21D92A;
+        background-image: -webkit-linear-gradient(top,#8AB529 0,#87AC31 100%);
+        border: 1px solid #6c8049;
+    }
+    .pitchBtn-blue {
+        color: #fff;
+        background-color: #2A82FF;
+        border: 1px solid #6c8049;
+    }
+    .pitchBtn.disabled {
+        color: #F4F4F4;
+        background-color: #E6E6E6 !important;
+        background-image: none;
+    }
+
+    td.buttons {
+        padding-top:10px;
+    }
+    td.buttons.back {
+        text-align:left;
+    }
+    td.buttons.forward {
+        text-align:right;
+    }
+    td.pageXofY {
+        text-align:center;
+        vertical-align: bottom;
+        font-size:80%;
+        color: gray;
+    }
+    td.label {
+        padding-top: 10px;
+        text-align:left;
+        white-space:nowrap;
+    }
+    #productEntry td.label {
+        padding-top: 0px;
+        text-align:right;
+    }
+    .label label {
+        font-weight: bold;
+        font-size: 90%;
+        padding-right: 5px;
+    }
+    .input {
+        font-size: 100%;
+    }
+    .input input[type="text"], .input select {
+        font-family: 'Arial','Helvetica',san-serif;
+        font-size: 110%;
+        height: 25px;
+        width: 90%;
+        border-radius: 3px;
+        border: 1px solid #c7ccce;
+        padding-left: 5px;
+    }
+    
+    input[type="text"].error, select.error {
+        border: 1px dotted red;
+    }
+    td.input {
+        text-align:left;
+        vertical-align: middle;
+        padding-left: 0px;
+        white-space:nowrap;
+        width:50%;
+    }
+    .pageTitle {
+        font-weight: bold;
+        font-size: 100%;
+
+    }
+    .productIcon:hover {
+        /*border:1px solid #669966;*/
+        background-color: #2A82FF;
+        border-radius: 3px;
+    }
+
+    .dataTable th {
+        background: #CCCCCC;
+        text-align:center;
+
+    }
+
+    .dataTable tr.dataRow:hover {
+        background-color:#E3F3FF;
+    }
+    .dataTable td.dataCell {
+    }
+
+    /* format TD of amount field in product table */
+    .dataTable td.field-amountDisplay.dataCell {
+        text-align:right;
+        font-weight: bold;
+        padding-right: 5px;
+    }
+
+    /* limit max length of team autocomplete dropdown */
+    .ui-autocomplete {
+        max-height: 210px;
+        overflow-y: auto;
+        /* prevent horizontal scrollbar */
+        overflow-x: hidden;
+        /* display scroll bar in mobile safari when user starts dragging the drop down*/
+        -webkit-overflow-scrolling: touch;
+    }
+</style>
+
+<apex:variable var="isDebug" value="{! NOT(ISBLANK($CurrentPage.parameters.debug)) && '0' != $CurrentPage.parameters.debug && 'false' != $CurrentPage.parameters.debug}" />
+<script>
+
+var PUBLISHER_HEIGHT = 330;//number must match the height of Chatter Publisher action (in pixels)
+
+var PRODUCT_CHART_HEIGHT = PUBLISHER_HEIGHT/2 - 10;
+
+//it shall not be necessary cto change anything below this line
+
+var isDebug = {!isDebug}; //this variable is later used inside static resource OpportunityPitch.resource
+
+function refreshFeed() { 
+    Sfdc.canvas.publisher.publish({name : 'publisher.refresh', payload : {feed:true}}); 
+}
+var jq = jQuery.noConflict();
+
+// init google chart API
+google.load("visualization", "1", {packages:["corechart"]});
+
+jq( document ).ready(function() {
+    PAGE_SETUP.setupUI();
+
+});
+
+
+/* these are all actions used by javascript code */
+var MERGE_FIELDS = (function() {
+    var pub = {};
+
+    var actions = [];
+    actions.getAvailableUserMap = '{!$RemoteAction.OpportunityPitchController.getAvailableUserMap}';
+    actions.getProductsByIcon = '{!$RemoteAction.OpportunityPitchController.getProductsByIcon}';
+
+    pub.getAction = function (name) {
+        var action = actions[name];
+        if (!action) {
+            alert("Remote action '" + action + "' is not defined.");
+        }
+        return action;
+    };
+
+    pub.getUserLocale = function () {
+        return "{!UserLocale}";
+    };
+
+    pub.getCurrencyCode = function () {
+        return "{!Opportunity.CurrencyIsoCode}";
+    }
+    function getCurrencySymbolByISO(isoCode) {
+        var symbolByISOCode = [];
+        symbolByISOCode['default'] = "&pound;";
+        symbolByISOCode['USD'] = "$";
+        symbolByISOCode['GBP'] = "&pound;";
+        var res = symbolByISOCode[isoCode];
+        if (!res) {
+            res = symbolByISOCode['default'];
+        }
+        return res;
+    }
+    pub.getCurrencySymbol = function () {
+        return getCurrencySymbolByISO(pub.getCurrencyCode());
+    }
+
+    return pub;
+})();
+
+var PAGE_SETUP = (function(jq) {
+    var pub = {};
+
+    pub.setupUI = function() {
+        if (window!=window.top) { 
+            /* inside a frame maximise content width/height */ 
+            jq('#pagesTable').prop("width", "100%");
+            //jq('#pagesTable').prop("height", jq(document).height() + "px") ;
+        }
+        jq('#pagesTable').height(PUBLISHER_HEIGHT);
+
+        registerAllControls();
+        pager.onPageChange();
+        addRequiredIndicator();
+        hideTodayDateControls();
+        addPlaceholders();
+    };
+
+    /**
+     * check if call to SFDC returned any errors and display them
+     */
+    pub.checkMessages = function() {
+        jq('#btnSave').removeClass('btnProgress');
+
+        var jqMessagesElem = jq('[id$="messages"]');
+        if (jqMessagesElem.text().length > 0) {
+            registerAllControls();
+            alert(jqMessagesElem.text());
+        }
+    };
+
+    function registerAllControls() {
+        //register all controls
+        //html-control="{'shortId':'Advertiser', 'longId':'{! $Component.Advertiser}', 
+        //              'lookupInputId':'{! $Component.AdvertiserInput}', 'selectElementId':'{! $Component.Advertiser}'}"
+
+        jq('[control]').each(function() {
+                pub.registerControl(this);
+            });
+    }
+
+    pub.registerControl = function (elem) {
+        var json = jq(elem).attr("control").replace(/'/g, '"').replace(/\\"/g, '"');
+        var obj = jQuery.parseJSON(json);
+
+        if (obj.lookupInputId) {
+            setupSelectWithLookup(obj.lookupInputId, obj.selectElementId, obj.hiddenInputId);
+        }
+        if (obj.shortId) {
+            //if longId is "not" specified then this means we need Id of current control
+            var longId = (!obj.longId)? jq(elem).attr('id') : obj.longId;
+            pager.registerControl(obj.shortId, longId);
+        }
+    };
+
+
+    /**
+     * highlight as required the label of every control which has attribute 'isRequried'
+     */
+    function addRequiredIndicator() {
+        jq('label').each (function () {
+            pub.updateRequiredIndicator(this);
+        });
+    }
+    pub.updateRequiredIndicator = function (labelElem) {
+        //check if this label has required control
+        var controlId = jq(labelElem).prop('for');
+        if (controlId) {
+            var jqControl = jq('[id="'+controlId+'"]');
+            var hasRequiredMark = jq(labelElem).children('span.requiredMark').length > 0;
+            if (jqControl && "true" == jqControl.attr('isRequired')) {
+                if (!hasRequiredMark ) {
+                    jq(labelElem).prepend('<span class="requiredMark">*</span>');
+                }
+            } else {
+                //make sure there is no requiredMark
+                jq(labelElem).children('span.requiredMark').remove();
+            }
+        }
+    };
+
+    /**
+     * find all <span class="dateFormat"> elements and hide them
+     * because they do not fit the frame
+     */
+    function hideTodayDateControls() {
+        jq('span.dateFormat').hide();
+    }
+
+    function setupSelectWithLookup(lookupInputId, selectElementId, hiddenInputId) {
+        var lookupInputElem = jq('input[id="'+lookupInputId+'"]');
+        //insert select between text input and lookup icon
+        var selectElem = jq('select[id="'+selectElementId+'"]');
+        lookupInputElem.after(selectElem);
+        //hide original input field
+        lookupInputElem.hide();
+        //show lookup icon of the original input field
+        if ("true" !== selectElem.attr('x-disabled')) {
+            jq('a[id="'+lookupInputId+'_lkwgt"]').show();
+        } else {
+            selectElem.prop("disabled", true);
+        }
+
+        var currentVal = jq('[id="'+hiddenInputId+'"]').val();
+        if (currentVal) {
+            //assign initial value
+            selectElem.val(currentVal);
+        }
+
+        //setup lookupPick handler
+        lookupChangeHandlers[lookupInputId] = function (newId, newText) {
+            selectOrAdd(selectElementId, newId, newText, hiddenInputId);
+        };
+        //setup onchange handler - when drop down changes, populate its hidden input
+        //so we could return value to Apex Controller
+        jq(selectElem).change(function () {
+                var selectedVal = jq(this).val();
+                jq('[id="'+hiddenInputId+'"]').val(selectedVal);
+            });
+    }
+
+
+    function addPlaceholders() {
+        jq('input[xtype="date"]').attr('placeholder', dateHandler.getFormat());
+    }
+
+    return pub;
+
+})(jQuery);
+
+</script>
+<!-- Main Javascript code for OpportunityPitch.page -->
+<apex:includeScript value="{!$Resource.OpportunityPitch}"/>
+
+<div class="baseContainer"> 
+    <apex:outputPanel rendered="{!'true' == $CurrentPage.parameters.saveOk}" id="saveResultPanel" style="display:none">
+        <apex:pageMessage summary="Save Successful." severity="info" strength="3" />
+        <script>
+            jq('[id="{!$Component.saveResultPanel}"]').show();
+            refreshFeed();
+            window.setTimeout(function() {
+                        jq('[id="{!$Component.saveResultPanel}"]').fadeOut(1600);
+                    }, 3000);
+            
+        </script>
+
+    </apex:outputPanel>
+
+    <apex:form > 
+    <apex:outputPanel style="display:none"> 
+        <apex:pageMessages id="messages"/>
+    </apex:outputPanel>
+    <apex:outputPanel id="mainPanel" layout="none">
+        <table border="0" id="pagesTable" ><!-- height must match the height of Chatter Publisher action -->
+            <tr id="page1">
+                <td width="100%">
+                <table width="100%">
+                    <tr>
+                        <td class="label"><apex:outputLabel for="Advertiser">Advertiser</apex:outputLabel></td>
+                        <td class="label"><apex:outputLabel for="Agency" id="lblAgency">Agency</apex:outputLabel></td>
+                    </tr>
+                    <tr>
+                        <td class="input" style="padding-right:20px">
+                            <apex:actionRegion >
+                            <apex:outputPanel layout="inline" styleClass="requiredPanel">
+                            <select id="Advertiser" isRequired="true" title="Advertiser" size="1" 
+                                onchange="jq('input[id$=Advertiser]').val(jq('#Advertiser').val()); reloadCampaigns();"
+                                    control="{'shortId':'Advertiser', 'longId':'Advertiser', 'lookupInputId':'{!$Component.AdvertiserInput}', 'selectElementId':'Advertiser', 'hiddenInputId':'{!$Component.Advertiser}'}"
+                                    x-disabled="{!isAdvertiser}">
+                                        <apex:repeat value="{!Advertisers}" var="opt">
+                                            <option value="{!opt.value}">{!opt.label}</option>
+                                        </apex:repeat>
+                                </select>
+                                <apex:inputHidden value="{!selectedAdvertiserId15}" id="Advertiser" html-isRequired="true"/>
+                                <apex:inputField value="{!opportunity.accountId}"  id="AdvertiserInput" style="display:none"/>
+                            </apex:outputPanel>
+                            <apex:actionFunction name="reloadCampaigns" action="{!reloadCampaigns}" rerender="campaignPanel, messages" oncomplete="PAGE_SETUP.checkMessages()"/>
+                            </apex:actionRegion>
+
+                        </td>
+                        <td class="input">
+                            <apex:outputPanel layout="inline" styleClass="requiredPanel">
+                                <select id="Agency" title="Agency" size="1"
+                                    control="{'shortId':'Agency', 'longId':'Agency', 'lookupInputId':'{!$Component.AgencyInput}', 'selectElementId':'Agency', 'hiddenInputId':'{!$Component.Agency}'}" 
+                                        x-disabled="{!isAgency}">
+                                        <apex:repeat value="{!Agencies}" var="opt">
+                                            <option value="{!opt.value}">{!opt.label}</option>
+                                        </apex:repeat>
+                                </select>
+                                <apex:inputHidden value="{!selectedAgencyId15}" id="Agency" html-isRequired="true" html-title="Agency"/>
+                                <apex:inputField value="{!opportunity.Agency__c}" id="AgencyInput"  style="display:none" />
+                            </apex:outputPanel>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="label"><apex:outputLabel for="PitchName">Pitch Name</apex:outputLabel></td>
+                        <td class="label"><apex:outputLabel for="CloseDate">Close Date</apex:outputLabel></td>
+                    </tr>
+                    <tr>
+                        <td class="input">
+                            <apex:inputField value="{!opportunity.name}" id="PitchName" html-title="Pitch Name" html-isRequired="true" required="false"
+                                html-control="{'shortId':'PitchName', 'longId':'{!$Component.PitchName}'}" />
+                        </td>
+                        <td class="input"><apex:inputField value="{!opportunity.CloseDate}" id="CloseDate" html-title="Close Date" 
+                                            html-isRequired="true" required="false" html-xtype="date"/></td>
+                    </tr>
+
+                    <tr>
+                        <td class="label" colspan="2">
+                            <apex:outputLabel for="Pitch_Team">Pitch Team</apex:outputLabel>&nbsp;
+                            <button type="button"  id="btnPitchTeam" onclick="pitchTeamDialogue.show();" class="pitchBtn pitchBtn-white" >Add</button>
+                            <span id="teamCountMessage" style="display:none">&nbsp;<span id="teamCount"></span> team member(s)</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="label"><apex:outputLabel for="StageName">Stage</apex:outputLabel></td>
+                        <td class="label"><apex:outputLabel for="Campaign">Campaign</apex:outputLabel></td>
+                    </tr>
+                    <tr>
+                        <td class="input"><apex:inputField value="{!opportunity.StageName}" id="StageName" html-isRequired="true" html-title="Stage" required="false"/></td>
+                        <td class="input">
+                            <apex:outputPanel layout="inline" styleClass="requiredPanel" id="campaignPanel">
+                                <select id="Campaign" title="Campaign" size="1"
+                                    control="{'shortId':'Campaign', 'longId':'Campaign', 'lookupInputId':'{!$Component.CampaignInput}', 'selectElementId':'Campaign', 'hiddenInputId':'{!$Component.Campaign}'}">
+                                        <apex:repeat value="{!Campaigns}" var="opt">
+                                            <option value="{!opt.value}">{!opt.label}</option>
+                                        </apex:repeat>
+                                </select>
+                                <apex:inputHidden value="{!selectedCampaign15}" id="Campaign" />
+                                <apex:inputField value="{!opportunity.CampaignId}" id="CampaignInput" style="display:none"/>
+                                <script>
+                                    //have to do that every time when this part is reloaded
+                                    jq( document ).ready(function() {
+                                        PAGE_SETUP.registerControl(jq('#Campaign')); 
+                                        //Agency is mandatory if Advertiser Account 'Type' is anything except 'Direct Advertiser'
+                                        var advertiserType = "{!AdvertiserType}";
+                                        var jqAgency = jq('[id="{!$Component.Agency}"]');
+                                        if ("Direct Advertiser" == advertiserType) {
+                                            jqAgency.attr('isRequired', "false");
+                                        } else {
+                                            jqAgency.attr('isRequired', "true");
+                                        }
+                                        PAGE_SETUP.updateRequiredIndicator(jq('[id="{!$Component.lblAgency}"]'));
+                                    });
+                                </script>
+                            </apex:outputPanel>
+                        </td>
+                    </tr>
+                </table><!-- end page1 table -->
+                </td>
+            </tr>
+
+            <!-- PAGE 2 - Products -->
+            <tr id="page2" style="display:none;" class="pageIcons">
+                <td align="center" valign="middle" id="tdIcons">
+                    <apex:variable var="iconsInLineCount" value="{!0}" />
+                    <div id="iconsDiv" style="height:250px; overflow-y: scroll;"><!--250px here is initial height, real height is set in pager, see resizeIconsDiv()-->
+                    <table id="iconTable" styleClass="iconTable" >
+                        <apex:repeat value="{!ProductIconRows}" var="row" >
+                        <tr>
+                            <apex:repeat value="{!row}" var="icon" >
+                            <td>
+                                <apex:image value="{!icon}" styleClass="productIcon" onclick="pager.openProduct('{!icon}')"/>
+                            </td>
+                            </apex:repeat>
+                        </tr>
+                        </apex:repeat>
+                    </table><!-- end page2 table -->
+                    </div>
+                </td>
+            </tr>
+            <!-- Product Entry -->
+            <tr id="pageProduct" style="display:none;">
+                <td align="center" valign="top" width="100%">
+                    <table id="productEntry" styleClass="productEntry" width="100%" border="0">
+                        <tr>
+                            <td colspan="2" ><apex:outputLabel styleClass="pageTitle">Add new Product</apex:outputLabel></td>
+                        </tr>
+                        <tr>
+                            <td class="label" width="20%"><label for="productSelect">Product</label></td>
+                            <td class="input" width="80%">
+                                <select id="productSelect" title="Product" isRequired="true">
+                                    <option value="">--None--</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label"><label for="Amount">Amount ({!Opportunity.CurrencyIsoCode})</label></td>
+                            <td class="input">
+                                <input id="Amount" type="text" isRequired="true" xtype="currencyKMB" title="Amount"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label"><apex:outputLabel for="StartDate">Start Date</apex:outputLabel></td>
+                            <td class="input">
+                                <apex:inputField value="{!dummyLineItem.ServiceDate}" id="StartDate" html-title="Start Date" 
+                                                    required="false" html-isRequired="true" html-xtype="date" 
+                                                    html-control="{'shortId':'StartDate'}" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label"><apex:outputLabel for="EndDate">End Date</apex:outputLabel></td>
+                            <td class="input">
+                                <apex:inputField value="{!dummyLineItem.Last_Insertion_Date__c}" id="EndDate" html-title="End Date" 
+                                                    required="false" html-xtype="date" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <table width="100%">
+                                <td align="left">
+                                    <input type="button" id="btnProductBack" onclick="pager.closeProduct();" class="pitchBtn pitchBtn-green" value="Back"/>
+                                </td>
+                                <td align="right" style="white-space:nowrap;">
+                                    <input type="button" id="btnAddProduct" onclick="productHandler.addProductAndBack();" class="pitchBtn pitchBtn-green" 
+                                                value="Add" title="Add Product and return to Icons"/>
+                                    <input type="button" id="btnAddFinish" onclick="productHandler.addProductAndForward();" class="pitchBtn pitchBtn-green" 
+                                                value="Finish" title="Add Product (if entered) and go to Summary" />
+                                </td>
+                                </table>
+                            </td>
+                        </tr>
+                    </table><!-- end Product Entry table -->
+
+                    <!-- Added Products table -->
+                    <div id="productListDiv">
+                    <table id="productList" border="0" width="100%" class="dataTable" style="display:none;">
+                        <thead>
+                        <tr>
+                            <td colspan="5" ><apex:outputLabel styleClass="pageTitle">Added Products (this icon)</apex:outputLabel></td>
+                        </tr>
+                        <tr>
+                            <th>&nbsp;</th>
+                            <th>Product</th>
+                            <th>Amount</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <!--
+                        <tr class="dataRow odd">
+                            <td>X</td>
+                            <td>Product</td>
+                            <td>Amount</td>
+                            <td>Start Date</td>
+                            <td>End Date</td>
+                        </tr>
+                        -->
+                        </tbody>
+                    </table>
+                    </div>
+                    <input type="button" id="productListBtnBack" class="pitchBtn pitchBtn-green " value="Back" style="display:none"/>
+                    <div style="text-align:left;margin-top:5px;display:none;" id="productListNumOfOtherProductsDiv">
+                        + <a href="#" id="productListNumOfOtherProductsA" ><span id="productListNumOfOtherProducts">0</span> other product(s)</a>
+                    </div>
+                </td>
+            </tr>
+            <!-- PAGE 3 - Overview and Save -->
+            <tr id="page3" style="display:none;">
+                <td width="100%">
+                <table width="100%">
+                    <tr>
+                        <td colspan="4" ><apex:outputLabel styleClass="pageTitle">Pitch Summary for '<span id="summaryPitchName"></span>'</apex:outputLabel></td>
+                    </tr>
+
+                    <tr>
+                        <td class="label" valign="top"><apex:outputLabel for="summarySalesPrice">Sales Price ({!Opportunity.CurrencyIsoCode})</apex:outputLabel></td>
+                        <td class="input"><input type="text" disabled="disabled" id="summarySalesPrice" /></td>
+                    </tr>
+                    <tr>
+                        <td class="label" valign="top"><apex:outputLabel for="summaryAdvertiser">Advertiser</apex:outputLabel></td>
+                        <td class="input"><input type="text" disabled="disabled" id="summaryAdvertiser" /></td>
+                        <td class="label" valign="top"><apex:outputLabel for="summaryAgency">Agency</apex:outputLabel></td>
+                        <td class="input" ><input type="text" disabled="disabled" id="summaryAgency" /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"><div id="piechart"></div></td>
+                    </tr>
+                </table><!-- end page3 table -->
+                </td>
+            </tr>
+            <!-- Botton Buttons -->
+            <tr id="mainButtons">
+                <td colspan="4" valign="bottom">
+                    <table width="100%" height="100%" border="0">
+                        <tr>
+                            <td colspan="3" height="80%">&nbsp;</td><!-- provide necessary space for pages of different hights-->
+                        </tr>
+                        <tr>
+                            <td class="buttons back" width="30%">
+                                <input type="button" id="btnBack" onclick="pager.pageChange(-1);" class="pitchBtn pitchBtn-green page2 page3" value="Back" style="display:none;"/>
+                            </td>
+                            <td class="pageXofY">
+                                New Pitch (step <span id="stepNum">1</span> of 3)
+                            </td>
+                            <td class="buttons forward" width="30%">
+                                <input type="button" id="btnForward" onclick="pager.pageChange(+1);" class="pitchBtn pitchBtn-green page1" value="Forward"/>
+                                <input type="button" id="btnFinish" onclick="pager.pageChange(+1);" class="pitchBtn pitchBtn-green page2" value="Finish" 
+                                                    style="display:none;" isEnabled="pager.canFinish"/>
+                                <!--<apex:commandButton action="{!cancel}" styleClass="pitchBtn pitchBtn-white page3" value="Cancel" style="display:none;" />-->
+                                <input type="button" id="btnCancel" onclick="cancel()" class="pitchBtn pitchBtn-white page3" value="Cancel" style="display:none;"/>
+                                <input type="button" id="btnSave" onclick="pitchTeamDialogue.save();" class="pitchBtn pitchBtn-blue page3" value="Save" 
+                                                    style="display:none;" isEnabled="pager.canFinish"/>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </apex:outputPanel>
+
+    <!-- teamMemberIds and  productData are used to pass Team and Product data to VF Controller, see pager.save()-->
+    <apex:inputHidden id="teamMemberIds" value="{!teamMemberIds}" html-control="{'shortId':'teamMemberIds'}" />
+    <apex:inputHidden id="productData" value="{!productDataJSON}" html-control="{'shortId':'productData'}" />
+
+    <apex:actionFunction name="saveAll" action="{!save}" rerender="mainPanel, messages" oncomplete="PAGE_SETUP.checkMessages()"/>
+    <apex:actionFunction name="cancel" action="{!cancel}"/>
+    </apex:form>
+
+    <!-- Add Pitch Team modal -->
+    <apex:form >
+    <div id="pitchTeamDialogue" title="Add Pitch Team" style="display:none;">
+        <div id="wrapper" style="text-align: center">    
+            <div style="text-align:left; white-space:nowrap;">
+                <!--if need to support placeholders in IE 8: http://www.hagenburger.net/BLOG/HTML5-Input-Placeholder-Fix-With-jQuery.html -->
+                <input type="text" id="teamMemberLookup" placeholder="Start typing User name"/>
+                <button type="button" onclick="pitchTeamDialogue.memberAdd();" class="pitchBtn pitchBtn-white" >Add</button>
+            </div>
+            <div style="text-align:left;margin-top:10px;" class="label"><apex:outputLabel >Already Added</apex:outputLabel></div>
+            <div style="text-align:left;margin-top:10px;" class="selectedTeamMembers" id="selectedTeamMembers"></div>
+            <div style="text-align:left;margin-top:10px;display:none;" class="numOfOthersDiv" id="numOfOthersDiv">
+                + <span id="numOfOthers">0</span> others
+            </div>
+        </div>
+        <script>
+        //have to do that every time when this area is re-rendered
+        jq(document).ready(function() { 
+            //without document.ready this can cause error(KB927917) in IE8
+            //pitchTeamDialogue.init("pitchTeamDialogue", "{!$Component.teamMemberLookup}");
+            pitchTeamDialogue.init("pitchTeamDialogue", "teamMemberLookup");
+        });
+        </script>
+    </div>
+    </apex:form>
+</div>
+
+<apex:outputPanel rendered="{!isDebug}">
+Account Name: {!account.Name}<br/>
+Account RT: {!account.RecordType.Name}<br/>
+</apex:outputPanel>
+
+</apex:page>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HomePageComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <body>&lt;IFRAME marginWidth=0 marginHeight=0 src=&quot;http://www.google.com/uds/modules/elements/newsshow/iframe.html?rsz=small&amp;amp;q=“Metro.co.uk”,“Mail%20Online”&amp;amp;format=728x90&quot; frameBorder=0 width=760 scrolling=no height=120&gt;&lt;/IFRAME&gt;</body>
+    <pageComponentType>htmlArea</pageComponentType>
+    <width>wide</width>
+</HomePageComponent>

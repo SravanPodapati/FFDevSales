@@ -1,0 +1,912 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Object to enable users to send through account detail update requests</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account_Mapping__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account Mapping</label>
+        <referenceTo>Account_Mapping__c</referenceTo>
+        <relationshipLabel>Update Requests</relationshipLabel>
+        <relationshipName>Update_Requests</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Account_Name_S__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Selected tick box</description>
+        <externalId>false</externalId>
+        <label>Account Name Selected</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Account_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Account Name</label>
+        <length>200</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Update Requests</relationshipLabel>
+        <relationshipName>Update_Requests</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Billing_City_S__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Billing City Selected</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Billing_City__c</fullName>
+        <externalId>false</externalId>
+        <label>Billing City</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Billing_Country_S__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Billing Country Selected</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Billing_Country__c</fullName>
+        <externalId>false</externalId>
+        <label>Billing Country</label>
+        <length>200</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Billing_State_Province__c</fullName>
+        <externalId>false</externalId>
+        <label>Billing State/Province</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Billing_State_Province_s__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Billing State/Province Selected</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Billing_Street_S__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Billing Street Selected</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Billing_Street__c</fullName>
+        <externalId>false</externalId>
+        <label>Billing Street</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Billing_Zip_Postal_Code_S__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Billing Zip/Postal Code Selected</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Billing_Zip_Postal_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Billing Zip/Postal Code</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Change_Completed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Change Completed</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Display_Minor_Category_S__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Display - Minor Category Selected</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Display_Minor_Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Display - Minor Category</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Display_S__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Display - Main Category Selected</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Display_Sub_Category_S__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Display - Sub Category Selected</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Display_Sub_Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Display - Sub Category</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Display__c</fullName>
+        <externalId>false</externalId>
+        <label>Display - Main Category</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>First_Name_S__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>First Name Selected</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>First_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>First Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NPA_S__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>NPA Selected</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>NPA__c</fullName>
+        <externalId>false</externalId>
+        <label>NPA</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>New_Parent_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Relationship to new parent account, Used for validation rules.</description>
+        <externalId>false</externalId>
+        <label>New Parent Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Update Requests (New Parent Account)</relationshipLabel>
+        <relationshipName>Update_Requests1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Parent_Account_S__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Parent Account Selected</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Parent_Account__c</fullName>
+        <externalId>false</externalId>
+        <label>Parent Account</label>
+        <length>200</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phone_Number_S__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Phone Number Selected</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Phone_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Phone Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Salutation_S__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Salutation Selected</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Salutation__c</fullName>
+        <externalId>false</externalId>
+        <label>Salutation</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Type_S__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Type Selected</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Update Request</label>
+    <listViews>
+        <fullName>Update_Request_Open</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>Change_Completed__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>Change_Completed__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>Update Request - Open</label>
+        <queue>Virtual_Data_Team</queue>
+        <sharedTo>
+            <group>Virtual_Data_Team</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Update_Requests_Closed</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Change_Completed__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Change_Completed__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Update Requests - Closed</label>
+        <sharedTo>
+            <group>Virtual_Data_Team</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Virtual_Data_Team</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Change_Completed__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Queue</filterScope>
+        <label>Virtual Data Team</label>
+        <queue>Virtual_Data_Team</queue>
+        <sharedTo>
+            <group>Virtual_Data_Team</group>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <displayFormat>{YYYY}{MM}{DD}{0000000000}</displayFormat>
+        <label>Update Request Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Update Requests</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <fullName>AccBillingAddrRequiredOnAgencyDirectAdv</fullName>
+        <active>true</active>
+        <description>only for accounts</description>
+        <errorConditionFormula>!( $Setup.No_Validations__c.Flag__c ) &amp;&amp; 
+Account__c != null &amp;&amp; 
+OR((Account__r.RecordType.Name = &apos;Advertiser&apos; &amp;&amp; 
+	if(!Type_S__c, OR(ISPICKVAL(Account__r.Type, &apos;Direct Advertiser&apos;),ISPICKVAL(Account__r.Type, &apos;Private Advertiser&apos;),ISPICKVAL(Account__r.Type, &apos;Charity&apos;)), 
+		OR(Type__c==&apos;Direct Advertiser&apos;,Type__c==&apos;Private Advertiser&apos;,Type__c==&apos;Charity&apos;))
+),
+(Account__r.RecordType.Name = &apos;Agency&apos; &amp;&amp; 
+if(!Type_S__c, ISPICKVAL(Account__r.Type, &apos;Billing Agency&apos;), Type__c==&apos;Billing Agency&apos;))
+)&amp;&amp;
+if(!Billing_Country_S__c, lower(Account__r.BillingCountry) != &apos;ireland&apos;, lower(Billing_Country__c) != &apos;ireland&apos;)&amp;&amp;
+if(!Billing_Street_S__c, ISBLANK(Account__r.BillingStreet), ISBLANK(Billing_Street__c))</errorConditionFormula>
+        <errorMessage>Billing Street is mandatory on Billing Agencies, Direct Advertisers, Private Advertisers and Charity unless they&apos;re based in Ireland.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>AccBillingPostCodeReqOnAgencyDirectAdv</fullName>
+        <active>true</active>
+        <description>only for Accounts</description>
+        <errorConditionFormula>!( $Setup.No_Validations__c.Flag__c ) &amp;&amp; 
+Account__c != null &amp;&amp; 
+OR((Account__r.RecordType.Name = &apos;Advertiser&apos; &amp;&amp; 
+if(!Type_S__c, OR(ISPICKVAL(Account__r.Type, &apos;Direct Advertiser&apos;),ISPICKVAL(Account__r.Type, &apos;Private Advertiser&apos;),ISPICKVAL(Account__r.Type, &apos;Charity&apos;)), 
+OR(Type__c==&apos;Direct Advertiser&apos;,Type__c==&apos;Private Advertiser&apos;,Type__c==&apos;Charity&apos;)) 
+), 
+(Account__r.RecordType.Name = &apos;Agency&apos; &amp;&amp; 
+if(!Type_S__c, ISPICKVAL(Account__r.Type, &apos;Billing Agency&apos;), Type__c==&apos;Billing Agency&apos;) 
+)) &amp;&amp; 
+if(!Billing_Zip_Postal_Code_S__c, ISBLANK(Account__r.BillingPostalCode), ISBLANK(Billing_Zip_Postal_Code__c)) &amp;&amp; 
+if(!Billing_Country_S__c, lower(Account__r.BillingCountry) != &apos;ireland&apos;, lower(Billing_Country__c) != &apos;ireland&apos;)</errorConditionFormula>
+        <errorMessage>Billing Postcode is mandatory on Billing Agencies, Direct Advertisers, Private Advertisers and Charity unless they&apos;re based in Ireland.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>AccountCheckPhoneFormat</fullName>
+        <active>true</active>
+        <description>only for accounts</description>
+        <errorConditionFormula>!( $Setup.No_Validations__c.Flag__c ) &amp;&amp; 
+Account__c != null &amp;&amp; 
+!REGEX( Phone_Number__c , &apos;[0-9-()+/ ]*&apos;)</errorConditionFormula>
+        <errorMessage>Phone Field shouldn&apos;t allow text to be added.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>AccountTypeChangeValidation</fullName>
+        <active>true</active>
+        <description>only for Accounts</description>
+        <errorConditionFormula>!( $Setup.No_Validations__c.Flag__c ) &amp;&amp; 
+Account__c != null &amp;&amp;If( 
+( 
+Account__r.RecordType.Name=&apos;Advertiser&apos;&amp;&amp; 
+Type_S__c&amp;&amp; 
+( 
+Not(ISBLANK(Account__r.CCIMailCustID__c))|| 
+Not(ISBLANK(Account__r.CCIMetroCustID__c)) 
+) 
+), 
+(If( 
+OR( 
+( 
+ISPICKVAL(Account__r.Type,&apos;Client&apos;)&amp;&amp; 
+(Type__c == &apos;Direct Advertiser&apos;) 
+), 
+( 
+ISPICKVAL(Account__r.Type,&apos;Client&apos;)&amp;&amp; 
+(Type__c == &apos;Brand&apos;) 
+), 
+( 
+ISPICKVAL(Account__r.Type,&apos;Brand&apos;)&amp;&amp; 
+(Type__c == &apos;Client&apos;) 
+), 
+( 
+ISPICKVAL(Account__r.Type,&apos;Brand&apos;)&amp;&amp; 
+(Type__c == &apos;Direct Advertiser&apos;) 
+) 
+), 
+false, 
+true 
+) 
+), 
+false 
+)</errorConditionFormula>
+        <errorMessage>Type can not be changed after an account is synchronised with CCI.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Avoid_pipe_sign_Account</fullName>
+        <active>true</active>
+        <description>avoid pipe symbol in account name field if the related object is account</description>
+        <errorConditionFormula>!( $Setup.No_Validations__c.Flag__c ) &amp;&amp;
+Account__c != null &amp;&amp; 
+CONTAINS(  Account_Name__c , &apos;|&apos;)</errorConditionFormula>
+        <errorMessage>Can not have &apos;|&apos; in Account Name</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Avoid_pipe_sign_Billing_City_for_Account</fullName>
+        <active>true</active>
+        <errorConditionFormula>!( $Setup.No_Validations__c.Flag__c ) &amp;&amp; 
+Account__c != null &amp;&amp; 
+CONTAINS( Billing_City__c , &apos;|&apos;)</errorConditionFormula>
+        <errorMessage>Can not have &apos;|&apos; in Billing City</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Avoid_pipe_sign_Billing_Country</fullName>
+        <active>true</active>
+        <description>For Accounts only</description>
+        <errorConditionFormula>!( $Setup.No_Validations__c.Flag__c ) &amp;&amp; 
+Account__c != null &amp;&amp; 
+CONTAINS( Billing_Country__c , &apos;|&apos;)</errorConditionFormula>
+        <errorMessage>Can not have &apos;|&apos; in Billing Country</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Avoid_pipe_sign_Billing_Postal_Code</fullName>
+        <active>true</active>
+        <description>only for accounts</description>
+        <errorConditionFormula>!( $Setup.No_Validations__c.Flag__c ) &amp;&amp; 
+Account__c != null &amp;&amp; 
+CONTAINS( Billing_Zip_Postal_Code__c , &apos;|&apos;)</errorConditionFormula>
+        <errorMessage>Can not have &apos;|&apos; in Billing Zip/Postal Code</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Avoid_pipe_sign_Billing_State_Province</fullName>
+        <active>true</active>
+        <description>only for accounts</description>
+        <errorConditionFormula>!( $Setup.No_Validations__c.Flag__c ) &amp;&amp; 
+Account__c != null &amp;&amp; 
+CONTAINS(  Billing_State_Province__c , &apos;|&apos;)</errorConditionFormula>
+        <errorMessage>Can not have &apos;|&apos; in Billing State / Province</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Avoid_pipe_sign_Billing_Street</fullName>
+        <active>true</active>
+        <description>only for Accounts</description>
+        <errorConditionFormula>!( $Setup.No_Validations__c.Flag__c ) &amp;&amp; 
+Account__c != null &amp;&amp; 
+CONTAINS(  Billing_Street__c , &apos;|&apos;)</errorConditionFormula>
+        <errorMessage>Can not have &apos;|&apos; in Billing Street</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>BillingPostalCode_format</fullName>
+        <active>true</active>
+        <description>only for Accounts</description>
+        <errorConditionFormula>!( $Setup.No_Validations__c.Flag__c ) &amp;&amp;
+Account__c != null &amp;&amp; 
+OR(
+AND(
+	(!Billing_Zip_Postal_Code_S__c &amp;&amp; Billing_Country_S__c ),
+	(&apos;Yes&apos;==CASE(Billing_Country__c,&apos;United Kingdom&apos;,&apos;Yes&apos;,&apos;UK&apos;,&apos;Yes&apos;,&apos;GB&apos;,&apos;Yes&apos;,&apos;England&apos;,&apos;Yes&apos;,&apos;Scotland&apos;,&apos;Yes&apos;,&apos;Wales&apos;,&apos;Yes&apos;,&apos;Northern Ireland&apos;,&apos;Yes&apos;,&apos;NI&apos;,&apos;Yes&apos;,&apos;No&apos;)),
+	(!OR( 
+		REGEX(Account__r.BillingPostalCode, &apos;[a-zA-Z]{1,2}[0-9]{1,2} [0-9]{1}[ABD-HJLNP-UW-Zabd-hjlnp-uw-z]{2}&apos;), 
+		REGEX(Account__r.BillingPostalCode, &apos;[a-zA-Z]{1,2}[0-9]{1,2}[0-9]{1}[ABD-HJLNP-UW-Zabd-hjlnp-uw-z]{2}&apos;), 
+		REGEX(Account__r.BillingPostalCode, &apos;[a-zA-Z]{1,2}[0-9]{1}[a-zA-Z]{1}[0-9]{1}[ABD-HJLNP-UW-Zabd-hjlnp-uw-z]{2}&apos;), 
+		REGEX(Account__r.BillingPostalCode, &apos;[a-zA-Z]{1,2}[0-9]{1}[a-zA-Z]{1} [0-9]{1}[ABD-HJLNP-UW-Zabd-hjlnp-uw-z]{2}&apos;) 
+		)
+	),
+	!ISBLANK(Account__r.BillingPostalCode)
+),
+AND(
+	(Billing_Zip_Postal_Code_S__c &amp;&amp; !Billing_Country_S__c ),
+	(&apos;Yes&apos;==CASE(Account__r.BillingCountry,&apos;United Kingdom&apos;,&apos;Yes&apos;,&apos;UK&apos;,&apos;Yes&apos;,&apos;GB&apos;,&apos;Yes&apos;,&apos;England&apos;,&apos;Yes&apos;,&apos;Scotland&apos;,&apos;Yes&apos;,&apos;Wales&apos;,&apos;Yes&apos;,&apos;Northern Ireland&apos;,&apos;Yes&apos;,&apos;NI&apos;,&apos;Yes&apos;,&apos;No&apos;)),
+	(!OR( 
+		REGEX(Billing_Zip_Postal_Code__c, &apos;[a-zA-Z]{1,2}[0-9]{1,2} [0-9]{1}[ABD-HJLNP-UW-Zabd-hjlnp-uw-z]{2}&apos;), 
+		REGEX(Billing_Zip_Postal_Code__c, &apos;[a-zA-Z]{1,2}[0-9]{1,2}[0-9]{1}[ABD-HJLNP-UW-Zabd-hjlnp-uw-z]{2}&apos;), 
+		REGEX(Billing_Zip_Postal_Code__c, &apos;[a-zA-Z]{1,2}[0-9]{1}[a-zA-Z]{1}[0-9]{1}[ABD-HJLNP-UW-Zabd-hjlnp-uw-z]{2}&apos;), 
+		REGEX(Billing_Zip_Postal_Code__c, &apos;[a-zA-Z]{1,2}[0-9]{1}[a-zA-Z]{1} [0-9]{1}[ABD-HJLNP-UW-Zabd-hjlnp-uw-z]{2}&apos;) 
+		)
+	),
+	!ISBLANK(Billing_Zip_Postal_Code__c)
+),
+AND(
+	(Billing_Zip_Postal_Code_S__c &amp;&amp; Billing_Country_S__c ),
+	(&apos;Yes&apos;==CASE(Billing_Country__c,&apos;United Kingdom&apos;,&apos;Yes&apos;,&apos;UK&apos;,&apos;Yes&apos;,&apos;GB&apos;,&apos;Yes&apos;,&apos;England&apos;,&apos;Yes&apos;,&apos;Scotland&apos;,&apos;Yes&apos;,&apos;Wales&apos;,&apos;Yes&apos;,&apos;Northern Ireland&apos;,&apos;Yes&apos;,&apos;NI&apos;,&apos;Yes&apos;,&apos;No&apos;)),
+	(!OR( 
+		REGEX(Billing_Zip_Postal_Code__c, &apos;[a-zA-Z]{1,2}[0-9]{1,2} [0-9]{1}[ABD-HJLNP-UW-Zabd-hjlnp-uw-z]{2}&apos;), 
+		REGEX(Billing_Zip_Postal_Code__c, &apos;[a-zA-Z]{1,2}[0-9]{1,2}[0-9]{1}[ABD-HJLNP-UW-Zabd-hjlnp-uw-z]{2}&apos;), 
+		REGEX(Billing_Zip_Postal_Code__c, &apos;[a-zA-Z]{1,2}[0-9]{1}[a-zA-Z]{1}[0-9]{1}[ABD-HJLNP-UW-Zabd-hjlnp-uw-z]{2}&apos;), 
+		REGEX(Billing_Zip_Postal_Code__c, &apos;[a-zA-Z]{1,2}[0-9]{1}[a-zA-Z]{1} [0-9]{1}[ABD-HJLNP-UW-Zabd-hjlnp-uw-z]{2}&apos;) 
+		)
+	),
+	!ISBLANK(Billing_Zip_Postal_Code__c)
+)
+)</errorConditionFormula>
+        <errorMessage>You Requested to change the country to United Kingdom, but the entered or existing post code value is not valid.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Billing_City_to_a_maximum_of_22_Characte</fullName>
+        <active>true</active>
+        <errorConditionFormula>!( $Setup.No_Validations__c.Flag__c ) &amp;&amp; 
+Account__c != null &amp;&amp; 
+if(!Billing_City_S__c, LEN(Account__r.BillingCity)&gt;22, LEN(Billing_City__c)&gt;80)</errorConditionFormula>
+        <errorMessage>Billing City to a maximum of 22 Characters</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Billing_Country_Lookup</fullName>
+        <active>true</active>
+        <description>only for accounts</description>
+        <errorConditionFormula>!( $Setup.No_Validations__c.Flag__c ) &amp;&amp; 
+Account__c != null &amp;&amp; 
+VLOOKUP( $ObjectType.pw_cc__CountryObject__c.Fields.Name , $ObjectType.pw_cc__CountryObject__c.Fields.Name ,  Billing_Country__c ) !=  Billing_Country__c</errorConditionFormula>
+        <errorMessage>Country is not valid</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Billing_Street_format</fullName>
+        <active>true</active>
+        <description>only for Accounts</description>
+        <errorConditionFormula>!( $Setup.No_Validations__c.Flag__c ) &amp;&amp; 
+Account__c != null &amp;&amp; 
+!(ISBLANK(Billing_Street__c)) 
+&amp;&amp; NOT(OR(contains(LOWER(Billing_Street__c),&apos;a&apos;),contains(LOWER(Billing_Street__c),&apos;b&apos;),contains(LOWER(Billing_Street__c),&apos;c&apos;),contains(LOWER(Billing_Street__c),&apos;d&apos;),contains(LOWER(Billing_Street__c),&apos;e&apos;),contains(LOWER(Billing_Street__c),&apos;f&apos;),contains(LOWER(Billing_Street__c),&apos;g&apos;),contains(LOWER(Billing_Street__c),&apos;h&apos;),contains(LOWER(Billing_Street__c),&apos;i&apos;),contains(LOWER(Billing_Street__c),&apos;j&apos;),contains(LOWER(Billing_Street__c),&apos;k&apos;),contains(LOWER(Billing_Street__c),&apos;l&apos;),contains(LOWER(Billing_Street__c),&apos;m&apos;),contains(LOWER(Billing_Street__c),&apos;n&apos;),contains(LOWER(Billing_Street__c),&apos;o&apos;),contains(LOWER(Billing_Street__c),&apos;p&apos;),contains(LOWER(Billing_Street__c),&apos;q&apos;),contains(LOWER(Billing_Street__c),&apos;r&apos;),contains(LOWER(Billing_Street__c),&apos;s&apos;),contains(LOWER(Billing_Street__c),&apos;t&apos;),contains(LOWER(Billing_Street__c),&apos;u&apos;),contains(LOWER(Billing_Street__c),&apos;v&apos;),contains(LOWER(Billing_Street__c),&apos;w&apos;),contains(LOWER(Billing_Street__c),&apos;x&apos;),contains(LOWER(Billing_Street__c),&apos;y&apos;),contains(LOWER(Billing_Street__c),&apos;z&apos;),contains(LOWER(Billing_Street__c),&apos;0&apos;),contains(LOWER(Billing_Street__c),&apos;9&apos;),contains(LOWER(Billing_Street__c),&apos;8&apos;),contains(LOWER(Billing_Street__c),&apos;7&apos;),contains(LOWER(Billing_Street__c),&apos;6&apos;),contains(LOWER(Billing_Street__c),&apos;5&apos;),contains(LOWER(Billing_Street__c),&apos;4&apos;),contains(LOWER(Billing_Street__c),&apos;3&apos;),contains(LOWER(Billing_Street__c),&apos;2&apos;),contains(LOWER(Billing_Street__c),&apos;1&apos;)
+))</errorConditionFormula>
+        <errorMessage>Billing Street should not have only special characters.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Billing_Street_to_a_maximum_of_80_Charac</fullName>
+        <active>true</active>
+        <errorConditionFormula>!( $Setup.No_Validations__c.Flag__c ) &amp;&amp; 
+Account__c != null &amp;&amp; 
+if(!Billing_Street_S__c, LEN(Account__r.BillingStreet)&gt;80, LEN(Billing_Street__c)&gt;80)</errorConditionFormula>
+        <errorMessage>Billing street can not be more than 80 characters.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>BrandParentAccountIsDirectOrClient</fullName>
+        <active>true</active>
+        <description>only for accounts</description>
+        <errorConditionFormula>!( $Setup.No_Validations__c.Flag__c ) &amp;&amp; 
+Account__c != null &amp;&amp; 
+AND(!Type_S__c &amp;&amp; ISPICKVAL(Account__r.Type, &apos;Brand&apos;), ISBLANK( Parent_Account__c ))&amp;&amp;
+AND(Type_S__c &amp;&amp; Type__c == &apos;Brand&apos;, ISBLANK(Account__r.ParentId))</errorConditionFormula>
+        <errorMessage>If Type is Brand Parent account must be completed with either a Direct Advertiser or a Client account</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>BrandParentAccountShouldNotBeAgency</fullName>
+        <active>true</active>
+        <description>Brand Accounts must have either a Direct Advertiser Or a Client as the Parent Account</description>
+        <errorConditionFormula>!( $Setup.No_Validations__c.Flag__c ) &amp;&amp; 
+Account__c != null &amp;&amp; 
+if(!Parent_Account_S__c,
+		AND(
+			Account__r.RecordType.Name == &apos;Agency&apos;,
+			if(!Type_S__c, ISPICKVAL(Account__r.Type, &apos;Brand&apos;), Type__c==&apos;Brand&apos;)
+		),
+		
+		AND(
+			 New_Parent_Account__r.RecordType.Name == &apos;Agency&apos;,
+			 if(!Type_S__c, ISPICKVAL(Account__r.Type, &apos;Brand&apos;), Type__c==&apos;Brand&apos;)
+		)
+	)</errorConditionFormula>
+        <errorMessage>The Parent account for a Brand account must be either a Direct Advertiser or a Client account type</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>BrandParentTypeCannotBeHoldingCompany</fullName>
+        <active>true</active>
+        <description>Holding companies cannot be the parent type for brands</description>
+        <errorConditionFormula>!( $Setup.No_Validations__c.Flag__c ) &amp;&amp; 
+Account__c != null &amp;&amp; 
+IF(!Parent_Account_S__c,
+AND(ISPICKVAL(Account__r.Parent.Type,&apos;Holding Company&apos;),
+if(!Type_S__c, ISPICKVAL(Account__r.Type, &apos;Brand&apos;), Type__c==&apos;Brand&apos;)), 
+
+AND(ISPICKVAL(New_Parent_Account__r.Type,&apos;Holding Company&apos;), 
+if(!Type_S__c, ISPICKVAL(Account__r.Type, &apos;Brand&apos;), Type__c==&apos;Brand&apos;))
+)</errorConditionFormula>
+        <errorMessage>If the account type is Brand the parent cannot be a Holding Company type</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>If_Type_is_Brand_requires_parent_account</fullName>
+        <active>true</active>
+        <description>If the account type is brand the parent account must be completed with either a direct advertised or a client account</description>
+        <errorConditionFormula>!( $Setup.No_Validations__c.Flag__c ) &amp;&amp; 
+Account__c != null &amp;&amp; 
+IF(!Type_S__c, ISPICKVAL(Account__r.Type, &apos;Brand&apos;), Type__c == &apos;Brand&apos;) &amp;&amp;
+IF(!Parent_Account_S__c, ISBLANK(Account__r.ParentId), ISBLANK(Parent_Account__c))</errorConditionFormula>
+        <errorMessage>If Type is Brand Parent account must be completed with either a Direct Advertiser or a Client account</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PA_can_only_have_FirstName_and_Saluatio</fullName>
+        <active>true</active>
+        <description>only Private Advertiser can have first naem and salutation</description>
+        <errorConditionFormula>!( $Setup.No_Validations__c.Flag__c ) &amp;&amp; 
+Account__c != null &amp;&amp; 
+if(!Type_S__c, !ISPICKVAL(Account__r.Type, &apos;Private Advertiser&apos;), Type__c != &apos;Private Advertiser&apos; ) &amp;&amp; 
+OR(IF(!Salutation_S__c, !ISPICKVAL( Account__r.Salutation__c, &apos;&apos; ), !ISBLANK(Salutation__c)), 
+	IF(!First_Name_S__c, !ISBLANK( Account__r.FirstName__c ), !ISBLANK(First_Name__c)) )</errorConditionFormula>
+        <errorMessage>Only Private Advertiser can have First Name or Salutation</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ParentForBookingOrBillingAgency</fullName>
+        <active>true</active>
+        <description>The Parent for a Booking or a Billing Agency should only be a Booking or Billing Agency.</description>
+        <errorConditionFormula>!( $Setup.No_Validations__c.Flag__c ) &amp;&amp; 
+Account__c != null &amp;&amp; 
+Account__r.RecordType.Name == &apos;Agency&apos; &amp;&amp; 
+OR( 
+if(!Type_S__c, ISPICKVAL(Account__r.Type, &apos;Booking Agency&apos;), Type__c==&apos;Booking Agency&apos;), 
+if(!Type_S__c, ISPICKVAL(Account__r.Type, &apos;Billing Agency&apos;), Type__c==&apos;Billing Agency&apos;) 
+)&amp;&amp; 
+IF(!Parent_Account_S__c, !ISBLANK(Account__r.ParentId), !ISBLANK(Parent_Account__c))&amp;&amp; 
+
+if( 
+!Parent_Account_S__c,
+AND( 
+!ISPICKVAL(Account__r.Parent.Type, &apos;Billing Agency&apos; ), 
+!ISPICKVAL(Account__r.Parent.Type, &apos;Booking Agency&apos; ), 
+!ISPICKVAL(Account__r.Parent.Type, &apos;Holding Agency&apos; ) 
+), 
+
+AND( 
+!ISPICKVAL(New_Parent_Account__r.Parent.Type, &apos;Billing Agency&apos; ), 
+!ISPICKVAL(New_Parent_Account__r.Parent.Type, &apos;Booking Agency&apos; ), 
+!ISPICKVAL(New_Parent_Account__r.Parent.Type, &apos;Holding Agency&apos; ) 
+) 
+)</errorConditionFormula>
+        <errorMessage>The Parent can only be a Booking or Billing Agency.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PhoneNoMandatory</fullName>
+        <active>true</active>
+        <description>only for accounts</description>
+        <errorConditionFormula>!( $Setup.No_Validations__c.Flag__c )&amp;&amp;
+Account__c != null &amp;&amp; 
+(BEGINS( $User.Profile_Name__c , &apos;London&apos;)|| 
+if(!Type_S__c, ISPICKVAL(Account__r.Type, &apos;Billing Agency&apos;), Type__c==&apos;Billing Agency&apos;)|| 
+if(!Type_S__c, ISPICKVAL(Account__r.Type, &apos;Private Advertiser&apos;), Type__c==&apos;Private Advertiser&apos;)|| 
+if(!Type_S__c, ISPICKVAL(Account__r.Type, &apos;Direct Advertiser&apos;), Type__c==&apos;Direct Advertiser&apos;)|| 
+if(!Type_S__c, ISPICKVAL(Account__r.Type, &apos;Charity&apos;), Type__c==&apos;Charity&apos;) 
+)&amp;&amp; 
+if(!Phone_Number_S__c, ISBLANK(Account__r.Phone), ISBLANK(Phone_Number__c))</errorConditionFormula>
+        <errorMessage>The Phone Number field is mandatory</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Phone_length_Validation</fullName>
+        <active>true</active>
+        <description>only for accounts</description>
+        <errorConditionFormula>!( $Setup.No_Validations__c.Flag__c ) &amp;&amp; 
+Account__c != null &amp;&amp; 
+IF(!Phone_Number_S__c, (LEN(TRIM(Account__r.Phone))&lt;10 || LEN(TRIM(Account__r.Phone))&gt;20),(LEN(TRIM(Phone_Number__c))&lt;10 || LEN(TRIM(Phone_Number__c))&gt;20)
+)</errorConditionFormula>
+        <errorMessage>Phone Numbers should be between 10 and 20 Digits.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PostCodeCharacterValidation</fullName>
+        <active>true</active>
+        <errorConditionFormula>!( $Setup.No_Validations__c.Flag__c ) &amp;&amp;
+Account__c != null &amp;&amp; Billing_Zip_Postal_Code_S__c &amp;&amp;
+NOT(OR( 
+	contains(LOWER(Billing_Zip_Postal_Code__c),&apos;a&apos;),contains(LOWER(Billing_Zip_Postal_Code__c),&apos;b&apos;),contains(LOWER(Billing_Zip_Postal_Code__c),&apos;c&apos;),contains(LOWER(Billing_Zip_Postal_Code__c),&apos;d&apos;),contains(LOWER(Billing_Zip_Postal_Code__c),&apos;e&apos;),contains(LOWER(Billing_Zip_Postal_Code__c),&apos;f&apos;),contains(LOWER(Billing_Zip_Postal_Code__c),&apos;g&apos;),contains(LOWER(Billing_Zip_Postal_Code__c),&apos;h&apos;),contains(LOWER(Billing_Zip_Postal_Code__c),&apos;i&apos;),contains(LOWER(Billing_Zip_Postal_Code__c),&apos;j&apos;),contains(LOWER(Billing_Zip_Postal_Code__c),&apos;k&apos;),contains(LOWER(Billing_Zip_Postal_Code__c),&apos;l&apos;),contains(LOWER(Billing_Zip_Postal_Code__c),&apos;m&apos;),contains(LOWER(Billing_Zip_Postal_Code__c),&apos;n&apos;),contains(LOWER(Billing_Zip_Postal_Code__c),&apos;o&apos;),contains(LOWER(Billing_Zip_Postal_Code__c),&apos;p&apos;),contains(LOWER(Billing_Zip_Postal_Code__c),&apos;q&apos;),contains(LOWER(Billing_Zip_Postal_Code__c),&apos;r&apos;),contains(LOWER(Billing_Zip_Postal_Code__c),&apos;s&apos;),contains(LOWER(Billing_Zip_Postal_Code__c),&apos;t&apos;),contains(LOWER(Billing_Zip_Postal_Code__c),&apos;u&apos;),contains(LOWER(Billing_Zip_Postal_Code__c),&apos;v&apos;),contains(LOWER(Billing_Zip_Postal_Code__c),&apos;w&apos;),contains(LOWER(Billing_Zip_Postal_Code__c),&apos;x&apos;),contains(LOWER(Billing_Zip_Postal_Code__c),&apos;y&apos;),contains(LOWER(Billing_Zip_Postal_Code__c),&apos;z&apos;),contains(LOWER(Billing_Zip_Postal_Code__c),&apos;0&apos;),contains(LOWER(Billing_Zip_Postal_Code__c),&apos;9&apos;),contains(LOWER(Billing_Zip_Postal_Code__c),&apos;8&apos;),contains(LOWER(Billing_Zip_Postal_Code__c),&apos;7&apos;),contains(LOWER(Billing_Zip_Postal_Code__c),&apos;6&apos;),contains(LOWER(Billing_Zip_Postal_Code__c),&apos;5&apos;),contains(LOWER(Billing_Zip_Postal_Code__c),&apos;4&apos;),contains(LOWER(Billing_Zip_Postal_Code__c),&apos;3&apos;),contains(LOWER(Billing_Zip_Postal_Code__c),&apos;2&apos;),contains(LOWER(Billing_Zip_Postal_Code__c),&apos;1&apos;)
+) 
+)
+&amp;&amp;
+if(!Billing_Country_S__c, 
+&apos;NO&apos;==CASE(Account__r.BillingCountry,&apos;United Kingdom&apos;,&apos;Yes&apos;,&apos;UK&apos;,&apos;Yes&apos;,&apos;GB&apos;,&apos;Yes&apos;,&apos;England&apos;,&apos;Yes&apos;,&apos;Scotland&apos;,&apos;Yes&apos;,&apos;Wales&apos;,&apos;Yes&apos;,&apos;Northern Ireland&apos;,&apos;Yes&apos;,&apos;NI&apos;,&apos;Yes&apos;,&apos;No&apos;) ,
+&apos;NO&apos;==CASE(Billing_Country__c,&apos;United Kingdom&apos;,&apos;Yes&apos;,&apos;UK&apos;,&apos;Yes&apos;,&apos;GB&apos;,&apos;Yes&apos;,&apos;England&apos;,&apos;Yes&apos;,&apos;Scotland&apos;,&apos;Yes&apos;,&apos;Wales&apos;,&apos;Yes&apos;,&apos;Northern Ireland&apos;,&apos;Yes&apos;,&apos;NI&apos;,&apos;Yes&apos;,&apos;No&apos;)
+)</errorConditionFormula>
+        <errorMessage>Post code must contain at least a number or letter.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PrivateAdvertiserNameRequired</fullName>
+        <active>true</active>
+        <description>only for accounts</description>
+        <errorConditionFormula>!( $Setup.No_Validations__c.Flag__c ) &amp;&amp; 
+Account__c != null &amp;&amp; 
+Account__r.RecordType.Name = &apos;Advertiser&apos; &amp;&amp; 
+OR(
+	AND(
+		!Type_S__c,
+		ISPICKVAL(Account__r.Type, &apos;Private Advertiser&apos;),
+		OR(
+			IF(!Salutation_S__c, ISPICKVAL( Account__r.Salutation__c, &apos;&apos; ), ISBLANK(Salutation__c)),
+			IF(!First_Name_S__c, ISBLANK( Account__r.FirstName__c ), ISBLANK(First_Name__c))
+		)
+	),
+	AND(
+		Type_S__c,
+		Type__c == &apos;Private Advertiser&apos;,
+		OR(
+			IF(!Salutation_S__c, ISPICKVAL( Account__r.Salutation__c, &apos;&apos; ), ISBLANK(Salutation__c)),
+			IF(!First_Name_S__c, ISBLANK( Account__r.FirstName__c ), ISBLANK(First_Name__c))
+		)
+	)
+)</errorConditionFormula>
+        <errorMessage>Salutation and First Name are Required for a Private Advertiser</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Private_advertiser_can_not_be_changeable</fullName>
+        <active>true</active>
+        <description>only for accounts</description>
+        <errorConditionFormula>!( $Setup.No_Validations__c.Flag__c ) &amp;&amp; 
+Account__c != null &amp;&amp; 
+Type_S__c&amp;&amp; 
+ISPICKVAL(Account__r.Type,&apos;Private Advertiser&apos;) &amp;&amp; 
+Type__c != &apos;Private Advertiser&apos;</errorConditionFormula>
+        <errorMessage>Type can not be changed from Private Advertiser.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>TypeChangeValidationToBrand</fullName>
+        <active>true</active>
+        <description>only for Accounts</description>
+        <errorConditionFormula>!( $Setup.No_Validations__c.Flag__c ) &amp;&amp; 
+Account__c != null &amp;&amp; 
+AND( 
+	Type_S__c, 
+	(!ISBLANK(Account__r.CCIMetroCustID__c)|| !ISBLANK(Account__r.CCIMailCustID__c)), 
+	AND( 
+		OR( 
+			ISBlank(Account__r.Phone), 
+			ISBlank(Account__r.BillingStreet), 
+			ISBlank(Account__r.BillingPostalCode) 
+		), 
+		(Type__c==&apos;Brand&apos;), 
+		AND( 
+			IF(!Phone_Number_S__c, !ISBLANK(Account__r.Phone), !ISBLANK(Phone_Number__c)),
+			IF(!Billing_Street_S__c, !ISBLANK(Account__r.BillingStreet), !ISBLANK(Billing_Street__c)),
+			IF(!Phone_Number_S__c, !ISBLANK(Account__r.BillingStreet), !ISBLANK(Phone_Number__c))
+		) 
+	) 
+)</errorConditionFormula>
+        <errorMessage>Account Type can not be changed to this type of Account. Please enter the Phone,Billing Street and Billing PostalCode then save the record before switching the Account Type.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>New_Update_Request_Account</fullName>
+        <availability>online</availability>
+        <description>Account Object Update request</description>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>New Update Request</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/apex/CreateEditUpdateRequest?rID={!Account.Id}&amp;rObj=account</url>
+    </webLinks>
+</CustomObject>

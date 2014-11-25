@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>ConstantsH</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>ConstantsH</value>
+    </caseValues>
+    <fields>
+        <label><!-- Acc and Contact owner --></label>
+        <name>Acc_and_Contact_owner__c</name>
+    </fields>
+    <fields>
+        <label><!-- Department --></label>
+        <name>Department__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsManager --></label>
+        <name>IsManager__c</name>
+    </fields>
+    <fields>
+        <help><!-- comma separated list of Opportunity stages valid for Auto-Follow rules [Gl-38] --></help>
+        <label><!-- Opportunity Auto Follow Stages --></label>
+        <name>Opportunity_Auto_Follow_Stages__c</name>
+    </fields>
+    <fields>
+        <help><!-- Opportunity Amount thresholds for Auto-Follow logic --></help>
+        <label><!-- Opportunity Auto Follow Threshold --></label>
+        <name>Opportunity_Auto_Follow_Threshold__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price Book --></label>
+        <name>Price_Book__c</name>
+    </fields>
+    <fields>
+        <help><!-- number of product icons per line on Page 2 of Opportunity create via Chatter function --></help>
+        <label><!-- Quick Pitch - Icons Per Line --></label>
+        <name>Quick_Pitch_Icons_Per_Line__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,16 @@
+<apex:page standardController="ffps_dmgcp__DocumentOutput__c" extensions="TalendTestRestController" action="{!testCallOut}">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection columns="1">
+                <apex:pageBlockSectionItem >
+                    <apex:pageMessages />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="1">
+                <apex:pageBlockSectionItem >
+                    <apex:commandButton value="Back" action="{!cancel}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>    
+</apex:page>

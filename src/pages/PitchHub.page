@@ -1,0 +1,201 @@
+<!-- *********************************************************************************** --> 
+<!-- *********************************************************************************** --> 
+<!-- ****                                                                           **** --> 
+<!-- ****   This page is called after clicking Pitch Hub tab                        **** --> 
+<!-- ****                                                                           **** -->
+<!-- ****                                                                           **** -->
+<!-- ****   We use this page for creating a quick Pitch with one Product            **** -->
+<!-- ****   but for multiple insertion dates.                                       **** --> 
+<!-- ****                                                                           **** --> 
+<!-- ****   If Pricebook doesn't exist (or if it is empty) than an error message    **** --> 
+<!-- ****   is shown and fields for entering Pitch and Product are not              **** --> 
+<!-- ****   rendered.                                                               **** --> 
+<!-- ****                                                                           **** --> 
+<!-- ****                                                                           **** --> 
+<!-- *********************************************************************************** --> 
+<!-- *********************************************************************************** --> 
+
+
+<apex:page controller="PitchHubController" id="pgid" tabStyle="Pitch_Hub__tab">
+    <apex:form id="frmid">
+    
+    
+        <!-- loads jquery and jquery ui -->
+
+        <script src="{!URLFOR($Resource.MultiDateSelector, 'MultiDateSelector/js/jquery-1.7.2.js')}"></script>
+        <script src="{!URLFOR($Resource.MultiDateSelector, 'MultiDateSelector/js/jquery.ui.core.js')}"></script>        
+        
+        <script src="{!URLFOR($Resource.MultiDateSelector, 'MultiDateSelector/js/jquery.calendars.js')}"></script>
+        <script src="{!URLFOR($Resource.MultiDateSelector, 'MultiDateSelector/js/jquery.calendars.plus.js')}"></script>
+        <script src="{!URLFOR($Resource.MultiDateSelector, 'MultiDateSelector/js/jquery.calendars.picker.js')}"></script>
+
+        <style type="text/css" title="currentStyle">
+            @import "{!URLFOR($Resource.MultiDateSelector, 'MultiDateSelector/css/jquery.calendars.picker.css')}";
+        </style>         
+
+        <script type="text/javascript">      
+            var $j = jQuery.noConflict();
+            $j(function(){
+                //alert(document.getElementById('{!$component.pgid:frmid:pgBlockId:pgBlockSectionId1:pgBlockSectionItemId3:multi999Picker}'));
+                var myElement    =   document.getElementById('{!$component.pgid:frmid:pgBlockId:pgBlockSectionId1:pgBlockSectionItemId3:multi999Picker}');
+                $j(myElement).calendarsPicker({ 
+                dateFormat: 'dd/mm/yyyy', multiSelect: 999, monthsToShow: 2, showTrigger: '#calImg'});
+
+            });
+        </script>        
+        
+        <script type="text/javascript">
+        
+        function MandatoryFieldsCheck(){
+            
+            var sStageValue             =    document.getElementById('{!$component.pgid.frmid.pgBlockId.pgBlockSectionId1.stageSelect}').value; 
+            var sProductValue           =    document.getElementById('{!$component.pgid.frmid.pgBlockId.pgBlockSectionId1.pgBlockSectionItemId2.productSelect}').value;
+            var sFirstInsertionDates    =    document.getElementById('{!$component.pgid.frmid.pgBlockId.pgBlockSectionId1.pgBlockSectionItemId3.multi999Picker}').value;         
+            var sProductOptionName      =    document.getElementById('{!$component.pgid.frmid.pgBlockId.pgBlockSectionId1.pgBlockSectionItemId2.productSelect}').options[document.getElementById('{!$component.pgid.frmid.pgBlockId.pgBlockSectionId1.pgBlockSectionItemId2.productSelect}').selectedIndex].text;
+            //alert(sProductValue);
+            //alert(sFirstInsertionDates);            
+            //alert(sProductOptionName);
+            //alert(sStageValue);
+            
+            if(sProductValue == 'None' || sProductValue == '' || sProductValue == null ){
+                alert('Please select a product');
+                return false;
+            }
+            
+            else if(sFirstInsertionDates == '' || sFirstInsertionDates == null ){
+                alert('Please specify the First Insertion Dates');
+                return false;
+            }
+            
+            else if(sStageValue == 'Closed Won' && sProductOptionName == 'Metro Provisional Product'){
+                alert('Pitch cannot be closed-won with a provisional product allocated');
+                return false;            
+            }
+        }
+        
+        </script>
+        
+            <!-- *********************************************** -->
+            <!-- ***************** Opportunity ***************** -->  
+            <!-- *********************************************** -->
+
+                <apex:pageBlock rendered="{!productsExist}" id="pgBlockId">
+                <apex:pageMessages />
+                <apex:pageBlockSection id="pgBlockSectionId1" title="New Quick Pitch" columns="4" >                    
+                    <apex:inputField value="{!opportunity.name}" required="true"/>
+                    <apex:inputField value="{!opportunity.accountId}"  id="Advertiser" label="Advertiser" required="true"/>
+                    <apex:inputField value="{!opportunity.Agency__c}"/>                   
+                    <apex:inputField value="{!opportunity.Type}" required="true"/>
+                    <apex:selectList label="Stage" value="{!stageSelectList}" size="1" id="stageSelect"   required="true">
+                        <apex:selectOptions value="{!stageOptions}"/>
+                    </apex:selectList>                     
+                    <apex:inputField value="{!opportunity.closeDate}" required="true"/>                    
+                    
+            <!-- ****************************************** ***************** -->
+            <!-- ***************** Opportunity Contact Role ***************** -->  
+            <!-- ************************************************************ -->                    
+                    
+                    <apex:inputField value="{!contactRole.contactId}" required="true"/>
+<!--                    <apex:inputField value="{!contactRole.contactId}" required="false"/> -->
+                    <apex:pageBlockSectionItem id="pgBlockSectionItemId1" >
+                    <apex:outputLabel for="roleSelect">Contact Role</apex:outputLabel>
+                    <apex:panelGroup >
+                        <div class="requiredInput">
+                            <div class="requiredBlock"></div>
+                            <apex:selectList value="{!roleSelectList}" size="1" id="roleSelect" required="true">
+                                <apex:selectOptions value="{!roleOptions}"/>
+                            </apex:selectList>
+                        </div>
+                    </apex:panelGroup>
+<!--                     <apex:panelGroup >                    -->
+<!--                         <apex:selectList value="{!roleSelectList}" size="1" id="roleSelect"> -->
+<!--                             <apex:selectOptions value="{!roleOptions}"/> -->
+<!--                         </apex:selectList> -->
+<!--                     </apex:panelGroup> -->
+                    </apex:pageBlockSectionItem>
+                    <apex:inputField value="{!opportunity.ownerId}"/>
+                    <apex:inputField value="{!opportunity.CampaignID}" label="Strategic Campaign" id="Campaign" />                    
+                    <apex:pageBlockSectionItem >                                            
+                        <apex:outputLabel >Create New Contact</apex:outputLabel>
+                        <apex:outputpanel >
+                            <a href="/003/e?retURL=/apex/PitchHub" target="_blank">                        
+                            <apex:image value="{!$Resource.Edit}"/>                        
+                            </a>
+                        </apex:outputpanel>                        
+                    </apex:pageBlockSectionItem>
+                    <apex:inputField value="{!opportunity.IsNew__c}"/>
+                    
+                    <apex:inputCheckbox value="{!opportunity.Is_Mock_Up_Requested__c}"/>
+                
+                <!-- *********************************************** -->
+                <!-- ************ Opportunity Line Item ************ -->  
+                <!-- *********************************************** -->
+            
+                    <apex:pageBlockSectionItem id="pgBlockSectionItemId2" >
+                        <apex:outputLabel >Product</apex:outputLabel>
+                        <apex:panelGroup >
+                            <apex:image url="{!$Resource.Mandatory}"/>
+                            <apex:outputLabel ></apex:outputLabel>
+                            <apex:selectList value="{!productsSelectList}" size="1" id="productSelect" required="true" style="width:250px">
+                                <apex:selectOptions id="productOption" value="{!productOptions}"/>
+                            </apex:selectList>
+                        </apex:panelGroup>
+                    </apex:pageBlockSectionItem>                    
+                    <apex:inputField value="{!pitch.Description}"/>
+                    <apex:inputField value="{!pitch.UnitPrice}" required="true"/>
+                    <apex:inputField value="{!pitch.Brand__c}"/>                                                                            
+                    <apex:inputField value="{!pitch.Size__c}"/>
+                    <apex:inputField value="{!pitch.Position__c}"/>
+                    <apex:inputField value="{!pitch.Color_Specification__c}"/>
+                    <apex:inputField value="{!pitch.Region__c}"/>
+                    <apex:inputField value="{!pitch.URN__c}"/>
+                    
+                    <apex:pageblockSectionItem id="pgBlockSectionItemId3">
+                        <apex:outputLabel for="from-input">Select First Insertion Dates</apex:outputLabel>
+                        <apex:outputPanel >
+                            <apex:image url="{!$Resource.Mandatory}"/>
+                            <apex:inputText id="multi999Picker"  value="{!SelectedInsertionDates}"/>
+                            
+                            <!-- 
+                            <input type="text" id="multi999Picker" name="SelectedDates" value="{!SelectedInsertionDates}"/>
+                            <input type="text" id="multi999Picker" name="SelectedDates" value="{!HiddenSelectedInsertionDates}"/>
+                            <apex:inputHidden id="MultiSelectDateHidden" value="{!HiddenSelectedInsertionDates}"/>
+                            -->                         
+                        
+                        </apex:outputPanel>
+                    </apex:pageblockSectionItem>                                        
+                     <apex:inputField value="{!pitch.Last_Insertion_Date__c}"/>                                                                                                                        
+                    </apex:pageBlockSection>
+                    
+                <apex:pageBlockSection columns="4">
+                    <apex:outputLabel ></apex:outputLabel>                    
+                    <apex:commandButton value="Save" action="{!save}" onclick="return MandatoryFieldsCheck();"/>
+                    <apex:outputLabel ></apex:outputLabel>
+                </apex:pageBlockSection>
+                
+            </apex:pageBlock>
+            
+            <!-- *********************************************** -->
+            <!-- *********** If there are no products ********** -->  
+            <!-- *********************************************** -->
+
+            <apex:pageBlock rendered="{!!productsExist}">
+            
+                <apex:pageBlockButtons >
+                    <apex:commandButton action="{!cancel}"  value="Cancel" immediate="true"/>
+                </apex:pageBlockButtons>
+            
+                <apex:outputText value="Pitch Hub functionality cannot be used because Price Book is not defined for your profile or it contains no products." 
+                                    style="color:#CC0000;font-weight:bold;"/>
+
+            </apex:pageBlock>
+        </apex:form>            
+
+            <!-- ***************************************************************** -->
+            <!-- *********** Enhanced List View of all configured views ********** -->  
+            <!-- ***************************************************************** -->
+
+            <apex:pageBlock rendered="{!productsExist}">
+                <apex:enhancedList customizable="true" rowsPerPage="100" type="Opportunity" id="MyOpportunities" height="450"/>
+            </apex:pageBlock>
+</apex:page>

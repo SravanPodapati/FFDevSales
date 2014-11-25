@@ -1,0 +1,6 @@
+<apex:page standardController="Account" Extensions="AccountFullSyncController" action="{!cciFullSync}">
+    <apex:pageMessages />
+    <apex:form >
+    	<apex:commandButton value="Go Back" action="/{!CurrentRecord.id}"/>
+    </apex:form>
+</apex:page>

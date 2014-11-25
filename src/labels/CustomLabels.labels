@@ -1,0 +1,1137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>AB_Copy_Split</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AB Copy Split</shortDescription>
+        <value>AB Copy Split</value>
+    </labels>
+    <labels>
+        <fullName>Account_Record_Type</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Account Record Type</shortDescription>
+        <value>Account Record Type</value>
+    </labels>
+    <labels>
+        <fullName>Account_Type_vs_Finance_Account_Creation</fullName>
+        <categories>Settings</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Account Type vs Finance Account  Creation</shortDescription>
+        <value>Direct Advertiser,Charity,Private Advertiser,Brand</value>
+    </labels>
+    <labels>
+        <fullName>Actual_Opportunity_Value</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Actual Opportunity Value</shortDescription>
+        <value>Actual Opportunity Value</value>
+    </labels>
+    <labels>
+        <fullName>Ad_Hoc_VB</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Ad Hoc VB</shortDescription>
+        <value>Ad Hoc VB</value>
+    </labels>
+    <labels>
+        <fullName>Add_to_Opportunity_Line</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Add to Opportunity Line</shortDescription>
+        <value>Add to Opportunity Line</value>
+    </labels>
+    <labels>
+        <fullName>Add_to_Opportunity_Line_and_Copy</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Add to Opportunity Line and Copy</shortDescription>
+        <value>Add to Opportunity Line and Copy</value>
+    </labels>
+    <labels>
+        <fullName>Advertiser_or_Brand</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Advertiser or Brand</shortDescription>
+        <value>Advertiser or Brand</value>
+    </labels>
+    <labels>
+        <fullName>Agency</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Agency</shortDescription>
+        <value>Agency</value>
+    </labels>
+    <labels>
+        <fullName>AgencyTypeInvalid</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>This Agency Type can not be synchronised with CCI</shortDescription>
+        <value>This Agency Type can not be synchronised with CCI.</value>
+    </labels>
+    <labels>
+        <fullName>Agency_or_Client_Contact</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Agency or Client Contact</shortDescription>
+        <value>Agency or Client Contact</value>
+    </labels>
+    <labels>
+        <fullName>Allowed_Type_Change_Combinations</fullName>
+        <categories>Settings</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Allowed Type Change Combinations</shortDescription>
+        <value>Brand=&gt;Client,
+Client=&gt;Brand,
+Client=&gt;Direct Advertiser,
+Direct Advertiser=&gt;Client,
+Brand=&gt;Direct Advertiser,</value>
+    </labels>
+    <labels>
+        <fullName>BlankConceptValues</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>BlankConceptValues</shortDescription>
+        <value>All required fields are not populated for creating this order</value>
+    </labels>
+    <labels>
+        <fullName>BlankProductSelection</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>BlankProductSelection</shortDescription>
+        <value>Some of the product selections are blank.</value>
+    </labels>
+    <labels>
+        <fullName>Brand_Adv</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Brand / Adv</shortDescription>
+        <value>Brand / Adv</value>
+    </labels>
+    <labels>
+        <fullName>CCIAccount_already_exists</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CCIAccount already exists</shortDescription>
+        <value>This account already exists in CCI</value>
+    </labels>
+    <labels>
+        <fullName>CCICustomer_does_not_exist</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CCICustomer does not exist</shortDescription>
+        <value>CCI Customer does not exist for this account. First initiate CCI Customer record from Account</value>
+    </labels>
+    <labels>
+        <fullName>CCIIntegrationProfile_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CCI Integration Profile</shortDescription>
+        <value>CCI Integration Profile</value>
+    </labels>
+    <labels>
+        <fullName>CCI_Equivalent_Mail_Profiles</fullName>
+        <categories>Settings</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CCI Equivalent Mail Profiles</shortDescription>
+        <value>Mail Classified Data Migration; 
+Mail Classified Manager; 
+Mail Classified Senior Manager; 
+Mail Classified User; 
+Mail Display Data Migration; 
+Mail Display Manager; 
+Mail Display Senior Management; 
+Mail Display User; 
+MailOnline Manager; 
+MailOnline Senior Manager; 
+MailOnline User; 
+Group Client Sales Manager; 
+Group Client Sales Senior Manager 
+Group Client Sales User;</value>
+    </labels>
+    <labels>
+        <fullName>CCI_Equivalent_Metro_Profiles</fullName>
+        <categories>Settings</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CCI Equivalent Metro Profiles</shortDescription>
+        <value>Metro Display Manager; 
+Metro Display Senior Manager; 
+Metro Display User; 
+London Classified Data Migration; 
+London Classified Manager; 
+London Classified Senior Manager; 
+London Classified User;</value>
+    </labels>
+    <labels>
+        <fullName>CCI_Equivalent_System_Admin_Profiles</fullName>
+        <categories>Settings</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CCI Equivalent System Admin Profiles</shortDescription>
+        <value>System Administrator;</value>
+    </labels>
+    <labels>
+        <fullName>CCI_Exception</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CCI Exception</shortDescription>
+        <value>There is an exception connecting to  CCI. Please report it to System administrator or try again.</value>
+    </labels>
+    <labels>
+        <fullName>CCI_Information</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CCI Information</shortDescription>
+        <value>CCI Information</value>
+    </labels>
+    <labels>
+        <fullName>CCI_Order_ID</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CCI Order ID</shortDescription>
+        <value>CCI Order ID</value>
+    </labels>
+    <labels>
+        <fullName>CCI_Order_Item_Id</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CCI Order Item Id</shortDescription>
+        <value>CCI Order ID for this Insertion</value>
+    </labels>
+    <labels>
+        <fullName>CCI_Order_Status</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CCI Order Status</shortDescription>
+        <value>CCI Order Status</value>
+    </labels>
+    <labels>
+        <fullName>Can_not_Delete_Opportunity_Reason</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Can not Delete Opportunity Reason</shortDescription>
+        <value>To Delete Opportunity, Remove all active lines.</value>
+    </labels>
+    <labels>
+        <fullName>Can_not_Edit_Opportunity_Reason</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Can not Edit Opportunity Reason</shortDescription>
+        <value>Can not edit the opportunity as some orders has been submited</value>
+    </labels>
+    <labels>
+        <fullName>Cancel</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cancel</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>Cancel_Reasons</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cancel Reasons</shortDescription>
+        <value>Cancel Reasons</value>
+    </labels>
+    <labels>
+        <fullName>ChangeTypeNotAllowedMsg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ChangeTypeNotAllowedMsg</shortDescription>
+        <value>Type can not be updated from Direct Advertiser to Client if an account has Live Finance Account</value>
+    </labels>
+    <labels>
+        <fullName>ClassifiedCategoryError</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ClassifiedCategoryError</shortDescription>
+        <value>Advertiser Account must have at least one category populated - Classified.</value>
+    </labels>
+    <labels>
+        <fullName>Classified_Product_Info</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Classified Product Info</shortDescription>
+        <value>Classified Product Info</value>
+    </labels>
+    <labels>
+        <fullName>Clear</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Clear</shortDescription>
+        <value>Clear</value>
+    </labels>
+    <labels>
+        <fullName>Client</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Client</shortDescription>
+        <value>Client</value>
+    </labels>
+    <labels>
+        <fullName>Client_Information</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Client Information</shortDescription>
+        <value>Client Information</value>
+    </labels>
+    <labels>
+        <fullName>Close</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Close</shortDescription>
+        <value>Close</value>
+    </labels>
+    <labels>
+        <fullName>Configure_Clasified_Insertions</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Configure Clasified Insertions</shortDescription>
+        <value>Configure Clasified Insertions</value>
+    </labels>
+    <labels>
+        <fullName>Configure_Dispaly_Insertions</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Configure Dispaly Insertions</shortDescription>
+        <value>Configure Dispaly Insertions</value>
+    </labels>
+    <labels>
+        <fullName>Configure_Print_Insertions</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Configure Print Insertions</shortDescription>
+        <value>Configure Print Insertions</value>
+    </labels>
+    <labels>
+        <fullName>Configure_QuicK_Opportunity</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Configure Quick Opportunity</shortDescription>
+        <value>Configure Quick Opportunity</value>
+    </labels>
+    <labels>
+        <fullName>Confirmed_In_CCI</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Confirmed In CCI</shortDescription>
+        <value>Confirmed In CCI</value>
+    </labels>
+    <labels>
+        <fullName>Contacts_Role_For_this_Opportunity</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Contacts Role For this Opportunity</shortDescription>
+        <value>Contacts Role For this Opportunity</value>
+    </labels>
+    <labels>
+        <fullName>Create_New_Contact</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Create New Contact</shortDescription>
+        <value>Create New Contact</value>
+    </labels>
+    <labels>
+        <fullName>Create_Order_In_CCI</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Create Order In CCI</shortDescription>
+        <value>Create Order In CCI</value>
+    </labels>
+    <labels>
+        <fullName>Customer_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Customer Name</shortDescription>
+        <value>Customer Name or Aliases</value>
+    </labels>
+    <labels>
+        <fullName>Dateflex</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dateflex</shortDescription>
+        <value>Dateflex</value>
+    </labels>
+    <labels>
+        <fullName>Delete</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Delete</shortDescription>
+        <value>Delete</value>
+    </labels>
+    <labels>
+        <fullName>Delete_Opportuity</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Delete Opportuity</shortDescription>
+        <value>Delete Opportuity</value>
+    </labels>
+    <labels>
+        <fullName>Digital</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Digital</shortDescription>
+        <value>Digital</value>
+    </labels>
+    <labels>
+        <fullName>Disp_Sect</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Disp Sect</shortDescription>
+        <value>Disp Sect</value>
+    </labels>
+    <labels>
+        <fullName>Display_Print_Product_Details</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Display Print Product Details</shortDescription>
+        <value>Display Print Product Details</value>
+    </labels>
+    <labels>
+        <fullName>Display_Product_Info</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Display Product Info</shortDescription>
+        <value>Display Product Info</value>
+    </labels>
+    <labels>
+        <fullName>Edit</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Edit</shortDescription>
+        <value>Edit</value>
+    </labels>
+    <labels>
+        <fullName>EditCategoryError</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>&apos;Please add an Update Request to enable a change to be made for Display Categori</shortDescription>
+        <value>&apos;Please add an Update Request to enable a change to be made for Display Categories</value>
+    </labels>
+    <labels>
+        <fullName>Edit_Opportunity</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Edit Opportunity</shortDescription>
+        <value>Edit Opportunity</value>
+    </labels>
+    <labels>
+        <fullName>ErrorAuthCode</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ErrorAuthCode</shortDescription>
+        <value>Error generating authorizationCode</value>
+    </labels>
+    <labels>
+        <fullName>ErrorCreatingOrderInCCILocal</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ErrorCreatingOrderInCCILocal</shortDescription>
+        <value>Error creating order in CCI Local</value>
+    </labels>
+    <labels>
+        <fullName>ErrorGettingDates</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ErrorGettingDates</shortDescription>
+        <value>Error occurred while trying to get valid publishing dates from CCI</value>
+    </labels>
+    <labels>
+        <fullName>ErrorGettingModules</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ErrorGettingModules</shortDescription>
+        <value>Error getting modules from CCI</value>
+    </labels>
+    <labels>
+        <fullName>ErrorGettingPackages</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ErrorGettingPackages</shortDescription>
+        <value>Error encountered while getting packages from CCI.</value>
+    </labels>
+    <labels>
+        <fullName>ErrorGettingconceptValues</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ErrorGettingconceptValues</shortDescription>
+        <value>Error Getting concept values</value>
+    </labels>
+    <labels>
+        <fullName>ErrorOrderconfirmation</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ErrorOrderconfirmation</shortDescription>
+        <value>If you have any problems please contact me either by email or on 020 3615 0339.</value>
+    </labels>
+    <labels>
+        <fullName>Estimated_For_Opportunity</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Estimated For Opportunity</shortDescription>
+        <value>Estimated For Opportunity</value>
+    </labels>
+    <labels>
+        <fullName>Estimated_Total_Opportunity_Value</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Estimated Total Opportunity Value</shortDescription>
+        <value>Estimated Total Opportunity Value</value>
+    </labels>
+    <labels>
+        <fullName>Finance_Account_Creation_Required_Fields_On_Account</fullName>
+        <categories>Settings</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Finance Account Creation Required Fields On Account</shortDescription>
+        <value>Phone,BillingStreet,BillingPostalCode</value>
+    </labels>
+    <labels>
+        <fullName>InActiveAccountMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>This account is not active.Please activate the account first.</shortDescription>
+        <value>This account is not active.Please activate the account first.</value>
+    </labels>
+    <labels>
+        <fullName>InAppropriateAccountInCCI</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>InAppropriateMailUser</shortDescription>
+        <value>You are not authorised to create a CCI Mail Account.</value>
+    </labels>
+    <labels>
+        <fullName>InAppropriateMetroUser</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>InAppropriateMetroUser</shortDescription>
+        <value>You are not authorised to create a CCI Metro Account.</value>
+    </labels>
+    <labels>
+        <fullName>In_Progress_Order_Lines</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>In Progress Order Lines</shortDescription>
+        <value>In Progress Order Lines</value>
+    </labels>
+    <labels>
+        <fullName>In_Valid_Characters_CMs</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>In Valid Characters - CMs</shortDescription>
+        <value>CMs must be an integer.</value>
+    </labels>
+    <labels>
+        <fullName>In_Valid_Characters_Columns</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>In Valid Characters - Columns</shortDescription>
+        <value>Columns must be an integer.</value>
+    </labels>
+    <labels>
+        <fullName>In_Valid_Characters_Price</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>In Valid Characters - Price</shortDescription>
+        <value>Price must be a monetary value.</value>
+    </labels>
+    <labels>
+        <fullName>In_Valid_Characters_Yield</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>In Valid Characters - Yield</shortDescription>
+        <value>Yield must be a monetary value.</value>
+    </labels>
+    <labels>
+        <fullName>Insertion_Date</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Insertion Date</shortDescription>
+        <value>Insertion Date</value>
+    </labels>
+    <labels>
+        <fullName>Insertion_Date_or_Date_Range</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Insertion Date or Date Range</shortDescription>
+        <value>Insertion Date or Date Range</value>
+    </labels>
+    <labels>
+        <fullName>Insertion_Details</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Insertion Details</shortDescription>
+        <value>Insertion Details</value>
+    </labels>
+    <labels>
+        <fullName>InvalidCCIUser</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>InvalidCCIUser</shortDescription>
+        <value>You are not authorised or set up on CCI.</value>
+    </labels>
+    <labels>
+        <fullName>InvalidUserOppToOrder</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>InvalidUserOppToOrder</shortDescription>
+        <value>User is not valid to create CCI Opportunity Order</value>
+    </labels>
+    <labels>
+        <fullName>Invalid_Finance_User</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Invalid Finance User</shortDescription>
+        <value>User is not authorised to create this account.</value>
+    </labels>
+    <labels>
+        <fullName>Invalid_Zip</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Invalid Postcode/Zipcode</shortDescription>
+        <value>Postcode/Zipcode is invalid.</value>
+    </labels>
+    <labels>
+        <fullName>Main</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Main</shortDescription>
+        <value>Main</value>
+    </labels>
+    <labels>
+        <fullName>Minor</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Minor</shortDescription>
+        <value>Minor</value>
+    </labels>
+    <labels>
+        <fullName>MissingBillingAddress</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error message when Billing Address is missing</shortDescription>
+        <value>Billing Street and Post Code is mandatory for CCI. Please enter them and try again</value>
+    </labels>
+    <labels>
+        <fullName>MissingIndustry</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error message when Industry is missing</shortDescription>
+        <value>Please complete the Category section under Account Detail and try again.</value>
+    </labels>
+    <labels>
+        <fullName>MissingPhone</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error msg when phone number is missing</shortDescription>
+        <value>Phone Number is mandatory for CCI. Please enter one and try again</value>
+    </labels>
+    <labels>
+        <fullName>Missing_Shared_Secret</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Missing Shared Secret</shortDescription>
+        <value>There was a problem connecting to CCI. Please inform System Admin that the Shared Secret is missing.</value>
+    </labels>
+    <labels>
+        <fullName>Multiple_Contacts_Found</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Multiple Contacts Found</shortDescription>
+        <value>Multiple contacts have been found for</value>
+    </labels>
+    <labels>
+        <fullName>New_Opportunity</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>New Opportunity</shortDescription>
+        <value>New Opportunity</value>
+    </labels>
+    <labels>
+        <fullName>New_Opportunity_Line</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>New Opportunity Line</shortDescription>
+        <value>New Opportunity Line</value>
+    </labels>
+    <labels>
+        <fullName>NoHoldingAgencyCCI</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NoHoldingAgencyCCI</shortDescription>
+        <value>Holding Agency is not synchronised with CCI</value>
+    </labels>
+    <labels>
+        <fullName>NoHoldingCoCCI</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NoHoldingCoCCI</shortDescription>
+        <value>Holding Company for this Account is not synchronised with CCI</value>
+    </labels>
+    <labels>
+        <fullName>NoOrder</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NoCCIOrder</shortDescription>
+        <value>Order does not exist in CCI</value>
+    </labels>
+    <labels>
+        <fullName>NoParentCCI</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NoParentCCI</shortDescription>
+        <value>Parent Account is not synchronised with CCI</value>
+    </labels>
+    <labels>
+        <fullName>No_Custom_Setting_Value</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No Custom Setting Value defined</shortDescription>
+        <value>No Custom Setting Value defined</value>
+    </labels>
+    <labels>
+        <fullName>No_booking_system_settings</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No booking system settings</shortDescription>
+        <value>No booking system settings found</value>
+    </labels>
+    <labels>
+        <fullName>Opportunity_Line_Changes</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Opportunity Line Changes</shortDescription>
+        <value>Opportunity Line Changes</value>
+    </labels>
+    <labels>
+        <fullName>Opportunity_To_Order</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Opportunity To Order</shortDescription>
+        <value>Opportunity To Order</value>
+    </labels>
+    <labels>
+        <fullName>Opportunity_to_Print</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Opportunity to Print</shortDescription>
+        <value>Opportunity to Print</value>
+    </labels>
+    <labels>
+        <fullName>Order_History</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order History</shortDescription>
+        <value>Order History</value>
+    </labels>
+    <labels>
+        <fullName>Order_Item_Insertions</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Order Item Insertions</shortDescription>
+        <value>Order Item Insertions</value>
+    </labels>
+    <labels>
+        <fullName>PONumberRequired</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PONumberRequired</shortDescription>
+        <value>PO number is required before creating an order.</value>
+    </labels>
+    <labels>
+        <fullName>Package</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Package</shortDescription>
+        <value>Package</value>
+    </labels>
+    <labels>
+        <fullName>Post_Code</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Post Code</shortDescription>
+        <value>Post Code</value>
+    </labels>
+    <labels>
+        <fullName>Price</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Price</shortDescription>
+        <value>Price</value>
+    </labels>
+    <labels>
+        <fullName>Price_Details</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Price Details</shortDescription>
+        <value>Price Details</value>
+    </labels>
+    <labels>
+        <fullName>Pub</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Pub</shortDescription>
+        <value>Pub</value>
+    </labels>
+    <labels>
+        <fullName>Region</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Region</shortDescription>
+        <value>Region</value>
+    </labels>
+    <labels>
+        <fullName>Regional_Copy_Split</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Regional Copy Split</shortDescription>
+        <value>Regional Copy Split</value>
+    </labels>
+    <labels>
+        <fullName>Related_Object_Field_to_Update_Request_Field</fullName>
+        <categories>Update Request VF Settings</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Related Object Field to Update Request Field</shortDescription>
+        <value>Account.Salutation__c=&gt;Salutation__c;
+Account.FirstName__c=&gt;First_Name__c;
+Account.Name=&gt;Account_Name__c;
+Account.Type=&gt;Type__c;
+Account.ParentID=&gt;Parent_Account__c;
+Account.NPA__C=&gt;NPA__c;
+Account.Phone=&gt;Phone_Number__c;
+Account.BillingStreet=&gt;Billing_Street__c;
+Account.BillingState=&gt;Billing_State_Province__c;
+Account.BillingCity=&gt;Billing_City__c;
+Account.BillingPostalCode=&gt;Billing_Zip_Postal_Code__c;
+Account.BillingCountry=&gt;Billing_Country__c;
+Account.Industry=&gt;Display__c;
+Account.Industry_Sub_Category__c=&gt;Display_Sub_Category__c;
+Account.Industry_Minor_Category__c=&gt;Display_Minor_Category__c;</value>
+    </labels>
+    <labels>
+        <fullName>Related_Object_to_Information_Block_Field</fullName>
+        <categories>Update Request VF Settings</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Related Object to Information Block Field</shortDescription>
+        <value>Account=&gt;Name, REcordTypeID;</value>
+    </labels>
+    <labels>
+        <fullName>Related_Object_to_Related_UR_Field</fullName>
+        <categories>Update Request VF Settings</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Related Object to Related UR Field</shortDescription>
+        <value>Account=&gt;Account__c;
+Account_Mapping__c=&gt;Account_Mapping__c;</value>
+    </labels>
+    <labels>
+        <fullName>Related_Object_to_special_Fields_Map</fullName>
+        <categories>Update Request VF Settings</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Related Object to special Fields Map</shortDescription>
+        <value>Account.INDUSTRY=&gt;Industry,Industry_Minor_Category__c,Industry_Sub_Category__c;</value>
+    </labels>
+    <labels>
+        <fullName>Root_Account_Exception</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Root Account Exception</shortDescription>
+        <value>Member Account must have a valid id.</value>
+    </labels>
+    <labels>
+        <fullName>Save</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Save</shortDescription>
+        <value>Save</value>
+    </labels>
+    <labels>
+        <fullName>Save_Changes</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Save Changes</shortDescription>
+        <value>Save Changes</value>
+    </labels>
+    <labels>
+        <fullName>Save_Opportunity</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Save Opportunity</shortDescription>
+        <value>Save Opportunity</value>
+    </labels>
+    <labels>
+        <fullName>Search</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Search</shortDescription>
+        <value>Search</value>
+    </labels>
+    <labels>
+        <fullName>Search_Criteria_Error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Search Criteria Error</shortDescription>
+        <value>You must enter either Customer Name or Post Code to search Accounts.</value>
+    </labels>
+    <labels>
+        <fullName>Search_Criteria_Info</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Search Criteria Info</shortDescription>
+        <value>Please enter either Customer Name or Post Code to start Account Search.</value>
+    </labels>
+    <labels>
+        <fullName>Search_Information</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Search Information</shortDescription>
+        <value>Enter Search Information</value>
+    </labels>
+    <labels>
+        <fullName>Search_Results</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Search Results</shortDescription>
+        <value>Search Results</value>
+    </labels>
+    <labels>
+        <fullName>Search_Results_Limit</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Search Results Limit</shortDescription>
+        <value>Your search returned more than 100 rows. Please adjust the search criteria to reduce the number of results.</value>
+    </labels>
+    <labels>
+        <fullName>Search_Results_Warning</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Search Results Warning</shortDescription>
+        <value>No records found for the entered search criteria.</value>
+    </labels>
+    <labels>
+        <fullName>Select</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Select</shortDescription>
+        <value>Select</value>
+    </labels>
+    <labels>
+        <fullName>Select_Value_Back_Contract</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Select Value Back Contract</shortDescription>
+        <value>Select Value Back Contract</value>
+    </labels>
+    <labels>
+        <fullName>Selected_Order_Lines</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Selected Order Lines</shortDescription>
+        <value>Selected Order Lines</value>
+    </labels>
+    <labels>
+        <fullName>Size</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Size</shortDescription>
+        <value>Size</value>
+    </labels>
+    <labels>
+        <fullName>Sub</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Sub</shortDescription>
+        <value>Sub</value>
+    </labels>
+    <labels>
+        <fullName>Subject_Field_Exception</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Subject Field Exception</shortDescription>
+        <value>Subject can not be blank. Please enter subject and try again</value>
+    </labels>
+    <labels>
+        <fullName>Submit</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Submit</shortDescription>
+        <value>Submit</value>
+    </labels>
+    <labels>
+        <fullName>Submit_Edit_In_CCI</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Submit / Edit In CCI</shortDescription>
+        <value>Submit / Edit In CCI</value>
+    </labels>
+    <labels>
+        <fullName>Switch_To_Classified</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Switch To Classified</shortDescription>
+        <value>Switch To Classified</value>
+    </labels>
+    <labels>
+        <fullName>Switch_To_Display</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Switch To Display</shortDescription>
+        <value>Switch To Display</value>
+    </labels>
+    <labels>
+        <fullName>Title</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Title</shortDescription>
+        <value>Title</value>
+    </labels>
+    <labels>
+        <fullName>To_Field_exception</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>To Field exception</shortDescription>
+        <value>To field can not be blank. Please enter an email Address and try again.</value>
+    </labels>
+    <labels>
+        <fullName>Type</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Type</shortDescription>
+        <value>Type</value>
+    </labels>
+    <labels>
+        <fullName>Type_Change_Vs_Finance_Account_creation</fullName>
+        <categories>Settings</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Type Change Vs Finance Account creation</shortDescription>
+        <value>Client=&gt;Brand,
+Client=&gt;Direct Advertiser,
+Booking Agency=&gt;Billing Agency,
+Brand=&gt;Direct Advertiser,</value>
+    </labels>
+    <labels>
+        <fullName>UnSynchedAccOrAgency</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>UnSynchedAccOrAgency</shortDescription>
+        <value>Account or Agency is not synchronised with CCI</value>
+    </labels>
+    <labels>
+        <fullName>User_Access_CCI</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>User Access - CCI</shortDescription>
+        <value>User does not have access to CCI.</value>
+    </labels>
+    <labels>
+        <fullName>VB_Target</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VB Target</shortDescription>
+        <value>VB Target</value>
+    </labels>
+    <labels>
+        <fullName>Value_Back</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Value Back</shortDescription>
+        <value>Value Back</value>
+    </labels>
+    <labels>
+        <fullName>Yield</fullName>
+        <categories>Opportunity To Order</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Yield</shortDescription>
+        <value>Yield</value>
+    </labels>
+</CustomLabels>

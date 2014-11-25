@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Query</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Queries</value>
+    </caseValues>
+    <fields>
+        <label><!-- Ad Reference --></label>
+        <name>AdReference__c</name>
+    </fields>
+    <fields>
+        <label><!-- Allocated Query Amount --></label>
+        <name>AllocatedQueryAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approving Credit Controller --></label>
+        <name>ApprovingCreditController__c</name>
+    </fields>
+    <fields>
+        <label><!-- Business Unit --></label>
+        <name>BusinessUnit__c</name>
+        <picklistValues>
+            <masterLabel>ANy Media</masterLabel>
+            <translation><!-- ANy Media --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Group</masterLabel>
+            <translation><!-- Group --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mail</masterLabel>
+            <translation><!-- Mail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Metro</masterLabel>
+            <translation><!-- Metro --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Client --></label>
+        <name>Client__c</name>
+        <relationshipLabel><!-- Queries --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Credit Approval Level --></label>
+        <name>CreditApprovalLevel__c</name>
+    </fields>
+    <fields>
+        <label><!-- Credit Controller Approved Date --></label>
+        <name>CreditControllerApprovedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Credit Controller Approved --></label>
+        <name>CreditControllerApproved__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Contact --></label>
+        <name>CustomerContact__c</name>
+        <relationshipLabel><!-- Queries --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Customer Reference --></label>
+        <name>CustomerReference__c</name>
+    </fields>
+    <fields>
+        <label><!-- Company --></label>
+        <name>Customer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Opened --></label>
+        <name>DateOpened__c</name>
+    </fields>
+    <fields>
+        <label><!-- Days to Resolve --></label>
+        <name>DaysToResolve__c</name>
+    </fields>
+    <fields>
+        <label><!-- Days Outstanding --></label>
+        <name>Days_Outstanding__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Document Credit Status --></label>
+        <name>DocumentCreditStatus__c</name>
+    </fields>
+    <fields>
+        <label><!-- Due Date --></label>
+        <name>DueDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Finance Account --></label>
+        <name>FinanceAccount__c</name>
+        <relationshipLabel><!-- Queries --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Invoice Currency --></label>
+        <name>InvoiceCurrency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invoice Date --></label>
+        <name>InvoiceDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invoice Exchange Rate --></label>
+        <name>InvoiceExchangeRate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invoice Total --></label>
+        <name>InvoiceTotal__c</name>
+    </fields>
+    <fields>
+        <label><!-- Net Total --></label>
+        <name>NetTotal__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Billing Notes --></label>
+        <name>OrderBillingNotes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Outstanding Value --></label>
+        <name>OutstandingValue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Status --></label>
+        <name>PaymentStatus__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prepaid or Credit --></label>
+        <name>PrepaidOrCredit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Query Close Date --></label>
+        <name>QueryCloseDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Query Date --></label>
+        <name>QueryDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reason Code --></label>
+        <name>ReasonCode__c</name>
+        <picklistValues>
+            <masterLabel>Ad Did Not Appear</masterLabel>
+            <translation><!-- Ad Did Not Appear --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ad Not Authorised</masterLabel>
+            <translation><!-- Ad Not Authorised --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Adazzle</masterLabel>
+            <translation><!-- Adazzle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Advert Cancelled</masterLabel>
+            <translation><!-- Advert Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Advert Duplicated</masterLabel>
+            <translation><!-- Advert Duplicated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Artwork</masterLabel>
+            <translation><!-- Artwork --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Book Balancing</masterLabel>
+            <translation><!-- Book Balancing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Credit Card Fraud</masterLabel>
+            <translation><!-- Credit Card Fraud --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Credit Policy Violation</masterLabel>
+            <translation><!-- Credit Policy Violation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Duplicate Charge</masterLabel>
+            <translation><!-- Duplicate Charge --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Free Advert Charged</masterLabel>
+            <translation><!-- Free Advert Charged --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Goodwill - Non Rev</masterLabel>
+            <translation><!-- Goodwill - Non Rev --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Goodwill - Rev Aff</masterLabel>
+            <translation><!-- Goodwill - Rev Aff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incorrect Class/Position</masterLabel>
+            <translation><!-- Incorrect Class/Position --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incorrect Commission</masterLabel>
+            <translation><!-- Incorrect Commission --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incorrect Insert Date</masterLabel>
+            <translation><!-- Incorrect Insert Date --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incorrect Newsprint</masterLabel>
+            <translation><!-- Incorrect Newsprint --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incorrect Number of Copies</masterLabel>
+            <translation><!-- Incorrect Number of Copies --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incorrect Photo/Lift</masterLabel>
+            <translation><!-- Incorrect Photo/Lift --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incorrect Publication</masterLabel>
+            <translation><!-- Incorrect Publication --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incorrect Rate (National)</masterLabel>
+            <translation><!-- Incorrect Rate (National) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incorrect Style/Layout/Size/Co</masterLabel>
+            <translation><!-- Incorrect Style/Layout/Size/Co --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incorrect Text</masterLabel>
+            <translation><!-- Incorrect Text --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Insert Missing</masterLabel>
+            <translation><!-- Insert Missing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Invoice Overcharged</masterLabel>
+            <translation><!-- Invoice Overcharged --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Invoice Transfer</masterLabel>
+            <translation><!-- Invoice Transfer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Order Number</masterLabel>
+            <translation><!-- Order Number --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Poor Reproduction</masterLabel>
+            <translation><!-- Poor Reproduction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prepaid Credit Note</masterLabel>
+            <translation><!-- Prepaid Credit Note --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Under Delivery</masterLabel>
+            <translation><!-- Under Delivery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VAT Exempt</masterLabel>
+            <translation><!-- VAT Exempt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Voucher Copy Required</masterLabel>
+            <translation><!-- Voucher Copy Required --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SOP ID --></label>
+        <name>SOPID__c</name>
+    </fields>
+    <fields>
+        <label><!-- SOP --></label>
+        <name>SOP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Approval Status --></label>
+        <name>SalesApprovalStatus__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Approver --></label>
+        <name>SalesApprover__c</name>
+        <relationshipLabel><!-- Queries (Sales Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sales Invoice --></label>
+        <name>SalesInvoice__c</name>
+        <relationshipLabel><!-- Queries --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sales Manager Email --></label>
+        <name>SalesManagerEmail__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Manager --></label>
+        <name>SalesManager__c</name>
+        <relationshipLabel><!-- Queries (Sales Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sales Person Email --></label>
+        <name>SalesPersonEmail__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Person --></label>
+        <name>SalesPerson__c</name>
+        <relationshipLabel><!-- Queries --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sales Section Email --></label>
+        <name>SalesSectionEmail__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Section --></label>
+        <name>SalesSection__c</name>
+        <picklistValues>
+            <masterLabel>Administration</masterLabel>
+            <translation><!-- Administration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client Sales</masterLabel>
+            <translation><!-- Client Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Services</masterLabel>
+            <translation><!-- Customer Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Innovations</masterLabel>
+            <translation><!-- Innovations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inserts</masterLabel>
+            <translation><!-- Inserts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>International</masterLabel>
+            <translation><!-- International --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Leicester SSF</masterLabel>
+            <translation><!-- Leicester SSF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mail</masterLabel>
+            <translation><!-- Mail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mail Order, Motors, Homes &amp; Gardens, Interiors &amp; Property</masterLabel>
+            <translation><!-- Mail Order, Motors, Homes &amp; Gardens, Interiors &amp; Property --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manchester</masterLabel>
+            <translation><!-- Manchester --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marketing</masterLabel>
+            <translation><!-- Marketing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Media Link</masterLabel>
+            <translation><!-- Media Link --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Metro</masterLabel>
+            <translation><!-- Metro --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mobility, Health, Career Mail, Notices</masterLabel>
+            <translation><!-- Mobility, Health, Career Mail, Notices --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Network</masterLabel>
+            <translation><!-- Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Overseas Travel</masterLabel>
+            <translation><!-- Overseas Travel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Property</masterLabel>
+            <translation><!-- Property --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recruitment</masterLabel>
+            <translation><!-- Recruitment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Scotland</masterLabel>
+            <translation><!-- Scotland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Scotland Admin</masterLabel>
+            <translation><!-- Scotland Admin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Scotland Production</masterLabel>
+            <translation><!-- Scotland Production --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Senior Management</masterLabel>
+            <translation><!-- Senior Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Strategic Sales</masterLabel>
+            <translation><!-- Strategic Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Strategy &amp; Solutions</masterLabel>
+            <translation><!-- Strategy &amp; Solutions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Support</masterLabel>
+            <translation><!-- Support --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Systems &amp; Goodwill</masterLabel>
+            <translation><!-- Systems &amp; Goodwill --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Team Barry</masterLabel>
+            <translation><!-- Team Barry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Team Hendle</masterLabel>
+            <translation><!-- Team Hendle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Team Stevens</masterLabel>
+            <translation><!-- Team Stevens --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Travel</masterLabel>
+            <translation><!-- Travel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UK Travel &amp; YOU Gallery</masterLabel>
+            <translation><!-- UK Travel &amp; YOU Gallery --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Set by a background process to flag that a 48 Hour Email followup should be sent. This field is a trigger for an email to be sent via a workflow. --></help>
+        <label><!-- Send 48hr Email --></label>
+        <name>Send48HrEmail__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source --></label>
+        <name>Source__c</name>
+    </fields>
+    <fields>
+        <help><!-- Status of Query --></help>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Credit Note Created</masterLabel>
+            <translation><!-- Credit Note Created --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Draft</masterLabel>
+            <translation><!-- Draft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open</masterLabel>
+            <translation><!-- Open --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Credit Controller Approval</masterLabel>
+            <translation><!-- Pending Credit Controller Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Query Denied</masterLabel>
+            <translation><!-- Query Denied --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Query Passed</masterLabel>
+            <translation><!-- Query Passed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Approval Received</masterLabel>
+            <translation><!-- Sales Approval Received --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sterling Total Query Amount --></label>
+        <name>SterlingTotalQueryAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax Total --></label>
+        <name>TaxTotal__c</name>
+    </fields>
+    <fields>
+        <label><!-- To Be Allocated Query Amount --></label>
+        <name>ToBeAllocatedQueryAmount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Net Home Value --></label>
+        <name>TotalNetHomeValue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Query Amount --></label>
+        <name>TotalQueryAmount__c</name>
+    </fields>
+    <layouts>
+        <layout>Query Layout</layout>
+        <sections>
+            <label><!-- Credit Control Passing --></label>
+            <section>Credit Control Passing</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- Query Amount --></label>
+            <section>Query Amount</section>
+        </sections>
+        <sections>
+            <label><!-- Sales Approver --></label>
+            <section>Sales Approver</section>
+        </sections>
+        <sections>
+            <label><!-- Sales Contacts --></label>
+            <section>Sales Contacts</section>
+        </sections>
+        <sections>
+            <label><!-- Sales Invoice Details --></label>
+            <section>Sales Invoice Details</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Log a Call --></label>
+        <name>Log_A_Call_Query</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- New Task --></label>
+        <name>New_Task_Query</name>
+    </quickActions>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- You cannot change the Sales Invoice once a record has been created. You must delete and create a new Query. --></errorMessage>
+        <name>CannotChangeSalesInvoice</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You have insufficient authority to pass this Query --></errorMessage>
+        <name>CreditControllerInsufficientAuthority</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must specify a Customer Contact. --></errorMessage>
+        <name>CustomerContactRequiredForActiveQuery</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If the Status is Pending Credit Controller Approval or Query Passed then the Sales Approval Status must be Approved – Sales Approver is blank or has insufficient authority --></errorMessage>
+        <name>SalesApprovalStatusMustBeApproved</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If the Status is anything other than Open or Sales Approval Received then the To Be Allocated Query Amount must be nil --></errorMessage>
+        <name>ToBeAllocatedQueryAmountMustBeNil</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Total Query Amount cannot exceed the Invoice Net total. --></errorMessage>
+        <name>TotalQueryAmountCannotExceedNetInvoice</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- CreateCreditNote --></label>
+        <name>CreateCreditNote</name>
+    </webLinks>
+</CustomObjectTranslation>

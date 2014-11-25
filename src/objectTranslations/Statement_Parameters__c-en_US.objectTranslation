@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Statement Parameters</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Statement Parameters</value>
+    </caseValues>
+    <fields>
+        <help><!-- Threshold below which monthly statements will not be produced --></help>
+        <label><!-- Statement Threshold --></label>
+        <name>Statement_Threshold__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

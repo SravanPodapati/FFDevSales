@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>KPI Metrics</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>KPI Metrics</value>
+    </caseValues>
+    <fields>
+        <label><!-- Ave Deal Value --></label>
+        <name>Ave_Deal_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Entry Date --></label>
+        <name>Entry_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- New Business Count --></label>
+        <name>New_Business_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- New Business Value --></label>
+        <name>New_Business_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- % New Business --></label>
+        <name>New_Business__c</name>
+    </fields>
+    <fields>
+        <label><!-- Proactive Count --></label>
+        <name>Proactive_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Proactive Value --></label>
+        <name>Proactive_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- % Proactive --></label>
+        <name>Proactive__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reactive Count --></label>
+        <name>Reactive_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reactive Value --></label>
+        <name>Reactive_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- % Reactive --></label>
+        <name>Reactive__c</name>
+    </fields>
+    <fields>
+        <label><!-- Repeat Business Count --></label>
+        <name>Repeat_Business_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Repeat Business Value --></label>
+        <name>Repeat_Business_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- % Repeat Business --></label>
+        <name>Repeat_Business__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

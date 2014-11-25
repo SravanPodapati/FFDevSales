@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>ErroredOrder</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>ErroredOrders</value>
+    </caseValues>
+    <fields>
+        <label><!-- ActivatedBy --></label>
+        <name>ActivatedBy__c</name>
+        <relationshipLabel><!-- ErroredOrders --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- ActivatedDate --></label>
+        <name>ActivatedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ad Hoc VB --></label>
+        <name>Ad_Hoc_VB__c</name>
+    </fields>
+    <fields>
+        <label><!-- Allowances --></label>
+        <name>Allowances__c</name>
+    </fields>
+    <fields>
+        <label><!-- Base Price --></label>
+        <name>Base_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Booking Source --></label>
+        <name>Booking_Source__c</name>
+    </fields>
+    <fields>
+        <label><!-- Booking Status --></label>
+        <name>Booking_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- CCIBookingAgencyId --></label>
+        <name>CCIBookingAgencyId__c</name>
+    </fields>
+    <fields>
+        <label><!-- CCI Account ID --></label>
+        <name>CCI_Account_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- CCI Cancel Reason Code --></label>
+        <name>CCI_Cancel_Reason_Code__c</name>
+        <picklistValues>
+            <masterLabel>BADCRE</masterLabel>
+            <translation><!-- BADCRE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CUSTREQ</masterLabel>
+            <translation><!-- CUSTREQ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ITMSOLD</masterLabel>
+            <translation><!-- ITMSOLD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MISC</masterLabel>
+            <translation><!-- MISC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NOMAT</masterLabel>
+            <translation><!-- NOMAT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PACKCHANGE</masterLabel>
+            <translation><!-- PACKCHANGE --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- CCI Cancel Reason --></label>
+        <name>CCI_Cancel_Reason__c</name>
+        <picklistValues>
+            <masterLabel>Credit problems</masterLabel>
+            <translation><!-- Credit problems --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer request</masterLabel>
+            <translation><!-- Customer request --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Item sold</masterLabel>
+            <translation><!-- Item sold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Material not received</masterLabel>
+            <translation><!-- Material not received --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Miscellaneous</masterLabel>
+            <translation><!-- Miscellaneous --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zone/Package Change</masterLabel>
+            <translation><!-- Zone/Package Change --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- CCI Customer ID --></label>
+        <name>CCI_Customer_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- CCI Order ID --></label>
+        <name>CCI_Order_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Caller Name --></label>
+        <name>Caller_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Caller_Phone --></label>
+        <name>Caller_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cancel Date --></label>
+        <name>Cancel_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cancel Reason Code --></label>
+        <name>Cancel_Reason_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cancel Reason Name --></label>
+        <name>Cancel_Reason_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Charges --></label>
+        <name>Charges__c</name>
+    </fields>
+    <fields>
+        <label><!-- Complaint Note --></label>
+        <name>Complaint_Note__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created In CCI By --></label>
+        <name>Created_In_CCI_By__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discounts --></label>
+        <name>Discounts__c</name>
+    </fields>
+    <fields>
+        <label><!-- EffectiveDate --></label>
+        <name>EffectiveDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- ErrorDesc --></label>
+        <name>ErrorDesc__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Delivery Date --></label>
+        <name>First_Delivery_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Has Complaint --></label>
+        <name>Has_Complaint__c</name>
+    </fields>
+    <fields>
+        <label><!-- Accepted --></label>
+        <name>Is_Accepted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cancelled --></label>
+        <name>Is_Cancelled__c</name>
+    </fields>
+    <fields>
+        <label><!-- Voided --></label>
+        <name>Is_Voided__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Delivery Date --></label>
+        <name>Last_Delivery_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- No Of Cancelled --></label>
+        <name>No_Of_Cancelled__c</name>
+    </fields>
+    <fields>
+        <label><!-- No Of Dates --></label>
+        <name>No_Of_Dates__c</name>
+    </fields>
+    <fields>
+        <label><!-- No Of Published --></label>
+        <name>No_Of_Published__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- ErroredOrders --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- OrderReferenceNumber --></label>
+        <name>OrderReferenceNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- OrderStatus --></label>
+        <name>OrderStatus__c</name>
+        <picklistValues>
+            <masterLabel>Complete</masterLabel>
+            <translation><!-- Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incomplete</masterLabel>
+            <translation><!-- Incomplete --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Order Status Name --></label>
+        <name>Order_Status_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order --></label>
+        <name>Order__c</name>
+        <relationshipLabel><!-- ErroredOrders --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- PoNumber --></label>
+        <name>PoNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax 1 --></label>
+        <name>Tax_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax 2 --></label>
+        <name>Tax_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax 3 --></label>
+        <name>Tax_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total excl. Tax --></label>
+        <name>Total_Excl_Tax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total incl. tax --></label>
+        <name>Total_Incl_Tax__c</name>
+    </fields>
+    <fields>
+        <label><!-- VB Target --></label>
+        <name>VB_Target__c</name>
+        <picklistValues>
+            <masterLabel>Advertiser</masterLabel>
+            <translation><!-- Advertiser --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Agency</masterLabel>
+            <translation><!-- Agency --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Value Back --></label>
+        <name>Value_Back__c</name>
+    </fields>
+    <layouts>
+        <layout>ErroredOrder Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- CreateOrder --></label>
+        <name>CreateOrder</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- CreateorderFromList --></label>
+        <name>CreateorderFromList</name>
+    </webLinks>
+</CustomObjectTranslation>

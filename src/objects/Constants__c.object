@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <customSettingsVisibility>Protected</customSettingsVisibility>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Advertiser_Record_Type__c</fullName>
+        <defaultValue>&apos;Advertiser&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>Advertiser Record Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Agency_Record_Type__c</fullName>
+        <defaultValue>&apos;Agency&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>Agency Record Type</label>
+        <length>255</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Creative_Snapshot_URL__c</fullName>
+        <defaultValue>&apos;http://www.addynamix.co.uk/Press/Alerts/CreativeSnapshot.aspx&apos;</defaultValue>
+        <description>This URL will be used to display the Advert from the Account Page.</description>
+        <externalId>false</externalId>
+        <label>Creative Snapshot URL</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>CustomerRef1email__c</fullName>
+        <externalId>false</externalId>
+        <label>CustomerRef1email</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CustomerRef2email__c</fullName>
+        <defaultValue>&apos;o2.generic@cloudsensesolutions.com&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>CustomerRef2email</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CustomerRef3email__c</fullName>
+        <defaultValue>&apos;o2.generic@cloudsensesolutions.com&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>CustomerRef3email</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CustomerRef4email__c</fullName>
+        <defaultValue>&apos;o2.generic@cloudsensesolutions.com&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>CustomerRef4email</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CustomerRef5email__c</fullName>
+        <defaultValue>&apos;o2.generic@cloudsensesolutions.com&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>CustomerRef5email</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Media_Lead_Opp_Record_Type__c</fullName>
+        <defaultValue>&apos;Media_Opportunities&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>Media Lead Opp Record Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Media_Partner_Record_Type__c</fullName>
+        <defaultValue>&apos;Media_Partner&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>Media Partner Record Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Auto_UnFollow_Threshold__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>max number of records user can be subscribed to before Opportunity Auto-Un-Follow logic kicks in</inlineHelpText>
+        <label>Opportunity Auto UnFollow Threshold</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Regular_Opp_Record_Type__c</fullName>
+        <defaultValue>&apos;New_Business&apos;</defaultValue>
+        <externalId>false</externalId>
+        <label>Regular Opp Record Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Wowcher_Lead_Owner__c</fullName>
+        <defaultValue>&apos;Julian Boardman&apos;</defaultValue>
+        <description>Wowcher Lead Owner will be used if the Lead has no activities after a period of time.</description>
+        <externalId>false</externalId>
+        <label>Wowcher Lead Owner</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Constants</label>
+</CustomObject>

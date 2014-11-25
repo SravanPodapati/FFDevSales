@@ -1,0 +1,989 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Finance Accounts</relationshipLabel>
+        <relationshipName>Finance_Accounts</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Agency_Commission__c</fullName>
+        <externalId>false</externalId>
+        <label>Agency Commission</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0.00</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5.00</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6.00</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6.50</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>7.00</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>7.50</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>8.00</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>8.50</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>9.00</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>10.00</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>11.00</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>12.00</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>12.50</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>13.00</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>15.00</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>30.00</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>CCIMailCustomerID__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account__r.CCIMailCustID__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>CCIMailCustomerID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CCIMetroCustomerID__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account__r.CCIMetroCustID__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>CCIMetroCustomerID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CloseDate__c</fullName>
+        <description>The Date the Finance Account was closed.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Date the Finance Account was closed.</inlineHelpText>
+        <label>Close Date</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CloseStatus__c</fullName>
+        <description>The Close status of the Account.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Close status of the Account.</inlineHelpText>
+        <label>Close Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Live</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dead</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Company__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Company</label>
+        <referenceTo>Company__c</referenceTo>
+        <relationshipLabel>Finance Accounts</relationshipLabel>
+        <relationshipName>Finance_Accounts</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Credit_Controller__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Credit Controller</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Finance_Accounts</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Credit_Limit__c</fullName>
+        <externalId>false</externalId>
+        <label>Credit Limit</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Credit_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Credit Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>TODO: Add picklist values</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Good</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Overdue</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Stop</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pre-Legal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Legal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pre-BDWO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BDWO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Prepay Only</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>DoCCIInt__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>DoCCIInt</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DocumentDestinationContact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Document Destination Contact</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>Contact must belong to the associated Account.</errorMessage>
+            <filterItems>
+                <field>Contact.Account.Id</field>
+                <operation>equals</operation>
+                <valueField>$Source.Account__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Finance Accounts</relationshipLabel>
+        <relationshipName>Finance_Accounts</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>FDCustomer__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>FD Customer</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>FinanceAccountNo__c</fullName>
+        <displayFormat>{000000}</displayFormat>
+        <externalId>true</externalId>
+        <label>Finance Account Number</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Finance_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>Finance Id</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>InvoicedRevenueLastYear__c</fullName>
+        <description>CCI</description>
+        <externalId>false</externalId>
+        <label>CCI InvoicedRevenueLastYear</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>InvoicedRevenueYTD__c</fullName>
+        <description>CCI InvoicedRevenueYTD</description>
+        <externalId>false</externalId>
+        <label>CCI InvoicedRevenueYTD</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>InvoicingFrequency__c</fullName>
+        <externalId>false</externalId>
+        <label>Invoicing Frequency</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Weekly</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quarterly</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>7DAYS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MIDMINTHLY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MONTH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>INTERN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PREPAYMENT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>MonthlyStatement__c</fullName>
+        <externalId>false</externalId>
+        <label>Monthly Statement</label>
+        <picklist>
+            <picklistValues>
+                <fullName>House Rules</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Always Receive Statements</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Never Receive Statements</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Neo_ID__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Neo ID</inlineHelpText>
+        <label>Neo ID</label>
+        <length>40</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SOP_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>SOP ID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SOP_Source__c</fullName>
+        <externalId>false</externalId>
+        <label>SOP Source</label>
+        <picklist>
+            <picklistValues>
+                <fullName>ADV</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CCI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CIR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OPE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>UniqueName__c</fullName>
+        <description>This field is created  to disallow creation of multiple finance accounts for same account and company
+
+GAR-796 - Removing Uniqueness in Finance Account to accommodate Financial Force.</description>
+        <externalId>false</externalId>
+        <label>UniqueName</label>
+        <length>200</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Finance Account</label>
+    <nameField>
+        <label>Finance Account Name</label>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Finance Accounts</pluralLabel>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>ReadOnly</fullName>
+        <active>true</active>
+        <label>ReadOnly</label>
+        <picklistValues>
+            <picklist>Agency_Commission__c</picklist>
+            <values>
+                <fullName>0%2E00</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>10%2E00</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11%2E00</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12%2E00</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12%2E50</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13%2E00</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15%2E00</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30%2E00</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5%2E00</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6%2E00</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6%2E50</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7%2E00</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7%2E50</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8%2E00</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8%2E50</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9%2E00</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CloseStatus__c</picklist>
+            <values>
+                <fullName>Dead</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Live</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Credit_Status__c</picklist>
+            <values>
+                <fullName>TODO%3A Add picklist values</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>InvoicingFrequency__c</picklist>
+            <values>
+                <fullName>7DAYS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>INTERN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MIDMINTHLY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PREPAYMENT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quarterly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Weekly</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>MonthlyStatement__c</picklist>
+            <values>
+                <fullName>Always Receive Statements</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>House Rules</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Never Receive Statements</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SOP_Source__c</picklist>
+            <values>
+                <fullName>ADV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CCI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CIR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OPE</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>master</fullName>
+        <active>true</active>
+        <label>master</label>
+        <picklistValues>
+            <picklist>Agency_Commission__c</picklist>
+            <values>
+                <fullName>0%2E00</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>10%2E00</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11%2E00</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12%2E00</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12%2E50</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13%2E00</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15%2E00</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30%2E00</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5%2E00</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6%2E00</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6%2E50</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7%2E00</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7%2E50</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8%2E00</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8%2E50</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9%2E00</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CloseStatus__c</picklist>
+            <values>
+                <fullName>Dead</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Live</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Credit_Status__c</picklist>
+            <values>
+                <fullName>BDWO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Good</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Legal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Overdue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pre-BDWO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pre-Legal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prepay Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TODO%3A Add picklist values</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>InvoicingFrequency__c</picklist>
+            <values>
+                <fullName>7DAYS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>INTERN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MIDMINTHLY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MONTH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PREPAYMENT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quarterly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Weekly</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>MonthlyStatement__c</picklist>
+            <values>
+                <fullName>Always Receive Statements</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>House Rules</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Never Receive Statements</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>SOP_Source__c</picklist>
+            <values>
+                <fullName>ADV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CCI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CIR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OPE</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>AccountLookupValidation</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISBLANK( Account__c )</errorConditionFormula>
+        <errorDisplayField>Account__c</errorDisplayField>
+        <errorMessage>Account must be set</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CompanyLookupValidation</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISBLANK( Company__c )</errorConditionFormula>
+        <errorDisplayField>Company__c</errorDisplayField>
+        <errorMessage>Company cannot be blank</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Create_CCIAccount_Mail</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Create CCI Account</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/apex.js&quot;)} 
+var errorResponse; 
+var result = confirm(&quot;By selecting OK you will automatically be creating an account in CCI booking system. Would you like to proceed?.&quot;); 
+
+if (result == true){ 
+errorResponse = sforce.apex.execute(&quot;CCIAccountWebService&quot;,&quot;createCCIAccount&quot;, 
+                                       {accId:&quot;{!FinanceAccount__c.Id}&quot; ,directOrder:false                                    });
+}
+
+if(errorResponse!=null &amp;&amp; errorResponse!=&quot;&quot;){
+ alert(&apos;Problem creating CCI Account:-&apos;+errorResponse);
+
+}else{
+window.location.href=&quot;/{!FinanceAccount__c.Id}&quot;; 
+
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Finance_Account</fullName>
+        <availability>online</availability>
+        <description>Create a Finance Account only for Direct Advertiser and Billing Agency</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>New Finance Account</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>var acct = new sforce.SObject(&quot;Account&quot;); 
+acct.id = &quot;{!Account.Id}&quot;;
+acct.type = &quot;{!Account.Type}&quot;;
+acct.name = &quot;{!Account.Name}&quot;;
+acct.phone = &quot;{!Account.Phone}&quot;;
+acct.billingStreet = &quot;{!Account.BillingStreet}&quot;;
+acct.billingPostcode = &quot;{!Account.BillingPostalCode}&quot;;
+if(acct.type==&quot;Direct Advertiser&quot;||acct.type==&quot;Billing Agency&quot;||(acct.type=&quot;Brand&quot; &amp;&amp; acct.phone!=null &amp;&amp; acct.billingPostcode!=&quot;&quot;&amp;&amp;acct.billingPostcode!=null &amp;&amp; acct.phone!=&quot;&quot;&amp;&amp;acct.billingStreet!=null &amp;&amp; acct.billingStreet!=&quot;&quot;))
+{
+   
+ window.parent.location.href=&quot;/a1h/e?Name=&quot;+acct.name+&quot;&amp;CF00ND0000005jggc=&quot;+acct.name+&quot;&amp;CF00ND0000005jggc_lkid=&quot;+acct.id+&quot;&amp;retURL=&quot;+acct.id;
+}
+else if(acct.type=&quot;Brand&quot; &amp;&amp; (acct.phone==null || acct.phone==&quot;&quot; ||acct.billingPostcode==null || acct.billingPostcode==&quot;&quot;||acct.billingStreet==null || acct.billingStreet==&quot;&quot;))
+{
+alert(&quot;Please note that a Finance Account cannot be created for Brand unless Phone,Billing Street and BillingPostalcode fields are populated.&quot;);
+}
+
+else
+{
+    alert(&quot;Please note that a Finance Account cannot be created for &quot;+acct.type);
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Send_To_CCI</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Send To CCI</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/apex.js&quot;)} 
+if(&apos;{!FinanceAccount__c.DoCCIInt__c}&apos;==&apos;1&apos;) 
+{ 
+alert(&quot;The record has already been interfaced to CCI&quot;); 
+} 
+//else if(&apos;{!Account.CCIMetroCustID__c}&apos;===&apos;&apos;)
+else if(!&apos;{! FinanceAccount__c.CCIMetroCustomerID__c }&apos;.length)
+{
+alert(&quot;The Metro Parent Account has not been interfaced to CCI Yet. Please do so before proceeding.&quot;); 
+}
+else 
+{ 
+var FAcc = new sforce.SObject(&apos;FinanceAccount__c&apos;); 
+FAcc.Id = &apos;{!FinanceAccount__c.Id}&apos;; 
+FAcc.DoCCIInt__c=Boolean(&quot;True&quot;); 
+result = sforce.connection.update([FAcc]); 
+if(!result[0].getBoolean(&quot;success&quot;)) 
+{ 
+alert(result[0].errors.message); 
+} 
+else 
+{ 
+alert(&apos;Finance Account Successfully sent to CCI. You will need to refresh the page to see the CCI Number&apos;); 
+window.open(&apos;/&apos;+&apos;{!FinanceAccount__c.Id}&apos;); 
+} 
+}</url>
+    </webLinks>
+</CustomObject>

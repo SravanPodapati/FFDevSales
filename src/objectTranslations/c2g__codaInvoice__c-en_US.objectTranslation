@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>TFR Sales Invoice Layout</layout>
+        <sections>
+            <label><!-- Account Detail --></label>
+            <section>Account Detail</section>
+        </sections>
+        <sections>
+            <label><!-- Bad Debt Write-off --></label>
+            <section>Bad Debt Write-off</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Invoice Detail --></label>
+            <section>Invoice Detail</section>
+        </sections>
+        <sections>
+            <label><!-- Invoice Status --></label>
+            <section>Invoice Status</section>
+        </sections>
+        <sections>
+            <label><!-- Invoice Summary --></label>
+            <section>Invoice Summary</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Log a Call --></label>
+        <name>Log_A_Call_SalesInvoice</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- New Task --></label>
+        <name>New_Task_SalesInvoice</name>
+    </quickActions>
+</CustomObjectTranslation>

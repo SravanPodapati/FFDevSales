@@ -1,0 +1,1667 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account__c</fullName>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Account Categories</relationshipLabel>
+        <relationshipName>Account_Categories</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Classified_Main_Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Classified - Main Category</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Business &amp; Finance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Education</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Entertainments</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fashion &amp; Retail</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Health</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Homes &amp; Gardens</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mail Order</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mobility</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Noticeboard</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Personal &amp; Notices</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Property Overseas</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Property UK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Recruitment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Travel Overseas</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Travel UK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Classified_Minor_Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Classified - Minor Category</label>
+        <picklist>
+            <controllingField>Classified_Main_Category__c</controllingField>
+            <picklistValues>
+                <fullName>Accessories</fullName>
+                <controllingFieldValues>Fashion &amp; Retail</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Accessories &amp; Soft Furnishings</fullName>
+                <controllingFieldValues>Homes &amp; Gardens</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Africa</fullName>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>America</fullName>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Asia</fullName>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Australia &amp; New Zealand</fullName>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Austria</fullName>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Balearics</fullName>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bathrooms</fullName>
+                <controllingFieldValues>Homes &amp; Gardens</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bedrooms</fullName>
+                <controllingFieldValues>Homes &amp; Gardens</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Blackpool</fullName>
+                <controllingFieldValues>Travel UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bournemouth</fullName>
+                <controllingFieldValues>Travel UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bridal</fullName>
+                <controllingFieldValues>Fashion &amp; Retail</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Building &amp; Construction</fullName>
+                <controllingFieldValues>Recruitment</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Building Maintenance</fullName>
+                <controllingFieldValues>Homes &amp; Gardens</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Businesses For Sale</fullName>
+                <controllingFieldValues>Business &amp; Finance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Business Services</fullName>
+                <controllingFieldValues>Business &amp; Finance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Canada</fullName>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Canaries</fullName>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Car Hire &amp; Leasing</fullName>
+                <controllingFieldValues>Motors</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Caribbean</fullName>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Channel Islands</fullName>
+                <controllingFieldValues>Travel UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Children</fullName>
+                <controllingFieldValues>Fashion &amp; Retail</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>China</fullName>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Claims Management</fullName>
+                <controllingFieldValues>Business &amp; Finance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Clerical &amp; Secretarial</fullName>
+                <controllingFieldValues>Recruitment</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Conservatories, Lofts &amp; Extensions</fullName>
+                <controllingFieldValues>Homes &amp; Gardens</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Contracts &amp; Tenders</fullName>
+                <controllingFieldValues>Business &amp; Finance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cornwall</fullName>
+                <controllingFieldValues>Travel UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cotswolds</fullName>
+                <controllingFieldValues>Travel UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Credit Management</fullName>
+                <controllingFieldValues>Business &amp; Finance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Croatia</fullName>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cyprus</fullName>
+                <controllingFieldValues>Property Overseas</controllingFieldValues>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Debt Management</fullName>
+                <controllingFieldValues>Business &amp; Finance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Devon</fullName>
+                <controllingFieldValues>Travel UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dorset</fullName>
+                <controllingFieldValues>Travel UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Drivers &amp; Riders</fullName>
+                <controllingFieldValues>Recruitment</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Driving Instructors</fullName>
+                <controllingFieldValues>Recruitment</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dubai</fullName>
+                <controllingFieldValues>Property Overseas</controllingFieldValues>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>East Midlands</fullName>
+                <controllingFieldValues>Travel UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>East of England</fullName>
+                <controllingFieldValues>Property UK</controllingFieldValues>
+                <controllingFieldValues>Travel UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Education &amp; Teaching</fullName>
+                <controllingFieldValues>Recruitment</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Egypt</fullName>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Engineering &amp; Technical</fullName>
+                <controllingFieldValues>Recruitment</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Europe</fullName>
+                <controllingFieldValues>Property Overseas</controllingFieldValues>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Events (Motors)</fullName>
+                <controllingFieldValues>Motors</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Far East</fullName>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fashion, Design &amp; Tailoring</fullName>
+                <controllingFieldValues>Recruitment</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Financial</fullName>
+                <controllingFieldValues>Recruitment</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Flooring</fullName>
+                <controllingFieldValues>Homes &amp; Gardens</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Florida</fullName>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>France</fullName>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Furniture</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Garages &amp; Driveways</fullName>
+                <controllingFieldValues>Homes &amp; Gardens</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Garden Equipment</fullName>
+                <controllingFieldValues>Homes &amp; Gardens</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Garden Furniture &amp; Ornaments</fullName>
+                <controllingFieldValues>Homes &amp; Gardens</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General</fullName>
+                <controllingFieldValues>Recruitment</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Graduate</fullName>
+                <controllingFieldValues>Recruitment</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Greece</fullName>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Greenhouses &amp; Sheds</fullName>
+                <controllingFieldValues>Homes &amp; Gardens</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hampshire</fullName>
+                <controllingFieldValues>Travel UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Heating</fullName>
+                <controllingFieldValues>Homes &amp; Gardens</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Home Entertaiment</fullName>
+                <controllingFieldValues>Homes &amp; Gardens</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hotel, Catering &amp; Tourism</fullName>
+                <controllingFieldValues>Recruitment</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Housing/Regeneration</fullName>
+                <controllingFieldValues>Recruitment</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HR Appointments</fullName>
+                <controllingFieldValues>Recruitment</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>I.T. &amp; Communications</fullName>
+                <controllingFieldValues>Recruitment</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>India</fullName>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Indian Ocean</fullName>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Interior Design</fullName>
+                <controllingFieldValues>Homes &amp; Gardens</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ireland</fullName>
+                <controllingFieldValues>Travel UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Isle of Man</fullName>
+                <controllingFieldValues>Travel UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Isle of Wight</fullName>
+                <controllingFieldValues>Travel UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Italy</fullName>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kent</fullName>
+                <controllingFieldValues>Travel UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kitchens</fullName>
+                <controllingFieldValues>Homes &amp; Gardens</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lake District &amp; Cumbria</fullName>
+                <controllingFieldValues>Travel UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lapland</fullName>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Latin America</fullName>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lawnmowers &amp; Tractors</fullName>
+                <controllingFieldValues>Homes &amp; Gardens</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lighting</fullName>
+                <controllingFieldValues>Homes &amp; Gardens</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>London &amp; Home Counties</fullName>
+                <controllingFieldValues>Property UK</controllingFieldValues>
+                <controllingFieldValues>Travel UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Malaysia</fullName>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Malta &amp; Gozo</fullName>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Management &amp; Executive</fullName>
+                <controllingFieldValues>Recruitment</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mauritius</fullName>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Media &amp; Marketing</fullName>
+                <controllingFieldValues>Recruitment</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medical &amp; Healthcare</fullName>
+                <controllingFieldValues>Recruitment</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medical Sales</fullName>
+                <controllingFieldValues>Recruitment</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mediterranean</fullName>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Men</fullName>
+                <controllingFieldValues>Fashion &amp; Retail</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Midlands</fullName>
+                <controllingFieldValues>Property UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mortgages &amp; Loans</fullName>
+                <controllingFieldValues>Business &amp; Finance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motor Accessories</fullName>
+                <controllingFieldValues>Motors</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motor Dealerships</fullName>
+                <controllingFieldValues>Motors</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motor Manufacturers</fullName>
+                <controllingFieldValues>Motors</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Norfolk</fullName>
+                <controllingFieldValues>Travel UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>North Cyprus</fullName>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>North East of England</fullName>
+                <controllingFieldValues>Property UK</controllingFieldValues>
+                <controllingFieldValues>Travel UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>North West of England</fullName>
+                <controllingFieldValues>Property UK</controllingFieldValues>
+                <controllingFieldValues>Travel UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Peak District</fullName>
+                <controllingFieldValues>Travel UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Plus Size</fullName>
+                <controllingFieldValues>Fashion &amp; Retail</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Portugal</fullName>
+                <controllingFieldValues>Property Overseas</controllingFieldValues>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Print</fullName>
+                <controllingFieldValues>Recruitment</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Private Sales</fullName>
+                <controllingFieldValues>Motors</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Renewable Energy</fullName>
+                <controllingFieldValues>Homes &amp; Gardens</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Retail</fullName>
+                <controllingFieldValues>Recruitment</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sales</fullName>
+                <controllingFieldValues>Recruitment</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Scotland</fullName>
+                <controllingFieldValues>Property UK</controllingFieldValues>
+                <controllingFieldValues>Travel UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Security</fullName>
+                <controllingFieldValues>Recruitment</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Seeds &amp; Plants</fullName>
+                <controllingFieldValues>Homes &amp; Gardens</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Servicing &amp; Repairs</fullName>
+                <controllingFieldValues>Motors</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shelving &amp; Storage</fullName>
+                <controllingFieldValues>Homes &amp; Gardens</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>South Africa</fullName>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>South of England</fullName>
+                <controllingFieldValues>Property UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>South West of England</fullName>
+                <controllingFieldValues>Property UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Spain</fullName>
+                <controllingFieldValues>Property Overseas</controllingFieldValues>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sri Lanka</fullName>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Suffolk</fullName>
+                <controllingFieldValues>Travel UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sussex</fullName>
+                <controllingFieldValues>Travel UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Switzerland</fullName>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Thailand</fullName>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Turkey</fullName>
+                <controllingFieldValues>Property Overseas</controllingFieldValues>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>USA</fullName>
+                <controllingFieldValues>Property Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vehicle Finance &amp; Insurance</fullName>
+                <controllingFieldValues>Motors</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wales</fullName>
+                <controllingFieldValues>Travel UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>West Country</fullName>
+                <controllingFieldValues>Travel UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>West Midlands</fullName>
+                <controllingFieldValues>Travel UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Windows</fullName>
+                <controllingFieldValues>Homes &amp; Gardens</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Women</fullName>
+                <controllingFieldValues>Fashion &amp; Retail</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yorkshire</fullName>
+                <controllingFieldValues>Travel UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Classified_Sub_Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Classified - Sub Category</label>
+        <picklist>
+            <controllingField>Classified_Main_Category__c</controllingField>
+            <picklistValues>
+                <fullName>Airlines</fullName>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Airport Parking</fullName>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Apprenticeships</fullName>
+                <controllingFieldValues>Recruitment</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Auctions (General)</fullName>
+                <controllingFieldValues>Business &amp; Finance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Auctions (Motors)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Auctions (Property)</fullName>
+                <controllingFieldValues>Property UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>B&amp;B/Guest Houses</fullName>
+                <controllingFieldValues>Travel UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bars/Clubs</fullName>
+                <controllingFieldValues>Entertainments</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bathing</fullName>
+                <controllingFieldValues>Mobility</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Battlefields</fullName>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Births, Deaths and Marriages</fullName>
+                <controllingFieldValues>Noticeboard</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Business Opportunities</fullName>
+                <controllingFieldValues>Business &amp; Finance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Business to Business</fullName>
+                <controllingFieldValues>Business &amp; Finance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Camping &amp; Caravan Holidays</fullName>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <controllingFieldValues>Travel UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Caravans &amp; Motorhomes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Car Hire</fullName>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cars</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cars wanted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Charities</fullName>
+                <controllingFieldValues>Personal &amp; Notices</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Charity Events</fullName>
+                <controllingFieldValues>Entertainments</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chatlines</fullName>
+                <controllingFieldValues>Noticeboard</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Christmas</fullName>
+                <controllingFieldValues>Noticeboard</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cinemas</fullName>
+                <controllingFieldValues>Entertainments</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>City Living</fullName>
+                <controllingFieldValues>Property UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Clinical Trials</fullName>
+                <controllingFieldValues>Noticeboard</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Collectables</fullName>
+                <controllingFieldValues>Mail Order</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Colleges</fullName>
+                <controllingFieldValues>Education</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Commercial Property</fullName>
+                <controllingFieldValues>Property UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Complementary Therapies &amp; Wellbeing</fullName>
+                <controllingFieldValues>Health</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Conferences</fullName>
+                <controllingFieldValues>Travel UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cosmetics</fullName>
+                <controllingFieldValues>Fashion &amp; Retail</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cosmetic Surgery</fullName>
+                <controllingFieldValues>Noticeboard</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cottages</fullName>
+                <controllingFieldValues>Travel UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Country Homes</fullName>
+                <controllingFieldValues>Property UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cruising</fullName>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Daily Living Aids</fullName>
+                <controllingFieldValues>Health</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Death Notices</fullName>
+                <controllingFieldValues>Personal &amp; Notices</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dentalcare</fullName>
+                <controllingFieldValues>Health</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Diet &amp; Weight Loss</fullName>
+                <controllingFieldValues>Health</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Distance Learning</fullName>
+                <controllingFieldValues>Education</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Domestic Posts</fullName>
+                <controllingFieldValues>Recruitment</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Entertainment</fullName>
+                <controllingFieldValues>Mail Order</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Escorted Tours</fullName>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Estate Agents</fullName>
+                <controllingFieldValues>Property UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Events</fullName>
+                <controllingFieldValues>Entertainments</controllingFieldValues>
+                <controllingFieldValues>Noticeboard</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Events &amp; Exhibitions</fullName>
+                <controllingFieldValues>Property Overseas</controllingFieldValues>
+                <controllingFieldValues>Recruitment</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Exhibitions</fullName>
+                <controllingFieldValues>Entertainments</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Eyecare</fullName>
+                <controllingFieldValues>Health</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Family Fun</fullName>
+                <controllingFieldValues>Entertainments</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fashion</fullName>
+                <controllingFieldValues>Fashion &amp; Retail</controllingFieldValues>
+                <controllingFieldValues>Mail Order</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ferries</fullName>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <controllingFieldValues>Travel UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Finance</fullName>
+                <controllingFieldValues>Business &amp; Finance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>First Time Buyers</fullName>
+                <controllingFieldValues>Property UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fitness &amp; Health Equipment</fullName>
+                <controllingFieldValues>Health</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Flights &amp; Overseas Holidays</fullName>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Footwear</fullName>
+                <controllingFieldValues>Fashion &amp; Retail</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Franchises</fullName>
+                <controllingFieldValues>Business &amp; Finance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Full Time Appointments</fullName>
+                <controllingFieldValues>Recruitment</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Further Education</fullName>
+                <controllingFieldValues>Education</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gallery</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gardens</fullName>
+                <controllingFieldValues>Homes &amp; Gardens</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Golf Breaks</fullName>
+                <controllingFieldValues>Travel UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Health and Beauty</fullName>
+                <controllingFieldValues>Noticeboard</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Health Products</fullName>
+                <controllingFieldValues>Mail Order</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hearing Aids</fullName>
+                <controllingFieldValues>Mail Order</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Holiday Homes for Sale</fullName>
+                <controllingFieldValues>Property UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Holiday Parks &amp; Lodges</fullName>
+                <controllingFieldValues>Travel UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Holidays Afloat</fullName>
+                <controllingFieldValues>Travel UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Home Improvements</fullName>
+                <controllingFieldValues>Homes &amp; Gardens</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Homes &amp; Gardening products</fullName>
+                <controllingFieldValues>Mail Order</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hotels</fullName>
+                <controllingFieldValues>Travel UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Interiors</fullName>
+                <controllingFieldValues>Homes &amp; Gardens</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Investment Property</fullName>
+                <controllingFieldValues>Property Overseas</controllingFieldValues>
+                <controllingFieldValues>Property UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Landlord/Property Services</fullName>
+                <controllingFieldValues>Property UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Legal Notices</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lettings</fullName>
+                <controllingFieldValues>Property UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mail Order</fullName>
+                <controllingFieldValues>Noticeboard</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Massage</fullName>
+                <controllingFieldValues>Noticeboard</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MBA &amp; Post Graduate Courses</fullName>
+                <controllingFieldValues>Education</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medical</fullName>
+                <controllingFieldValues>Noticeboard</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Meeting point</fullName>
+                <controllingFieldValues>Noticeboard</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mobile Communications</fullName>
+                <controllingFieldValues>Business &amp; Finance</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mobility Aids</fullName>
+                <controllingFieldValues>Mobility</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mother &amp; Baby</fullName>
+                <controllingFieldValues>Noticeboard</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorbikes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Multi-Lingual Appointments</fullName>
+                <controllingFieldValues>Recruitment</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Museums &amp; Galleries</fullName>
+                <controllingFieldValues>Entertainments</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New Homes &amp; Developers</fullName>
+                <controllingFieldValues>Property UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Noticeboard Trades</fullName>
+                <controllingFieldValues>Noticeboard</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Overseas Appointments</fullName>
+                <controllingFieldValues>Recruitment</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Part Time Appointments</fullName>
+                <controllingFieldValues>Recruitment</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Personal</fullName>
+                <controllingFieldValues>Personal &amp; Notices</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Personal Training</fullName>
+                <controllingFieldValues>Noticeboard</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pets Welcome</fullName>
+                <controllingFieldValues>Travel UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional Qualifications</fullName>
+                <controllingFieldValues>Education</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Property Wanted</fullName>
+                <controllingFieldValues>Property UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Public &amp; Community</fullName>
+                <controllingFieldValues>Recruitment</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Public Notices</fullName>
+                <controllingFieldValues>Personal &amp; Notices</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rail &amp; Coach Journeys</fullName>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <controllingFieldValues>Travel UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Recruitment Consultants</fullName>
+                <controllingFieldValues>Recruitment</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Registration Numbers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Residential Park Homes</fullName>
+                <controllingFieldValues>Property UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Residential Property</fullName>
+                <controllingFieldValues>Property Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Restaurants</fullName>
+                <controllingFieldValues>Entertainments</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Retail</fullName>
+                <controllingFieldValues>Fashion &amp; Retail</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Retirement Homes</fullName>
+                <controllingFieldValues>Property UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rise &amp; Recliners</fullName>
+                <controllingFieldValues>Mobility</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>River Cruises</fullName>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sample Sales</fullName>
+                <controllingFieldValues>Noticeboard</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Schools</fullName>
+                <controllingFieldValues>Education</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Scooters</fullName>
+                <controllingFieldValues>Mobility</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Self Catering Holidays</fullName>
+                <controllingFieldValues>Travel UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shared Ownership &amp; Housing Asociations</fullName>
+                <controllingFieldValues>Property UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Short &amp; Part Time Courses</fullName>
+                <controllingFieldValues>Education</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Short Breaks</fullName>
+                <controllingFieldValues>Travel UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Singles Holidays</fullName>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <controllingFieldValues>Travel UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Skiing &amp; Winter Sports</fullName>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Skincare &amp; Cosmetics</fullName>
+                <controllingFieldValues>Health</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Special Interest Holidays</fullName>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <controllingFieldValues>Travel UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Spiritualists</fullName>
+                <controllingFieldValues>Noticeboard</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Stairlifts</fullName>
+                <controllingFieldValues>Mobility</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Temporary Staff</fullName>
+                <controllingFieldValues>Recruitment</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Theatres &amp; Concerts</fullName>
+                <controllingFieldValues>Entertainments</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Timeshares</fullName>
+                <controllingFieldValues>Property Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tourist Boards</fullName>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <controllingFieldValues>Travel UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Trades &amp; Craftspeople</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Travel Insurance</fullName>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TV Shows</fullName>
+                <controllingFieldValues>Noticeboard</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UK Holidays</fullName>
+                <controllingFieldValues>Travel UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Universities</fullName>
+                <controllingFieldValues>Education</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vans</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Villa Holidays</fullName>
+                <controllingFieldValues>Travel Overseas</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vitamins &amp; Medicines</fullName>
+                <controllingFieldValues>Health</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vocational</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Waterside Homes</fullName>
+                <controllingFieldValues>Property UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Weddings</fullName>
+                <controllingFieldValues>Noticeboard</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Weddings &amp; Honeymoons</fullName>
+                <controllingFieldValues>Travel UK</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Work Wanted</fullName>
+                <controllingFieldValues>Recruitment</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Display_Main_Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Display - Main Category</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Business &amp; Industrial</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Clothing &amp; Accessories</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Computers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cosmetics &amp; Personal Care</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Drink</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Entertainment &amp; Leisure</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Finance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Food</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Games &amp; Consoles</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gardening &amp; Agriculture</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Govt,social,political Organis</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Household Appliances</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Household Equipment &amp; Diy</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Household Fmcg</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Leisure Equipment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mail Order</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Media</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Miscellaneous</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Multi Advertisers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Allocated</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Office Equipment &amp; Stationery</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Online Retail</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pharmaceutical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Property</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Retail</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Telecoms</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tobacco &amp; Accessories</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Travel &amp; Transport</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <label>Account Category</label>
+    <nameField>
+        <displayFormat>CAT-{0000}</displayFormat>
+        <label>Account Category Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Account Categories</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Display_Main_Category__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Classified_Minor_Category__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Classified_Sub_Category__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Classified_Main_Category__c</lookupDialogsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

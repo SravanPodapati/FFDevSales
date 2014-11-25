@@ -1,0 +1,101 @@
+<!-- *********************************************************************************** --> 
+<!-- *********************************************************************************** --> 
+<!-- ****                                                                           **** --> 
+<!-- ****   This page is called after clicking "Create a Quick Pitch"               **** --> 
+<!-- ****   link on the Home tab.                                                   **** -->
+<!-- ****                                                                           **** -->
+<!-- ****   We use this page for creating a quick Pitch with one Product            **** -->
+<!-- ****   from a single page.                                                     **** --> 
+<!-- ****                                                                           **** --> 
+<!-- ****   If Pricebook doesn't exist (or if it is empty) than an error message    **** --> 
+<!-- ****   is shown and fields for entering Pitch and Product are not              **** --> 
+<!-- ****   rendered.                                                               **** --> 
+<!-- ****                                                                           **** --> 
+<!-- ****                                                                           **** --> 
+<!-- *********************************************************************************** --> 
+<!-- *********************************************************************************** --> 
+
+
+<apex:page controller="CreateQuickOpptyController" tabStyle="Opportunity">
+    <apex:sectionHeader title="New Pitch"/>
+        <apex:form >
+        
+        
+            <!-- *********************************************** -->
+            <!-- ***************** Opportunity ***************** -->  
+            <!-- *********************************************** -->
+            
+            <apex:pageBlock title="Pitch Information" rendered="{!productsExist}">
+                
+                <apex:pageBlockButtons >
+                        <apex:commandButton action="{!save}"    value="Save"   rendered="{!productsExist}"/>
+                        <apex:commandButton action="{!cancel}"  value="Cancel" immediate="true"/>
+                </apex:pageBlockButtons>
+
+                <apex:pageBlockSection title="Pitch Information"          columns="2">
+                    <apex:inputField value="{!opportunity.name}"                required="true"/> 
+                    
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel for="productSelect">Stage</apex:outputLabel>
+                            <apex:selectList value="{!stageSelectList}" size="1" id="stageSelect"   required="true">
+                                <apex:selectOptions value="{!stageOptions}"/>
+                            </apex:selectList>
+                    </apex:pageBlockSectionItem>
+                    
+                    <apex:pageBlockSectionItem >
+                       <apex:outputLabel for="Advertiser" value="Advertiser"></apex:outputLabel>
+                        <apex:panelGroup >
+                             <apex:inputField value="{!opportunity.accountId}"  id="Advertiser"     required="true"/>  
+                        </apex:panelGroup>
+                    </apex:pageBlockSectionItem>
+                    
+                    <apex:inputField value="{!opportunity.Type}"                required="true"/>  
+                    <apex:inputField value="{!opportunity.Agency__c}"                               />  
+                    <apex:inputField value="{!opportunity.closeDate}"           required="true"/>
+                    
+                </apex:pageBlockSection>
+                
+                
+                <!-- *********************************************** -->
+                <!-- ************ Opportunity Line Item ************ -->  
+                <!-- *********************************************** -->
+            
+                <apex:pageBlockSection title="Pitch Line Item Information">
+                    
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel for="productSelect">Product</apex:outputLabel>
+                        <apex:panelGroup >
+                            <apex:selectList value="{!productsSelectList}" size="1" id="productSelect" required="true">
+                                <apex:selectOptions value="{!productOptions}"/>
+                            </apex:selectList>
+                        </apex:panelGroup>
+                    </apex:pageBlockSectionItem>
+                   
+                    <apex:inputField value="{!pitch.UnitPrice}"                     required="true"/>
+                    <apex:inputField value="{!pitch.First_Insertion_Date__c}"       required="true"/>
+                    <apex:inputField value="{!pitch.Description}"/>
+                   
+                </apex:pageBlockSection>
+                
+            </apex:pageBlock>
+            
+            
+            
+            <!-- *********************************************** -->
+            <!-- *********** If there are no products ********** -->  
+            <!-- *********************************************** -->
+
+            <apex:pageBlock rendered="{!!productsExist}">
+            
+                <apex:pageBlockButtons >
+                    <apex:commandButton action="{!cancel}"  value="Cancel" immediate="true"/>
+                </apex:pageBlockButtons>
+            
+                <apex:outputText value="Quick Pitch functionality cannot be used because Price Book is not defined for your profile or it contains no products." 
+                                    style="color:#CC0000;font-weight:bold;"/>
+
+            </apex:pageBlock>
+            
+            
+        </apex:form>
+</apex:page>

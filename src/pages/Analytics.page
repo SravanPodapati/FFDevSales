@@ -1,0 +1,4 @@
+<apex:page >
+<iframe height="1000px" width="1500px" id="Analytics" name="Analytics"
+src="http://hsk-qlk-w02v-p.anl.dmgt.net/QvAJAXZfc/opendoc.htm?document=BIU%20QlikviewData/Qlikview%20Models/DMG%20Media%20Advertising.qvw&host=QVS@hsk-qlk-w02v-p&client=Ajax"></iframe>
+</apex:page>

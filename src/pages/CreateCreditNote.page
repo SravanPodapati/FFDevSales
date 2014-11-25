@@ -1,0 +1,19 @@
+<apex:page standardController="Query__c" extensions="CreateCreditNoteController" action="{!validate}">
+    <apex:variable var="q" value="{!Query__c}"/>
+    <apex:form >
+        <apex:pageBlock title="Create Credit Note for Query: {!q.Name}">
+            <apex:pageBlockSection columns="1">
+                <apex:pageBlockSectionItem >
+                    <apex:pageMessages />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Cancel" action="{!cancel}"/>
+                <apex:commandButton value="Create" action="{!createCreditNote}" rendered="{!!HasErrors}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection columns="1">
+                    <apex:inputField value="{!CreditNote.c2g__CreditNoteReason__c}" rendered="{!!HasErrors}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

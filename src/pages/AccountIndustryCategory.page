@@ -1,0 +1,78 @@
+<apex:page sidebar="false" showHeader="false" wizard="false" standardController="Account" extensions="AccountIndustryCategoryController">
+    <apex:form >
+    <apex:pageMessages id="mymsg"/>
+    <!--apex:outputPanel rendered="{!refreshPage}"-->
+     <apex:pageBlock >
+          
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton action="{!save}"  rendered="{!mode=='Edit'}" value="Save" />
+                 <apex:commandButton action="{!cancel}"  rendered="{!mode=='Edit'}" value="Cancel"/>
+                 <apex:commandButton action="{!edit}" rendered="{!mode=='View'}" value="Edit"/>
+               </apex:pageBlockButtons>
+            
+           
+           <table  width="100%">
+           <tr>
+           <td align="right" width = "5%">   
+           <apex:outputLabel value="Display - Main Category " style="font-weight:bold"></apex:outputLabel>
+           
+            
+            </td>  
+           <td align="left" width = "20%" > 
+           <apex:outputText rendered="{!mode=='View'}" value="{!account.Industry}"/>        
+           <!--apex:outputText rendered="{!mode=='View'}" value="{!parentPicklistVal}"/-->        
+           <apex:selectList rendered="{!mode=='Edit'}"   title="Display - Main Category" value="{!parentPicklistVal}" multiselect="false" size="1">
+                <apex:selectOptions value="{!parentPicklistOptions}" />
+                <apex:actionSupport event="onchange" action="{!actionUpdatePicklistVals}" rerender="subcategory" />
+            </apex:selectList>
+            </td>
+           
+             
+            <td align="right" width ="5%">   
+            <apex:outputLabel value="Display - Sub Category " style="font-weight:bold"></apex:outputLabel>
+           
+                
+            </td>  
+           <td align="left" width = "32%">   
+            <apex:outputText rendered="{!mode=='View'}" value="{!account.Industry_Sub_Category__c}"/>        
+                   <apex:selectList style="{!styleSub}" id="subcategory" rendered="{!mode=='Edit'}" value="{!childMultiPicklistVal}" multiselect="true"  >
+                <apex:selectOptions value="{!childMultiPicklistOptions}" />
+                <apex:actionSupport event="onchange" action="{!actionUpdatePicklistVals}" rerender="minor" />
+            </apex:selectList>
+                  
+           
+                </td>     
+           <td align="right" width = "5%">  
+            <apex:outputLabel value="Display - Minor Category" style="font-weight:bold"></apex:outputLabel>
+          
+                                    
+              
+            </td>  
+           <td align="left" width = "32%"> 
+            <apex:outputText rendered="{!mode=='View'}" value="{!account.Industry_Minor_Category__c}"/>
+            <apex:selectList style="{!styleMinor}" id="minor" rendered="{!mode=='Edit'}" value="{!childSinglePicklistVal}" multiselect="true" size="1" >
+                <apex:selectOptions value="{!childSinglePicklistOptions}"/>
+           </apex:selectList>
+                     
+            
+    
+                        
+
+             </td></tr>
+             </table>
+            
+             
+           
+             </apex:pageBlock>
+    </apex:form>
+    <script>
+     window.parent.location=window.parent.location;
+    // Removing empty options
+    var entries = document.getElementById('{!$Component.picklist}');
+    for (var i = entries.length - 1; i>=0; i--){
+        if (entries.options[i].text == ''){
+            entries.remove(i);
+        }
+    }
+</script>
+</apex:page>

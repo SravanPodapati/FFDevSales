@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>MOLKPISnapshot</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>MOLKPISnapshots</value>
+    </caseValues>
+    <fields>
+        <label><!-- Actual Close Date --></label>
+        <name>Actual_Close_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Advertiser Account Name --></label>
+        <name>Advertiser_Account_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Agency Account Name --></label>
+        <name>Agency_Account_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created Date --></label>
+        <name>Created_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Display Main Category --></label>
+        <name>Display_Main_Category__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Insertion Date --></label>
+        <name>First_Insertion_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Insertion Date --></label>
+        <name>Last_Insertion_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Owners Department --></label>
+        <name>Owners_Department__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pitch Name --></label>
+        <name>Pitch_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pitch Owner --></label>
+        <name>Pitch_Owner__c</name>
+    </fields>
+    <fields>
+        <label><!-- Probability --></label>
+        <name>Probability__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Name --></label>
+        <name>Product_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Revenue --></label>
+        <name>Revenue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Schedule Date --></label>
+        <name>Schedule_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stage --></label>
+        <name>Stage__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

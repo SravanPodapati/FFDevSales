@@ -1,0 +1,28 @@
+<apex:page StandardController="Account" Extensions="ViewBTAHistoryController" ShowHeader="False">
+<apex:form >  
+<apex:pageBlock title="BTA Tasks : {!account.Name}">
+ 
+<!--  apex:commandbutton value="Close Window" onclick="javascript:self.close()"/ -->
+
+<apex:pageBlockTable value="{!activityPagination}" var="a">         
+ 
+<apex:column headerValue="Subject"> 
+<apex:outputLink target="_blank" value="../{!a.id}">{!a.subject}</apex:outputLink>
+</apex:column>
+ 
+<apex:column value="{!a.ActivityDate}"/>
+<apex:column value="{!a.OwnerId}"/>
+<apex:column value="{!a.Status}"/>
+<apex:column value="{!a.WhoId}"/>
+<apex:column value="{!a.Description}"/>
+
+
+</apex:pageBlockTable>
+
+<!-- <a href="javascript: history.go(-1)">Click here to go back to the previous page!</a> --> 
+ <!-- <apex:commandLink action="{!previous}">Previous</apex:commandlink> -->
+ <!-- <apex:commandLink action="{!next}">Next</apex:commandlink> -->
+ <!--  <a href="javascript:self.close()">Close this Window</a> -->
+ </apex:pageBlock>
+</apex:form>
+</apex:page>

@@ -1,0 +1,21 @@
+<!-- *********************************************************************************** --> 
+<!-- *********************************************************************************** --> 
+<!-- **** 																			**** --> 
+<!-- **** 	This page is called after clicking "Activate" button on the 			**** --> 
+<!-- ****	inactive Pitch Idea.													**** --> 
+<!-- **** 																			**** -->							
+<!-- ****	It calls the Activate method from ActivateDeactivatePitchIdeaController **** --> 
+<!-- **** 	and shows error messages if there are any.								**** --> 
+<!-- **** 																			**** --> 
+<!-- *********************************************************************************** --> 
+<!-- *********************************************************************************** --> 
+
+
+<apex:page standardController="Inactive_Pitch_Idea__c" 
+			tabStyle="Inactive_Pitch_Idea__c" 
+			extensions="ActivateDeactivatePitchIdeaController" 
+			action="{!Activate}">
+			
+			<apex:outputText value="{!errorMessage}" rendered="{!errorMessage != null}" style="color:#CC0000;font-weight:bold;"/>
+			
+</apex:page>

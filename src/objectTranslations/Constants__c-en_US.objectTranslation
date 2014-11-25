@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Constants</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Constants</value>
+    </caseValues>
+    <fields>
+        <label><!-- Advertiser Record Type --></label>
+        <name>Advertiser_Record_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Agency Record Type --></label>
+        <name>Agency_Record_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Creative Snapshot URL --></label>
+        <name>Creative_Snapshot_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- CustomerRef1email --></label>
+        <name>CustomerRef1email__c</name>
+    </fields>
+    <fields>
+        <label><!-- CustomerRef2email --></label>
+        <name>CustomerRef2email__c</name>
+    </fields>
+    <fields>
+        <label><!-- CustomerRef3email --></label>
+        <name>CustomerRef3email__c</name>
+    </fields>
+    <fields>
+        <label><!-- CustomerRef4email --></label>
+        <name>CustomerRef4email__c</name>
+    </fields>
+    <fields>
+        <label><!-- CustomerRef5email --></label>
+        <name>CustomerRef5email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Media Lead Opp Record Type --></label>
+        <name>Media_Lead_Opp_Record_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Media Partner Record Type --></label>
+        <name>Media_Partner_Record_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- max number of records user can be subscribed to before Opportunity Auto-Un-Follow logic kicks in --></help>
+        <label><!-- Opportunity Auto UnFollow Threshold --></label>
+        <name>Opportunity_Auto_UnFollow_Threshold__c</name>
+    </fields>
+    <fields>
+        <label><!-- Regular Opp Record Type --></label>
+        <name>Regular_Opp_Record_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Wowcher Lead Owner --></label>
+        <name>Wowcher_Lead_Owner__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

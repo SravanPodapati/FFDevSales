@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Currency Director Rates</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Currency Director Rates</value>
+    </caseValues>
+    <fields>
+        <label><!-- Base Currency --></label>
+        <name>Base_Currency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Currency Director Currencies --></label>
+        <name>Currency_Director_Currencies__c</name>
+        <relationshipLabel><!-- Currency Director Rates --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Effective Date --></label>
+        <name>Effective_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Latest ? --></label>
+        <name>Is_Latest__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rate --></label>
+        <name>Rate__c</name>
+    </fields>
+    <layouts>
+        <layout>Currency Director Rates Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- The new exchange rate (effective date) must fall after the last existing exchange rate record --></errorMessage>
+        <name>Check_rate_does_not_predate_other_rates</name>
+    </validationRules>
+</CustomObjectTranslation>

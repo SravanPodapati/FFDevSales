@@ -1,0 +1,287 @@
+<apex:page standardController="Order" showheader="false" extensions="BookingConfirmationPdfController" standardStylesheets="false" applyBodyTag="false" sidebar="false" renderAs="pdf" >
+<head>
+    <style>
+        @page {
+            size: A4 landscape;
+            margin-top: 25mm;
+            margin-bottom: 35mm;
+            
+            @top-center{
+                content: element(header);
+                width: 100%;
+            }
+            @bottom-center{
+                content: element(footer);
+                width: 100%;
+            }
+        }
+        div.header { 
+            position: running(header);
+            width:100%;
+            padding: 0px;
+            margin: 25px 0 0 0;
+        }
+        
+        div#pageContent {
+            width:100%;
+            height: auto;
+            position: inherit;
+            font-size:10px;
+            color:rgb(0,0,0);
+            font-style:normal;
+            text-decoration: none;
+        }
+        div.footer {
+            position: running(footer);
+            width:100%;
+            padding: 0px;
+            margin: 0 0 0 0;
+        }
+        span.cls_001{
+            font-size:26px;
+            color:rgb(0,0,0);
+            font-weight:bold;
+            font-style:normal;
+            text-decoration: none;
+        }
+        div.cls_001{
+            position:relative;
+            width: 100%; 
+            text-align: center;
+            font-size:26px;
+            color:rgb(0,0,0);
+            font-weight:bold;
+            font-style:normal;
+            text-decoration: none;
+        }
+        span.cls_004{
+            font-size:8px;
+            color:rgb(0,0,0);
+            font-weight:normal;
+            font-style:normal;
+            text-decoration: none;
+        }
+        div.cls_004{
+            position:relative;
+            width: 100%;
+            float: left;
+            margin: 0 0 0 0;
+            font-size:8px;
+            color:rgb(0,0,0);
+            font-weight:normal;
+            font-style:normal;
+            text-decoration: none;
+        }
+        span.cls_005{
+            font-size:12px;
+            color:rgb(0,0,0);
+            font-weight:normal;
+            font-style:normal;
+            text-decoration: none;
+        }
+        div.cls_005{
+            position:relative;
+            float: left;
+            width: 33%;
+            margin: 0 0 0 0;
+            font-size:12px;
+            color:rgb(0,0,0);
+            font-weight:normal;
+            font-style:normal;
+            text-decoration: none;
+        }
+        div.pageNumbers{
+            content: counter(page) of counter(pages);
+        }
+        table.headerTable{
+            width: 100%;
+            border: 0 0 0 0;
+        }
+        table.headerTable td.headerTd {
+            width: 15%;
+            font-size:14px; 
+            font-weight:bold;
+        }
+        table.headerTable td.contentTd {
+            width: 30%;
+            font-size:14px; 
+        }
+        table.orderItemsTable {
+            width: 100%;
+            border-collapse:collapse;
+            border: 1px black solid;
+            page-break-inside:auto;
+            margin-left: -5px;
+            margin-right: -5px;
+        }
+        
+        table.orderItemsTable th {
+            text-align:left;
+            font-weight: bold;
+            /*padding:2px 2px 2px 2px;*/
+            border: 1px black solid;
+        }
+        
+        table.orderItemsTable td.alignRight {
+            text-align:right;
+        }
+        
+        table.orderItemsTable td {
+            text-align:left;
+            font-weight: normal;
+            font-size:10pt;
+            /*padding:2px 2px 2px 2px;*/
+            border: 1px black solid;
+        }
+        
+        table.orderItemsTable tr {
+            page-break-inside:avoid; 
+            page-break-after:auto;
+        }
+        
+        table.orderItemsTable td.hidden {
+            border: 0;
+            visibility:hidden;
+        }
+        
+        table.orderItemsTable td.noBorder {
+            border: 0;
+        }
+        
+        table.orderItemsTable thead {
+            text-align:left;
+            font-size:11pt;
+            padding:20px 20px 20px 20px;
+            background-color: rgb(176,230,255);
+            height: 150%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class = "header" >
+        <div style="text-align: center;">
+            <img src='{!URLFOR($Resource.MailDisplay_Logo)}' title="logo"  />
+        </div>
+        <div class="cls_001" ><span class="cls_001">Booking Confirmation</span></div>
+        <hr size="1"/>
+        <table style="width: 100%;" class="headerTable">
+            <tr style="width: 100%">
+                <td class="headerTd">Order Number:</td>
+                <td class="contentTd">{!currentOrder.CCI_Order_ID__c}</td>
+                <td class="headerTd">Date:</td>
+                <td class="contentTd">
+                    <apex:outputText value="{0,date,dd'/'MM'/'yyyy}">
+                        <apex:param value="{!currentOrder.ActivatedDate}" />
+                    </apex:outputText>
+                </td>
+            </tr>
+            <tr style="width: 100%">
+                <td class="headerTd">Contact Details:</td>
+                <td class="contentTd">{!currentOrder.Caller_Name__c}</td>
+                <td class="headerTd">Advertiser:</td>
+                <td class="contentTd">{!currentOrder.Account.Name}</td>
+            </tr>
+            <tr style="width: 100%">
+                <td class="headerTd">Billing:</td>
+                <td class="contentTd">{!currentOrder.Agency__r.Name}</td>
+                <td class="headerTd">Agency:</td>
+                <td class="contentTd">{!Agency}</td>
+            </tr>
+            <tr style="width: 100%">
+            
+<!-- commenting the folloeing to remove Brand 
+                <td class="headerTd">Brand:</td>
+                <td class="contentTd">{!Brand}</td>-->
+                <td></td>
+                <td></td>
+                <td class="headerTd">Sales Exec:</td>
+                <td class="contentTd">{!currentOrder.Created_In_CCI_By__c}</td>
+            </tr>
+        </table>
+    </div>
+    
+    <br/><br/><br/><br/><br/><br/>
+    <div id="pageContent" class="content">
+        <table class="orderItemsTable">
+            <thead >
+                <tr>
+                    <th colspan="13" >Print</th>
+                </tr>
+            </thead>
+            <tr>
+                <th class="alignLeft">Ref</th>
+                <th class="alignLeft">Status</th>
+                <th class="alignLeft">Issue Date</th>
+                <th class="alignLeft">Publication</th>
+                <th class="alignLeft">Section</th>
+                <th class="alignLeft">Ad Description</th>
+                <th class="alignLeft">Position</th>
+                <th class="alignLeft">Region</th>
+                <th class="alignLeft">Size</th>
+                <th class="alignLeft">Colour</th>
+                <th class="alignLeft">Copy Split</th>
+                <th class="alignLeft">SCC Rate</th>
+                <th class="alignLeft">Gross Price</th>
+            </tr>
+            <apex:repeat value="{!relatedItems}" var="item">
+                <tr>
+                    <td>{!item.CCI_Order_Item_ID__c}</td>
+                    <td>{!if(item.Is_Cancelled__c==false, 'Normal', 'Killed')}</td>
+                    <td>
+                        <apex:outputText value="{0,date,MMM' 'dd' 'yyyy}">
+                            <apex:param value="{!item.Last_Delivery_Date__c}" />
+                        </apex:outputText>
+                    </td>
+                    <td>{!item.Publication_Name__c}</td>
+                    <td>{!item.Section_Name__c}</td>
+                    <td>{!item.Description}</td>
+                    <td>{!item.Position__c}</td>
+                    <td>{!item.Zone_Name__c}</td>
+                    <td>{!VALUE(item.Height__c)/100000}x{!item.Columns__c}</td>
+                    <td>{!item.Colour__c}</td>
+                    <td>{!item.Regional_Copy_Split__c}</td>
+                    <td class="alignRight">
+                        <apex:outputText value="{!item.SCC_Rate__c}" rendered="{!NOT(ISBLANK(item.SCC_Rate__c))}"/>
+                        <apex:outputText value="{!ROUND((item.UnitPrice/((VALUE(item.Height__c)/100000)*value(item.Columns__c))),2)}" rendered="{!ISBLANK(item.SCC_Rate__c)}"/>
+                    </td>
+                    
+                    <td class="alignRight">{!item.UnitPrice}</td>
+                </tr>
+            </apex:repeat>
+            <tr>
+                <td class="hidden"></td>
+                <td class="hidden"></td>
+                <td class="hidden"></td>
+                <td class="hidden"></td>
+                <td class="hidden"></td>
+                <td class="hidden"></td>
+                <td class="hidden"></td>
+                <td class="hidden"></td>
+                <td class="hidden"></td>
+                <td class="hidden"></td>
+                <td class="hidden"></td>
+                <td class="noBorder alignRight">Total</td>
+                <td class="alignRight">{!currentOrder.TotalAmount}</td>
+            </tr>
+        </table>
+    </div>
+    <div class="footer">
+        <div class="cls_004">
+            <span class="cls_004">Please accept this email as confirmation of your booking. Should this document include notification of any provisional orders be aware that such advertisement/s will not be published unless we receive confirmation of the order. If there are any discrepancies please contact your sales rep. The publisher cannot be held responsible for errors in advertising where the copy and full copy instructions have not been received prior to the copy deadlines as stated in our ratecard. Full terms and conditions can be found at <A HREF="http://www.mailconnected.co.uk/rates-spec./">http://www.mailconnected.co.uk/rates-spec.</A></span>
+            <br/>
+            <hr size="1"/>
+            <div class="cls_005" style="text-align: left;">Associated Newspapers Ltd.</div>
+            <div class="cls_005" style="text-align: center;">
+                Page 1 of 1 
+            </div>
+            <div class="cls_005" style="text-align: right;">
+                <!--GAR-919-->
+                <apex:outputText value="{0, date, dd MMMM YYYY, hh:mm a}">
+                    <apex:param value="{!NOW()}" />
+                </apex:outputText>
+            </div>
+        </div>
+    </div>
+</body>
+</apex:page>

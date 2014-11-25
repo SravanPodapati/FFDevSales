@@ -1,0 +1,36 @@
+<apex:component controller="BookingConfirmationController" access="global">
+  <apex:attribute name="OpportunityID" description="Opportunity ID"  type="Id" required="required" assignTo="{!oppID}"/>
+  <apex:attribute name="ShowPrice" description="Attribute that decides whether price is to be displayed or not"  type="Boolean" required="false" assignTo="{!showPrice}"/>
+  <apex:attribute name="LineDesc" description="Attribute that decides whether the Line Description is to be displayed or not"  type="Boolean" required="false" assignTo="{!lineDesc}"/>  
+ 
+    <style>
+        p { font-family:calibri; font-size:12pt;  }
+    </style>
+
+    <p>
+        <apex:dataTable value="{!OppLineItems}" var="oli" border="1">
+        
+            <apex:column headerValue="Agency" value="{!oli.Opportunity.Agency__r.name}"/>
+            <apex:column headerValue="Client" value="{!oli.Opportunity.Account.name}"/>
+            <apex:column headerValue="Brand" value="{!oli.Brand__c}"/>
+            <apex:column headerValue="Description" value="{!oli.Description}" rendered="{!lineDesc}"/>
+            <apex:column headerValue="Date">
+               <apex:outputText value="{0,date,dd'-'MMM'-'yyyy}">
+                   <apex:param value="{!oli.ServiceDate}"/>
+               </apex:outputText>
+            </apex:column>
+            <apex:column headerValue="Size" value="{!oli.Size__c}"/>
+            <apex:column headerValue="Color Spec" value="{!oli.Color_Specification__c}"/>
+            <apex:column headerValue="Region" value="{!oli.Region__c}"/>
+            <apex:column headerValue="Position" value="{!oli.Position__c}"/>
+            <apex:column headerValue="Rate" value="£ {!ROUND(oli.TotalPrice,2)}" rendered="{!showPrice}"/>
+            <apex:column headerValue="URN" value="{!oli.URN__c}"/>
+            <apex:column headerValue="Date Booked">    
+               <apex:outputText value="{0,date,dd'-'MMM'-'yyyy}">
+                   <apex:param value="{!oli.Date_Booked__c}"/>
+               </apex:outputText>    
+            </apex:column>
+        
+        </apex:dataTable>    
+    </p>
+</apex:component>
